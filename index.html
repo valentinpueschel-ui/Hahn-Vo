@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hahn &amp; Vo — Luxury Watches · Frankfurt am Main</title>
+  <meta name="description" content="Kuratierte Luxusuhren — auf Echtheit geprüft, mit 12 Monaten Garantie. Ankauf, Inzahlungnahme und Suchaufträge. Showroom im Garden Tower, Frankfurt.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/hv-mark.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body data-page="home" data-header="dark">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<!-- ============ PRELOADER: watch face with flyback hand ============ -->
+<div class="preloader" aria-hidden="true">
+  <div class="pre-watch">
+    <svg class="pre-ring" id="preRing" viewBox="0 0 200 200" aria-hidden="true"></svg>
+    <div class="pre-mark" id="preMark"></div>
+    <svg class="pre-handsvg" viewBox="0 0 200 200" aria-hidden="true">
+      <g id="preHand">
+        <path class="ph-needle" d="M100 20 L102.1 104 L97.9 104 Z"/>
+        <rect class="ph-needle" x="98.7" y="104" width="2.6" height="22" rx="1.3"/>
+        <circle class="ph-weight" cx="100" cy="131" r="5.2"/>
+        <circle class="ph-cap" cx="100" cy="100" r="4.2"/>
+        <circle class="ph-capdot" cx="100" cy="100" r="1.6"/>
+      </g>
+    </svg>
+  </div>
+  <div class="pre-word micro">Hahn &amp; Vo · Luxury Watches</div>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/ch_hero_poster.jpg">
+      <source src="assets/video/ch_hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
+    <div class="hero-inner wrap">
+      <div class="hero-mark" id="heroMark" aria-hidden="true"></div>
+      <h1 class="hero-title display-xl">
+        <span class="reveal-line" data-delay="1.15"><span>Hahn&nbsp;&amp;&nbsp;Vo</span></span>
+      </h1>
+      <p class="hero-sub" data-reveal data-delay="1.45">Kuratierte Luxusuhren — geprüft, garantiert, persönlich übergeben.<br>Showroom über den Dächern des Frankfurter Bankenviertels.</p>
+      <div class="hero-ctas" data-reveal data-delay="1.6">
+        <a class="btn btn-creme" data-magnetic href="shop.html">Kollektion entdecken <span class="arr">→</span></a>
+        <a class="btn btn-ghost-creme" data-magnetic href="ankauf.html">Uhr verkaufen</a>
+      </div>
+    </div>
+    <div class="hero-foot wrap" data-reveal data-delay="1.8">
+      <span class="micro">Frankfurt am Main · Garden Tower</span>
+      <span class="hero-scrollcue micro">Scrollen <span class="cue-line"></span></span>
+      <span class="micro num" id="heroClock">—:—</span>
+    </div>
+  </section>
+
+  <!-- ============ BRAND MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Rolex</span><span class="marquee-item">Omega</span><span class="marquee-item">IWC</span><span class="marquee-item">Breitling</span><span class="marquee-item">Tudor</span><span class="marquee-item">Cartier</span><span class="marquee-item">TAG Heuer</span><span class="marquee-item">MB&amp;F</span><span class="marquee-item">Panerai</span><span class="marquee-item">Jaeger-LeCoultre</span><span class="marquee-item">Glashütte Original</span><span class="marquee-item">Nomos</span>
+    </div>
+  </div>
+
+  <!-- ============ NEW IN ============ -->
+  <section class="section" id="newin">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker"><span class="kicker-index">01</span><span class="micro micro-dim">Neu eingetroffen</span></div>
+          <h2 class="display-l reveal-line"><span>New In</span></h2>
+        </div>
+        <a class="btn btn-outline" data-magnetic href="shop.html">Alle Uhren <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <!-- flagship feature -->
+    <div class="wrap">
+      <article class="flagship" id="flagship">
+        <div class="flagship-media img-frame" data-clip>
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/video/ch_unruh_poster.jpg">
+            <source src="assets/video/ch_unruh.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="flagship-body">
+          <span class="micro micro-dim" data-reveal>Das Flaggschiff</span>
+          <h3 class="display-m" data-reveal id="flagshipName"></h3>
+          <p class="flagship-desc" data-reveal id="flagshipDesc"></p>
+          <div class="flagship-meta" data-reveal id="flagshipMeta"></div>
+          <div class="flagship-cta" data-reveal>
+            <a class="btn btn-solid" data-magnetic id="flagshipLink" href="#">Uhr ansehen <span class="arr">→</span></a>
+            <span class="micro micro-dim">1 von 1 · sofort verfügbar</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- newest pieces rail -->
+    <div class="rail-wrap">
+      <div class="rail" id="newinRail"></div>
+    </div>
+  </section>
+
+  <!-- ============ LEISTUNGEN ============ -->
+  <section class="section services" id="leistungen">
+    <div class="wrap">
+      <div class="kicker"><span class="kicker-index">02</span><span class="micro micro-dim">Unser Versprechen</span></div>
+      <div class="services-grid">
+        <div class="service" data-reveal>
+          <div class="service-num num"><span data-counter="12">0</span><em>Monate</em></div>
+          <h3>Garantie auf jedes Werk</h3>
+          <p>Zwölf Monate Garantie auf jede verkaufte Uhr — zusätzlich zu einer eventuell laufenden Herstellergarantie, viele Stücke mit frischem Servicenachweis.</p>
+        </div>
+        <div class="service" data-reveal data-delay="0.12">
+          <div class="service-num num"><span data-counter="14">0</span><em>Tage</em></div>
+          <h3>Rückgaberecht</h3>
+          <p>Nehmen Sie sich Zeit. Vierzehn Tage Rückgaberecht ab Erhalt — versichert zurück, ohne Diskussion.</p>
+        </div>
+        <div class="service" data-reveal data-delay="0.24">
+          <div class="service-num num"><span data-counter="100">0</span><em>%</em></div>
+          <h3>Auf Echtheit geprüft</h3>
+          <p>Jede Uhr wird geöffnet, das Werk kontrolliert, Referenz- und Seriennummer dokumentiert — von Uhrmacherhand, bevor sie in den Verkauf geht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section quotes" id="stimmen">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker"><span class="kicker-index">03</span><span class="micro" style="color:var(--creme-60)">Kundenstimmen</span></div>
+          <h2 class="display-l reveal-line"><span>Was unsere Kunden sagen</span></h2>
+        </div>
+        <div class="quote-nav">
+          <button class="qn-btn" data-q-prev aria-label="Zurück">←</button>
+          <button class="qn-btn" data-q-next aria-label="Weiter">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="quote-rail-wrap">
+      <div class="quote-rail" id="quoteRail"></div>
+    </div>
+  </section>
+
+  <!-- ============ 3ER BLOCK ============ -->
+  <section class="section" id="wege">
+    <div class="wrap">
+      <div class="kicker"><span class="kicker-index">04</span><span class="micro micro-dim">Drei Wege zu uns</span></div>
+      <div class="ways-grid">
+        <a class="way" href="ankauf.html" data-reveal>
+          <div class="way-media img-frame"><img src="assets/img/way-ankauf.jpg" alt="Uhr verkaufen — Ankauf bei Hahn & Vo" loading="lazy"></div>
+          <div class="way-body">
+            <h3 class="display-m">Ankauf &amp;<br>Inzahlungnahme</h3>
+            <p>Verkaufen Sie Ihre Uhr — oder rechnen Sie sie direkt auf Ihre nächste an. Angebot innerhalb von 24–48 Stunden.</p>
+            <span class="way-cta micro">Uhr anbieten <span class="arr">→</span></span>
+          </div>
+        </a>
+        <a class="way" href="suchauftrag.html" data-reveal data-delay="0.12">
+          <div class="way-media img-frame"><img src="assets/img/way-suche.jpg" alt="Suchauftrag — wir finden Ihre Uhr" loading="lazy"></div>
+          <div class="way-body">
+            <h3 class="display-m">Suchanfrage<br>einer Uhr</h3>
+            <p>Ihre Referenz ist nirgends zu finden? Unser Netzwerk reicht bis Seoul und Tokio — Sourcing seltener Stücke ist unsere Spezialität.</p>
+            <span class="way-cta micro">Suchauftrag stellen <span class="arr">→</span></span>
+          </div>
+        </a>
+        <a class="way" href="ueber-uns.html#showroom" data-reveal data-delay="0.24">
+          <div class="way-media img-frame"><img src="assets/img/way-showroom.jpg" alt="Showroom im Garden Tower, Frankfurt" loading="lazy"></div>
+          <div class="way-body">
+            <h3 class="display-m">Unser<br>Showroom</h3>
+            <p>Garden Tower, 7. Etage — mit Blick über das Bankenviertel. Besichtigung und Übergabe nach Terminvereinbarung.</p>
+            <span class="way-cta micro">Termin vereinbaren <span class="arr">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFERENZ-CHECKER TEASER ============ -->
+  <section class="section rc-band" id="refcheck">
+    <div class="wrap" style="display:grid;gap:20px;justify-items:center;text-align:center">
+      <div class="kicker" style="justify-content:center"><span class="kicker-index">05</span><span class="micro micro-dim">Das Werkzeug</span></div>
+      <h2 class="display-l reveal-line" style="max-width:22ch"><span>Welche Uhr ist das?<br>Die Referenz weiß es.</span></h2>
+      <p data-reveal style="color:var(--ink-60);max-width:56ch;line-height:1.7">Referenznummer eingeben — Modell, Produktionszeitraum und Kaliber bekommen. Live gegen unseren Bestand geprüft.</p>
+      <form class="rc-mini" data-reveal action="referenz-checker.html" method="get">
+        <input name="q" type="text" placeholder="z. B. 126610LN" aria-label="Referenznummer" autocomplete="off" spellcheck="false">
+        <button class="btn btn-solid" type="submit">Prüfen <span class="arr">→</span></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ Q&A ============ -->
+  <section class="section" id="faq">
+    <div class="wrap faq-grid">
+      <div>
+        <div class="kicker"><span class="kicker-index">06</span><span class="micro micro-dim">Q&amp;A</span></div>
+        <h2 class="display-l reveal-line"><span>Fragen &amp;<br>Antworten</span></h2>
+        <p class="faq-aside" data-reveal>Nicht dabei, was Sie wissen wollten? Wir antworten meist innerhalb weniger Minuten.</p>
+        <div class="faq-contact" data-reveal>
+          <a class="btn btn-outline" data-magnetic id="faqWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp schreiben</a>
+          <a class="btn btn-outline" data-magnetic href="mailto:info@hahntime.com">E-Mail senden</a>
+        </div>
+      </div>
+      <div class="acc" id="faqAcc"></div>
+    </div>
+  </section>
+
+  <!-- ============ ÜBER UNS TEASER ============ -->
+  <section class="section about-teaser" id="ueber">
+    <div class="wrap about-grid">
+      <div class="about-media img-frame" data-clip>
+        <img src="assets/products/p446/0.jpg" alt="Hahn & Vo — Uhren mit Geschichte" loading="lazy" data-parallax="30">
+      </div>
+      <div class="about-body">
+        <div class="kicker"><span class="kicker-index">07</span><span class="micro micro-dim">Über uns</span></div>
+        <h2 class="display-l reveal-line"><span>Zwei Uhrmacher-<br>herzen, eine<br>Adresse.</span></h2>
+        <p data-reveal>Hannes Hahn und Minh Vo haben ihr Handwerk bei Bucherer gelernt. Heute öffnen und prüfen sie jede Uhr selbst, bevor sie in den Verkauf geht — und beschaffen über ihr Netzwerk bis nach Seoul Referenzen, die es in Europa kaum zu sehen gibt.</p>
+        <a class="btn btn-solid" data-magnetic href="ueber-uns.html" data-reveal>Unsere Geschichte <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSTAGRAM ============ -->
+  <section class="section ig" id="instagram">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker"><span class="kicker-index">08</span><span class="micro micro-dim">Instagram</span></div>
+          <h2 class="display-l reveal-line"><span>@hahn.vo</span></h2>
+        </div>
+        <a class="btn btn-outline" data-magnetic id="igLink" href="#" target="_blank" rel="noopener">Folgen <span class="arr">→</span></a>
+      </div>
+      <div class="ig-grid" id="igGrid"></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

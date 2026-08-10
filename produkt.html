@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uhr — Hahn &amp; Vo</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/hv-mark.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="shop">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<main id="main">
+
+  <div class="wrap product-layout">
+    <div class="gallery" id="gallery">
+      <div class="gallery-main" id="galleryMain">
+        <span class="pc-status status" id="pdStatus"></span>
+        <img id="mainImg" src="" alt="">
+      </div>
+      <div class="gallery-thumbs" id="thumbs"></div>
+    </div>
+
+    <div class="pd-info">
+      <div class="crumb micro micro-dim" style="margin-bottom:22px">
+        <a href="index.html">Home</a> <span>/</span> <a href="shop.html">Shop</a> <span>/</span> <span id="crumbName"></span>
+      </div>
+      <span class="pd-brand" id="pdBrand"></span>
+      <h1 class="pd-name" id="pdName"></h1>
+      <div class="pd-price-row">
+        <span class="pd-price num" id="pdPrice"></span>
+        <span class="pd-list num" id="pdList" hidden></span>
+      </div>
+      <p class="pd-tax">Inkl. MwSt. — differenzbesteuert nach § 25a UStG, kein MwSt.-Ausweis. Kostenloser versicherter Versand innerhalb Deutschlands.</p>
+
+      <div class="pd-ctas" id="pdCtas">
+        <button class="btn btn-solid" data-magnetic id="addToCart">In den Warenkorb <span class="arr">→</span></button>
+        <div class="pd-secondary-ctas">
+          <a class="btn btn-outline" id="pdWhatsapp" href="#" target="_blank" rel="noopener">Per WhatsApp anfragen</a>
+          <a class="btn btn-outline" id="pdShowroom" href="ueber-uns.html#showroom">Im Showroom ansehen</a>
+        </div>
+      </div>
+      <p class="pd-note" id="pdReservedNote" hidden>Diese Uhr ist aktuell reserviert. Gern benachrichtigen wir Sie, falls sie wieder verfügbar wird — schreiben Sie uns.</p>
+      <p class="pd-note" id="pdSoldNote" hidden>Diese Uhr wurde verkauft. Über einen Suchauftrag finden wir ein vergleichbares Stück für Sie.</p>
+      <p class="pd-human">Fragen zu dieser Uhr? <b>+49 176 8421 1760</b> — persönliche Beratung, Antwort meist in Minuten.</p>
+
+      <div class="pd-trust">
+        <div><b>Echtheit</b><span>Geöffnet, geprüft &amp; dokumentiert von Uhrmacherhand</span></div>
+        <div><b>12 Monate</b><span>Garantie auf das Werk, zusätzlich zur Herstellergarantie</span></div>
+        <div><b>14 Tage</b><span>Rückgaberecht — versichert zurück, ohne Diskussion</span></div>
+      </div>
+
+      <dl class="spec-table" id="specTable"></dl>
+
+      <div class="pd-desc" id="pdDesc"></div>
+    </div>
+  </div>
+
+  <section class="section related">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="micro micro-dim">Ebenfalls im Haus</span>
+          <h2 class="display-m" style="margin-top:12px">Das könnte Sie interessieren</h2>
+        </div>
+        <a class="btn btn-outline" data-magnetic href="shop.html">Alle Uhren <span class="arr">→</span></a>
+      </div>
+      <div class="product-grid" id="relatedGrid"></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

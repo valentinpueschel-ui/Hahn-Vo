@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suchauftrag — Hahn &amp; Vo</title>
+  <meta name="description" content="Ihre Wunschuhr ist nirgends zu finden? Hahn & Vo findet sie — über ein Netzwerk, das bis Seoul und Tokio reicht. Jetzt Suchauftrag stellen.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/hv-mark.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="suchauftrag" data-header="dark">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<main id="main">
+
+  <header class="form-hero">
+    <div class="wrap">
+      <div class="crumb micro" style="color:var(--creme-60);margin-bottom:26px"><a href="index.html">Home</a> <span>/</span> <span>Suchauftrag</span></div>
+      <h1 class="display-l reveal-line"><span>Wir finden, was der<br>Markt nicht zeigt.</span></h1>
+      <p class="lede" data-reveal>Ihre Wunschuhr ist ausverkauft, nirgends gelistet oder nur zu Mondpreisen zu haben? Stellen Sie einen Suchauftrag. Unser Netzwerk reicht von Frankfurt über Genf bis Seoul und Tokio — dort finden wir Referenzen, die auf dem europäischen Markt kaum auftauchen.</p>
+      <div class="form-hero-meta" data-reveal>
+        <span class="fm"><b>Unverbindlich</b> &amp; kostenfrei</span>
+        <span class="fm"><b>Geprüft</b> wie jede Uhr im Haus</span>
+        <span class="fm"><b>Korea-Sourcing</b> als Spezialität</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="wizard-zone">
+    <div class="wrap">
+      <div class="section-head" style="max-width:780px;margin-left:auto;margin-right:auto">
+        <div>
+          <span class="micro micro-dim">Der Suchauftrag</span>
+          <h2 class="display-m" style="margin-top:10px">Beschreiben Sie Ihre Wunschuhr</h2>
+        </div>
+      </div>
+      <div class="wizard" id="sucheWizard"></div>
+      <p style="max-width:780px;margin:18px auto 0;font-size:12.5px;color:var(--ink-60);line-height:1.6">
+        Der Suchauftrag selbst ist kostenfrei und unverbindlich. Finden wir ein passendes Stück, erhalten Sie Fotos, Zustandsbericht und Endpreis — gekauft wird erst nach Ihrer ausdrücklichen Freigabe, per Überweisung oder bei Übergabe im Showroom.
+      </p>
+    </div>
+  </section>
+
+  <!-- how sourcing works -->
+  <section class="section" style="background:var(--white);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="kicker"><span class="kicker-index">01</span><span class="micro micro-dim">So arbeiten wir</span></div>
+      <h2 class="display-l reveal-line"><span>Vom Auftrag<br>zur Übergabe</span></h2>
+      <div class="steps-grid">
+        <div class="step-card" data-reveal>
+          <div class="s-num num">1</div>
+          <h3>Suchauftrag stellen</h3>
+          <p>Modell, Konfiguration, Zustand und Budget — je präziser Ihre Angaben, desto gezielter suchen wir.</p>
+        </div>
+        <div class="step-card" data-reveal data-delay="0.08">
+          <div class="s-num num">2</div>
+          <h3>Netzwerk aktivieren</h3>
+          <p>Wir fragen Händler, Sammler und Auktionshäuser an — in Europa und besonders in Südkorea und Japan.</p>
+        </div>
+        <div class="step-card" data-reveal data-delay="0.16">
+          <div class="s-num num">3</div>
+          <h3>Angebot erhalten</h3>
+          <p>Sie bekommen Fotos, Zustandsbericht und Endpreis. Keine versteckten Kosten, kein Kaufzwang.</p>
+        </div>
+        <div class="step-card" data-reveal data-delay="0.24">
+          <div class="s-num num">4</div>
+          <h3>Prüfung &amp; Übergabe</h3>
+          <p>Die Uhr wird von uns geöffnet, geprüft und dokumentiert — dann Versand oder Übergabe im Showroom, mit 12 Monaten Garantie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- korea band -->
+  <section class="section" style="background:var(--petrol);color:var(--creme)">
+    <div class="wrap" style="text-align:center;display:grid;gap:20px;justify-items:center">
+      <span class="micro" style="color:var(--creme-60)">Die Spezialität des Hauses</span>
+      <h2 class="display-l reveal-line" style="max-width:24ch"><span>Frankfurt — Seoul,<br>kurzer Dienstweg.</span></h2>
+      <p data-reveal style="color:var(--creme-60);max-width:60ch;line-height:1.7">Der koreanische Sammlermarkt ist einer der lebendigsten der Welt — und für europäische Käufer praktisch unsichtbar. Wir beziehen seit Jahren Uhren aus Seoul, kennen die Händler persönlich und prüfen jedes Stück selbst, bevor es den Weg nach Frankfurt antritt.</p>
+      <a class="btn btn-creme" data-magnetic href="ueber-uns.html" data-reveal>Mehr über uns <span class="arr">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/wizard.js"></script>
+<script>
+(function () {
+  'use strict';
+  var BRANDS = ['A. Lange & Söhne','Audemars Piguet','Blancpain','Breguet','Breitling','Cartier','Glashütte Original','Hublot','IWC','Jaeger-LeCoultre','MB&F','Montblanc','Nomos','Omega','Panerai','Patek Philippe','Richard Mille','Rolex','Sinn','TAG Heuer','Tudor','Vacheron Constantin','Zenith','Andere'];
+
+  var steps = [
+    { label: 'Kontakt', q: 'Wie dürfen wir Sie erreichen?',
+      hint: 'Sobald wir fündig werden, melden wir uns hier.',
+      fields: [
+        { type: 'text', key: 'name', label: 'Vor- und Nachname', placeholder: 'Max Mustermann' },
+        { type: 'email', key: 'email', label: 'E-Mail-Adresse', placeholder: 'max@beispiel.de' },
+        { type: 'tel', key: 'phone', label: 'Telefonnummer', placeholder: '+49 …' },
+      ] },
+    { q: 'Welche Marke sollen wir für Sie finden?',
+      fields: [{ type: 'select', key: 'brand', label: 'Marke', options: BRANDS }] },
+    { q: 'Welches Modell suchen Sie?',
+      hint: 'Bitte mit Konfiguration — z. B. „Datejust 41, blaues Blatt, Jubilé-Band“ oder „Speedmaster Professional, Hesalit“.',
+      fields: [
+        { type: 'text', key: 'model', label: 'Modell & Konfiguration', placeholder: 'Modell, Zifferblatt, Band …' },
+        { type: 'text', key: 'ref', label: 'Referenznummer (falls bekannt)', placeholder: 'z. B. 126334', optional: true },
+      ] },
+    { q: 'Welcher Lieferumfang kommt infrage?',
+      hint: 'Mehrfachauswahl möglich — je flexibler, desto schneller werden wir fündig.',
+      fields: [{ type: 'checks', key: 'lieferumfang', options: ['Full Set (Box & Papiere)', 'Nur Papiere', 'Nur Uhr („nackt“)'] }] },
+    { q: 'Welche Zustände akzeptieren Sie?',
+      fields: [{ type: 'checks', key: 'zustand', options: ['Ungetragen', 'Wie neu', 'Sehr gut', 'Gut', 'Vintage / Patina willkommen'] }] },
+    { q: 'Wo liegt Ihr Budget?',
+      hint: 'Bitte realistisch am aktuellen Marktpreis orientieren — wir beraten Sie gern zur Marktlage Ihrer Wunschreferenz.',
+      fields: [{ type: 'text', key: 'budget', label: 'Budget in EUR', placeholder: 'z. B. bis 15.000 €' }] },
+    { label: 'Abschluss', q: 'Noch etwas, das wir wissen sollten?',
+      optional: true,
+      fields: [{ type: 'textarea', key: 'notiz', label: 'Ihre Nachricht (optional)', placeholder: 'z. B. Geschenk zum Jahrestag im Oktober — bis dahin wäre ideal …', optional: true }] },
+  ];
+
+  var prefillRef = new URLSearchParams(location.search).get('ref');
+  HV.wizard(document.getElementById('sucheWizard'), steps, {
+    initial: prefillRef ? { ref: prefillRef } : null,
+    storageKey: 'hv_suchauftrag_requests',
+    submitLabel: 'Suchauftrag stellen',
+    successKicker: 'Suchauftrag eingegangen',
+    successTitle: 'Die Suche läuft.',
+    successText: 'Wir haben Ihren Suchauftrag aufgenommen und melden uns, sobald wir ein passendes Stück gefunden haben. Verkürzen Sie sich die Wartezeit — auf Instagram zeigen wir Neuzugänge zuerst.',
+  });
+})();
+</script>
+</body>
+</html>

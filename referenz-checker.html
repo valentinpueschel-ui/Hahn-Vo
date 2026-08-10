@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referenz-Checker — Hahn &amp; Vo</title>
+  <meta name="description" content="Referenznummer eingeben, Klarheit bekommen: Marke, Modell, Produktionszeitraum, Kaliber — der Referenz-Checker von Hahn & Vo.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/hv-mark.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    .rc-tool { max-width: 860px; margin: 0 auto; }
+    .rc-toggle { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 2px; overflow: hidden; margin-bottom: 18px; }
+    .rc-toggle button { padding: 11px 18px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; transition: background .25s, color .25s; }
+    .rc-toggle button.is-active { background: var(--petrol); color: var(--creme); }
+    .rc-inputwrap { position: relative; background: var(--white); border: 1px solid var(--line-strong); border-radius: 2px; display: flex; align-items: center; transition: border-color .25s, box-shadow .25s; }
+    .rc-inputwrap:focus-within { border-color: var(--petrol); box-shadow: inset 0 0 0 1px var(--petrol); }
+    .rc-input { flex: 1; border: 0; background: transparent; font-family: inherit; color: var(--ink); padding: clamp(18px, 2.6vw, 28px) clamp(18px, 2.6vw, 28px); font-size: clamp(1.2rem, 2.6vw, 1.9rem); font-weight: 620; letter-spacing: 0.05em; font-variant-numeric: tabular-nums; text-transform: uppercase; min-width: 0; }
+    .rc-input:focus { outline: none; }
+    .rc-input::placeholder { color: var(--ink-40); font-weight: 480; text-transform: none; letter-spacing: 0; }
+    .rc-spin { width: 40px; height: 40px; margin-right: 20px; flex: none; opacity: 0; transition: opacity .2s; color: var(--petrol); }
+    .rc-spin.is-on { opacity: 1; }
+    .rc-spin g { transform-origin: 50% 50%; animation: rcspin 1.1s cubic-bezier(.6,.05,.3,.95) infinite; }
+    @keyframes rcspin { to { transform: rotate(360deg); } }
+    .rc-examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; align-items: baseline; }
+    .rc-examples .lbl { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-40); margin-right: 4px; }
+    .rc-ex { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; border: 1px solid var(--line); background: var(--white); border-radius: 2px; padding: 7px 12px; font-variant-numeric: tabular-nums; transition: border-color .2s, background .2s; }
+    .rc-ex:hover { border-color: var(--petrol); }
+    .rc-result { margin-top: clamp(24px, 3.5vw, 44px); }
+    .rc-sheet { background: var(--white); border: 1px solid var(--line-strong); border-radius: 2px; padding: clamp(24px, 3.5vw, 44px); position: relative; overflow: hidden; }
+    .rc-sheet .rc-mark { position: absolute; right: -30px; bottom: -40px; width: 190px; opacity: 0.05; pointer-events: none; }
+    .rc-brand { font-size: 12px; font-weight: 620; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-60); margin-bottom: 8px; }
+    .rc-model { font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 640; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 22px; }
+    .rc-specs { border-top: 1px solid var(--line); }
+    .rc-specs .row { display: grid; grid-template-columns: 190px 1fr; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+    .rc-specs dt { color: var(--ink-60); font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding-top: 2px; }
+    .rc-specs dd { font-weight: 560; font-variant-numeric: tabular-nums; }
+    .rc-specs .hl dd { font-size: 1.25em; font-weight: 650; }
+    .rc-note { margin-top: 16px; font-size: 12px; color: var(--ink-40); line-height: 1.55; }
+    .rc-ctas { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+    .rc-stock-head { display: flex; align-items: center; gap: 12px; margin: clamp(28px, 4vw, 40px) 0 16px; }
+    .rc-stock-head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+    .rc-near { margin-top: 18px; font-size: 13px; color: var(--ink-60); display: flex; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+    @media (max-width: 640px) { .rc-specs .row { grid-template-columns: 1fr; gap: 4px; } }
+  </style>
+</head>
+<body data-page="referenz-checker" data-header="dark">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<main id="main">
+
+  <header class="form-hero">
+    <div class="wrap">
+      <div class="crumb micro" style="color:var(--creme-60);margin-bottom:26px"><a href="index.html">Home</a> <span>/</span> <span>Referenz-Checker</span></div>
+      <h1 class="display-l reveal-line"><span>Referenz rein.<br>Klarheit raus.</span></h1>
+      <p class="lede" data-reveal>Jede Uhr trägt ihre Identität in der Referenznummer. Geben Sie sie ein — wir sagen Ihnen, welches Modell Sie vor sich haben, wann es gebaut wurde und welches Werk darin schlägt. Und falls das Stück gerade bei uns im Haus liegt, sehen Sie es sofort.</p>
+      <div class="form-hero-meta" data-reveal>
+        <span class="fm"><b id="rcDbCount">100+</b> Referenzen in der Datenbank</span>
+        <span class="fm"><b>Live</b> gegen unseren Bestand geprüft</span>
+        <span class="fm"><b>Rolex</b> Seriennummer-Datierung inklusive</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="wizard-zone">
+    <div class="wrap rc-tool">
+      <div class="rc-toggle" role="tablist" aria-label="Modus">
+        <button class="is-active" data-mode="ref" role="tab">Referenznummer</button>
+        <button data-mode="serial" role="tab">Rolex-Seriennummer</button>
+      </div>
+
+      <div class="rc-inputwrap">
+        <input class="rc-input" id="rcInput" type="text" autocomplete="off" spellcheck="false"
+               placeholder="z. B. 126610LN, IW388102, PAM00632 …" aria-label="Referenznummer">
+        <svg class="rc-spin" id="rcSpin" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
+          <g>
+            <path d="M20 5 L20.9 21 L19.1 21 Z" fill="currentColor"/>
+            <rect x="19.5" y="21" width="1" height="5.5" rx="0.5" fill="currentColor"/>
+            <circle cx="20" cy="20" r="1.6" fill="currentColor"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="rc-examples" id="rcExamples">
+        <span class="lbl">Probieren Sie:</span>
+        <button class="rc-ex">126610LN</button>
+        <button class="rc-ex">116500LN</button>
+        <button class="rc-ex">IW388102</button>
+        <button class="rc-ex">210.92.42.20.01.001</button>
+        <button class="rc-ex">PAM00632</button>
+        <button class="rc-ex">04.TR.LB</button>
+      </div>
+
+      <div class="rc-result" id="rcResult" aria-live="polite"></div>
+
+      <p class="rc-note" style="margin-top:28px">Produktionszeiträume und Werkangaben sind sorgfältig gepflegt, aber ohne Gewähr — Referenzen wurden von Herstellern teils über Jahre parallel gefertigt. Im Zweifel prüfen wir Ihre Uhr gern persönlich: Foto per WhatsApp genügt.</p>
+    </div>
+  </section>
+
+  <!-- how it connects -->
+  <section class="section" style="background:var(--white);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="kicker"><span class="kicker-index">01</span><span class="micro micro-dim">Und dann?</span></div>
+      <h2 class="display-l reveal-line"><span>Von der Nummer<br>zur Uhr am Handgelenk</span></h2>
+      <div class="steps-grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="step-card" data-reveal>
+          <div class="s-num num">1</div>
+          <h3>Im Bestand?</h3>
+          <p>Liegt die Referenz bei uns im Haus, sehen Sie das Stück direkt mit Preis, Fotos und Zustand — reservierbar in zwei Klicks.</p>
+        </div>
+        <div class="step-card" data-reveal data-delay="0.1">
+          <div class="s-num num">2</div>
+          <h3>Nicht im Bestand?</h3>
+          <p>Ein Klick übergibt die Referenz an den Suchauftrag — unser Netzwerk bis Seoul und Tokio übernimmt.</p>
+        </div>
+        <div class="step-card" data-reveal data-delay="0.2">
+          <div class="s-num num">3</div>
+          <h3>Verkaufen statt kaufen?</h3>
+          <p>Sie besitzen diese Referenz? Über den Ankauf erhalten Sie innerhalb von 24–48 Stunden ein konkretes Angebot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/refdb.js"></script>
+<script>
+(function () {
+  'use strict';
+  var HV = window.HV;
+  var input = document.getElementById('rcInput');
+  var result = document.getElementById('rcResult');
+  var spin = document.getElementById('rcSpin');
+  var mode = 'ref';
+  var timer = null;
+
+  document.getElementById('rcDbCount').textContent = HV.REFDB_SIZE + '+';
+
+  /* mode toggle */
+  document.querySelectorAll('.rc-toggle button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.rc-toggle button').forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      mode = btn.dataset.mode;
+      input.placeholder = mode === 'serial'
+        ? 'z. B. Z123456 oder F987654 …'
+        : 'z. B. 126610LN, IW388102, PAM00632 …';
+      input.value = '';
+      result.innerHTML = '';
+      document.getElementById('rcExamples').style.display = mode === 'serial' ? 'none' : '';
+      input.focus();
+    });
+  });
+
+  function specRow(dt, dd, hl) {
+    return dd ? '<div class="row' + (hl ? ' hl' : '') + '" data-rcrow><dt>' + dt + '</dt><dd>' + dd + '</dd></div>' : '';
+  }
+  function sheet(inner) {
+    return '<div class="rc-sheet">' + inner +
+      '<div class="rc-mark">' + HV.MARK.replace('class="brand-mark"', '') + '</div></div>';
+  }
+  function ctas(refText) {
+    var wa = window.SITE.whatsapp + '?text=' + encodeURIComponent('Guten Tag, ich habe eine Frage zur Referenz ' + refText + '.');
+    return '<div class="rc-ctas">' +
+      '<a class="btn btn-solid" href="suchauftrag.html?ref=' + encodeURIComponent(refText) + '">Diese Referenz suchen lassen <span class="arr">→</span></a>' +
+      '<a class="btn btn-outline" href="ankauf.html">Diese Referenz verkaufen</a>' +
+      '<a class="btn btn-outline" href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' +
+    '</div>';
+  }
+
+  function render(res) {
+    if (res.state === 'short') { result.innerHTML = ''; return; }
+
+    if (res.state === 'hit' && mode === 'ref') {
+      var e = res.entry;
+      var html = '';
+      if (e) {
+        html += sheet(
+          '<div class="rc-brand">' + e.brand + '</div>' +
+          '<h2 class="rc-model">' + e.model + '</h2>' +
+          '<dl class="rc-specs">' +
+            specRow('Referenz', '<span class="num">' + e.ref + '</span>') +
+            specRow('Produktionszeitraum', e.years, true) +
+            specRow('Gehäusedurchmesser', e.size) +
+            specRow('Kaliber', e.caliber) +
+            specRow('Anmerkung', e.note) +
+          '</dl>' +
+          (res.stock.length ? '' : ctas(e.ref))
+        );
+      }
+      if (res.stock.length) {
+        html += '<div class="rc-stock-head"><span class="dot"></span><span class="micro">Jetzt bei Hahn &amp; Vo im Haus</span></div>' +
+          '<div class="product-grid">' + res.stock.map(HV.renderCard).join('') + '</div>';
+        if (!e) html = sheet(
+          '<div class="rc-brand">' + res.stock[0].brand + '</div>' +
+          '<h2 class="rc-model">' + res.stock[0].name + '</h2>' +
+          '<dl class="rc-specs">' +
+            specRow('Referenz', '<span class="num">' + (res.stock[0].ref || res.query) + '</span>') +
+            specRow('Baujahr dieses Exemplars', res.stock[0].year, true) +
+            specRow('Gehäusedurchmesser', res.stock[0].size) +
+            specRow('Werk', res.stock[0].movement) +
+          '</dl>'
+        ) + html;
+      }
+      if (res.near.length) {
+        html += '<div class="rc-near"><span class="lbl" style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-40)">Meinten Sie:</span>' +
+          res.near.map(function (n) { return '<button class="rc-ex" data-fill="' + n.ref + '">' + n.ref + ' · ' + n.brand + ' ' + n.model + '</button>'; }).join('') +
+          '</div>';
+      }
+      result.innerHTML = html;
+    } else if (res.state === 'brand') {
+      result.innerHTML = sheet(
+        '<div class="rc-brand">Marke erkannt</div>' +
+        '<h2 class="rc-model">' + res.brand + '</h2>' +
+        '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.65;max-width:56ch">Die Referenz <b class="num">' + res.query + '</b> ist noch nicht in unserer Datenbank — das Nummernformat spricht aber für ' + res.brand + '. Senden Sie sie uns, wir identifizieren die Uhr persönlich. Oder lassen Sie sie direkt suchen:</p>' +
+        ctas(res.query)
+      );
+    } else if (res.state === 'miss') {
+      result.innerHTML = sheet(
+        '<div class="rc-brand">Keine Übereinstimmung</div>' +
+        '<h2 class="rc-model">Diese Nummer kennen wir (noch) nicht.</h2>' +
+        '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.65;max-width:56ch">Kein Grund zur Sorge — nicht jede Gravur ist die Referenz, und manche Hersteller verstecken sie gut. Ein Foto von Zifferblatt und Gehäuseboden per WhatsApp genügt, und wir sagen Ihnen, was Sie haben.</p>' +
+        ctas(res.query)
+      );
+    }
+
+    /* serial mode */
+    if (mode === 'serial') {
+      if (res.state === 'hit') {
+        result.innerHTML = sheet(
+          '<div class="rc-brand">Rolex-Seriennummer</div>' +
+          '<h2 class="rc-model">Produktion: ' + res.year + '</h2>' +
+          '<dl class="rc-specs">' +
+            specRow('Seriennummer', '<span class="num">' + norm(input.value) + '</span>') +
+            specRow('Datierung', res.year, true) +
+            specRow('Hinweis', res.note) +
+          '</dl>' +
+          '<p class="rc-note">Die Seriennummer sitzt zwischen den Bandanstößen bei 6 Uhr bzw. auf dem Rehaut. Datierung nach Auslieferungszeitraum — Abweichungen von ±1 Jahr sind normal.</p>'
+        );
+      } else if (res.state === 'random') {
+        result.innerHTML = sheet(
+          '<div class="rc-brand">Rolex-Seriennummer</div>' +
+          '<h2 class="rc-model">Zufällige Seriennummer — ab ca. 2010</h2>' +
+          '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.65;max-width:56ch">' + res.note + ' Wenn Sie die Garantiekarte fotografieren und uns per WhatsApp senden, bestätigen wir Ihnen das exakte Auslieferungsdatum.</p>' +
+          '<div class="rc-ctas"><a class="btn btn-outline" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">WhatsApp öffnen</a></div>'
+        );
+      } else if (res.state === 'miss') {
+        result.innerHTML = sheet(
+          '<div class="rc-brand">Rolex-Seriennummer</div>' +
+          '<h2 class="rc-model">Das sieht noch nicht nach einer Seriennummer aus.</h2>' +
+          '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.65">Rolex-Seriennummern bestehen aus einem Buchstaben und sechs Ziffern (z. B. Z123456) — oder aus acht zufälligen Zeichen bei neueren Modellen.</p>'
+        );
+      } else { result.innerHTML = ''; }
+    }
+
+    /* stagger the sheet in */
+    if (window.gsap && result.firstElementChild) {
+      gsap.fromTo(result.firstElementChild, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' });
+      gsap.fromTo(result.querySelectorAll('[data-rcrow]'), { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.4, stagger: 0.06, ease: 'power2.out', delay: 0.1 });
+    }
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
+  }
+
+  function norm(s) { return (s || '').toUpperCase().replace(/\s/g, ''); }
+
+  function run() {
+    var q = input.value.trim();
+    if (!q) { result.innerHTML = ''; spin.classList.remove('is-on'); return; }
+    spin.classList.add('is-on');
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      spin.classList.remove('is-on');
+      render(mode === 'serial' ? HV.serialLookup(q) : HV.refLookup(q));
+    }, 420);
+  }
+  input.addEventListener('input', run);
+
+  /* example + near chips */
+  document.addEventListener('click', function (e) {
+    var ex = e.target.closest('.rc-ex');
+    if (!ex) return;
+    input.value = ex.dataset.fill || ex.textContent.split(' · ')[0];
+    input.focus();
+    run();
+  });
+
+  /* deep link ?q= */
+  var q0 = new URLSearchParams(location.search).get('q');
+  if (q0) { input.value = q0; run(); }
+  else { input.focus(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Hahn &amp; Vo · Luxusuhren Frankfurt</title>
+  <meta name="description" content="Alle Uhren von Hahn & Vo: Rolex, Omega, IWC, Breitling, Tudor und mehr — auf Echtheit geprüft, mit 12 Monaten Garantie.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/hv-mark.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="shop" data-header="dark">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<main id="main">
+
+  <header class="collection-band">
+    <div class="wrap band-row">
+      <h1 class="display-xl reveal-line"><span id="bandTitle">Shop</span></h1>
+      <span class="count num" id="bandCount"></span>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="wrap toolbar-row">
+      <div class="cat-toggle" role="tablist" aria-label="Kategorie">
+        <button class="is-active" data-cat="alle" role="tab">Alle</button>
+        <button data-cat="uhren" role="tab">Uhren</button>
+        <button data-cat="zubehoer" role="tab">Zubehör</button>
+      </div>
+      <div class="filter" data-filter="brand">
+        <button class="filter-btn" aria-haspopup="true">Marke <span class="fcount" hidden>0</span> <span aria-hidden="true">▾</span></button>
+        <div class="filter-panel" id="brandPanel"></div>
+      </div>
+      <div class="filter" data-filter="price">
+        <button class="filter-btn" aria-haspopup="true">Preis <span class="fcount" hidden>0</span> <span aria-hidden="true">▾</span></button>
+        <div class="filter-panel" id="pricePanel"></div>
+      </div>
+      <div class="filter" data-filter="status">
+        <button class="filter-btn" aria-haspopup="true">Status <span class="fcount" hidden>0</span> <span aria-hidden="true">▾</span></button>
+        <div class="filter-panel" id="statusPanel"></div>
+      </div>
+      <span class="spacer"></span>
+      <select class="sort-select" id="sortSelect" aria-label="Sortierung">
+        <option value="new">Neueste zuerst</option>
+        <option value="price-asc">Preis aufsteigend</option>
+        <option value="price-desc">Preis absteigend</option>
+        <option value="brand">Marke A–Z</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="wrap shop-grid-zone">
+    <div class="active-chips" id="activeChips"></div>
+    <div class="product-grid" id="shopGrid"></div>
+    <div class="empty-result" id="emptyResult" hidden>
+      <p>Keine Uhr entspricht dieser Auswahl.</p>
+      <button class="btn btn-outline" id="clearAll">Filter zurücksetzen</button>
+    </div>
+  </div>
+
+  <!-- Suchauftrag banner -->
+  <section class="section" style="background: var(--white); border-top: 1px solid var(--line);">
+    <div class="wrap" style="display:grid; gap:20px; justify-items:center; text-align:center;">
+      <span class="micro micro-dim">Nicht gefunden, was Sie suchen?</span>
+      <h2 class="display-m reveal-line" style="max-width:22ch"><span>Ihre Wunschuhr ist nicht dabei? Wir beschaffen sie.</span></h2>
+      <a class="btn btn-solid" data-magnetic href="suchauftrag.html">Suchauftrag stellen <span class="arr">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/motion.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
