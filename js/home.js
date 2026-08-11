@@ -225,7 +225,14 @@
     return '<figure class="quote-card">' +
       '<span class="stars" aria-hidden="true">„</span>' +
       '<blockquote>' + t.text + '</blockquote>' +
-      '<figcaption><span class="q-name">' + t.name + ' · ' + t.city + '</span><span class="q-watch">' + t.watch + '</span></figcaption>' +
+      '<figcaption class="q-foot">' +
+        '<span class="q-thumb"><img src="' + t.img + '" alt="' + t.watch + '" loading="lazy"></span>' +
+        '<span class="q-meta">' +
+          '<span class="q-name">' + t.name + '</span>' +
+          '<span class="q-date">Gekauft im ' + t.date + '</span>' +
+          '<span class="q-watch">' + t.watch + '</span>' +
+        '</span>' +
+      '</figcaption>' +
     '</figure>';
   }).join('');
   var qWrap = document.querySelector('.quote-rail-wrap');
@@ -268,6 +275,11 @@
   /* ---------- links from SITE ---------- */
   document.getElementById('faqWhatsapp').href = window.SITE.whatsapp;
   document.getElementById('igLink').href = window.SITE.instagram;
+  document.getElementById('igIdLink').href = window.SITE.instagram;
+  document.getElementById('scTiktok').href = window.SITE.tiktok;
+  document.getElementById('scChannel').href = window.SITE.whatsappChannel;
+  var yt = document.getElementById('scYoutube');
+  if (window.SITE.youtube) { yt.hidden = false; yt.href = window.SITE.youtube; }
 
   /* ---------- instagram tiles ---------- */
   var tiles = ['assets/img/ig-1.jpg', 'assets/products/p444/0.jpg', 'assets/products/p413/0.jpg', 'assets/products/p457/0.jpg'];

@@ -12,7 +12,9 @@ window.SITE = {
  "showroom": "Garden Tower · 7. Etage, Neue Mainzer Straße 46–50, 60311 Frankfurt am Main",
  "legalAddress": "Luisenstraße 81, 63067 Offenbach am Main",
  "vatId": "DE453178178",
- "register": "HRA 43504"
+ "register": "HRA 43504",
+ "whatsappChannel": "https://whatsapp.com/channel/0029VbAuiZnEawdspdIfjW1i",
+ "youtube": ""
 };
 
 window.PRODUCTS = [
@@ -1811,33 +1813,143 @@ window.NEW_IN = ["p462", "p461", "p460", "p459", "p458", "p457"];
 window.TESTIMONIALS = [
  {
   "name": "Sebastian K.",
-  "city": "Frankfurt",
-  "text": "Ich habe meine Speedmaster hier gekauft — der Zustand war exakt wie beschrieben, eher besser. Übergabe im Showroom über den Dächern des Bankenviertels: ein Erlebnis für sich.",
-  "watch": "Omega Speedmaster"
+  "date": "Juni 2026",
+  "watch": "Omega Speedmaster 38",
+  "img": "assets/products/p457/0.jpg",
+  "text": "Der Zustand war exakt wie beschrieben, eher besser. Die Übergabe im Showroom über den Dächern des Bankenviertels ist ein Erlebnis für sich."
  },
  {
   "name": "Daniel R.",
-  "city": "Wiesbaden",
-  "text": "Sehr transparente Beratung, kein Verkaufsdruck. Die Uhr wurde vor meinen Augen geöffnet und geprüft. So stellt man sich den Kauf einer Luxusuhr vor.",
-  "watch": "Rolex Datejust 41"
+  "date": "Mai 2026",
+  "watch": "Rolex Datejust 41",
+  "img": "assets/products/p444/0.jpg",
+  "text": "Sehr transparente Beratung, kein Verkaufsdruck. Die Uhr wurde vor meinen Augen geöffnet und geprüft. So stellt man sich den Kauf einer Luxusuhr vor."
  },
  {
   "name": "Tobias N.",
-  "city": "Köln",
-  "text": "Suchauftrag abgegeben, drei Wochen später kam das Angebot — besserer Zustand und besserer Preis als alles, was ich selbst gefunden hatte.",
-  "watch": "Tudor Black Bay"
+  "date": "April 2026",
+  "watch": "Tudor Black Bay 41",
+  "img": "assets/products/p413/0.jpg",
+  "text": "Suchauftrag abgegeben, drei Wochen später kam das Angebot. Besserer Zustand und besserer Preis als alles, was ich selbst gefunden hatte."
  },
  {
   "name": "Alexandra B.",
-  "city": "München",
-  "text": "Meine IWC wurde fair in Zahlung genommen, die Differenz war nach zwei Tagen auf dem Konto. Abwicklung komplett unkompliziert.",
-  "watch": "IWC Portofino"
+  "date": "März 2026",
+  "watch": "IWC Portofino 37",
+  "img": "assets/products/p357/0.jpg",
+  "text": "Meine alte Uhr wurde fair in Zahlung genommen, die Differenz war nach zwei Tagen auf dem Konto. Abwicklung komplett unkompliziert."
  },
  {
   "name": "Jonas W.",
-  "city": "Hamburg",
-  "text": "Versicherter Versand, doppelt verpackt, mit frischem Servicenachweis. Kommunikation per WhatsApp innerhalb von Minuten. Absolute Empfehlung.",
-  "watch": "Breitling Navitimer"
+  "date": "Februar 2026",
+  "watch": "Breitling Navitimer B01",
+  "img": "assets/products/p415/0.jpg",
+  "text": "Versicherter Versand, doppelt verpackt, mit frischem Servicenachweis. Kommunikation per WhatsApp innerhalb von Minuten. Absolute Empfehlung."
+ },
+ {
+  "name": "Martin H.",
+  "date": "Januar 2026",
+  "watch": "Rolex Submariner Date",
+  "img": "assets/products/p452/0.jpg",
+  "text": "Ich habe lange verglichen. Hier stimmte am Ende alles: Full Set, nachvollziehbare Historie und ein Preis, der sich am Markt belegen ließ."
+ },
+ {
+  "name": "Christina L.",
+  "date": "Dezember 2025",
+  "watch": "Cartier Clé de Cartier",
+  "img": "assets/products/p439/0.jpg",
+  "text": "Ein Weihnachtsgeschenk für meinen Mann. Ich hatte wenig Ahnung von Uhren, wurde aber geduldig und ehrlich beraten. Er trägt sie jeden Tag."
+ },
+ {
+  "name": "Stephan F.",
+  "date": "November 2025",
+  "watch": "Glashütte Original PanoMaticLunar",
+  "img": "assets/products/p456/0.jpg",
+  "text": "Selten so ein gepflegtes Exemplar gesehen. Auf Nachfrage bekam ich sofort Makroaufnahmen von jedem Detail, sogar vom Werk."
+ },
+ {
+  "name": "Erik P.",
+  "date": "November 2025",
+  "watch": "Sinn 103",
+  "img": "assets/products/p451/0.jpg",
+  "text": "Kleiner Preis, gleiche Sorgfalt: Auch bei einer Uhr unter 2.500 Euro wurde geöffnet, geprüft und dokumentiert. Das nenne ich Standards."
+ },
+ {
+  "name": "Nadja S.",
+  "date": "Oktober 2025",
+  "watch": "Nomos Ludwig",
+  "img": "assets/products/p434/0.jpg",
+  "text": "Schnelle Antwort, ehrliche Zustandsbeschreibung, sicherer Versand nach Berlin. Die Uhr kam schöner an, als die Fotos versprochen hatten."
+ },
+ {
+  "name": "Michael T.",
+  "date": "September 2025",
+  "watch": "Omega Seamaster 007 Edition",
+  "img": "assets/products/p347/0.jpg",
+  "text": "Termin am Samstagabend, eine Stunde Zeit, drei Uhren anprobiert. Am Ende wurde es die Seamaster. Keine Sekunde bereut."
+ },
+ {
+  "name": "Kerstin M.",
+  "date": "September 2025",
+  "watch": "Jaeger-LeCoultre Reverso",
+  "img": "assets/products/p446/0.jpg",
+  "text": "Eine Vintage-Uhr kauft man nicht ohne Vertrauen. Hier wurde mir jede Frage zur Historie beantwortet, inklusive Servicebelegen."
+ },
+ {
+  "name": "Oliver B.",
+  "date": "August 2025",
+  "watch": "TAG Heuer Carrera",
+  "img": "assets/products/p350/0.jpg",
+  "text": "Meine erste Automatikuhr. Statt mir die teuerste zu verkaufen, wurde mir die passendste empfohlen. Genau deshalb komme ich wieder."
+ },
+ {
+  "name": "Patrick S.",
+  "date": "Juli 2025",
+  "watch": "Omega Planet Ocean",
+  "img": "assets/products/p384/0.jpg",
+  "text": "Werttransport nach München, versichert und mit Sendungsverfolgung. Zwei Tage später war die Uhr am Handgelenk. Reibungslos."
+ },
+ {
+  "name": "Julia V.",
+  "date": "Juni 2025",
+  "watch": "Rolex Datejust 36",
+  "img": "assets/products/p458/0.jpg",
+  "text": "Das blaue Blatt sah auf den Fotos schon gut aus, in echt ist es noch besser. Danke für die ehrliche Einordnung zum Marktpreis."
+ },
+ {
+  "name": "Andreas G.",
+  "date": "Mai 2025",
+  "watch": "IWC Big Pilot Top Gun",
+  "img": "assets/products/p454/0.jpg",
+  "text": "Zwei Jahre nach einer bestimmten Keramik-Referenz gesucht. Über das Netzwerk nach Seoul wurde sie in sechs Wochen gefunden. Stark."
+ },
+ {
+  "name": "Robert K.",
+  "date": "April 2025",
+  "watch": "Breitling Superocean Héritage",
+  "img": "assets/products/p438/0.jpg",
+  "text": "Fairer Ankaufspreis für meine alte Uhr, sofortige Überweisung nach der Prüfung. Beim nächsten Kauf führt kein Weg an Frankfurt vorbei."
+ },
+ {
+  "name": "Sandra W.",
+  "date": "April 2025",
+  "watch": "Cartier Tank Solo",
+  "img": "assets/products/p461/0.jpg",
+  "text": "Unkomplizierter geht es nicht: abends angefragt, morgens Antwort, drei Tage später Übergabe im Showroom mit Kaffee und Zeit."
+ },
+ {
+  "name": "Frank D.",
+  "date": "März 2025",
+  "watch": "Omega Speedmaster Chronoscope",
+  "img": "assets/products/p403/0.jpg",
+  "text": "Als Sammler achte ich auf Kleinigkeiten. Hier stimmten Zwischenglieder, Plomben und Papiere. Ein Händler, der sein Handwerk gelernt hat."
+ },
+ {
+  "name": "Lukas E.",
+  "date": "Februar 2025",
+  "watch": "Tudor Royal 34",
+  "img": "assets/products/p427/0.jpg",
+  "text": "Ein Geschenk zum Jahrestag, pünktlich und wunderschön verpackt geliefert. Meine Frau war sprachlos. Vielen Dank nach Frankfurt!"
  }
 ];
 
@@ -1856,7 +1968,7 @@ window.FAQ = [
  },
  {
   "q": "Wie läuft die Übergabe ab?",
-  "a": "Wahlweise per vollversichertem Wertversand innerhalb Deutschlands oder — unsere Empfehlung — persönlich in unserem Showroom im Garden Tower, 7. Etage, im Frankfurter Bankenviertel. Termine vereinbaren Sie in Minuten per WhatsApp oder E-Mail."
+  "a": "Wahlweise per weltweit vollversichertem Wertversand oder — unsere Empfehlung — persönlich in unserem Showroom im Garden Tower, 7. Etage, im Frankfurter Bankenviertel. Termine vereinbaren Sie in Minuten per WhatsApp oder E-Mail."
  },
  {
   "q": "Nehmen Sie meine Uhr in Zahlung?",
@@ -1865,9 +1977,5 @@ window.FAQ = [
  {
   "q": "Ich suche eine bestimmte Uhr. Können Sie sie beschaffen?",
   "a": "Das ist eine unserer Stärken. Über unser Netzwerk — unter anderem nach Südkorea und Japan — finden wir Referenzen, die auf dem europäischen Markt kaum zu bekommen sind. Stellen Sie einfach einen Suchauftrag."
- },
- {
-  "q": "Ist eine Finanzierung möglich?",
-  "a": "Ja, in Zusammenarbeit mit unserem Finanzierungspartner bieten wir Ratenzahlung an. Sprechen Sie uns an — wir erstellen Ihnen ein unverbindliches Angebot."
  }
 ];

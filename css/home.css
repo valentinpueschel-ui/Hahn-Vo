@@ -191,3 +191,73 @@
 .rc-mini input:focus { outline: none; border-color: var(--petrol); }
 .rc-mini input::placeholder { color: var(--ink-40); font-weight: 480; text-transform: none; letter-spacing: 0; }
 @media (max-width: 560px) { .rc-mini { flex-direction: column; } }
+
+/* ============ Kundenfeedback-Runde 11.08. ============ */
+
+/* wordmark hero */
+.hero-word {
+  font-family: var(--font-brand);
+  font-size: clamp(2.5rem, 7vw, 6.2rem);
+  font-weight: 400; letter-spacing: 0.1em; line-height: 1.08;
+  text-transform: uppercase;
+}
+.hero-word .rl { margin-right: 0.09em; }
+.hero-rule { width: clamp(60px, 8vw, 110px); height: 1px; background: var(--creme-line); margin-top: clamp(18px, 2.6vh, 28px); }
+
+/* marquee brands are links now */
+.marquee-item { transition: opacity .25s, color .25s; }
+a.marquee-item:hover { opacity: 1; color: var(--petrol); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+
+/* new-in grid replaces the rail */
+.newin-grid-zone { margin-top: clamp(8px, 1vw, 16px); }
+
+/* Versprechen headline */
+.services .section-head { margin-bottom: 0; }
+
+/* review cards: purchase date + watch photo */
+.quote-card .q-foot { display: flex; align-items: center; gap: 14px; margin-top: auto; padding-top: 6px; }
+.quote-card .q-thumb { width: 58px; height: 58px; flex: none; background: var(--white); border-radius: 2px; overflow: hidden; }
+.quote-card .q-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+.quote-card .q-meta { display: grid; gap: 3px; min-width: 0; }
+.quote-card .q-date { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--creme-60); }
+.quote-card .q-watch { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* contact tiles (FAQ column) */
+.contact-tiles { display: grid; gap: 10px; margin-top: 26px; width: 100%; max-width: 360px; }
+.contact-tile {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 2px;
+  padding: 16px 18px; transition: border-color .25s, transform .3s var(--ease-out), box-shadow .3s;
+}
+.contact-tile:hover { border-color: var(--petrol); transform: translateY(-2px); box-shadow: 0 14px 34px rgba(14, 51, 79, 0.1); }
+.contact-tile .ct-ic {
+  width: 44px; height: 44px; flex: none; border-radius: 50%;
+  background: var(--petrol); color: var(--creme); display: grid; place-items: center;
+}
+.contact-tile .ct-ic svg { width: 20px; height: 20px; }
+.contact-tile .ct-label { font-size: 10.5px; font-weight: 620; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-60); }
+.contact-tile .ct-value { font-size: 15px; font-weight: 620; letter-spacing: 0.01em; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.contact-tile .ct-sub { font-size: 11.5px; color: var(--ink-60); margin-top: 1px; }
+
+/* social hub */
+.ig .ig-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(28px, 4vw, 48px); }
+.ig-id { display: flex; align-items: center; gap: clamp(14px, 2vw, 24px); }
+.ig-glyph {
+  width: clamp(52px, 6vw, 78px); height: clamp(52px, 6vw, 78px); flex: none;
+  border-radius: 22%; background: var(--petrol); color: var(--creme);
+  display: grid; place-items: center;
+}
+.ig-glyph svg { width: 55%; height: 55%; }
+.ig-sub { color: var(--ink-60); font-size: 14px; margin-top: 8px; max-width: 44ch; line-height: 1.55; }
+.social-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: clamp(20px, 2.6vw, 32px); align-items: center; }
+.social-row .sr-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-40); margin-right: 6px; }
+.social-chip {
+  display: inline-flex; align-items: center; gap: 9px;
+  border: 1px solid var(--line); background: var(--white); border-radius: 2px;
+  padding: 10px 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  transition: border-color .25s, transform .25s var(--ease-out);
+}
+.social-chip:hover { border-color: var(--petrol); transform: translateY(-2px); }
+.social-chip svg { width: 15px; height: 15px; }
+@media (max-width: 700px) { .ig .ig-head { flex-direction: column; align-items: flex-start; } }
+.quote-card .q-foot { justify-content: flex-start; text-align: left; }

@@ -82,11 +82,14 @@
   window.HV.initMotion = initScope;
   initScope(document);
 
-  /* marquee — seamless loop, speed-neutral (does not react to scroll velocity) */
+  /* marquee — seamless loop, speed-neutral; slows on hover so brand links are clickable */
   document.querySelectorAll('.marquee-track').forEach(function (track) {
     var clone = track.innerHTML;
-    track.innerHTML = clone + clone;
-    gsap.to(track, { xPercent: -50, duration: 34, ease: 'none', repeat: -1 });
+    track.innerHTML = clone + '<span aria-hidden="true" style="display:contents">' + clone + '</span>';
+    var tween = gsap.to(track, { xPercent: -50, duration: 34, ease: 'none', repeat: -1 });
+    var parent = track.parentElement;
+    parent.addEventListener('mouseenter', function () { gsap.to(tween, { timeScale: 0.15, duration: 0.5 }); });
+    parent.addEventListener('mouseleave', function () { gsap.to(tween, { timeScale: 1, duration: 0.5 }); });
   });
 
   /* magnetic hover */

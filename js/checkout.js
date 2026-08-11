@@ -20,7 +20,7 @@
     var list = items();
     var deliveryLabel = order.delivery === 'showroom'
       ? 'Persönliche Übergabe im Showroom — kostenfrei'
-      : 'Versicherter Werttransport (DE) — kostenfrei';
+      : 'Versicherter Werttransport — weltweit';
     summary.innerHTML =
       '<h3>Ihre Bestellung</h3>' +
       list.map(function (p) {
@@ -103,7 +103,7 @@
           '<div class="chip-sub">Garden Tower, 7. Etage, Frankfurt — mit Besichtigung, Anprobe und Zeit. Terminabstimmung nach der Bestellung. Kostenfrei.</div></span><span class="micro">Empfohlen</span></span></label>' +
         '<label class="chip"><input type="radio" name="dl" value="versand"' + (order.delivery === 'versand' ? ' checked' : '') + '>' +
           '<span class="chip-face"><span><span class="chip-title">Versicherter Werttransport</span>' +
-          '<div class="chip-sub">Vollversicherter Versand innerhalb Deutschlands, doppelt verpackt, mit Sendungsverfolgung. Kostenfrei.</div></span></span></label>' +
+          '<div class="chip-sub">Weltweit vollversicherter Werttransport, doppelt verpackt, mit Sendungsverfolgung. Innerhalb Deutschlands kostenfrei.</div></span></span></label>' +
       '</div>' +
       '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
       '<button class="btn btn-solid" data-next>Weiter zur Zahlung <span class="arr">→</span></button></div>';
@@ -121,9 +121,6 @@
             '<span class="chip-face"><span><span class="chip-title">Zahlung bei Übergabe im Showroom</span>' +
             '<div class="chip-sub">EC-/Kreditkarte oder Überweisung vor Ort — nach Besichtigung der Uhr.</div></span></span></label>'
           : '') +
-        '<label class="chip"><input type="radio" name="pay" value="finanzierung"' + (order.payment === 'finanzierung' ? ' checked' : '') + '>' +
-          '<span class="chip-face"><span><span class="chip-title">Finanzierung anfragen</span>' +
-          '<div class="chip-sub">Ratenzahlung über unseren Finanzierungspartner — wir melden uns mit einem unverbindlichen Angebot.</div></span></span></label>' +
       '</div>' +
       '<div class="field" style="margin-top:18px"><label>Anmerkung zur Bestellung (optional)</label>' +
       '<textarea id="fNote" placeholder="z. B. Wunschtermin für die Übergabe …">' + esc(order.note) + '</textarea></div>' +
@@ -133,7 +130,7 @@
 
   function stepReview() {
     var k = order.kunde;
-    var payLabel = { ueberweisung: 'Banküberweisung', showroom: 'Zahlung bei Übergabe im Showroom', finanzierung: 'Finanzierung (Angebot folgt)' }[order.payment];
+    var payLabel = { ueberweisung: 'Banküberweisung', showroom: 'Zahlung bei Übergabe im Showroom' }[order.payment];
     var dlLabel = order.delivery === 'showroom' ? 'Persönliche Übergabe im Showroom' : 'Versicherter Werttransport';
     panel.innerHTML =
       '<h2>Bestellung prüfen</h2>' +
@@ -162,9 +159,8 @@
         '<p style="color:var(--ink-60);max-width:56ch;line-height:1.7">' +
         (confirmedCount > 1 ? 'Wir haben alle ' + confirmedCount + ' Uhren' : 'Wir haben die Uhr') +
         ' fest für Sie zurückgelegt. Sie erhalten in Kürze eine Bestellbestätigung per E-Mail' +
-        (order.payment === 'ueberweisung' ? ' — inklusive unserer Bankverbindung. Nach Zahlungseingang stimmen wir umgehend die Übergabe mit Ihnen ab.' :
-         order.payment === 'showroom' ? '. Wir melden uns noch heute zur Terminabstimmung; gezahlt wird bei der Übergabe im Showroom.' :
-         '. Unser Finanzierungspartner meldet sich mit einem unverbindlichen Angebot bei Ihnen.') + '</p>' +
+        (order.payment === 'showroom' ? '. Wir melden uns noch heute zur Terminabstimmung; gezahlt wird bei der Übergabe im Showroom.' :
+         ' — inklusive unserer Bankverbindung. Nach Zahlungseingang stimmen wir umgehend die Übergabe mit Ihnen ab.') + '</p>' +
         '<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">' +
           '<a class="btn btn-solid" href="shop.html">Weiter stöbern</a>' +
           '<a class="btn btn-outline" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">Fragen? WhatsApp</a>' +

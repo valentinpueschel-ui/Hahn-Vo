@@ -11,6 +11,14 @@
   font-style: normal;
   font-display: swap;
 }
+/* wordmark serif — engraved roman caps, dial-typography feel */
+@font-face {
+  font-family: 'Marcellus';
+  src: url('../vendor/fonts/marcellus.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --petrol: #0E334F;
@@ -30,6 +38,7 @@
   --reserved: #8A6A1F;
   --sold: #8B8B83;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-brand: 'Marcellus', 'Times New Roman', serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
   --header-h: 76px;
@@ -37,6 +46,8 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+/* the hidden attribute must always win over display rules */
+[hidden] { display: none !important; }
 
 html { scroll-behavior: auto; }
 html.lenis, html.lenis body { height: auto; }
@@ -126,7 +137,7 @@ ul { list-style: none; }
 .brand { display: flex; align-items: center; gap: 12px; justify-self: center; }
 .brand-mark { width: 34px; height: 34px; color: currentColor; transition: transform 0.5s var(--ease-out); }
 .brand:hover .brand-mark { transform: rotate(180deg); }
-.brand-word { font-size: 13px; font-weight: 640; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap; }
+.brand-word { font-family: var(--font-brand); font-size: 16px; font-weight: 400; letter-spacing: 0.28em; text-transform: uppercase; white-space: nowrap; }
 
 .nav-right { display: flex; gap: clamp(14px, 2vw, 28px); justify-content: flex-end; align-items: center; }
 .cart-btn { position: relative; display: flex; align-items: center; gap: 8px; }
@@ -321,7 +332,8 @@ ul { list-style: none; }
 .sf-legal a:hover { color: var(--creme); }
 .sf-watermark {
   position: absolute; left: 50%; bottom: -0.28em; transform: translateX(-50%);
-  font-size: clamp(48px, 17vw, 300px); font-weight: 700; letter-spacing: -0.04em;
+  font-family: var(--font-brand);
+  font-size: clamp(48px, 16vw, 280px); font-weight: 400; letter-spacing: 0.02em;
   color: rgba(255, 250, 231, 0.045); line-height: 1; white-space: nowrap; pointer-events: none;
   text-transform: uppercase; z-index: 0; max-width: 100vw;
 }
