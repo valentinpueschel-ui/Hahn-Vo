@@ -177,18 +177,172 @@
   }
   if (clock) { tick(); setInterval(tick, 1000); }
 
-  /* ---------- flagship ---------- */
-  var flag = HV.byId(window.FLAGSHIP_ID);
-  if (flag) {
-    document.getElementById('flagshipName').textContent = flag.brand + ' ' + flag.name;
-    document.getElementById('flagshipDesc').textContent =
-      'Max Büssers „horologisches Konzeptlabor“ baut rund 400 Uhren im Jahr — diese hier trägt ihre fliegende Unruh sichtbar über dem eisblauen Zifferblatt. Full Set von 2024, Zustand wie neu, sofort im Showroom zu besichtigen.';
-    document.getElementById('flagshipMeta').innerHTML =
-      '<span class="spec">Titan · 44 mm</span>' +
-      '<span class="spec">Ref. ' + flag.ref + '</span>' +
-      '<span class="spec">' + (flag.fullset || 'Full Set') + '</span>' +
-      '<span class="spec num">' + HV.fmtEUR(flag.price) + '</span>';
-    document.getElementById('flagshipLink').href = 'produkt.html?id=' + flag.id;
+  /* ---------- flagship showcase: rotates through the New-In pieces ---------- */
+  var SHOWCASE_COPY = {
+    p462: 'Max Büssers „horologisches Konzeptlabor“ baut rund 400 Uhren im Jahr — diese hier trägt ihre fliegende Unruh sichtbar über dem eisblauen Zifferblatt. Full Set von 2024, Zustand wie neu, sofort im Showroom zu besichtigen.',
+    p461: 'Seit 1917 ist die Tank die Antwort auf die Frage nach der einen Uhr zum Anzug. Dieses Exemplar mit weißem, römischem Zifferblatt kommt mit Echtheitszertifikat — geöffnet und geprüft wie jede Uhr im Haus.',
+    p460: 'Die Tank Solo im größeren Format mit dem gesuchten Piano-Zifferblatt — Baujahr 2010, im Full Set mit Echtheitszertifikat. Zeitlos vom Vormittagstermin bis zur Abendgarderobe.',
+    p459: 'Blaues Zifferblatt auf Oysterband: die Datejust 36 in ihrer souveränsten Konfiguration. Baujahr 2009, Zustand sehr gut, im Full Set mit Box und Papieren.',
+    p458: 'Blaues Blatt am Jubilé-Band — die meistgetragene Rolex-Linie in ihrer elegantesten Ausführung. Baujahr 2022, Full Set mit Box und Papieren.',
+    p457: 'Moonwatch-DNA im 38-Millimeter-Gehäuse mit grauem Zifferblatt — die Speedmaster für schmalere Handgelenke. Baujahr 2018, komplettes Full Set.',
+  };
+
+  function slideData(p) {
+    var chips = [];
+    if (p.material && p.size) chips.push(p.material + ' · ' + p.size);
+    else if (p.size || p.material) chips.push(p.size || p.material);
+    if (p.ref) chips.push('Ref. ' + p.ref);
+    if (p.fullset) chips.push(p.fullset.indexOf('Full Set') === 0 ? 'Full Set, Papiere, Box' : p.fullset);
+    chips.push(HV.fmtEUR(p.price));
+    var firstSentence = (p.desc || '').split('. ').slice(1, 3).join('. ');
+    return {
+      id: p.id,
+      kicker: p.id === window.FLAGSHIP_ID ? 'Das Flaggschiff' : 'Neu eingetroffen',
+      name: p.brand + ' ' + p.name,
+      desc: SHOWCASE_COPY[p.id] || (firstSentence ? firstSentence + '.' : 'Geöffnet, geprüft und dokumentiert — jetzt im Showroom zu besichtigen.'),
+      chips: chips,
+      avail: p.status === 'available' ? '1 von 1 · sofort verfügbar' : '1 von 1 · aktuell reserviert',
+      img: p.images[0],
+    };
+  }
+
+  var slides = (window.NEW_IN || [])
+    .map(HV.byId).filter(Boolean)
+    .filter(function (p) { return p.status === 'available'; })
+    .map(slideData);
+
+  var fsMedia = document.getElementById('fsMedia');
+  var fsEls = {
+    kicker: document.getElementById('fsKicker'),
+    count: document.getElementById('fsCount'),
+    name: document.getElementById('flagshipName'),
+    desc: document.getElementById('flagshipDesc'),
+    meta: document.getElementById('flagshipMeta'),
+    link: document.getElementById('flagshipLink'),
+    avail: document.getElementById('fsAvail'),
+    bar: document.getElementById('fsBar'),
+  };
+
+  /* one media layer per slide; layer 0 keeps the MB&F film */
+  var layers = [fsMedia.querySelector('.fs-layer')];
+  slides.forEach(function (s, i) {
+    if (i === 0) return;
+    var layer = document.createElement('div');
+    layer.className = 'fs-layer';
+    layer.innerHTML = '<img src="' + s.img + '" alt="' + s.name + '" loading="lazy">';
+    fsMedia.appendChild(layer);
+    layers.push(layer);
+  });
+  var fsVideo = layers[0] ? layers[0].querySelector('video') : null;
+
+  function fill(s, idx) {
+    fsEls.kicker.textContent = s.kicker;
+    fsEls.count.textContent = ('0' + (idx + 1)).slice(-2) + ' / ' + ('0' + slides.length).slice(-2);
+    fsEls.name.textContent = s.name;
+    fsEls.desc.textContent = s.desc;
+    fsEls.meta.innerHTML = s.chips.map(function (c, ci) {
+      return '<span class="spec' + (ci === s.chips.length - 1 ? ' num' : '') + '">' + c + '</span>';
+    }).join('');
+    fsEls.avail.textContent = s.avail;
+    fsEls.link.href = 'produkt.html?id=' + s.id;
+  }
+
+  var current = 0;
+  var rotTimer = null;
+  var barTween = null;
+  var paused = false;
+  var inView = true;
+  var DWELL = 5;
+
+  function kenBurns(layer) {
+    var img = layer.querySelector('img');
+    if (img) gsap.fromTo(img, { scale: 1.1 }, { scale: 1.0, duration: DWELL + 1.6, ease: 'none', overwrite: true });
+  }
+
+  function armBar() {
+    if (!fsEls.bar || !window.gsap) return;
+    if (barTween) barTween.kill();
+    barTween = gsap.fromTo(fsEls.bar, { width: '0%' }, { width: '100%', duration: DWELL, ease: 'none' });
+  }
+
+  function schedule() {
+    if (rotTimer) rotTimer.kill();
+    rotTimer = gsap.delayedCall(DWELL, function () { goTo((current + 1) % slides.length); });
+  }
+
+  function goTo(idx) {
+    if (idx === current || !window.gsap) return;
+    var from = layers[current], to = layers[idx];
+    var s = slides[idx];
+    current = idx;
+
+    /* media: curtain reveal from top over the old layer, then slow settle */
+    gsap.set(to, { visibility: 'visible', opacity: 1, clipPath: 'inset(0% 0% 100% 0%)', zIndex: 2 });
+    gsap.set(from, { zIndex: 1 });
+    kenBurns(to);
+    if (fsVideo) { if (idx === 0) fsVideo.play(); }
+    gsap.to(to, {
+      clipPath: 'inset(0% 0% 0% 0%)', duration: 1.15, ease: 'power4.inOut',
+      onComplete: function () {
+        gsap.set(from, { opacity: 0, visibility: 'hidden' });
+        from.classList.remove('is-active');
+        to.classList.add('is-active');
+        gsap.set(to, { clipPath: 'none' });
+        if (fsVideo && idx !== 0) fsVideo.pause();
+      },
+    });
+
+    /* text: staged out, swap, staged in */
+    var parts = [fsEls.name, fsEls.desc, fsEls.meta, fsEls.avail];
+    var tl = gsap.timeline();
+    tl.to(parts, { y: -12, opacity: 0, duration: 0.38, stagger: 0.05, ease: 'power2.in' }, 0)
+      .to(fsEls.kicker, { opacity: 0, duration: 0.3 }, 0)
+      .add(function () { fill(s, idx); }, 0.45)
+      .fromTo(fsEls.kicker, { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.55)
+      .fromTo(parts, { y: 24, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.75, stagger: 0.09, ease: 'power3.out' }, 0.55);
+
+    armBar();
+    schedule();
+  }
+
+  function pauseRotation() {
+    paused = true;
+    if (rotTimer) rotTimer.pause();
+    if (barTween) barTween.pause();
+  }
+  function resumeRotation() {
+    if (!inView || document.hidden) return;
+    paused = false;
+    if (rotTimer) rotTimer.resume();
+    if (barTween) barTween.resume();
+  }
+
+  if (slides.length) {
+    fill(slides[0], 0);
+    if (slides.length > 1 && !reduce && window.gsap) {
+      armBar();
+      schedule();
+      var flagshipEl = document.getElementById('flagship');
+      flagshipEl.addEventListener('mouseenter', pauseRotation);
+      flagshipEl.addEventListener('mouseleave', resumeRotation);
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) pauseRotation(); else resumeRotation();
+      });
+      if (window.ScrollTrigger) {
+        var fsST = ScrollTrigger.create({
+          trigger: flagshipEl, start: 'top 95%', end: 'bottom 5%',
+          onToggle: function (self) {
+            inView = self.isActive;
+            if (inView) resumeRotation(); else pauseRotation();
+          },
+        });
+        inView = fsST.isActive;
+        if (!inView) pauseRotation();
+      }
+    } else if (fsEls.bar) {
+      fsEls.bar.parentElement.style.display = 'none';
+    }
   }
 
   /* ---------- new-in rail ---------- */
