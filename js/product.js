@@ -110,6 +110,7 @@
     ['Lieferumfang', p.fullset],
     ['Zustand', p.rating ? p.rating : null],
     ['Status', HV.statusLabel[p.status]],
+    ['Besteuerung', p.tax || 'inkl. Mehrwertsteuer oder Differenzbesteuerung'],
   ].filter(function (row) { return row[1]; });
   document.getElementById('specTable').innerHTML = specs.map(function (row) {
     return '<div class="row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>';

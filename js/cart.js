@@ -60,7 +60,7 @@
     '</div>' +
     '<div class="cd-foot" data-cd-foot>' +
       '<div class="cd-total-row"><span class="micro micro-dim">Zwischensumme</span><span class="cd-total num" data-cd-total></span></div>' +
-      '<p class="cd-note">Inkl. MwSt. — differenzbesteuert nach § 25a UStG. Versicherter Versand oder persönliche Übergabe im Showroom, Abstimmung im nächsten Schritt.</p>' +
+      '<p class="cd-note">Alle Preise inkl. MwSt. Versicherter Versand oder persönliche Übergabe im Showroom — Abstimmung im nächsten Schritt.</p>' +
       '<a class="btn btn-solid" href="checkout.html">Zur Kasse <span class="arr">→</span></a>' +
     '</div>';
   document.body.append(overlay, drawer);

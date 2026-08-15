@@ -33,7 +33,7 @@
       '<div class="co-sum-row"><span>Zwischensumme</span><span class="num">' + HV.fmtEUR(HV.cart.total()) + '</span></div>' +
       '<div class="co-sum-row"><span>Übergabe</span><span>' + (step >= 2 ? deliveryLabel.split(' — ')[1] || 'kostenfrei' : '—') + '</span></div>' +
       '<div class="co-sum-total"><span>Gesamt</span><span class="num">' + HV.fmtEUR(HV.cart.total()) + '</span></div>' +
-      '<p style="font-size:11.5px;color:var(--ink-60);line-height:1.55;margin-top:14px">Inkl. MwSt. — differenzbesteuert nach § 25a UStG, kein MwSt.-Ausweis. Jede Uhr mit 12 Monaten Garantie und 14 Tagen Rückgaberecht.</p>';
+      '<p style="font-size:11.5px;color:var(--ink-60);line-height:1.55;margin-top:14px">Alle Preise inkl. MwSt. (Differenz- oder Regelbesteuerung je nach Uhr — Ausweis auf der Rechnung). Jede Uhr mit 12 Monaten Garantie und 14 Tagen Rückgaberecht.</p>';
   }
 
   /* ---------- step tabs ---------- */

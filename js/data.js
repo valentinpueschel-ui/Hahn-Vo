@@ -1956,7 +1956,7 @@ window.TESTIMONIALS = [
 window.FAQ = [
  {
   "q": "Sind alle Uhren auf Echtheit geprüft?",
-  "a": "Ja. Jede Uhr wird vor dem Verkauf von uns geöffnet, das Werk kontrolliert und mit Referenz- und Seriennummer dokumentiert. Beide Gründer haben ihr Handwerk bei Bucherer gelernt — wir kaufen keine Uhr an, die wir nicht selbst geprüft haben."
+  "a": "Ja. Jede Uhr wird vor dem Verkauf sorgfältig geprüft. Dabei arbeiten wir sowohl in Deutschland als auch in Korea mit erfahrenen Uhrmachern zusammen. Zusätzlich erhält jede Uhr von uns ein Echtheitszertifikat."
  },
  {
   "q": "Welche Garantie erhalte ich?",
@@ -1964,18 +1964,18 @@ window.FAQ = [
  },
  {
   "q": "Kann ich eine Uhr zurückgeben?",
-  "a": "Ja, Sie haben 14 Tage Rückgaberecht. Die Uhr muss sich im gelieferten Zustand befinden, inklusive aller Plomben, Papiere und Zubehörteile."
+  "a": "Ja, Sie haben 14 Tage Rückgaberecht. Die Uhr muss sich im gelieferten Zustand befinden, inklusive Uhrenbox, Papiere und Zubehörteile."
  },
  {
   "q": "Wie läuft die Übergabe ab?",
-  "a": "Wahlweise per weltweit vollversichertem Wertversand oder — unsere Empfehlung — persönlich in unserem Showroom im Garden Tower, 7. Etage, im Frankfurter Bankenviertel. Termine vereinbaren Sie in Minuten per WhatsApp oder E-Mail."
+  "a": "Wahlweise per weltweit versichertem Wertversand oder unsere Empfehlung: persönlich in unserem Showroom im Garden Tower in der 7. Etage im Frankfurter Bankenviertel. Termine vereinbaren Sie unkompliziert per WhatsApp, E-Mail oder telefonisch."
  },
  {
   "q": "Nehmen Sie meine Uhr in Zahlung?",
-  "a": "Sehr gern. Senden Sie uns über die Ankauf-Seite Fotos und Eckdaten Ihrer Uhr — Sie erhalten innerhalb von 24–48 Stunden ein konkretes Angebot, das Sie direkt mit einem Kauf verrechnen können."
+  "a": "Sehr gerne. Senden Sie uns über die Ankauf-Seite Fotos und Eckdaten Ihrer Uhr. Sie erhalten innerhalb von 12 Stunden ein konkretes Angebot, das Sie direkt mit einem Kauf verrechnen können."
  },
  {
   "q": "Ich suche eine bestimmte Uhr. Können Sie sie beschaffen?",
-  "a": "Das ist eine unserer Stärken. Über unser Netzwerk — unter anderem nach Südkorea und Japan — finden wir Referenzen, die auf dem europäischen Markt kaum zu bekommen sind. Stellen Sie einfach einen Suchauftrag."
+  "a": "Das ist eine unserer Stärken. Über unser Netzwerk in Südkorea und Europa finden wir Referenzen, die auf dem Markt kaum zu bekommen sind. Stellen Sie einfach einen Suchauftrag."
  }
 ];
