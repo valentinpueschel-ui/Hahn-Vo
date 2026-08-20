@@ -1979,3 +1979,14 @@ window.FAQ = [
   "a": "Das ist eine unserer Stärken. Über unser Netzwerk in Südkorea und Europa finden wir Referenzen, die auf dem Markt kaum zu bekommen sind. Stellen Sie einfach einen Suchauftrag."
  }
 ];
+
+/* Shopify Buy-Button-Testintegration.
+   Pro Uhr eine Zeile in products: '<data.js-id>': '<Shopify-Produkt-ID>'.
+   Der Storefront-Token ist ein öffentlicher (publishable) Token. */
+window.SHOPIFY = {
+ "domain": "tami1g-0j.myshopify.com",
+ "storefrontAccessToken": "89c87251e5d1f73c1302b1674ba75b69",
+ "products": {
+  "p426": "10218840228168"
+ }
+};

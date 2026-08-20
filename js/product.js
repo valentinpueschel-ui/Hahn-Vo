@@ -62,6 +62,13 @@
 
   /* CTAs by status */
   var add = document.getElementById('addToCart');
+  var shopifyNode = document.getElementById('shopifyBuy');
+  var hasShopify = p.status === 'available' && HV.mountShopifyBuy && HV.mountShopifyBuy(p.id, shopifyNode);
+  if (hasShopify) {
+    /* echter Shopify-Kauf ersetzt den Demo-Warenkorb für diese Uhr */
+    add.style.display = 'none';
+    shopifyNode.hidden = false;
+  }
   function syncCartBtn() {
     if (HV.cart.has(p.id)) {
       add.innerHTML = 'Im Warenkorb ✓ &nbsp;·&nbsp; Zur Kasse <span class="arr">→</span>';
@@ -72,13 +79,15 @@
     }
   }
   if (p.status === 'available') {
-    syncCartBtn();
-    add.addEventListener('click', function () {
-      if (add.dataset.mode === 'checkout') { location.href = 'checkout.html'; return; }
-      HV.cart.add(p.id);
+    if (!hasShopify) {
       syncCartBtn();
-    });
-    document.addEventListener('hv:cart', syncCartBtn);
+      add.addEventListener('click', function () {
+        if (add.dataset.mode === 'checkout') { location.href = 'checkout.html'; return; }
+        HV.cart.add(p.id);
+        syncCartBtn();
+      });
+      document.addEventListener('hv:cart', syncCartBtn);
+    }
   } else {
     add.disabled = true;
     add.textContent = p.status === 'reserved' ? 'Reserviert' : 'Verkauft';
