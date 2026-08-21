@@ -49,6 +49,6 @@ Stand 21.08.2026: **66 Uhren**. Produktbilder liegen lokal unter
 - `js/shell.js` injiziert Header/Footer/Cart-Drawer auf jeder Seite.
 - Warenkorb in `localStorage` (`hv_cart_v1`), Bestellungen/Formulare ebenso (`hv_orders`, `hv_ankauf_requests`, `hv_suchauftrag_requests`) — kein Backend.
 - Checkout ist funktional bis zur Bestellbestätigung; Zahlarten: Überweisung, Zahlung im Showroom, Finanzierungsanfrage.
-- Kontakt/Socials echt: info@hahntime.com, WhatsApp +49 176 8421 1760, IG @hahn.vo, TikTok @hahn.vo.
+- Kontakt/Socials echt: info@hahntime.com, WhatsApp +49 176 203 800 47, IG @hahn.vo, TikTok @hahn.vo.
 
 Port 8440 (Vergabe: 8408 De Shi, 8412 Marit, 8418 hahnvo-lmse, 8420 Terheggen, 8433 Lindenkamp).

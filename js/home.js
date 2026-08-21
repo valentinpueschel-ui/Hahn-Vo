@@ -252,7 +252,7 @@
   var barTween = null;
   var paused = false;
   var inView = true;
-  var DWELL = 5;
+  var DWELL = 3;
 
   function kenBurns(layer) {
     var img = layer.querySelector('img');
