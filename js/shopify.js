@@ -64,32 +64,81 @@
     return catPending;
   };
 
-  /* ================= Zuordnung Uhr ↔ Shopify ================= */
-  HV.shopifyMatch = function (p, catalog) {
-    var c = cfg();
-    if (!c || !p) return null;
-    catalog = catalog || [];
-    var hit = null;
+  /* ================= Zuordnung Uhr ↔ Shopify =================
+     Wird global gebildet, nicht je Uhr: exakte Titelgleichheit zuerst,
+     danach Referenznummer, erst zuletzt Teiltreffer — und jedes
+     Shopify-Produkt wird nur EINMAL vergeben. Sonst schnappt sich eine
+     kurz benannte Uhr das Produkt einer laenger benannten. */
+  function buildMatches(catalog) {
+    var explicit = (cfg() && cfg().products) || {};
+    var prods = window.PRODUCTS || [];
+    var out = {}, used = {};
 
-    var mapped = c.products && c.products[p.id];
-    if (mapped) {
-      catalog.forEach(function (it) { if (it.id === String(mapped)) hit = it; });
-      return hit;
-    }
-    var ref = norm(p.ref);
-    if (ref.length >= 4) {
-      catalog.forEach(function (it) { if (!hit && norm(it.title).indexOf(ref) !== -1) hit = it; });
-      if (hit) return hit;
-    }
-    var mine = norm(p.name), mineFull = norm(p.brand + p.name);
-    if (mine.length >= 12) {
+    /* 1. Ausdrueckliche Zuordnung aus data.js */
+    prods.forEach(function (p) {
+      var id = explicit[p.id];
+      if (!id) return;
       catalog.forEach(function (it) {
-        if (hit) return;
-        var t = norm(it.title);
-        if (t.length >= 12 && (t.indexOf(mine) !== -1 || mineFull.indexOf(t) !== -1)) hit = it;
+        if (it.id === String(id)) { out[p.id] = it; used[it.id] = true; }
       });
-    }
-    return hit;
+    });
+
+    /* 2. Exakte Titelgleichheit — erst Marke+Modell, dann nur Modell */
+    [function (p) { return norm(p.brand + p.name); },
+     function (p) { return norm(p.name); }].forEach(function (keyFn) {
+      prods.forEach(function (p) {
+        if (out[p.id]) return;
+        var k = keyFn(p);
+        if (k.length < 6) return;
+        catalog.forEach(function (it) {
+          if (out[p.id] || used[it.id]) return;
+          if (norm(it.title) === k) { out[p.id] = it; used[it.id] = true; }
+        });
+      });
+    });
+
+    /* 3. Referenznummer taucht im Shopify-Titel auf */
+    prods.forEach(function (p) {
+      if (out[p.id]) return;
+      var ref = norm(p.ref);
+      if (ref.length < 4) return;
+      catalog.forEach(function (it) {
+        if (out[p.id] || used[it.id]) return;
+        if (norm(it.title).indexOf(ref) !== -1) { out[p.id] = it; used[it.id] = true; }
+      });
+    });
+
+    /* 4. Teiltreffer als letzte Instanz — es gewinnt der engste */
+    prods.forEach(function (p) {
+      if (out[p.id]) return;
+      var full = norm(p.brand + p.name);
+      if (full.length < 12) return;
+      var best = null, bestDiff = Infinity;
+      catalog.forEach(function (it) {
+        if (used[it.id]) return;
+        var t = norm(it.title);
+        if (t.length < 12) return;
+        if (t.indexOf(full) !== -1 || full.indexOf(t) !== -1) {
+          var diff = Math.abs(t.length - full.length);
+          if (diff < bestDiff) { bestDiff = diff; best = it; }
+        }
+      });
+      if (best) { out[p.id] = best; used[best.id] = true; }
+    });
+
+    return out;
+  }
+
+  var matchCache = null, matchCacheFor = null;
+  function matchMap(catalog) {
+    if (matchCacheFor === catalog && matchCache) return matchCache;
+    matchCache = buildMatches(catalog || []);
+    matchCacheFor = catalog;
+    return matchCache;
+  }
+  HV.shopifyMatch = function (p, catalog) {
+    if (!cfg() || !p) return null;
+    return matchMap(catalog || [])[p.id] || null;
   };
 
   /* Reichert window.PRODUCTS mit Live-Daten aus Shopify an.
