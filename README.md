@@ -22,15 +22,26 @@ Doppelklick auf `serve.command` → http://localhost:8440
 
 ## Daten
 
-`js/data.js` ist die Single Source of Truth (neu bauen: `python3 tools/build_data.py`) — generiert aus dem Live-Bestand von
-hahn-vo.de (GoDaddy-Storefront-API, 66 Produkte, Stand 21.08.2026). Produktbilder
-liegen lokal unter `assets/products/p<id>/`. Regenerieren: Script im Scratchpad
-(`build_datajs.py`) bzw. neu scrapen über `…onlinestore.godaddy.com/api/v1/products`.
+`js/data.js` ist die einzige Wahrheitsquelle für Produkte — erzeugt aus dem
+Live-Bestand von hahn-vo.de:
 
-**Demo-Staging:** Die Status „reserviert" (4 Uhren) und „verkauft" (5 Uhren) sind für
-die Demo gesetzt — im Live-Bestand ist alles erhältlich. Kundenstimmen sind
-redaktionelle Platzhalter. Showroom-Fotos (`way-showroom.jpg`, `showroom-band.jpg`)
-sind KI-Visualisierungen (Higgsfield Cinema Studio 2.5).
+```
+python3 tools/build_data.py          # Bestand holen, Bilder laden, data.js schreiben
+python3 tools/build_data.py --dry-run
+```
+
+**Wichtig zur Quelle:** Der Shop liest aus
+`https://<websiteId>.mysimplestore.com/api/v2/products`. Die ältere Adresse
+`onlinestore.godaddy.com/api/v1/products` liefert einen **veralteten Stand**
+(am 21.08.2026 fehlten dort 32 neue Uhren und 28 längst verkaufte standen noch
+drin). Immer die v2-Adresse verwenden.
+
+Stand 21.08.2026: **66 Uhren**. Produktbilder liegen lokal unter
+`assets/products/p<id>/`, interner Code je Uhr ist `HV-<id>`.
+
+**Platzhalter:** Kundenstimmen sind redaktionell. Showroom-Fotos
+(`way-showroom.jpg`, `showroom-band.jpg`) sind KI-Visualisierungen
+(Higgsfield Cinema Studio 2.5).
 
 ## Technik
 
