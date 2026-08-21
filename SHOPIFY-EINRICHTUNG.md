@@ -105,16 +105,8 @@ Formulierungen für die Bestellbestätigung:
 
 ---
 
-## 6. Bestand
+## 6. Bestand abgleichen
 
-Sechs Uhren stehen noch auf Bestand 0 und erscheinen deshalb auf der Website als
-verkauft. Bestand jeweils auf **1** setzen:
-
-- Tudor Black Bay 36 Stahl/Gelbgold
-- Omega Seamaster Vintage 36 mm, blau
-- IWC GST Chronograph Titan
-- Rolex Datejust 36, schwarzes Zifferblatt
-- TAG Heuer Carrera Chronograph
-- Omega Seamaster Planet Ocean
-
-Schnellster Weg: *Produkte → alle auswählen → Bulk-Bearbeitung → Spalte Inventar*.
+Siehe **SHOPIFY-AUFRAEUMEN.md**: 28 verkaufte Uhren löschen, 32 neue über
+`shopify-neue-uhren.csv` importieren. Danach bei allen Uhren Bestand **1**
+prüfen (*Produkte → alle auswählen → Bulk-Bearbeitung → Spalte Inventar*).

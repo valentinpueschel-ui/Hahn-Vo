@@ -54,11 +54,14 @@ def tags(p):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--only'); ap.add_argument('-o', '--out', default='shopify-import.csv')
+    ap.add_argument('--only'); ap.add_argument('--ids'); ap.add_argument('-o', '--out', default='shopify-import.csv')
     a = ap.parse_args()
     prods = load()
     if a.only:
         prods = [p for p in prods if p['id'] == a.only]
+    if a.ids:
+        erlaubt = set(json.load(open(a.ids)))
+        prods = [p for p in prods if p['id'] in erlaubt]
     rows = []
     for p in prods:
         h = handle(p)

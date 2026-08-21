@@ -22,8 +22,8 @@ Doppelklick auf `serve.command` → http://localhost:8440
 
 ## Daten
 
-`js/data.js` ist die Single Source of Truth — generiert aus dem Live-Bestand von
-hahn-vo.de (GoDaddy-Storefront-API, 62 Produkte, Stand 10.08.2026). Produktbilder
+`js/data.js` ist die Single Source of Truth (neu bauen: `python3 tools/build_data.py`) — generiert aus dem Live-Bestand von
+hahn-vo.de (GoDaddy-Storefront-API, 66 Produkte, Stand 21.08.2026). Produktbilder
 liegen lokal unter `assets/products/p<id>/`. Regenerieren: Script im Scratchpad
 (`build_datajs.py`) bzw. neu scrapen über `…onlinestore.godaddy.com/api/v1/products`.
 
