@@ -290,7 +290,7 @@ window.PRODUCTS = [
  {
   "id": "p451",
   "brand": "Sinn",
-  "name": "103 St Chronograph Automatik",
+  "name": "103 Chronograph Automatik",
   "ref": "103",
   "price": 2190,
   "listPrice": null,
@@ -380,7 +380,7 @@ window.PRODUCTS = [
  {
   "id": "p446",
   "brand": "Jaeger-LeCoultre",
-  "name": "Reverso Classic Handaufzug",
+  "name": "Reverso Handaufzug",
   "ref": null,
   "price": 6290,
   "listPrice": null,
@@ -976,7 +976,7 @@ window.PRODUCTS = [
  {
   "id": "p398",
   "brand": "Tag Heuer",
-  "name": "Link Chronograph — limitiert auf 150 Stück",
+  "name": "Link Chronograph",
   "ref": null,
   "price": 1890,
   "listPrice": null,
@@ -1604,7 +1604,7 @@ window.PRODUCTS = [
  {
   "id": "p304",
   "brand": "Nomos",
-  "name": "Club Neomatik „175 Years“ Weltzeit",
+  "name": "Club Neomatik Weltzeit",
   "ref": null,
   "price": 4990,
   "listPrice": null,
