@@ -143,6 +143,7 @@
     ['Werk', p.movement],
     ['Lieferumfang', p.fullset],
     ['Zustand', p.rating ? p.rating : null],
+    ['Interner Code', p.code],
     ['Status', HV.statusLabel[p.status]],
     ['Besteuerung', p.tax || 'inkl. Mehrwertsteuer oder Differenzbesteuerung'],
   ].filter(function (row) { return row[1]; });

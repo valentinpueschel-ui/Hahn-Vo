@@ -32,15 +32,17 @@ def handle(p):
 
 
 def body(p):
-    rows = [('Referenz', p.get('ref')), ('Baujahr', p.get('year')), ('Durchmesser', p.get('size')),
+    rows = [('Interner Code', p.get('code')), ('Referenz', p.get('ref')), ('Baujahr', p.get('year')), ('Durchmesser', p.get('size')),
             ('Gehäuse', p.get('material')), ('Zifferblatt', p.get('dial')), ('Band', p.get('strap')),
             ('Werk', p.get('movement')), ('Lieferumfang', p.get('fullset')), ('Zustand', p.get('rating'))]
     table = ''.join(f'<tr><th align="left" style="padding:4px 18px 4px 0">{k}</th><td>{v}</td></tr>'
                     for k, v in rows if v)
     return (f"<p>{p.get('desc') or ''}</p><table>{table}</table>"
             '<p>Jede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, '
-            '14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe '
-            'in unserem Showroom in Frankfurt.</p>')
+            '14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — '
+            'oder persönliche Übergabe in unserem Showroom in Frankfurt.</p>'
+            f'<p><strong>Bei Zahlung per Überweisung bitte als Verwendungszweck angeben: '
+            f'{p.get("code") or ""}</strong></p>')
 
 
 def tags(p):

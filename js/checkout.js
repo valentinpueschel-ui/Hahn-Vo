@@ -13,6 +13,35 @@
   };
   var step = 0;
 
+  /* Versandzonen — muss mit den Zonen in Shopify übereinstimmen:
+     Deutschland kostenfrei · Europa 79 € · weltweit 150 € */
+  var EUROPA = ['AT','BE','BG','CH','CZ','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE',
+                'IS','IT','LI','LT','LU','LV','MC','MT','NL','NO','PL','PT','RO','SE','SI','SK'];
+  var LAENDER = [
+    ['DE','Deutschland'], ['AT','Österreich'], ['CH','Schweiz'], ['FR','Frankreich'], ['IT','Italien'],
+    ['NL','Niederlande'], ['BE','Belgien'], ['LU','Luxemburg'], ['ES','Spanien'], ['PT','Portugal'],
+    ['DK','Dänemark'], ['SE','Schweden'], ['NO','Norwegen'], ['FI','Finnland'], ['PL','Polen'],
+    ['CZ','Tschechien'], ['HU','Ungarn'], ['GR','Griechenland'], ['IE','Irland'],
+    ['GB','Vereinigtes Königreich'], ['US','USA'], ['CA','Kanada'], ['JP','Japan'],
+    ['KR','Südkorea'], ['SG','Singapur'], ['AE','Vereinigte Arabische Emirate'],
+    ['HK','Hongkong'], ['AU','Australien'], ['XX','Anderes Land']
+  ];
+  function landName(code) {
+    for (var i = 0; i < LAENDER.length; i++) if (LAENDER[i][0] === code) return LAENDER[i][1];
+    return 'Deutschland';
+  }
+  function versandkosten() {
+    if (order.delivery === 'showroom') return 0;
+    var c = order.kunde.land || 'DE';
+    if (c === 'DE') return 0;
+    return EUROPA.indexOf(c) !== -1 ? 79 : 150;
+  }
+  function versandLabel() {
+    if (order.delivery === 'showroom') return 'entfällt (Abholung)';
+    var vk = versandkosten();
+    return vk === 0 ? 'kostenfrei' : HV.fmtEUR(vk);
+  }
+
   function items() { return HV.cart.items(); }
 
   /* ---------- summary sidebar ---------- */
@@ -21,6 +50,8 @@
     var deliveryLabel = order.delivery === 'showroom'
       ? 'Persönliche Übergabe im Showroom — kostenfrei'
       : 'Versicherter Werttransport — weltweit';
+    var vk = versandkosten();
+    var zeigen = step >= 2;
     summary.innerHTML =
       '<h3>Ihre Bestellung</h3>' +
       list.map(function (p) {
@@ -31,8 +62,10 @@
         '</div>';
       }).join('') +
       '<div class="co-sum-row"><span>Zwischensumme</span><span class="num">' + HV.fmtEUR(HV.cart.total()) + '</span></div>' +
-      '<div class="co-sum-row"><span>Übergabe</span><span>' + (step >= 2 ? deliveryLabel.split(' — ')[1] || 'kostenfrei' : '—') + '</span></div>' +
-      '<div class="co-sum-total"><span>Gesamt</span><span class="num">' + HV.fmtEUR(HV.cart.total()) + '</span></div>' +
+      '<div class="co-sum-row"><span>' + (order.delivery === 'showroom' ? 'Übergabe' : 'Versand') + '</span>' +
+        '<span class="num">' + (zeigen ? versandLabel() : '—') + '</span></div>' +
+      '<div class="co-sum-total"><span>Gesamt</span><span class="num">' +
+        HV.fmtEUR(HV.cart.total() + (zeigen ? vk : 0)) + '</span></div>' +
       '<p style="font-size:11.5px;color:var(--ink-60);line-height:1.55;margin-top:14px">Alle Preise inkl. MwSt. (Differenz- oder Regelbesteuerung je nach Uhr — Ausweis auf der Rechnung). Jede Uhr mit 12 Monaten Garantie und 14 Tagen Rückgaberecht.</p>';
   }
 
@@ -88,6 +121,11 @@
         '<div class="field span2"><label>Straße &amp; Hausnummer *</label><input id="fStr" value="' + esc(k.str) + '" autocomplete="street-address"></div>' +
         '<div class="field"><label>PLZ *</label><input id="fPlz" value="' + esc(k.plz) + '" autocomplete="postal-code"></div>' +
         '<div class="field"><label>Ort *</label><input id="fOrt" value="' + esc(k.ort) + '" autocomplete="address-level2"></div>' +
+        '<div class="field span2"><label>Land *</label><select id="fLand" autocomplete="country">' +
+          LAENDER.map(function (l) {
+            return '<option value="' + l[0] + '"' + ((k.land || 'DE') === l[0] ? ' selected' : '') + '>' + l[1] + '</option>';
+          }).join('') +
+        '</select></div>' +
       '</div>' +
       '<p class="wiz-error" id="dataErr">Bitte alle Pflichtfelder korrekt ausfüllen.</p>' +
       '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
@@ -103,7 +141,7 @@
           '<div class="chip-sub">Garden Tower, 7. Etage, Frankfurt — mit Besichtigung, Anprobe und Zeit. Terminabstimmung nach der Bestellung. Kostenfrei.</div></span><span class="micro">Empfohlen</span></span></label>' +
         '<label class="chip"><input type="radio" name="dl" value="versand"' + (order.delivery === 'versand' ? ' checked' : '') + '>' +
           '<span class="chip-face"><span><span class="chip-title">Versicherter Werttransport</span>' +
-          '<div class="chip-sub">Weltweit vollversicherter Werttransport, doppelt verpackt, mit Sendungsverfolgung. Innerhalb Deutschlands kostenfrei.</div></span></span></label>' +
+          '<div class="chip-sub">Vollversichert, doppelt verpackt, mit Sendungsverfolgung. Deutschland kostenfrei · Europa 79 € · weltweit 150 €.</div></span></span></label>' +
       '</div>' +
       '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
       '<button class="btn btn-solid" data-next>Weiter zur Zahlung <span class="arr">→</span></button></div>';
@@ -151,8 +189,9 @@
     panel.innerHTML =
       '<h2>Bestellung prüfen</h2>' +
       '<dl class="spec-table" style="margin-bottom:8px">' +
-        '<div class="row"><dt>Besteller</dt><dd>' + esc(k.vor) + ' ' + esc(k.nach) + '<br>' + esc(k.str) + ', ' + esc(k.plz) + ' ' + esc(k.ort) + '<br>' + esc(k.mail) + ' · ' + esc(k.tel) + '</dd></div>' +
+        '<div class="row"><dt>Besteller</dt><dd>' + esc(k.vor) + ' ' + esc(k.nach) + '<br>' + esc(k.str) + ', ' + esc(k.plz) + ' ' + esc(k.ort) + '<br>' + landName(k.land) + '<br>' + esc(k.mail) + ' · ' + esc(k.tel) + '</dd></div>' +
         '<div class="row"><dt>Übergabe</dt><dd>' + dlLabel + '</dd></div>' +
+        '<div class="row"><dt>Versand</dt><dd>' + versandLabel() + '</dd></div>' +
         '<div class="row"><dt>Zahlung</dt><dd>' + payLabel + '</dd></div>' +
         (order.note ? '<div class="row"><dt>Anmerkung</dt><dd>' + esc(order.note) + '</dd></div>' : '') +
       '</dl>' +
@@ -200,7 +239,7 @@
     if (step === 1) {
       order.kunde = {
         vor: val('fVor'), nach: val('fNach'), mail: val('fMail'), tel: val('fTel'),
-        str: val('fStr'), plz: val('fPlz'), ort: val('fOrt'),
+        str: val('fStr'), plz: val('fPlz'), ort: val('fOrt'), land: val('fLand') || 'DE',
       };
       var k = order.kunde;
       var ok = k.vor && k.nach && /.+@.+\..+/.test(k.mail) && k.tel && k.str && k.plz && k.ort;

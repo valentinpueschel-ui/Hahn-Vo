@@ -45,7 +45,8 @@ window.PRODUCTS = [
    "assets/products/p462/4.jpg",
    "assets/products/p462/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/mbf-legacy-machine-split-escapement-titan-04trlb-full-set-2024"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/mbf-legacy-machine-split-escapement-titan-04trlb-full-set-2024",
+  "code": "HV-462"
  },
  {
   "id": "p461",
@@ -74,7 +75,8 @@ window.PRODUCTS = [
    "assets/products/p461/4.jpg",
    "assets/products/p461/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/cartier-tank-solo-2716-quarz-24-x-31"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/cartier-tank-solo-2716-quarz-24-x-31",
+  "code": "HV-461"
  },
  {
   "id": "p460",
@@ -103,7 +105,8 @@ window.PRODUCTS = [
    "assets/products/p460/4.jpg",
    "assets/products/p460/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/cartier-tank-solo-piano-dial-24-x-31-full-set-2010"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/cartier-tank-solo-piano-dial-24-x-31-full-set-2010",
+  "code": "HV-460"
  },
  {
   "id": "p459",
@@ -132,7 +135,8 @@ window.PRODUCTS = [
    "assets/products/p459/4.jpg",
    "assets/products/p459/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-zb-blau-116200-oysterband-full-set-jahr-2009"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-zb-blau-116200-oysterband-full-set-jahr-2009",
+  "code": "HV-459"
  },
  {
   "id": "p458",
@@ -161,7 +165,8 @@ window.PRODUCTS = [
    "assets/products/p458/4.jpg",
    "assets/products/p458/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-zb-blau-126200-jubilee-automatik-neu-jahr-2022"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-zb-blau-126200-jubilee-automatik-neu-jahr-2022",
+  "code": "HV-458"
  },
  {
   "id": "p457",
@@ -190,7 +195,8 @@ window.PRODUCTS = [
    "assets/products/p457/4.jpg",
    "assets/products/p457/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-speedmaster-38mm-32430385006001-full-set-2018"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-speedmaster-38mm-32430385006001-full-set-2018",
+  "code": "HV-457"
  },
  {
   "id": "p456",
@@ -219,7 +225,8 @@ window.PRODUCTS = [
    "assets/products/p456/4.jpg",
    "assets/products/p456/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--glashtte-original-panomatic-lunar-1-90-02-42-32-05-full-set-2022-pug"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--glashtte-original-panomatic-lunar-1-90-02-42-32-05-full-set-2022-pug",
+  "code": "HV-456"
  },
  {
   "id": "p454",
@@ -248,7 +255,8 @@ window.PRODUCTS = [
    "assets/products/p454/4.jpg",
    "assets/products/p454/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-big-pilot-top-gun-keramik-46mm-iw502001-full-set-2017"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-big-pilot-top-gun-keramik-46mm-iw502001-full-set-2017",
+  "code": "HV-454"
  },
  {
   "id": "p452",
@@ -276,7 +284,8 @@ window.PRODUCTS = [
    "assets/products/p452/3.jpg",
    "assets/products/p452/4.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-submariner-date-126610ln-full-set-automatik-jahr-2022"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-submariner-date-126610ln-full-set-automatik-jahr-2022",
+  "code": "HV-452"
  },
  {
   "id": "p451",
@@ -305,7 +314,8 @@ window.PRODUCTS = [
    "assets/products/p451/4.jpg",
    "assets/products/p451/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/sinn-103-chronograph-automatik-41mm-2015-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/sinn-103-chronograph-automatik-41mm-2015-full-set",
+  "code": "HV-451"
  },
  {
   "id": "p450",
@@ -334,7 +344,8 @@ window.PRODUCTS = [
    "assets/products/p450/4.jpg",
    "assets/products/p450/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-portugieser-handaufzug-iw545405-box-service-garantiekarte"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-portugieser-handaufzug-iw545405-box-service-garantiekarte",
+  "code": "HV-450"
  },
  {
   "id": "p387",
@@ -363,7 +374,8 @@ window.PRODUCTS = [
    "assets/products/p387/4.jpg",
    "assets/products/p387/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-globemaster-constellation-13023392103001-stahl--gold"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-globemaster-constellation-13023392103001-stahl--gold",
+  "code": "HV-387"
  },
  {
   "id": "p446",
@@ -392,7 +404,8 @@ window.PRODUCTS = [
    "assets/products/p446/4.jpg",
    "assets/products/p446/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/jaeger-le-coultre-reverso-handaufzug-401mm-2019-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/jaeger-le-coultre-reverso-handaufzug-401mm-2019-full-set",
+  "code": "HV-446"
  },
  {
   "id": "p449",
@@ -421,7 +434,8 @@ window.PRODUCTS = [
    "assets/products/p449/4.jpg",
    "assets/products/p449/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-mop-diamond-dial-16014-original-rolex-box-1983"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-mop-diamond-dial-16014-original-rolex-box-1983",
+  "code": "HV-449"
  },
  {
   "id": "p434",
@@ -450,7 +464,8 @@ window.PRODUCTS = [
    "assets/products/p434/4.jpg",
    "assets/products/p434/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/nomos-ludwig-34mm-205-handaufzug-aus-2011-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/nomos-ludwig-34mm-205-handaufzug-aus-2011-im-full-set",
+  "code": "HV-434"
  },
  {
   "id": "p444",
@@ -479,7 +494,8 @@ window.PRODUCTS = [
    "assets/products/p444/4.jpg",
    "assets/products/p444/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--rolex-datejust-41-weigold-126334-jubilee-neu-052026-full-set-52e"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--rolex-datejust-41-weigold-126334-jubilee-neu-052026-full-set-52e",
+  "code": "HV-444"
  },
  {
   "id": "p443",
@@ -508,7 +524,8 @@ window.PRODUCTS = [
    "assets/products/p443/4.jpg",
    "assets/products/p443/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-vintage-blau-36mm-ref-250181"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-vintage-blau-36mm-ref-250181",
+  "code": "HV-443"
  },
  {
   "id": "p441",
@@ -537,7 +554,8 @@ window.PRODUCTS = [
    "assets/products/p441/4.jpg",
    "assets/products/p441/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/longines-saint-imier-chronograph-41mm-l27524726"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/longines-saint-imier-chronograph-41mm-l27524726",
+  "code": "HV-441"
  },
  {
   "id": "p439",
@@ -566,7 +584,8 @@ window.PRODUCTS = [
    "assets/products/p439/4.jpg",
    "assets/products/p439/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/cartier-cle-de-cartier-wscl0006-aus-2017-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/cartier-cle-de-cartier-wscl0006-aus-2017-im-full-set",
+  "code": "HV-439"
  },
  {
   "id": "p438",
@@ -595,7 +614,8 @@ window.PRODUCTS = [
    "assets/products/p438/4.jpg",
    "assets/products/p438/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-superocean-heritage-a1732024b868-aus-2016-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-superocean-heritage-a1732024b868-aus-2016-im-full-set",
+  "code": "HV-438"
  },
  {
   "id": "p435",
@@ -624,7 +644,8 @@ window.PRODUCTS = [
    "assets/products/p435/4.jpg",
    "assets/products/p435/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-oyster-perpetual-34-mm-124200-med-blue-2026-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-oyster-perpetual-34-mm-124200-med-blue-2026-im-full-set",
+  "code": "HV-435"
  },
  {
   "id": "p427",
@@ -653,7 +674,8 @@ window.PRODUCTS = [
    "assets/products/p427/4.jpg",
    "assets/products/p427/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tudor-royal-34-mm-ref-28400-aus-2021-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tudor-royal-34-mm-ref-28400-aus-2021-im-full-set",
+  "code": "HV-427"
  },
  {
   "id": "p426",
@@ -682,7 +704,8 @@ window.PRODUCTS = [
    "assets/products/p426/4.jpg",
    "assets/products/p426/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tudor-black-bay-36-stgg-79503-aus-2022-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tudor-black-bay-36-stgg-79503-aus-2022-im-full-set",
+  "code": "HV-426"
  },
  {
   "id": "p407",
@@ -711,7 +734,8 @@ window.PRODUCTS = [
    "assets/products/p407/4.jpg",
    "assets/products/p407/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-aqua-terra-23110422101003-aus-2015-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-aqua-terra-23110422101003-aus-2015-im-full-set",
+  "code": "HV-407"
  },
  {
   "id": "p424",
@@ -740,7 +764,8 @@ window.PRODUCTS = [
    "assets/products/p424/4.jpg",
    "assets/products/p424/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-schaffhausen-fliegeruhr-spitfire-chronograph-iw377719-zb-grau"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-schaffhausen-fliegeruhr-spitfire-chronograph-iw377719-zb-grau",
+  "code": "HV-424"
  },
  {
   "id": "p384",
@@ -769,7 +794,8 @@ window.PRODUCTS = [
    "assets/products/p384/4.jpg",
    "assets/products/p384/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-23290465103001-aus-2014-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-23290465103001-aus-2014-im-full-set",
+  "code": "HV-384"
  },
  {
   "id": "p420",
@@ -798,7 +824,8 @@ window.PRODUCTS = [
    "assets/products/p420/4.jpg",
    "assets/products/p420/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-portofino-8-days-blau-iw510106-aus-2015-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-portofino-8-days-blau-iw510106-aus-2015-im-full-set",
+  "code": "HV-420"
  },
  {
   "id": "p351",
@@ -827,7 +854,8 @@ window.PRODUCTS = [
    "assets/products/p351/4.jpg",
    "assets/products/p351/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-42-automatik-22015100-jahr-2011"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-42-automatik-22015100-jahr-2011",
+  "code": "HV-351"
  },
  {
   "id": "p415",
@@ -856,7 +884,8 @@ window.PRODUCTS = [
    "assets/products/p415/4.jpg",
    "assets/products/p415/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-navitimer-b01-chronograph-ab0121211c1a1-full-set-service-april-2026"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-navitimer-b01-chronograph-ab0121211c1a1-full-set-service-april-2026",
+  "code": "HV-415"
  },
  {
   "id": "p413",
@@ -885,7 +914,8 @@ window.PRODUCTS = [
    "assets/products/p413/4.jpg",
    "assets/products/p413/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--tudor-black-bay-heritage-41-lnette-rot-79230r-0003-tudor-box-7gg"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--tudor-black-bay-heritage-41-lnette-rot-79230r-0003-tudor-box-7gg",
+  "code": "HV-413"
  },
  {
   "id": "p412",
@@ -910,7 +940,8 @@ window.PRODUCTS = [
    "assets/products/p412/0.jpg",
    "assets/products/p412/1.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-avenger-ii-gmt-automatik-a32390-lederband-breitling-box"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-avenger-ii-gmt-automatik-a32390-lederband-breitling-box",
+  "code": "HV-412"
  },
  {
   "id": "p408",
@@ -939,7 +970,8 @@ window.PRODUCTS = [
    "assets/products/p408/4.jpg",
    "assets/products/p408/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--baume--mercier-hampton-mv045226-aus-18k-weigold-im-full-set-30e"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--baume--mercier-hampton-mv045226-aus-18k-weigold-im-full-set-30e",
+  "code": "HV-408"
  },
  {
   "id": "p398",
@@ -968,7 +1000,8 @@ window.PRODUCTS = [
    "assets/products/p398/4.jpg",
    "assets/products/p398/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--tag-heuer-link-chronograph-150-stck-aus-2013-mit-garantiekarte-fog"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--tag-heuer-link-chronograph-150-stck-aus-2013-mit-garantiekarte-fog",
+  "code": "HV-398"
  },
  {
   "id": "p406",
@@ -997,7 +1030,8 @@ window.PRODUCTS = [
    "assets/products/p406/4.jpg",
    "assets/products/p406/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-395-mm-ref-21530402003001-full-set-2020"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-395-mm-ref-21530402003001-full-set-2020",
+  "code": "HV-406"
  },
  {
   "id": "p399",
@@ -1026,7 +1060,8 @@ window.PRODUCTS = [
    "assets/products/p399/4.jpg",
    "assets/products/p399/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/panerai-luminor-marina-pam00632-handaufzug-2016-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/panerai-luminor-marina-pam00632-handaufzug-2016-full-set",
+  "code": "HV-399"
  },
  {
   "id": "p405",
@@ -1055,7 +1090,8 @@ window.PRODUCTS = [
    "assets/products/p405/4.jpg",
    "assets/products/p405/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-avenger-bandit-chronograph-e1338310-full-set-jahr-2017"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-avenger-bandit-chronograph-e1338310-full-set-jahr-2017",
+  "code": "HV-405"
  },
  {
   "id": "p403",
@@ -1084,7 +1120,8 @@ window.PRODUCTS = [
    "assets/products/p403/4.jpg",
    "assets/products/p403/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-speedmaster-chronoscope-32933435102001-full-set-jahr-2022"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-speedmaster-chronoscope-32933435102001-full-set-jahr-2022",
+  "code": "HV-403"
  },
  {
   "id": "p395",
@@ -1113,7 +1150,8 @@ window.PRODUCTS = [
    "assets/products/p395/4.jpg",
    "assets/products/p395/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-aqua-terra-gmt-23110432203001-service-2025"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-aqua-terra-gmt-23110432203001-service-2025",
+  "code": "HV-395"
  },
  {
   "id": "p393",
@@ -1142,7 +1180,8 @@ window.PRODUCTS = [
    "assets/products/p393/4.jpg",
    "assets/products/p393/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-41-zb-black-126300-neu-aus-2026-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-41-zb-black-126300-neu-aus-2026-im-full-set",
+  "code": "HV-393"
  },
  {
   "id": "p367",
@@ -1171,7 +1210,8 @@ window.PRODUCTS = [
    "assets/products/p367/4.jpg",
    "assets/products/p367/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-gst-chronograph-titan-iw370703"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-gst-chronograph-titan-iw370703",
+  "code": "HV-367"
  },
  {
   "id": "p382",
@@ -1200,7 +1240,8 @@ window.PRODUCTS = [
    "assets/products/p382/4.jpg",
    "assets/products/p382/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-zb-schwarz-126200-automatik-full-set-jahr-2020"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-zb-schwarz-126200-automatik-full-set-jahr-2020",
+  "code": "HV-382"
  },
  {
   "id": "p381",
@@ -1227,7 +1268,8 @@ window.PRODUCTS = [
    "assets/products/p381/2.jpg",
    "assets/products/p381/3.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-edelstahl-rosegold-126201-zb-grau-full-set-2019"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/rolex-datejust-36-edelstahl-rosegold-126201-zb-grau-full-set-2019",
+  "code": "HV-381"
  },
  {
   "id": "p377",
@@ -1256,7 +1298,8 @@ window.PRODUCTS = [
    "assets/products/p377/4.jpg",
    "assets/products/p377/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--junghans-schaltradchronograph-unikat-fr-die-bundeswehr-mit-dokumenten-deh"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--junghans-schaltradchronograph-unikat-fr-die-bundeswehr-mit-dokumenten-deh",
+  "code": "HV-377"
  },
  {
   "id": "p366",
@@ -1285,7 +1328,8 @@ window.PRODUCTS = [
    "assets/products/p366/4.jpg",
    "assets/products/p366/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-link-chronograph-automatik-cjf2111-service-032026"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-link-chronograph-automatik-cjf2111-service-032026",
+  "code": "HV-366"
  },
  {
   "id": "p364",
@@ -1314,7 +1358,8 @@ window.PRODUCTS = [
    "assets/products/p364/4.jpg",
    "assets/products/p364/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-schaffhausen-pilots-chronograph-iw388102-full-set-2022"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-schaffhausen-pilots-chronograph-iw388102-full-set-2022",
+  "code": "HV-364"
  },
  {
   "id": "p347",
@@ -1343,7 +1388,8 @@ window.PRODUCTS = [
    "assets/products/p347/4.jpg",
    "assets/products/p347/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-diver-300m-007-titan-21092422001001-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-diver-300m-007-titan-21092422001001-full-set",
+  "code": "HV-347"
  },
  {
   "id": "p352",
@@ -1372,7 +1418,8 @@ window.PRODUCTS = [
    "assets/products/p352/4.jpg",
    "assets/products/p352/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-avenger-automatik-a17318101c1a1-full-set-jahr-2020"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-avenger-automatik-a17318101c1a1-full-set-jahr-2020",
+  "code": "HV-352"
  },
  {
   "id": "p357",
@@ -1401,7 +1448,8 @@ window.PRODUCTS = [
    "assets/products/p357/4.jpg",
    "assets/products/p357/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-portofino-37-automatic-iw458101-silber-dia-dial-2021-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-portofino-37-automatic-iw458101-silber-dia-dial-2021-full-set",
+  "code": "HV-357"
  },
  {
   "id": "p350",
@@ -1430,7 +1478,8 @@ window.PRODUCTS = [
    "assets/products/p350/4.jpg",
    "assets/products/p350/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-calibre-16-cbm2110ba065-chronograph"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-calibre-16-cbm2110ba065-chronograph",
+  "code": "HV-350"
  },
  {
   "id": "p335",
@@ -1459,7 +1508,8 @@ window.PRODUCTS = [
    "assets/products/p335/4.jpg",
    "assets/products/p335/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-chronomat-b13047-burgundy-dial-mit-echtheitszertifikat"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/breitling-chronomat-b13047-burgundy-dial-mit-echtheitszertifikat",
+  "code": "HV-335"
  },
  {
   "id": "p334",
@@ -1488,7 +1538,8 @@ window.PRODUCTS = [
    "assets/products/p334/4.jpg",
    "assets/products/p334/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-planet-ocean-45-mm-22005000-uhrenbox"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-seamaster-planet-ocean-45-mm-22005000-uhrenbox",
+  "code": "HV-334"
  },
  {
   "id": "p332",
@@ -1517,7 +1568,8 @@ window.PRODUCTS = [
    "assets/products/p332/4.jpg",
    "assets/products/p332/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-calibre-16-cv2010-full-set-automatik-jahr-2011"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-calibre-16-cv2010-full-set-automatik-jahr-2011",
+  "code": "HV-332"
  },
  {
   "id": "p246",
@@ -1546,7 +1598,8 @@ window.PRODUCTS = [
    "assets/products/p246/4.jpg",
    "assets/products/p246/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-chronograph-ref-cv2010-service-2025-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-chronograph-ref-cv2010-service-2025-full-set",
+  "code": "HV-246"
  },
  {
   "id": "p304",
@@ -1575,7 +1628,8 @@ window.PRODUCTS = [
    "assets/products/p304/4.jpg",
    "assets/products/p304/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/nomos-club-neomatik-weltzeit-175-limited-99-neu"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/nomos-club-neomatik-weltzeit-175-limited-99-neu",
+  "code": "HV-304"
  },
  {
   "id": "p298",
@@ -1604,7 +1658,8 @@ window.PRODUCTS = [
    "assets/products/p298/4.jpg",
    "assets/products/p298/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-chronograph-refcv2010-aus-2008-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-chronograph-refcv2010-aus-2008-im-full-set",
+  "code": "HV-298"
  },
  {
   "id": "p300",
@@ -1630,7 +1685,8 @@ window.PRODUCTS = [
    "assets/products/p300/1.jpg",
    "assets/products/p300/2.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--hublot-faltschliee-aus-18-karat-rotgold-fr-20-mm-bandansto-wue5b97l"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/xn--hublot-faltschliee-aus-18-karat-rotgold-fr-20-mm-bandansto-wue5b97l",
+  "code": "HV-300"
  },
  {
   "id": "p292",
@@ -1658,7 +1714,8 @@ window.PRODUCTS = [
    "assets/products/p292/3.jpg",
    "assets/products/p292/4.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-fliegerchronograph-iw377701-automatik-zb-schwarz"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/iwc-fliegerchronograph-iw377701-automatik-zb-schwarz",
+  "code": "HV-292"
  },
  {
   "id": "p283",
@@ -1687,7 +1744,8 @@ window.PRODUCTS = [
    "assets/products/p283/4.jpg",
    "assets/products/p283/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-435-mm-ref-21530442103001-full-set-2018"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-435-mm-ref-21530442103001-full-set-2018",
+  "code": "HV-283"
  },
  {
   "id": "p263",
@@ -1716,7 +1774,8 @@ window.PRODUCTS = [
    "assets/products/p263/4.jpg",
    "assets/products/p263/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-gmt-big-date-ref-war201z-service-nov-2025"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/tag-heuer-carrera-gmt-big-date-ref-war201z-service-nov-2025",
+  "code": "HV-263"
  },
  {
   "id": "p223",
@@ -1745,7 +1804,8 @@ window.PRODUCTS = [
    "assets/products/p223/4.jpg",
    "assets/products/p223/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-ref22015100-aus-2009-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/omega-planet-ocean-ref22015100-aus-2009-im-full-set",
+  "code": "HV-223"
  },
  {
   "id": "p185",
@@ -1774,7 +1834,8 @@ window.PRODUCTS = [
    "assets/products/p185/4.jpg",
    "assets/products/p185/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/bvlgari-octo-finissimo-chronograph-gmt-jahr-2022-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/bvlgari-octo-finissimo-chronograph-gmt-jahr-2022-full-set",
+  "code": "HV-185"
  },
  {
   "id": "p180",
@@ -1803,7 +1864,8 @@ window.PRODUCTS = [
    "assets/products/p180/4.jpg",
    "assets/products/p180/5.jpg"
   ],
-  "sourceUrl": "https://hahn-vo.de/shop/ols/products/montblanc-timewalker-43mm-ref-118488-aus-2017-im-full-set"
+  "sourceUrl": "https://hahn-vo.de/shop/ols/products/montblanc-timewalker-43mm-ref-118488-aus-2017-im-full-set",
+  "code": "HV-180"
  }
 ];
 
