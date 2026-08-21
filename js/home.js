@@ -432,6 +432,7 @@
   document.getElementById('igIdLink').href = window.SITE.instagram;
   document.getElementById('scTiktok').href = window.SITE.tiktok;
   document.getElementById('scChannel').href = window.SITE.whatsappChannel;
+  document.getElementById('waChannelCta').href = window.SITE.whatsappChannel;
   var yt = document.getElementById('scYoutube');
   if (window.SITE.youtube) { yt.hidden = false; yt.href = window.SITE.youtube; }
 
