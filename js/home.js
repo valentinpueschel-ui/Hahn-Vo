@@ -436,7 +436,7 @@
   if (window.SITE.youtube) { yt.hidden = false; yt.href = window.SITE.youtube; }
 
   /* ---------- instagram tiles ---------- */
-  var tiles = ['assets/img/ig-1.jpg', 'assets/products/p444/0.jpg', 'assets/products/p413/0.jpg', 'assets/products/p457/0.jpg'];
+  var tiles = ['assets/img/ig-1.jpg', 'assets/products/p393/0.jpg', 'assets/products/p413/0.jpg', 'assets/products/p9177/0.jpg'];
   document.getElementById('igGrid').innerHTML = tiles.map(function (src) {
     return '<a class="ig-tile" href="' + window.SITE.instagram + '" target="_blank" rel="noopener">' +
       '<img src="' + src + '" alt="Hahn & Vo auf Instagram" loading="lazy"></a>';

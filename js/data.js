@@ -1997,15 +1997,15 @@ window.TESTIMONIALS = [
  {
   "name": "Sebastian K.",
   "date": "Juni 2026",
-  "watch": "Omega Speedmaster 38",
-  "img": "assets/products/p457/0.jpg",
+  "watch": "Omega Seamaster Aqua Terra GMT",
+  "img": "assets/products/p395/0.jpg",
   "text": "Der Zustand war exakt wie beschrieben, eher besser. Die Übergabe im Showroom über den Dächern des Bankenviertels ist ein Erlebnis für sich."
  },
  {
   "name": "Daniel R.",
   "date": "Mai 2026",
   "watch": "Rolex Datejust 41",
-  "img": "assets/products/p444/0.jpg",
+  "img": "assets/products/p393/0.jpg",
   "text": "Sehr transparente Beratung, kein Verkaufsdruck. Die Uhr wurde vor meinen Augen geöffnet und geprüft. So stellt man sich den Kauf einer Luxusuhr vor."
  },
  {
@@ -2032,29 +2032,29 @@ window.TESTIMONIALS = [
  {
   "name": "Martin H.",
   "date": "Januar 2026",
-  "watch": "Rolex Submariner Date",
-  "img": "assets/products/p452/0.jpg",
+  "watch": "Rolex GMT-Master II",
+  "img": "assets/products/p9177/0.jpg",
   "text": "Ich habe lange verglichen. Hier stimmte am Ende alles: Full Set, nachvollziehbare Historie und ein Preis, der sich am Markt belegen ließ."
  },
  {
   "name": "Christina L.",
   "date": "Dezember 2025",
   "watch": "Cartier Clé de Cartier",
-  "img": "assets/products/p439/0.jpg",
+  "img": "assets/products/p1157/0.jpg",
   "text": "Ein Weihnachtsgeschenk für meinen Mann. Ich hatte wenig Ahnung von Uhren, wurde aber geduldig und ehrlich beraten. Er trägt sie jeden Tag."
  },
  {
   "name": "Stephan F.",
   "date": "November 2025",
-  "watch": "Glashütte Original PanoMaticLunar",
-  "img": "assets/products/p456/0.jpg",
+  "watch": "A. Lange & Söhne Saxonia",
+  "img": "assets/products/p5825/0.jpg",
   "text": "Selten so ein gepflegtes Exemplar gesehen. Auf Nachfrage bekam ich sofort Makroaufnahmen von jedem Detail, sogar vom Werk."
  },
  {
   "name": "Erik P.",
   "date": "November 2025",
-  "watch": "Sinn 103",
-  "img": "assets/products/p451/0.jpg",
+  "watch": "Sinn 203 Ti Chronograph",
+  "img": "assets/products/p7015/0.jpg",
   "text": "Kleiner Preis, gleiche Sorgfalt: Auch bei einer Uhr unter 2.500 Euro wurde geöffnet, geprüft und dokumentiert. Das nenne ich Standards."
  },
  {
@@ -2067,8 +2067,8 @@ window.TESTIMONIALS = [
  {
   "name": "Michael T.",
   "date": "September 2025",
-  "watch": "Omega Seamaster 007 Edition",
-  "img": "assets/products/p347/0.jpg",
+  "watch": "Omega Seamaster Diver 300 M",
+  "img": "assets/products/p2446/0.jpg",
   "text": "Termin am Samstagabend, eine Stunde Zeit, drei Uhren anprobiert. Am Ende wurde es die Seamaster. Keine Sekunde bereut."
  },
  {
@@ -2109,22 +2109,22 @@ window.TESTIMONIALS = [
  {
   "name": "Robert K.",
   "date": "April 2025",
-  "watch": "Breitling Superocean Héritage",
-  "img": "assets/products/p438/0.jpg",
+  "watch": "Breitling Superocean Heritage 46",
+  "img": "assets/products/p1226/0.jpg",
   "text": "Fairer Ankaufspreis für meine alte Uhr, sofortige Überweisung nach der Prüfung. Beim nächsten Kauf führt kein Weg an Frankfurt vorbei."
  },
  {
   "name": "Sandra W.",
   "date": "April 2025",
-  "watch": "Cartier Tank Solo",
-  "img": "assets/products/p461/0.jpg",
+  "watch": "Cartier Santos Galbée",
+  "img": "assets/products/p4267/0.jpg",
   "text": "Unkomplizierter geht es nicht: abends angefragt, morgens Antwort, drei Tage später Übergabe im Showroom mit Kaffee und Zeit."
  },
  {
   "name": "Frank D.",
   "date": "März 2025",
-  "watch": "Omega Speedmaster Chronoscope",
-  "img": "assets/products/p403/0.jpg",
+  "watch": "Omega Planet Ocean 39,5 mm",
+  "img": "assets/products/p406/0.jpg",
   "text": "Als Sammler achte ich auf Kleinigkeiten. Hier stimmten Zwischenglieder, Plomben und Papiere. Ein Händler, der sein Handwerk gelernt hat."
  },
  {

@@ -255,6 +255,13 @@ def main():
                 ' "products": ' + json.dumps(shop_neu, ensure_ascii=False, indent=2).replace('\n', '\n ') + '\n};\n')
     print(f'js/data.js geschrieben: {len(produkte)} Uhren, {len(shop_neu)} bestehende Shopify-Zuordnungen behalten')
 
+    # Warnen, wenn Kundenstimmen oder Instagram-Kacheln auf geloeschte Uhren zeigen
+    tot = sorted({m for m in re.findall(r'assets/products/(p\d+)/', (testi or '') + '\n'
+                                        + open(os.path.join(ROOT, 'js', 'home.js'), encoding='utf-8').read())
+                  if not os.path.isdir(os.path.join(ROOT, 'assets', 'products', m))})
+    if tot:
+        print('  ACHTUNG: tote Bildverweise (Kundenstimmen/Instagram) auf: ' + ', '.join(tot))
+
 
 if __name__ == '__main__':
     main()

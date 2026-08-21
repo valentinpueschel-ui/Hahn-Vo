@@ -40,8 +40,9 @@ Stand 21.08.2026: **66 Uhren**. Produktbilder liegen lokal unter
 `assets/products/p<id>/`, interner Code je Uhr ist `HV-<id>`.
 
 **Platzhalter:** Kundenstimmen sind redaktionell. Showroom-Fotos
-(`way-showroom.jpg`, `showroom-band.jpg`) sind KI-Visualisierungen
-(Higgsfield Cinema Studio 2.5).
+(`way-showroom.jpg`, `showroom-band.jpg`) und das Ankauf-Motiv
+(`way-ankauf.jpg`) sind echte Aufnahmen des Hauses, vom Kunden geliefert
+(21.08.2026) — vorlaeufig, bis professionelle Fotos vorliegen.
 
 ## Technik
 
