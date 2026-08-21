@@ -26,20 +26,50 @@
   HV.fmtEUR = function (n) {
     return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
   };
+  /* Uhren, die in Shopify liegen, werden im echten Shopify-Warenkorb
+     gespiegelt. reconcile() gleicht beide Seiten selbstheilend ab. */
+  function shopifyItems() {
+    return items().filter(function (p) { return p.shopifyVariantId; });
+  }
+  function hasShopify() { return shopifyItems().length > 0; }
+
+  function reconcile() {
+    if (!HV.shopifyCart || !window.SHOPIFY) return Promise.resolve(null);
+    var wanted = shopifyItems();
+    var ready = HV.shopifyCart.state() ? Promise.resolve(HV.shopifyCart.state()) : HV.shopifyCart.load();
+    return ready.then(function (state) {
+      var have = (state && state.lines) || [];
+      var ops = [];
+      wanted.forEach(function (p) {
+        var there = have.some(function (l) { return l.variantId === p.shopifyVariantId; });
+        if (!there) ops.push(function () { return HV.shopifyCart.add(p.shopifyVariantId); });
+      });
+      have.forEach(function (l) {
+        var keep = wanted.some(function (p) { return p.shopifyVariantId === l.variantId; });
+        if (!keep) ops.push(function () { return HV.shopifyCart.removeLine(l.lineId); });
+      });
+      return ops.reduce(function (chain, op) { return chain.then(op); }, Promise.resolve())
+        .catch(function () { return null; });
+    });
+  }
   HV.cart = {
     ids: read,
     items: items,
     total: total,
+    hasShopify: hasShopify,
+    reconcile: reconcile,
     has: function (id) { return read().indexOf(id) !== -1; },
     add: function (id) {
       var ids = read();
       if (ids.indexOf(id) === -1) { ids.push(id); write(ids); }
       openDrawer();
+      reconcile();
     },
     remove: function (id) {
       write(read().filter(function (x) { return x !== id; }));
+      reconcile();
     },
-    clear: function () { write([]); },
+    clear: function () { write([]); reconcile(); },
   };
 
   /* ---------- drawer markup ---------- */
@@ -101,7 +131,8 @@
         '<div>' +
           '<div class="cd-item-brand">' + p.brand + '</div>' +
           '<a class="cd-item-name" href="produkt.html?id=' + p.id + '">' + p.name + '</a>' +
-          '<div class="cd-item-price num">' + HV.fmtEUR(p.price) + '</div>' +
+          '<div class="cd-item-price num">' + HV.fmtEUR(p.price) +
+            (p.shopifyVariantId ? '<span class="cd-live">sofort kaufbar</span>' : '') + '</div>' +
         '</div>' +
         '<button class="cd-remove" data-cd-remove="' + p.id + '">Entfernen</button>' +
       '</div>';
@@ -120,4 +151,9 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render);
   else render();
+
+  /* Live-Preise und Verfügbarkeit aus Shopify nachziehen */
+  if (HV.shopifySync) {
+    HV.shopifySync().then(function () { render(); return HV.cart.reconcile(); });
+  }
 })();

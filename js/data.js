@@ -1986,7 +1986,8 @@ window.FAQ = [
 window.SHOPIFY = {
  "domain": "tami1g-0j.myshopify.com",
  "storefrontAccessToken": "89c87251e5d1f73c1302b1674ba75b69",
- "products": {
-  "p426": "10218840228168"
- }
+ /* Uhren werden automatisch über Referenznummer oder Titel zugeordnet.
+    Hier nur eintragen, wenn eine Zuordnung von Hand erzwungen werden soll:
+    "<data.js-id>": "<Shopify-Produkt-ID>" */
+ "products": {}
 };

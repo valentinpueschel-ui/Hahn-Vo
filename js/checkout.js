@@ -110,6 +110,22 @@
   }
 
   function stepPayment() {
+    if (HV.cart.hasShopify && HV.cart.hasShopify()) {
+      order.payment = 'shopify';
+      panel.innerHTML =
+        '<h2>Zahlung</h2>' +
+        '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.7;max-width:58ch">Ihre Zahlung läuft über unsere verschlüsselte Kasse — abgesichert nach Bankenstandard. Sie wählen dort zwischen Kreditkarte, Apple&nbsp;Pay, Google&nbsp;Pay, PayPal und Sofortüberweisung. Ihre Daten sind bereits hinterlegt.</p>' +
+        '<div class="pay-row">' +
+          '<span class="pay-badge">Kreditkarte</span><span class="pay-badge">Apple&nbsp;Pay</span>' +
+          '<span class="pay-badge">Google&nbsp;Pay</span><span class="pay-badge">PayPal</span>' +
+          '<span class="pay-badge">Sofortüberweisung</span>' +
+        '</div>' +
+        '<div class="field" style="margin-top:22px"><label>Anmerkung zur Bestellung (optional)</label>' +
+        '<textarea id="fNote" placeholder="z. B. Wunschtermin für die Übergabe …">' + esc(order.note) + '</textarea></div>' +
+        '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
+        '<button class="btn btn-solid" data-next>Bestellung prüfen <span class="arr">→</span></button></div>';
+      return;
+    }
     panel.innerHTML =
       '<h2>Wie möchten Sie zahlen?</h2>' +
       '<div class="chip-row">' +
@@ -130,7 +146,7 @@
 
   function stepReview() {
     var k = order.kunde;
-    var payLabel = { ueberweisung: 'Banküberweisung', showroom: 'Zahlung bei Übergabe im Showroom' }[order.payment];
+    var payLabel = { ueberweisung: 'Banküberweisung', showroom: 'Zahlung bei Übergabe im Showroom', shopify: 'Verschlüsselte Kasse — Karte, Apple Pay, PayPal, Sofortüberweisung' }[order.payment];
     var dlLabel = order.delivery === 'showroom' ? 'Persönliche Übergabe im Showroom' : 'Versicherter Werttransport';
     panel.innerHTML =
       '<h2>Bestellung prüfen</h2>' +
@@ -219,6 +235,7 @@
         document.getElementById('agbErr').classList.add('is-visible');
         return;
       }
+      if (HV.cart.hasShopify && HV.cart.hasShopify()) { handoff(); return; }
       var num = 'HV-' + new Date().getFullYear() + '-' + String(Math.floor(1000 + Math.random() * 9000));
       try {
         var log = JSON.parse(localStorage.getItem('hv_orders') || '[]');
@@ -228,6 +245,44 @@
       stepConfirm(num);
     }
   });
+
+  /* ---------- Übergabe an die gesicherte Kasse ---------- */
+  function handoff() {
+    var k = order.kunde;
+    var ov = document.createElement('div');
+    ov.className = 'co-handoff';
+    ov.innerHTML =
+      '<div class="ho-inner">' +
+        '<div class="ho-mark">' + (HV.MARK || '') + '</div>' +
+        '<span class="micro" style="opacity:.7">Gesicherte Zahlung</span>' +
+        '<h2 class="display-m">Einen Moment —<br>wir übergeben an die verschlüsselte Kasse.</h2>' +
+        '<p class="ho-sub">Ihre Angaben sind bereits hinterlegt. Sie schließen die Zahlung im nächsten Schritt ab.</p>' +
+        '<div class="ho-bar"><i></i></div>' +
+      '</div>';
+    document.body.appendChild(ov);
+    requestAnimationFrame(function () { ov.classList.add('is-on'); });
+
+    var note = 'Übergabe: ' +
+      (order.delivery === 'showroom' ? 'Persönlich im Showroom (Garden Tower, 7. Etage)' : 'Versicherter Werttransport') +
+      (order.note ? ' — Anmerkung: ' + order.note : '');
+
+    var started = Date.now();
+    HV.shopifyCart.setBuyer({
+      email: k.mail, phone: k.tel,
+      address: { firstName: k.vor, lastName: k.nach, address1: k.str, zip: k.plz, city: k.ort, country: 'DE' },
+    })
+      .then(function () { return HV.shopifyCart.setNote(note); })
+      .then(function (state) {
+        var s2 = state || HV.shopifyCart.state();
+        var url = s2 && s2.checkoutUrl;
+        var wait = Math.max(0, 1100 - (Date.now() - started));
+        setTimeout(function () {
+          if (url) { location.href = url; return; }
+          ov.querySelector('.ho-sub').textContent = 'Die Kasse ist gerade nicht erreichbar. Bitte versuchen Sie es erneut oder schreiben Sie uns per WhatsApp.';
+          ov.querySelector('.ho-bar').style.display = 'none';
+        }, wait);
+      });
+  }
 
   document.addEventListener('hv:cart', function () { if (step === 0) { renderSummary(); } });
 

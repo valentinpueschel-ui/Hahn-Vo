@@ -243,3 +243,27 @@
 /* human-contact trust line under PDP CTAs */
 .pd-human { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--ink-60); margin-top: 4px; }
 .pd-human b { color: var(--ink); font-weight: 620; }
+
+/* Shopify-Anbindung: Sofortkauf-Hinweise */
+.pd-live { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--ok); font-weight: 560; margin-top: 14px; }
+.pd-live .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); flex: none; }
+.cd-live { display: block; font-size: 10px; font-weight: 620; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ok); margin-top: 3px; }
+
+/* Zahlungsarten-Badges */
+.pay-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.pay-badge { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  border: 1px solid var(--line); background: var(--creme); border-radius: 2px; padding: 9px 14px; color: var(--ink-60); }
+
+/* Übergabe an die gesicherte Kasse */
+.co-handoff { position: fixed; inset: 0; z-index: 1200; background: var(--petrol-deep); color: var(--creme);
+  display: grid; place-items: center; text-align: center; padding: var(--gutter);
+  opacity: 0; transition: opacity .5s var(--ease-out); }
+.co-handoff.is-on { opacity: 1; }
+.co-handoff .ho-inner { display: grid; gap: 18px; justify-items: center; max-width: 56ch; }
+.co-handoff .ho-mark { width: 68px; color: var(--creme); }
+.co-handoff .ho-mark svg { width: 100%; height: auto; }
+.co-handoff h2 { line-height: 1.12; }
+.co-handoff .ho-sub { color: var(--creme-60); font-size: 15px; line-height: 1.65; max-width: 46ch; }
+.co-handoff .ho-bar { width: min(320px, 70vw); height: 2px; background: var(--creme-line); overflow: hidden; margin-top: 6px; }
+.co-handoff .ho-bar i { display: block; height: 100%; width: 40%; background: var(--creme); animation: hoSlide 1.1s var(--ease-inout) infinite; }
+@keyframes hoSlide { 0% { transform: translateX(-110%); } 100% { transform: translateX(320%); } }

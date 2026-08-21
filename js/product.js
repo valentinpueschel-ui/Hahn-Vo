@@ -63,30 +63,60 @@
   /* CTAs by status */
   var add = document.getElementById('addToCart');
   var shopifyNode = document.getElementById('shopifyBuy');
-  var hasShopify = p.status === 'available' && HV.mountShopifyBuy && HV.mountShopifyBuy(p.id, shopifyNode);
-  if (hasShopify) {
-    /* echter Shopify-Kauf ersetzt den Demo-Warenkorb für diese Uhr */
-    add.style.display = 'none';
-    shopifyNode.hidden = false;
-  }
+
   function syncCartBtn() {
     if (HV.cart.has(p.id)) {
-      add.innerHTML = 'Im Warenkorb ✓ &nbsp;·&nbsp; Zur Kasse <span class="arr">→</span>';
+      add.innerHTML = 'Im Warenkorb \u2713 &nbsp;\u00b7&nbsp; Zur Kasse <span class="arr">\u2192</span>';
       add.dataset.mode = 'checkout';
     } else {
-      add.innerHTML = 'In den Warenkorb <span class="arr">→</span>';
+      add.innerHTML = 'In den Warenkorb <span class="arr">\u2192</span>';
       add.dataset.mode = 'add';
     }
   }
+
+  function setWhatsapp() {
+    var wa = document.getElementById('pdWhatsapp');
+    if (!wa) return;
+    wa.href = window.SITE.whatsapp + '?text=' + encodeURIComponent(
+      'Guten Tag, ich interessiere mich f\u00fcr die ' + p.brand + ' ' + p.name +
+      (p.ref ? ' (Ref. ' + p.ref + ')' : '') + ' \u2014 ' + HV.fmtEUR(p.price));
+  }
+
+  /* Statuszeile in der Spec-Tabelle nachziehen (wird später gerendert) */
+  function setSpecStatus(label) {
+    document.querySelectorAll('.spec-table .row').forEach(function (row) {
+      var dt = row.querySelector('dt');
+      if (dt && dt.textContent === 'Status') row.querySelector('dd').textContent = label;
+    });
+  }
+
   if (p.status === 'available') {
-    if (!hasShopify) {
+    syncCartBtn();
+    add.addEventListener('click', function () {
+      if (add.dataset.mode === 'checkout') { location.href = 'checkout.html'; return; }
+      HV.cart.add(p.id);
       syncCartBtn();
-      add.addEventListener('click', function () {
-        if (add.dataset.mode === 'checkout') { location.href = 'checkout.html'; return; }
-        HV.cart.add(p.id);
-        syncCartBtn();
+    });
+    document.addEventListener('hv:cart', syncCartBtn);
+
+    /* Live-Daten aus Shopify: Preis, Verfügbarkeit, Sofortkauf-Hinweis */
+    if (HV.shopifySync) {
+      HV.shopifySync().then(function () {
+        if (p.price) document.getElementById('pdPrice').textContent = HV.fmtEUR(p.price);
+        setWhatsapp();
+        if (p.shopifyVariantId && p.shopifyAvailable) {
+          var live = document.getElementById('pdLive');
+          if (live) live.hidden = false;
+        }
+        if (p.status === 'sold') {
+          st.className = 'pc-status status status-sold';
+          st.textContent = HV.statusLabel.sold;
+          setSpecStatus(HV.statusLabel.sold);
+          add.disabled = true;
+          add.textContent = 'Verkauft';
+          document.getElementById('pdSoldNote').hidden = false;
+        }
       });
-      document.addEventListener('hv:cart', syncCartBtn);
     }
   } else {
     add.disabled = true;
@@ -95,15 +125,10 @@
     if (p.status === 'sold') {
       var sc = document.querySelector('.pd-secondary-ctas');
       sc.innerHTML = '<a class="btn btn-outline" href="suchauftrag.html">Suchauftrag stellen</a>' +
-        '<a class="btn btn-outline" id="pdWhatsapp2" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">Per WhatsApp anfragen</a>';
+        '<a class="btn btn-outline" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">Per WhatsApp anfragen</a>';
     }
   }
-  var wa = document.getElementById('pdWhatsapp');
-  if (wa) {
-    wa.href = window.SITE.whatsapp + '?text=' + encodeURIComponent(
-      'Guten Tag, ich interessiere mich für die ' + p.brand + ' ' + p.name +
-      (p.ref ? ' (Ref. ' + p.ref + ')' : '') + ' — ' + HV.fmtEUR(p.price));
-  }
+  setWhatsapp();
 
   /* spec table */
   var specs = [
