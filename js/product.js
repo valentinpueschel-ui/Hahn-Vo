@@ -151,10 +151,18 @@
     return '<div class="row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>';
   }).join('');
 
-  /* description */
-  if (p.desc) {
-    document.getElementById('pdDesc').innerHTML = '<h3>Beschreibung</h3><p>' + p.desc + '</p>';
-  }
+  /* Unser Versprechen — gleicher Text unter jeder Uhr */
+  var VERSPRECHEN = [
+    'Jeder Zeitmesser wird auf Echtheit, Funktion und Ganggenauigkeit überprüft. Sie bekommen also das Rundum-Sorglos-Paket und zusätzlich 12 Monate Garantie, wobei die Wasserdichtigkeit ausgeschlossen ist.',
+    'Unsere Zeitmesser können auch in unserem Showroom nach Terminvereinbarung im Frankfurter Bankenviertel besichtigt werden.',
+    'Falls Sie wider Erwarten unsicher sind, ob dieser Zeitmesser zu Ihnen passt, bieten wir ein 14-tägiges Rückgaberecht an.',
+    'Der Versand innerhalb Deutschlands ist kostenlos. Außerhalb Deutschlands hängen die Versandkosten vom jeweiligen Standort ab und werden individuell berechnet.',
+    'Für weitere Fragen stehen wir jederzeit gerne zur Verfügung.',
+    'Wir freuen uns auf Ihre Nachricht.',
+  ];
+  document.getElementById('pdDesc').innerHTML =
+    '<h3>Unser Versprechen</h3>' +
+    VERSPRECHEN.map(function (t) { return '<p>' + t + '</p>'; }).join('');
 
   /* related: same brand first, then price neighbours */
   var related = (window.PRODUCTS || [])

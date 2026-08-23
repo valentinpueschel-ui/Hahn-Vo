@@ -104,7 +104,8 @@
 .spec-table .row dt { color: var(--ink-60); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 2px; }
 .spec-table .row dd { font-weight: 500; }
 .pd-desc { color: var(--ink-60); font-size: 15px; line-height: 1.7; margin-top: 22px; }
-.pd-desc h3 { color: var(--ink); font-size: 13px; font-weight: 620; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.pd-desc h3 { color: var(--ink); font-size: 13px; font-weight: 620; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+.pd-desc p + p { margin-top: 12px; }
 .related { border-top: 1px solid var(--line); }
 @media (max-width: 980px) {
   .product-layout { grid-template-columns: 1fr; }
