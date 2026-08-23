@@ -30,6 +30,19 @@ python3 tools/build_data.py          # Bestand holen, Bilder laden, data.js schr
 python3 tools/build_data.py --dry-run
 ```
 
+**Instagram-Beitraege:** Das Raster auf der Startseite zeigt die echten
+Beitraege von @hahn.vo. Neu holen mit
+
+```
+python3 tools/fetch_instagram.py            # 4 Beitraege
+python3 tools/fetch_instagram.py --anzahl 8
+```
+
+Das Werkzeug rendert das oeffentliche Profil (kein Login noetig), zieht je
+Beitrag die 900-px-Fassung aus der Einbettung, speichert sie unter
+`assets/img/ig/` und schreibt `js/ig-posts.js`. Es ist eine Momentaufnahme —
+fuer neue Beitraege erneut ausfuehren.
+
 **Wichtig zur Quelle:** Der Shop liest aus
 `https://<websiteId>.mysimplestore.com/api/v2/products`. Die ältere Adresse
 `onlinestore.godaddy.com/api/v1/products` liefert einen **veralteten Stand**

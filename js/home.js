@@ -436,11 +436,15 @@
   var yt = document.getElementById('scYoutube');
   if (window.SITE.youtube) { yt.hidden = false; yt.href = window.SITE.youtube; }
 
-  /* ---------- instagram tiles ---------- */
-  var tiles = ['assets/img/ig-1.jpg', 'assets/products/p393/0.jpg', 'assets/products/p413/0.jpg', 'assets/products/p9177/0.jpg'];
-  document.getElementById('igGrid').innerHTML = tiles.map(function (src) {
-    return '<a class="ig-tile" href="' + window.SITE.instagram + '" target="_blank" rel="noopener">' +
-      '<img src="' + src + '" alt="Hahn & Vo auf Instagram" loading="lazy"></a>';
+  /* ---------- instagram tiles: echte Beitraege aus js/ig-posts.js ---------- */
+  var posts = window.IG_POSTS || [];
+  var PLAY = '<span class="ig-reel" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor">' +
+             '<path d="M8 5.2v13.6L19 12 8 5.2Z"/></svg></span>';
+  document.getElementById('igGrid').innerHTML = posts.map(function (p) {
+    return '<a class="ig-tile' + (p.reel ? ' is-reel' : '') + '" href="' + p.url +
+      '" target="_blank" rel="noopener">' +
+      '<img src="' + p.img + '" alt="' + String(p.alt || '').replace(/"/g, '&quot;') + '" loading="lazy">' +
+      (p.reel ? PLAY : '') + '</a>';
   }).join('');
 
   /* re-init motion for injected content */

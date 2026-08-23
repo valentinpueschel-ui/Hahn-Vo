@@ -14,7 +14,7 @@ window.SITE = {
  "vatId": "DE453178178",
  "register": "HRA 43504",
  "whatsappChannel": "https://whatsapp.com/channel/0029VbAuiZnEawdspdIfjW1i",
- "youtube": ""
+ "youtube": "https://www.youtube.com/@hahn-vo"
 };
 
 window.PRODUCTS = [
