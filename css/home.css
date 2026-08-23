@@ -175,7 +175,6 @@
 @media (max-width: 700px) { .ig-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* critique fixes */
-.quotes .kicker-index { color: rgba(255, 250, 231, 0.4); }
 .faq-aside { margin-top: 30px; }
 .quote-card .stars { font-size: 40px; line-height: 0.5; font-weight: 650; opacity: 0.5; letter-spacing: 0; }
 

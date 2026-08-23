@@ -107,7 +107,6 @@ ul { list-style: none; }
 .section { padding-top: clamp(72px, 9vw, 150px); padding-bottom: clamp(72px, 9vw, 150px); }
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(32px, 4.5vw, 64px); }
 .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-.kicker-index { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--ink-40); }
 .rule { border: 0; border-top: 1px solid var(--line); }
 
 /* ---------- header ---------- */
