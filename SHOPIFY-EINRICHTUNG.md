@@ -91,8 +91,9 @@ Bestellbestätigung. Enthält Kontoinhaber, IBAN, BIC und Bank (im Adminbereich
 hinterlegt, hier bewusst nicht wiederholt — das Verzeichnis ist öffentlich).
 Inhaltlich gilt:
 
-- Zahlungsfrist **7 Tage** (nicht 24 Stunden: bei fünf- bis sechsstelligen
-  Beträgen scheitert ein Tag oft am Tageslimit im Online-Banking)
+- Zahlungsfrist **24 Stunden** (Stand 24.08.2026). Anmerkung: Bei fünf- bis
+  sechsstelligen Beträgen scheitert ein Tag oft am Tageslimit im
+  Online-Banking — sieben Tage wären praxisnäher.
 - Bank: Städtische Sparkasse Offenbach a.M., **BIC HELADEF1OFF**
   — mit dem Buchstaben O, nicht der Ziffer 0
 - Verwendungszweck: interner Code der Uhr, mit Beispiel (z. B. HV-4846),
