@@ -66,7 +66,8 @@ Uhrenmodell werden nur angezeigt, wenn sie in `js/data.js` gepflegt sind.
 - Statisch, kein Build-Schritt. GSAP + ScrollTrigger + Lenis lokal gevendort, Inter variable lokal.
 - `js/shell.js` injiziert Header/Footer/Cart-Drawer auf jeder Seite.
 - Warenkorb in `localStorage` (`hv_cart_v1`), Bestellungen/Formulare ebenso (`hv_orders`, `hv_ankauf_requests`, `hv_suchauftrag_requests`) — kein Backend.
-- Checkout ist funktional bis zur Bestellbestätigung; Zahlarten: Überweisung, Zahlung im Showroom, Finanzierungsanfrage.
+- Checkout laeuft ueber die Shopify-Kasse (Storefront-API). Dort sind derzeit
+  PayPal und Banküberweisung freigeschaltet; siehe SHOPIFY-EINRICHTUNG.md.
 - Kontakt/Socials echt: info@hahntime.com, WhatsApp +49 176 203 800 47 (auch im Impressum),
   Telefon +49 176 8421 1760, IG @hahn.vo, TikTok @hahn.vo, YouTube @hahn-vo.
 

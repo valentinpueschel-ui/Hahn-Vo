@@ -152,11 +152,11 @@
       order.payment = 'shopify';
       panel.innerHTML =
         '<h2>Zahlung</h2>' +
-        '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.7;max-width:58ch">Ihre Zahlung läuft über unsere verschlüsselte Kasse — abgesichert nach Bankenstandard. Sie wählen dort zwischen Kreditkarte, Apple&nbsp;Pay, Google&nbsp;Pay, PayPal und Sofortüberweisung. Ihre Daten sind bereits hinterlegt.</p>' +
+        /* Die Auswahl muss dem entsprechen, was im Shopify-Konto wirklich
+           freigeschaltet ist — Stand 24.08.2026: PayPal und Banküberweisung. */
+        '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.7;max-width:58ch">Ihre Zahlung läuft über unsere verschlüsselte Kasse — abgesichert nach Bankenstandard. Sie wählen dort zwischen PayPal und Banküberweisung. Ihre Daten sind bereits hinterlegt.</p>' +
         '<div class="pay-row">' +
-          '<span class="pay-badge">Kreditkarte</span><span class="pay-badge">Apple&nbsp;Pay</span>' +
-          '<span class="pay-badge">Google&nbsp;Pay</span><span class="pay-badge">PayPal</span>' +
-          '<span class="pay-badge">Sofortüberweisung</span>' +
+          '<span class="pay-badge">PayPal</span><span class="pay-badge">Banküberweisung</span>' +
         '</div>' +
         '<div class="field" style="margin-top:22px"><label>Anmerkung zur Bestellung (optional)</label>' +
         '<textarea id="fNote" placeholder="z. B. Wunschtermin für die Übergabe …">' + esc(order.note) + '</textarea></div>' +

@@ -1,7 +1,42 @@
 # Shopify — was noch im Adminbereich einzustellen ist
 
 Die Website ist fertig verdrahtet. Was hier steht, lässt sich nur direkt in
-Shopify setzen. Reihenfolge egal, alle Punkte sind unabhängig.
+Shopify setzen.
+
+---
+
+## Stand vom 24.08.2026 (live abgefragt)
+
+Über die Storefront-Schnittstelle und die echte Kasse geprüft:
+
+| Punkt | Stand |
+|---|---|
+| Shop-Name „Hahn & Vo“ | erledigt |
+| Versand Deutschland | `Standard` **0,00 €** — passt |
+| Versand Deutschland | zusätzlich `Express` **9,99 €** — nicht vorgesehen, besser löschen |
+| Versand Europa / Welt | **fehlt vollständig** |
+| Verkaufsländer | **nur Deutschland** — Ausland kann nicht bestellen |
+| Zahlarten | PayPal, Banküberweisung |
+| Kreditkarte / Apple Pay / Google Pay | nicht aktiv (Shopify Payments fehlt) |
+| Abholung im Showroom | nicht aktiviert |
+| Anrede in der Kasse | Shopify duzt noch („Gib deine Lieferadresse ein“) |
+
+Die beiden dringendsten Punkte stehen ganz oben: **Verkaufsländer** und
+**Versandzonen**. Ohne sie bricht jede Bestellung aus dem Ausland ab.
+
+---
+
+## 0. Verkaufsländer freischalten  ⚠️ zuerst
+
+*Einstellungen → Märkte*
+
+Aktuell verkauft der Shop nur nach Deutschland — in der Kasse lässt sich
+kein anderes Land auswählen. Damit läuft der Versand nach Europa und in die
+Welt ins Leere, obwohl die Website ihn anbietet.
+
+- Markt **Europa** anlegen (oder die Länder aus der Tabelle unten aufnehmen)
+- Markt **Übrige Welt** aktivieren
+- Währung überall **EUR**, damit die Preise identisch zur Website bleiben
 
 ---
 
