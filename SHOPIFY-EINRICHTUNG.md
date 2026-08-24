@@ -33,7 +33,6 @@ bewusst ausgelassen (Sanktionen). Falls doch gewünscht, sag Bescheid.
 1. **Kreditkarte, Apple Pay, Google Pay** — Shopify Payments ist nicht aktiviert.
    Solange das so bleibt, nennt die Website nur PayPal und Banküberweisung.
    *Einstellungen → Zahlungen → Shopify Payments aktivieren*
-2. **Bankverbindung** für den Überweisungstext (Punkt 3 unten) — fehlt noch.
 3. **Anrede:** Die Kasse duzt („Gib deine Lieferadresse ein“).
    *Einstellungen → Sprachen → Checkout-Inhalte bearbeiten*
 4. **Kassen-Gestaltung:** Logo, Petrol #0E334F, Inter.
@@ -74,34 +73,34 @@ unserer Seite „Persönliche Übergabe im Showroom“ gewählt hat.
 
 ---
 
-## 3. Banküberweisung: Text für die Kasse
+## 3. Banküberweisung — ✅ hinterlegt am 24.08.2026
 
 *Einstellungen → Zahlungen → Manuelle Zahlungsmethoden → Banküberweisung*
 
-Ins Feld **„Zusätzliche Details“** (erscheint in der Kasse und in der
-Bestellbestätigung) folgenden Text einsetzen:
+Zwei Felder, zwei Zeitpunkte:
+
+**„Zusätzliche Details"** — erscheint in der Kasse, sobald der Kunde die
+Zahlart auswählt:
 
 ```
-Bitte überweisen Sie den Rechnungsbetrag innerhalb von 24 Stunden auf folgendes Konto:
-
-Kontoinhaber: Hahn & Vo OHG
-IBAN: [IBAN EINSETZEN]
-BIC: [BIC EINSETZEN]
-Bank: [BANK EINSETZEN]
-
-Verwendungszweck: Bitte den internen Code verwenden (siehe Beschreibung der Uhr, z. B. HV-462).
-
-Ihre Uhr bleibt bis zum Zahlungseingang verbindlich für Sie reserviert. Sobald der Betrag bei uns eingegangen ist, melden wir uns zur Abstimmung von Versand oder Übergabetermin.
+Sie erhalten unsere Bankverbindung mit der Bestellbestätigung. Ihre Uhr bleibt bis zum Zahlungseingang für Sie reserviert.
 ```
+
+**„Zahlungsanweisungen"** — erscheint nach dem Bestellabschluss und in der
+Bestellbestätigung. Enthält Kontoinhaber, IBAN, BIC und Bank (im Adminbereich
+hinterlegt, hier bewusst nicht wiederholt — das Verzeichnis ist öffentlich).
+Inhaltlich gilt:
+
+- Zahlungsfrist **7 Tage** (nicht 24 Stunden: bei fünf- bis sechsstelligen
+  Beträgen scheitert ein Tag oft am Tageslimit im Online-Banking)
+- Bank: Städtische Sparkasse Offenbach a.M., **BIC HELADEF1OFF**
+  — mit dem Buchstaben O, nicht der Ziffer 0
+- Verwendungszweck: interner Code der Uhr, mit Beispiel (z. B. HV-4846),
+  damit der Kunde weiß, wo er ihn findet
+- Durchgehend siezen
 
 Der interne Code steht bei jeder Uhr in der Beschreibung und auf unserer
 Website in der Datenblatt-Tabelle (Zeile „Interner Code“).
-
-**Zahlungsanweisungen-Feld** (falls separat vorhanden), kurz:
-
-```
-Überweisung innerhalb von 24 Stunden. Verwendungszweck: interner Code der Uhr (siehe Beschreibung).
-```
 
 ---
 
