@@ -20,7 +20,7 @@ Kasse nachgeprüft:
 | Zone Übrige Welt | `Versicherter Werttransport` **150,00 €** |
 | Alte Tarife `Standard 5,99 €` und `Express 9,99 €` | gelöscht |
 | Abholung im Showroom | aktiviert, kostenlos, mit Terminhinweis |
-| Zahlarten | PayPal, Banküberweisung |
+| Zahlarten | Kreditkarte (Visa, Mastercard, Amex), Apple Pay, Google Pay, Shop Pay, PayPal, Banküberweisung |
 
 Nachgemessen an der Kasse: Deutschland 0 €, Österreich 80 €, Frankreich 80 €,
 Schweiz 80 €, USA 150 €. Auswählbare Länder: 235.
@@ -30,15 +30,22 @@ bewusst ausgelassen (Sanktionen). Falls doch gewünscht, sag Bescheid.
 
 ### Was noch offen ist
 
-1. **Kreditkarte, Apple Pay, Google Pay** — Shopify Payments ist nicht aktiviert.
-   Solange das so bleibt, nennt die Website nur PayPal und Banküberweisung.
-   *Einstellungen → Zahlungen → Shopify Payments aktivieren*
-2. **Anrede:** Die Kasse duzt. Die 27 Stellen, die ein Kunde wirklich sieht,
-   stehen mit fertigem Ersatztext in `SHOPIFY-SIEZEN.md`.
-3. **Kassen-Gestaltung:** Logo liegt in der Shopify-Mediathek, alle Werte
-   stehen in `SHOPIFY-KASSE-GESTALTEN.md`. Per Schnittstelle nicht moeglich —
-   Shopify erlaubt das nur auf dem Plus-Tarif.
-5. **Eigene Domain** `shop.hahn-vo.de` statt `tami1g-0j.myshopify.com`.
+1. **Eigene Domain** `shop.hahn-vo.de` statt `tami1g-0j.myshopify.com`.
+   *Einstellungen → Domains*
+2. **Anrede:** Die Kasse duzt noch. Die 27 Stellen, die ein Kunde wirklich
+   sieht, stehen mit fertigem Ersatztext in `SHOPIFY-SIEZEN.md`. Bewusst
+   zurückgestellt.
+3. **E-Mails:** Bestellbestätigung und Versandbestätigung duzen ebenfalls.
+   *Einstellungen → Benachrichtigungen*
+
+### Erledigt am 24.08.2026
+
+- Märkte Europa und Übrige Welt, 235 Verkaufsländer
+- Versandtarife 0 / 80 / 150 €, Altarife entfernt
+- Abholung im Showroom
+- Banküberweisung mit Kontodaten und Verwendungszweck
+- Kassen-Gestaltung: Logo, Petrol, Creme, Inter (`SHOPIFY-KASSE-GESTALTEN.md`)
+- Shopify Payments: Visa, Mastercard, Amex, Apple Pay, Google Pay, Shop Pay
 
 ---
 
