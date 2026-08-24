@@ -14,7 +14,7 @@
   var step = 0;
 
   /* Versandzonen — muss mit den Zonen in Shopify übereinstimmen:
-     Deutschland kostenfrei · Europa 79 € · weltweit 150 € */
+     Deutschland kostenfrei · Europa 80 € · weltweit 150 € */
   var EUROPA = ['AT','BE','BG','CH','CZ','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE',
                 'IS','IT','LI','LT','LU','LV','MC','MT','NL','NO','PL','PT','RO','SE','SI','SK'];
   var LAENDER = [
@@ -34,7 +34,7 @@
     if (order.delivery === 'showroom') return 0;
     var c = order.kunde.land || 'DE';
     if (c === 'DE') return 0;
-    return EUROPA.indexOf(c) !== -1 ? 79 : 150;
+    return EUROPA.indexOf(c) !== -1 ? 80 : 150;
   }
   function versandLabel() {
     if (order.delivery === 'showroom') return 'entfällt (Abholung)';
@@ -141,7 +141,7 @@
           '<div class="chip-sub">Garden Tower, 7. Etage, Frankfurt — mit Besichtigung, Anprobe und Zeit. Terminabstimmung nach der Bestellung. Kostenfrei.</div></span><span class="micro">Empfohlen</span></span></label>' +
         '<label class="chip"><input type="radio" name="dl" value="versand"' + (order.delivery === 'versand' ? ' checked' : '') + '>' +
           '<span class="chip-face"><span><span class="chip-title">Versicherter Werttransport</span>' +
-          '<div class="chip-sub">Vollversichert, doppelt verpackt, mit Sendungsverfolgung. Deutschland kostenfrei · Europa 79 € · weltweit 150 €.</div></span></span></label>' +
+          '<div class="chip-sub">Vollversichert, doppelt verpackt, mit Sendungsverfolgung. Deutschland kostenfrei · Europa 80 € · weltweit 150 €.</div></span></span></label>' +
       '</div>' +
       '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
       '<button class="btn btn-solid" data-next>Weiter zur Zahlung <span class="arr">→</span></button></div>';

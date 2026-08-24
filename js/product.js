@@ -151,17 +151,48 @@
     return '<div class="row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>';
   }).join('');
 
+  /* Beschreibung dieser Uhr: der Satz zu den Bildern steht auf jeder Seite
+     und wird deshalb hier weggelassen. */
+  var BILDSATZ = /Unsere Bilder sind unbearbeitet.*?wahrnimmt\.*/i;
+  var intro = String(p.desc || '').replace(BILDSATZ, '').replace(/\s+/g, ' ').trim();
+  intro = intro.replace(/[\s.]+$/, '');
+  if (intro) intro += '.';
+
   /* Unser Versprechen — gleicher Text unter jeder Uhr */
   var VERSPRECHEN = [
     'Jeder Zeitmesser wird auf Echtheit, Funktion und Ganggenauigkeit überprüft. Sie bekommen also das Rundum-Sorglos-Paket und zusätzlich 12 Monate Garantie, wobei die Wasserdichtigkeit ausgeschlossen ist.',
     'Unsere Zeitmesser können auch in unserem Showroom nach Terminvereinbarung im Frankfurter Bankenviertel besichtigt werden.',
     'Falls Sie wider Erwarten unsicher sind, ob dieser Zeitmesser zu Ihnen passt, bieten wir ein 14-tägiges Rückgaberecht an.',
-    'Der Versand innerhalb Deutschlands ist kostenlos. Außerhalb Deutschlands hängen die Versandkosten vom jeweiligen Standort ab und werden individuell berechnet.',
+    'Der Versand innerhalb Deutschlands ist kostenlos. Innerhalb Europas berechnen wir pauschal 80 €, weltweit 150 € — versichert und mit Sendungsverfolgung.',
     'Für weitere Fragen stehen wir jederzeit gerne zur Verfügung.',
     'Wir freuen uns auf Ihre Nachricht.',
   ];
+  /* Manche Beschreibungen tragen eine Zustandsliste im Fliesstext mit —
+     als Aufzaehlung ist sie deutlich besser zu lesen. */
+  var MERKMAL = /(Gesamtbewertung|Gesamtzustand|Gehäuse|Glas|Lünette|Armband|Band|Schließe|Uhrwerk|Zifferblatt|Krone|Drücker)\s*:/g;
+  var teile = intro.split(/Alle wichtigen Details auf einen Blick:\s*/i);
+  var kopf = teile[0].replace(/[\s.]+$/, '');
+  if (kopf) kopf += '.';
+  var punkte = [];
+  if (teile.length > 1) {
+    punkte = teile[1]
+      .replace(/^[-–]\s*/, '')
+      .replace(/\s+[-–]\s+/g, '\n')
+      .replace(MERKMAL, '\n$1:')
+      .split('\n').map(function (t) { return t.trim(); }).filter(Boolean);
+  }
+
   document.getElementById('pdDesc').innerHTML =
-    '<h3>Unser Versprechen</h3>' +
+    (kopf ? '<h3>Diese Uhr</h3><p>' + kopf + '</p>' : '') +
+    (punkte.length
+      ? '<ul class="pd-cond">' + punkte.map(function (t) {
+          var k = t.indexOf(':');
+          return k > 0
+            ? '<li><b>' + t.slice(0, k) + '</b><span>' + t.slice(k + 1).trim().replace(/[\s.]+$/, '') + '</span></li>'
+            : '<li><span>' + t + '</span></li>';
+        }).join('') + '</ul>'
+      : '') +
+    '<h3 class="pd-promise">Unser Versprechen</h3>' +
     VERSPRECHEN.map(function (t) { return '<p>' + t + '</p>'; }).join('');
 
   /* related: same brand first, then price neighbours */

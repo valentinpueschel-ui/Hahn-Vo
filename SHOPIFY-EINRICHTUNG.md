@@ -14,7 +14,7 @@ Drei Zonen anlegen, jeweils mit **Pauschaltarif**:
 | Zone | Länder | Preis |
 |---|---|---|
 | Deutschland | Deutschland | **0,00 €** |
-| Europa | Österreich, Schweiz, Frankreich, Italien, Niederlande, Belgien, Luxemburg, Spanien, Portugal, Dänemark, Schweden, Norwegen, Finnland, Polen, Tschechien, Ungarn, Griechenland, Irland, Vereinigtes Königreich, Island, Liechtenstein, Monaco, Malta, Estland, Lettland, Litauen, Slowenien, Slowakei, Kroatien, Rumänien, Bulgarien | **79,00 €** |
+| Europa | Österreich, Schweiz, Frankreich, Italien, Niederlande, Belgien, Luxemburg, Spanien, Portugal, Dänemark, Schweden, Norwegen, Finnland, Polen, Tschechien, Ungarn, Griechenland, Irland, Vereinigtes Königreich, Island, Liechtenstein, Monaco, Malta, Estland, Lettland, Litauen, Slowenien, Slowakei, Kroatien, Rumänien, Bulgarien | **80,00 €** |
 | Übrige Welt | alle restlichen Länder | **150,00 €** |
 
 Tarifname jeweils: `Versicherter Werttransport`
