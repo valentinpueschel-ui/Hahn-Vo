@@ -35,8 +35,9 @@ bewusst ausgelassen (Sanktionen). Falls doch gewünscht, sag Bescheid.
    *Einstellungen → Zahlungen → Shopify Payments aktivieren*
 2. **Anrede:** Die Kasse duzt. Die 27 Stellen, die ein Kunde wirklich sieht,
    stehen mit fertigem Ersatztext in `SHOPIFY-SIEZEN.md`.
-4. **Kassen-Gestaltung:** Logo, Petrol #0E334F, Inter.
-   *Einstellungen → Checkout → Anpassen*
+3. **Kassen-Gestaltung:** Logo liegt in der Shopify-Mediathek, alle Werte
+   stehen in `SHOPIFY-KASSE-GESTALTEN.md`. Per Schnittstelle nicht moeglich —
+   Shopify erlaubt das nur auf dem Plus-Tarif.
 5. **Eigene Domain** `shop.hahn-vo.de` statt `tami1g-0j.myshopify.com`.
 
 ---
