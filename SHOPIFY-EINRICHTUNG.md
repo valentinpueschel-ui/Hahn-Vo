@@ -38,6 +38,39 @@ bewusst ausgelassen (Sanktionen). Falls doch gewünscht, sag Bescheid.
 3. **E-Mails:** Bestellbestätigung und Versandbestätigung duzen ebenfalls.
    *Einstellungen → Benachrichtigungen*
 
+### So geht die Domain `shop.hahn-vo.de`
+
+DNS für hahn-vo.de liegt bei **GoDaddy** (Nameserver `ns65/ns66.domaincontrol.com`).
+
+**1. Bei GoDaddy einen Eintrag anlegen**
+
+*Domain-Portfolio → hahn-vo.de → DNS → Eintrag hinzufügen*
+
+| Feld | Wert |
+|---|---|
+| Typ | `CNAME` |
+| Name | `shop` |
+| Wert / Verweist auf | `shops.myshopify.com` |
+| TTL | 1 Stunde |
+
+Nichts Bestehendes ändern. Der alte Shop unter hahn-vo.de läuft weiter.
+
+**2. In Shopify verbinden**
+
+*Einstellungen → Domains → Bestehende Domain verbinden* → `shop.hahn-vo.de`
+eingeben → **Verifizieren**. Shopify prüft den Eintrag und stellt das
+SSL-Zertifikat automatisch aus (dauert bis zu 48 Stunden, meist Minuten).
+
+**3. Als primäre Domain setzen**
+
+Danach in derselben Ansicht `shop.hahn-vo.de` als **primäre Domain** wählen.
+Erst dadurch lauten die Kassen-Adressen `shop.hahn-vo.de/checkouts/…` statt
+`tami1g-0j.myshopify.com/checkouts/…`.
+
+> An der Website ist nichts zu ändern: Die Kassen-Adresse kommt von Shopify
+> selbst und stellt sich automatisch um. Die Schnittstellen-Adresse in
+> `js/data.js` bleibt `tami1g-0j.myshopify.com` — das ist so richtig.
+
 ### Erledigt am 24.08.2026
 
 - Märkte Europa und Übrige Welt, 235 Verkaufsländer
