@@ -106,6 +106,11 @@ ul { list-style: none; }
 .wrap { padding-left: var(--gutter); padding-right: var(--gutter); max-width: 1680px; margin: 0 auto; }
 .section { padding-top: clamp(72px, 9vw, 150px); padding-bottom: clamp(72px, 9vw, 150px); }
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(32px, 4.5vw, 64px); }
+/* Schmale Displays: Schaltflaeche unter die Ueberschrift, sonst wird sie abgeschnitten */
+@media (max-width: 760px) {
+  .section-head { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .section-head .btn { align-self: flex-start; }
+}
 .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 .rule { border: 0; border-top: 1px solid var(--line); }
 
