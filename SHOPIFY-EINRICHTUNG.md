@@ -5,42 +5,44 @@ Shopify setzen.
 
 ---
 
-## Stand vom 24.08.2026 (live abgefragt)
+## Stand vom 24.08.2026 — erledigt
 
-Über die Storefront-Schnittstelle und die echte Kasse geprüft:
+Am 24.08.2026 direkt über die Admin-Schnittstelle gesetzt und an der echten
+Kasse nachgeprüft:
 
 | Punkt | Stand |
 |---|---|
 | Shop-Name „Hahn & Vo“ | erledigt |
-| Versand Deutschland | `Standard` **0,00 €** — passt |
-| Versand Deutschland | zusätzlich `Express` **9,99 €** — nicht vorgesehen, besser löschen |
-| Versand Europa / Welt | **fehlt vollständig** |
-| Verkaufsländer | **nur Deutschland** — Ausland kann nicht bestellen |
+| Markt **Europa** (32 Länder) | angelegt, aktiv, EUR |
+| Markt **Übrige Welt** (202 Länder) | angelegt, aktiv, EUR |
+| Zone Deutschland | `Versicherter Werttransport` **0,00 €**, ohne Mindestbestellwert |
+| Zone Europa | `Versicherter Werttransport` **80,00 €** |
+| Zone Übrige Welt | `Versicherter Werttransport` **150,00 €** |
+| Alte Tarife `Standard 5,99 €` und `Express 9,99 €` | gelöscht |
+| Abholung im Showroom | aktiviert, kostenlos, mit Terminhinweis |
 | Zahlarten | PayPal, Banküberweisung |
-| Kreditkarte / Apple Pay / Google Pay | nicht aktiv (Shopify Payments fehlt) |
-| Abholung im Showroom | nicht aktiviert |
-| Anrede in der Kasse | Shopify duzt noch („Gib deine Lieferadresse ein“) |
 
-Die beiden dringendsten Punkte stehen ganz oben: **Verkaufsländer** und
-**Versandzonen**. Ohne sie bricht jede Bestellung aus dem Ausland ab.
+Nachgemessen an der Kasse: Deutschland 0 €, Österreich 80 €, Frankreich 80 €,
+Schweiz 80 €, USA 150 €. Auswählbare Länder: 235.
 
----
+**Nicht freigeschaltet:** Russland, Belarus, Iran, Nordkorea, Syrien, Kuba —
+bewusst ausgelassen (Sanktionen). Falls doch gewünscht, sag Bescheid.
 
-## 0. Verkaufsländer freischalten  ⚠️ zuerst
+### Was noch offen ist
 
-*Einstellungen → Märkte*
-
-Aktuell verkauft der Shop nur nach Deutschland — in der Kasse lässt sich
-kein anderes Land auswählen. Damit läuft der Versand nach Europa und in die
-Welt ins Leere, obwohl die Website ihn anbietet.
-
-- Markt **Europa** anlegen (oder die Länder aus der Tabelle unten aufnehmen)
-- Markt **Übrige Welt** aktivieren
-- Währung überall **EUR**, damit die Preise identisch zur Website bleiben
+1. **Kreditkarte, Apple Pay, Google Pay** — Shopify Payments ist nicht aktiviert.
+   Solange das so bleibt, nennt die Website nur PayPal und Banküberweisung.
+   *Einstellungen → Zahlungen → Shopify Payments aktivieren*
+2. **Bankverbindung** für den Überweisungstext (Punkt 3 unten) — fehlt noch.
+3. **Anrede:** Die Kasse duzt („Gib deine Lieferadresse ein“).
+   *Einstellungen → Sprachen → Checkout-Inhalte bearbeiten*
+4. **Kassen-Gestaltung:** Logo, Petrol #0E334F, Inter.
+   *Einstellungen → Checkout → Anpassen*
+5. **Eigene Domain** `shop.hahn-vo.de` statt `tami1g-0j.myshopify.com`.
 
 ---
 
-## 1. Versandzonen
+## 1. Versandzonen — ✅ erledigt am 24.08.2026
 
 *Einstellungen → Versand und Zustellung → Versand → Tarife bearbeiten*
 
@@ -59,7 +61,7 @@ Tarifname jeweils: `Versicherter Werttransport`
 
 ---
 
-## 2. Abholung im Showroom
+## 2. Abholung im Showroom — ✅ erledigt am 24.08.2026
 
 *Einstellungen → Versand und Zustellung → Abholung vor Ort → Standort aktivieren*
 

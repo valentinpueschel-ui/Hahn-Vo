@@ -15,7 +15,8 @@
 
   /* Versandzonen — muss mit den Zonen in Shopify übereinstimmen:
      Deutschland kostenfrei · Europa 80 € · weltweit 150 € */
-  var EUROPA = ['AT','BE','BG','CH','CZ','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE',
+  /* Muss deckungsgleich mit der Shopify-Zone "Europa" bleiben (32 Laender). */
+  var EUROPA = ['AT','BE','BG','CH','CY','CZ','DK','EE','ES','FI','FR','GB','GR','HR','HU','IE',
                 'IS','IT','LI','LT','LU','LV','MC','MT','NL','NO','PL','PT','RO','SE','SI','SK'];
   var LAENDER = [
     ['DE','Deutschland'], ['AT','Österreich'], ['CH','Schweiz'], ['FR','Frankreich'], ['IT','Italien'],
