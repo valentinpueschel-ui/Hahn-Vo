@@ -52,7 +52,11 @@ drin). Immer die v2-Adresse verwenden.
 Stand 21.08.2026: **66 Uhren**. Produktbilder liegen lokal unter
 `assets/products/p<id>/`, interner Code je Uhr ist `HV-<id>`.
 
-**Platzhalter:** Kundenstimmen sind redaktionell. Showroom-Fotos
+**Kundenstimmen:** echt — Wortlaut und Fotos von hahn-vo.de/suchanfrage-einer-uhr
+uebernommen (24.08.2026), Fotos unter `assets/img/reviews/`. Kaufdatum und
+Uhrenmodell werden nur angezeigt, wenn sie in `js/data.js` gepflegt sind.
+
+**Platzhalter:** Showroom-Fotos
 (`way-showroom.jpg`, `showroom-band.jpg`) und das Ankauf-Motiv
 (`way-ankauf.jpg`) sind echte Aufnahmen des Hauses, vom Kunden geliefert
 (21.08.2026) — vorlaeufig, bis professionelle Fotos vorliegen.

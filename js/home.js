@@ -380,11 +380,11 @@
       '<span class="stars" aria-hidden="true">„</span>' +
       '<blockquote>' + t.text + '</blockquote>' +
       '<figcaption class="q-foot">' +
-        '<span class="q-thumb"><img src="' + t.img + '" alt="' + t.watch + '" loading="lazy"></span>' +
+        '<span class="q-thumb"><img src="' + t.img + '" alt="Uhr von ' + t.name + '" loading="lazy"></span>' +
         '<span class="q-meta">' +
           '<span class="q-name">' + t.name + '</span>' +
-          '<span class="q-date">Gekauft im ' + t.date + '</span>' +
-          '<span class="q-watch">' + t.watch + '</span>' +
+          (t.date ? '<span class="q-date">Gekauft im ' + t.date + '</span>' : '') +
+          (t.watch ? '<span class="q-watch">' + t.watch + '</span>' : '') +
         '</span>' +
       '</figcaption>' +
     '</figure>';

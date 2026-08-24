@@ -1996,144 +1996,44 @@ window.NEW_IN = ["p2162", "p5069", "p4846", "p4808", "p3771", "p2446"];
 
 window.TESTIMONIALS = [
  {
-  "name": "Sebastian K.",
-  "date": "Juni 2026",
-  "watch": "Omega Seamaster Aqua Terra GMT",
-  "img": "assets/products/p395/0.jpg",
-  "text": "Der Zustand war exakt wie beschrieben, eher besser. Die Übergabe im Showroom über den Dächern des Bankenviertels ist ein Erlebnis für sich."
+  "name": "Andrea M.",
+  "img": "assets/img/reviews/andrea-m.jpg",
+  "text": "Communication with seller has been easy, and the watch matched the offer perfectly. Hannes is a very nice person to exchange messages with, adding a personal touch to the interaction. thank you!"
  },
  {
-  "name": "Daniel R.",
-  "date": "Mai 2026",
-  "watch": "Rolex Datejust 41",
-  "img": "assets/products/p393/0.jpg",
-  "text": "Sehr transparente Beratung, kein Verkaufsdruck. Die Uhr wurde vor meinen Augen geöffnet und geprüft. So stellt man sich den Kauf einer Luxusuhr vor."
+  "name": "Marcel N.",
+  "img": "assets/img/reviews/marcel-n.jpg",
+  "text": "Hallo Hannes & Minh, ich bin super happy mit der Uhr, sie ist in einem Top-Zustand! Danke für den tollen Service und dass ihr mein Wunschmodell so schnell besorgen konntet 👌🏽"
  },
  {
-  "name": "Tobias N.",
-  "date": "April 2026",
-  "watch": "Tudor Black Bay 41",
-  "img": "assets/products/p413/0.jpg",
-  "text": "Suchauftrag abgegeben, drei Wochen später kam das Angebot. Besserer Zustand und besserer Preis als alles, was ich selbst gefunden hatte."
+  "name": "Stephan L.",
+  "img": "assets/img/reviews/stephan-l.jpg",
+  "text": "Watch looks very good. I am very happy! Thx for all. I hope to meet you someday for something else"
  },
  {
-  "name": "Alexandra B.",
-  "date": "März 2026",
-  "watch": "IWC Portofino 37",
-  "img": "assets/products/p357/0.jpg",
-  "text": "Meine alte Uhr wurde fair in Zahlung genommen, die Differenz war nach zwei Tagen auf dem Konto. Abwicklung komplett unkompliziert."
+  "name": "Giuseppe F.",
+  "img": "assets/img/reviews/giuseppe-f.jpg",
+  "text": "Hey guys. Everything ok, package arrived, watch perfect. Thank you very much for everything."
  },
  {
-  "name": "Jonas W.",
-  "date": "Februar 2026",
-  "watch": "Breitling Navitimer B01",
-  "img": "assets/products/p415/0.jpg",
-  "text": "Versicherter Versand, doppelt verpackt, mit frischem Servicenachweis. Kommunikation per WhatsApp innerhalb von Minuten. Absolute Empfehlung."
+  "name": "Christian H.",
+  "img": "assets/img/reviews/christian-h.jpg",
+  "text": "Servus Hannes, Uhr ist da, bin mega zufrieden, danke fürs organisieren, gerne wieder."
  },
  {
-  "name": "Martin H.",
-  "date": "Januar 2026",
-  "watch": "Rolex GMT-Master II",
-  "img": "assets/products/p9177/0.jpg",
-  "text": "Ich habe lange verglichen. Hier stimmte am Ende alles: Full Set, nachvollziehbare Historie und ein Preis, der sich am Markt belegen ließ."
+  "name": "Damian M.",
+  "img": "assets/img/reviews/damian-m.jpg",
+  "text": "Ist angekommen. Danke auch für den netten Kontakt und den schnellen Versand und bis zum nächsten Mal. 😁"
  },
  {
-  "name": "Christina L.",
-  "date": "Dezember 2025",
-  "watch": "Cartier Clé de Cartier",
-  "img": "assets/products/p1157/0.jpg",
-  "text": "Ein Weihnachtsgeschenk für meinen Mann. Ich hatte wenig Ahnung von Uhren, wurde aber geduldig und ehrlich beraten. Er trägt sie jeden Tag."
+  "name": "Mikel U.",
+  "img": "assets/img/reviews/mikel-u.jpg",
+  "text": "Thank you so much. It was a very smooth communication. Looking forward for the next watch and enjoy wearing this IWC!"
  },
  {
-  "name": "Stephan F.",
-  "date": "November 2025",
-  "watch": "A. Lange & Söhne Saxonia",
-  "img": "assets/products/p5825/0.jpg",
-  "text": "Selten so ein gepflegtes Exemplar gesehen. Auf Nachfrage bekam ich sofort Makroaufnahmen von jedem Detail, sogar vom Werk."
- },
- {
-  "name": "Erik P.",
-  "date": "November 2025",
-  "watch": "Sinn 203 Ti Chronograph",
-  "img": "assets/products/p7015/0.jpg",
-  "text": "Kleiner Preis, gleiche Sorgfalt: Auch bei einer Uhr unter 2.500 Euro wurde geöffnet, geprüft und dokumentiert. Das nenne ich Standards."
- },
- {
-  "name": "Nadja S.",
-  "date": "Oktober 2025",
-  "watch": "Nomos Ludwig",
-  "img": "assets/products/p434/0.jpg",
-  "text": "Schnelle Antwort, ehrliche Zustandsbeschreibung, sicherer Versand nach Berlin. Die Uhr kam schöner an, als die Fotos versprochen hatten."
- },
- {
-  "name": "Michael T.",
-  "date": "September 2025",
-  "watch": "Omega Seamaster Diver 300 M",
-  "img": "assets/products/p2446/0.jpg",
-  "text": "Termin am Samstagabend, eine Stunde Zeit, drei Uhren anprobiert. Am Ende wurde es die Seamaster. Keine Sekunde bereut."
- },
- {
-  "name": "Kerstin M.",
-  "date": "September 2025",
-  "watch": "Jaeger-LeCoultre Reverso",
-  "img": "assets/products/p446/0.jpg",
-  "text": "Eine Vintage-Uhr kauft man nicht ohne Vertrauen. Hier wurde mir jede Frage zur Historie beantwortet, inklusive Servicebelegen."
- },
- {
-  "name": "Oliver B.",
-  "date": "August 2025",
-  "watch": "TAG Heuer Carrera",
-  "img": "assets/products/p350/0.jpg",
-  "text": "Meine erste Automatikuhr. Statt mir die teuerste zu verkaufen, wurde mir die passendste empfohlen. Genau deshalb komme ich wieder."
- },
- {
-  "name": "Patrick S.",
-  "date": "Juli 2025",
-  "watch": "Omega Planet Ocean",
-  "img": "assets/products/p384/0.jpg",
-  "text": "Werttransport nach München, versichert und mit Sendungsverfolgung. Zwei Tage später war die Uhr am Handgelenk. Reibungslos."
- },
- {
-  "name": "Julia V.",
-  "date": "Juni 2025",
-  "watch": "Rolex Datejust 36",
-  "img": "assets/products/p458/0.jpg",
-  "text": "Das blaue Blatt sah auf den Fotos schon gut aus, in echt ist es noch besser. Danke für die ehrliche Einordnung zum Marktpreis."
- },
- {
-  "name": "Andreas G.",
-  "date": "Mai 2025",
-  "watch": "IWC Big Pilot Top Gun",
-  "img": "assets/products/p454/0.jpg",
-  "text": "Zwei Jahre nach einer bestimmten Keramik-Referenz gesucht. Über das Netzwerk nach Seoul wurde sie in sechs Wochen gefunden. Stark."
- },
- {
-  "name": "Robert K.",
-  "date": "April 2025",
-  "watch": "Breitling Superocean Heritage 46",
-  "img": "assets/products/p1226/0.jpg",
-  "text": "Fairer Ankaufspreis für meine alte Uhr, sofortige Überweisung nach der Prüfung. Beim nächsten Kauf führt kein Weg an Frankfurt vorbei."
- },
- {
-  "name": "Sandra W.",
-  "date": "April 2025",
-  "watch": "Cartier Santos Galbée",
-  "img": "assets/products/p4267/0.jpg",
-  "text": "Unkomplizierter geht es nicht: abends angefragt, morgens Antwort, drei Tage später Übergabe im Showroom mit Kaffee und Zeit."
- },
- {
-  "name": "Frank D.",
-  "date": "März 2025",
-  "watch": "Omega Planet Ocean 39,5 mm",
-  "img": "assets/products/p406/0.jpg",
-  "text": "Als Sammler achte ich auf Kleinigkeiten. Hier stimmten Zwischenglieder, Plomben und Papiere. Ein Händler, der sein Handwerk gelernt hat."
- },
- {
-  "name": "Lukas E.",
-  "date": "Februar 2025",
-  "watch": "Tudor Royal 34",
-  "img": "assets/products/p427/0.jpg",
-  "text": "Ein Geschenk zum Jahrestag, pünktlich und wunderschön verpackt geliefert. Meine Frau war sprachlos. Vielen Dank nach Frankfurt!"
+  "name": "Günther H.",
+  "img": "assets/img/reviews/guenther-h.jpg",
+  "text": "Ihr habt es geschafft (wie euch das gelungen ist kann ich echt nicht sagen) mir 2 megageile Uhren um 12k anzudrehen 😂 unglaulich."
  }
 ];
 
