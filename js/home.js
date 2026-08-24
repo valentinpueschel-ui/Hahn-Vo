@@ -199,7 +199,7 @@
       id: p.id,
       kicker: p.id === window.FLAGSHIP_ID ? 'Das Flaggschiff' : 'Neu eingetroffen',
       name: p.brand + ' ' + p.name,
-      desc: SHOWCASE_COPY[p.id] || (firstSentence ? firstSentence + '.' : 'Geöffnet, geprüft und dokumentiert — jetzt im Showroom zu besichtigen.'),
+      desc: SHOWCASE_COPY[p.id] || (firstSentence ? firstSentence.replace(/\.*$/, '') + '.' : 'Geprüft und dokumentiert — jetzt im Showroom zu besichtigen.'),
       chips: chips,
       avail: p.status === 'available' ? '1 von 1 · sofort verfügbar' : '1 von 1 · aktuell reserviert',
       img: p.images[0],
@@ -223,17 +223,17 @@
     bar: document.getElementById('fsBar'),
   };
 
-  /* one media layer per slide; layer 0 keeps the MB&F film */
-  var layers = [fsMedia.querySelector('.fs-layer')];
-  slides.forEach(function (s, i) {
-    if (i === 0) return;
+  /* eine Medienebene je Uhr — das Bild muss zum Text darunter passen */
+  fsMedia.innerHTML = '';
+  var layers = slides.map(function (s, i) {
     var layer = document.createElement('div');
-    layer.className = 'fs-layer';
-    layer.innerHTML = '<img src="' + s.img + '" alt="' + s.name + '" loading="lazy">';
+    layer.className = 'fs-layer' + (i === 0 ? ' is-active' : '');
+    layer.innerHTML = '<img src="' + s.img + '" alt="' + s.name + '"' +
+                      (i === 0 ? '' : ' loading="lazy"') + '>';
     fsMedia.appendChild(layer);
-    layers.push(layer);
+    return layer;
   });
-  var fsVideo = layers[0] ? layers[0].querySelector('video') : null;
+  var fsVideo = null;
 
   function fill(s, idx) {
     fsEls.kicker.textContent = s.kicker;
