@@ -33,8 +33,8 @@ bewusst ausgelassen (Sanktionen). Falls doch gewünscht, sag Bescheid.
 1. **Kreditkarte, Apple Pay, Google Pay** — Shopify Payments ist nicht aktiviert.
    Solange das so bleibt, nennt die Website nur PayPal und Banküberweisung.
    *Einstellungen → Zahlungen → Shopify Payments aktivieren*
-3. **Anrede:** Die Kasse duzt („Gib deine Lieferadresse ein“).
-   *Einstellungen → Sprachen → Checkout-Inhalte bearbeiten*
+2. **Anrede:** Die Kasse duzt. Die 27 Stellen, die ein Kunde wirklich sieht,
+   stehen mit fertigem Ersatztext in `SHOPIFY-SIEZEN.md`.
 4. **Kassen-Gestaltung:** Logo, Petrol #0E334F, Inter.
    *Einstellungen → Checkout → Anpassen*
 5. **Eigene Domain** `shop.hahn-vo.de` statt `tami1g-0j.myshopify.com`.
@@ -110,8 +110,11 @@ Shopify liefert die deutschen Texte standardmäßig in der Du-Form aus. An zwei
 Stellen umstellen:
 
 **a) Kasse und Onlineshop**
-*Onlineshop → Themes → … → Sprache bearbeiten* → Suchfeld nutzen und die
-Du-Formen ersetzen (`dein` → `Ihr`, `du` → `Sie`, `deine` → `Ihre`).
+*Einstellungen → Sprachen → Deutsch → Standardinhalt ändern* → Kategorie
+„Checkout & System“. **Die fertige Liste steht in `SHOPIFY-SIEZEN.md`** — 27
+Stellen mit Suchtext und Ersatztext, etwa 20 Minuten Arbeit. Über die
+Schnittstelle geht es nicht: Shopify lehnt Schreibzugriffe auf die
+Hauptsprache ab.
 
 **b) E-Mails (Bestellbestätigung, Versandbestätigung usw.)**
 *Einstellungen → Benachrichtigungen* → jede Vorlage öffnen → Text anpassen.
