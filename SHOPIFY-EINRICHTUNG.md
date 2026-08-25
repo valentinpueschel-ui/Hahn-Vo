@@ -191,3 +191,32 @@ Formulierungen für die Bestellbestätigung:
 Siehe **SHOPIFY-AUFRAEUMEN.md**: 28 verkaufte Uhren löschen, 32 neue über
 `shopify-neue-uhren.csv` importieren. Danach bei allen Uhren Bestand **1**
 prüfen (*Produkte → alle auswählen → Bulk-Bearbeitung → Spalte Inventar*).
+
+---
+
+## 7. Differenzbesteuerung — Stand 26.08.2026
+
+Alle 74 Artikel sind als differenzbesteuert nach § 25a UStG hinterlegt.
+
+**In Shopify**
+
+| Punkt | Stand |
+|---|---|
+| Metafeld `uhr.besteuerung` | bei allen 74 Artikeln „Differenzbesteuerung" |
+| Varianten, *Steuer berechnen* | bei allen 74 **abgeschaltet** |
+| Kasse | weist keine Mehrwertsteuer aus — an der echten Kasse nachgeprüft |
+
+Die Kasse zeigte auch vorher schon keine Steuerzeile, weil für Deutschland
+keine Steuerregistrierung eingetragen ist. Der abgeschaltete Schalter sorgt
+dafür, dass das so bleibt, falls später doch eine eingetragen wird — bei
+§ 25a darf die Umsatzsteuer nicht gesondert ausgewiesen werden.
+
+> Wird eine Uhr regelbesteuert eingekauft, müssen **beide** Stellen zurück:
+> Metafeld auf „Regelbesteuerung" und bei der Variante *Steuer berechnen*
+> wieder an. Vom Steuerberater bestätigen lassen.
+
+**Auf der Website**
+
+Der Hinweis steht an vier Stellen: unter dem Preis auf der Produktseite, in
+der Datenblatt-Zeile „Besteuerung", im Warenkorb und in der Kassenübersicht.
+AGB § 3 und das Impressum enthielten ihn bereits.

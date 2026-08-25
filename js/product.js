@@ -145,7 +145,7 @@
     ['Zustand', p.rating ? p.rating : null],
     ['Interner Code', p.code],
     ['Status', HV.statusLabel[p.status]],
-    ['Besteuerung', p.tax || 'inkl. Mehrwertsteuer oder Differenzbesteuerung'],
+    ['Besteuerung', p.tax || 'Differenzbesteuerung nach § 25a UStG'],
   ].filter(function (row) { return row[1]; });
   document.getElementById('specTable').innerHTML = specs.map(function (row) {
     return '<div class="row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>';
