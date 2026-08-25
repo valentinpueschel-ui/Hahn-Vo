@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- chrono24 template for xml feeds -->
+<articles>
+	<!-- use one article tag per listing -->
+	<!-- not every field has to contain information, but the more fields contain information, the better the listing's quality -->
+	<article>
+		<basic_information>
+			<article_id> unique identifiert for this article (NOT the reference number) </article_id>
+			<price></price>
+			<price_negotiable> if you want to accept price suggestions </price_negotiable>
+			<on_hold> option to mark the watch as reserved </on_hold>
+			<availability> in stock / to be procured / on request </availability>
+			<handling_time></handling_time>
+			<brand></brand>
+			<model></model>
+			<product_name> Listing's title. If long, brand and model are extracted as title, the rest is subtitle </product_name>
+			<addition_to_title> Subtitle </addition_to_title>
+			<gender> Is it a Mens watch or a Ladies watch? </gender>
+			<reference_number></reference_number>
+			<condition> overall condition of the watch: brand new, unworn, very good (mint), good (fine), fair, scrap (incomplete/defect) </condition>
+			<taxation_scheme> margin or regular </taxation_scheme>
+			<certification></certification>
+			<serial_number> you can provide a serial number for scam / theft check. Not visible for visitors </serial_number>
+			<description> This text will appear in the free-text "Description" field on the website </description>
+			<link> link to the watch on the merchant's page </link>
+		</basic_information>
+		<signs_of_wear>
+			<wearlevel_dial> hier you can specify the level of wear for specific watch parts </wearlevel_dial>
+			<wearlevel_case> possible values are: </wearlevel_case>
+			<wearlevel_bezel> none </wearlevel_bezel>
+			<wearlevel_glass> slight signs of wear / Barely visible </wearlevel_glass>
+			<wearlevel_caseback> moderate signs of wear / Noticeable </wearlevel_caseback>
+			<wearlevel_bracelet_clasp> heavy signs of wear / Obvious </wearlevel_bracelet_clasp>
+		</signs_of_wear>
+		<caliber>
+			<movement_type> automatic / manual winding / quartz / solar / smart watch </movement_type>
+			<caliber></caliber>
+			<base_caliber></base_caliber>
+			<power_reserve> power reserve in hours </power_reserve>
+			<jewel_number> number of jewels </jewel_number>
+			<frequency> examples: 28800 vph / 4 Hz</frequency>
+		</caliber>
+		<case>
+			<case_material></case_material>
+			<case_diameter></case_diameter>
+			<case_thickness></case_thickness>
+			<bezel_color></bezel_color>
+			<bezel_material></bezel_material>
+			<crystal> sapphire glass, mineral glass, plastic, plexiglass, regular glass </crystal>
+			<dial_color></dial_color>
+			<dial_numbers> arabic, roman, no numerals ... </dial_numbers>
+		</case>
+		<bracelet>
+			<bracelet_color></bracelet_color>
+			<bracelet_material></bracelet_material>
+			<bracelet_length></bracelet_length>
+			<bracelet_thickness></bracelet_thickness>
+			<lug_width></lug_width>
+			<lug_type></lug_type>
+			<clasp_type></clasp_type>
+			<clasp_material></clasp_material>
+		</bracelet>
+		<functionality>
+			<function_defects> list of functions that no longer properly work </function_defects>
+			<measured_waterproof_atm> tested actual water resistance (during revision or service) </measured_waterproof_atm>
+			<measured_accuracy> measured accuracy (i.g. in seconds per day) </measured_accuracy>
+			<measured_amplitude> amplitude of the balance wheel (in degrees) </measured_amplitude>
+		</functionality>
+		<miscellaneous>
+			<modified_parts> list of watch parts that were modified or customized i.e. no longer original </modified_parts>
+			<functions> date, moonphase, ... </functions>
+			<other_attributes> luminescent hands, small seconds, rotating bezel, limited edition ...  </other_attributes>
+			<original_papers> yes/no, 1/0, true/false </original_papers>
+			<original_box> yes/no, 1/0, true/false </original_box>
+			<year></year>
+			<water_resistance> in meter or ATM </water_resistance>
+			<revision_type> type of revision carried out: in-house or by manufacturer </revision_type>
+			<revision_date> the date of the last revision </revision_date>
+		</miscellaneous>
+		<images>
+			<image> first image of product, this image will appear as thumbnail on the search results page </image>
+			<image> room for more images, up to 16 total </image>
+			<image> the link to an image should be enclosed in "<image></image>" tags </image>
+			<image> only one link per tag </image>
+		</images>
+	</article>
+</articles>
