@@ -1738,7 +1738,7 @@ window.PRODUCTS = [
   "movement": "Automatik",
   "sku": null,
   "code": "HV-223",
-  "desc": "ier präsentieren wir die Omega Planet Ocean 42 mit orange Akzenten. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Gut Gehäuse: Sehr gut Glas: Gut (Mikrokratzer, siehe Bilder) Lünette: In Ordnung (leichte Kratzer auf der Pos., 3-5 siehe Bilder) Armband: Sehr gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.",
+  "desc": "Hier präsentieren wir die Omega Planet Ocean 42 mit orange Akzenten. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Gut Gehäuse: Sehr gut Glas: Gut (Mikrokratzer, siehe Bilder) Lünette: In Ordnung (leichte Kratzer auf der Pos., 3-5 siehe Bilder) Armband: Sehr gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.",
   "images": [
    "assets/products/p223/0.jpg",
    "assets/products/p223/1.jpg",
