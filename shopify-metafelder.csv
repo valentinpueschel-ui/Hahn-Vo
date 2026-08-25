@@ -1,19 +1,19 @@
 ﻿Handle,Metafield: uhr.referenz [single_line_text_field],Metafield: uhr.baujahr [number_integer],Metafield: uhr.durchmesser [single_line_text_field],Metafield: uhr.gehaeuse [single_line_text_field],Metafield: uhr.zifferblatt [single_line_text_field],Metafield: uhr.band [single_line_text_field],Metafield: uhr.aufzug [single_line_text_field],Metafield: uhr.kaliber [single_line_text_field],Metafield: uhr.zustand [single_line_text_field],Metafield: uhr.lieferumfang [single_line_text_field],Metafield: uhr.geschlecht [single_line_text_field],Metafield: uhr.code [single_line_text_field]
 sinn-chronograph-vollkalender-38mm-weiss-77990-automatik-p2162,A-90358,,38 mm,Edelstahl (Vergoldet),Weiß,Leder (Aftermarket von Kaufmann),Automatik,,Gut,Nur Papiere,Herren,HV-2162
-tudor-black-bay-bucherer-blue-automatik-only-watch-p5069,79250BB,,43 mm,Bronze,Blau,Textil,Automatik,Automatik (Manufakturwerk),Sehr gut,,Herren,HV-5069
+tudor-black-bay-bucherer-blue-automatik-only-watch-p5069,79250BB,,43 mm,Bronze,Blau,Textil,Automatik,Automatik (Manufakturwerk),Sehr gut,Nur Uhr,Herren,HV-5069
 rolex-datejust-36-seltenes-zifferblatt-mit-diamanten-p4846,116234,2014,36 mm,Edelstahl,Silber,Edelstahl,,Rolex 3135,Gut,Full Set (Box & Papiere),Herren,HV-4846
 patek-philippe-twenty-4-grau-damenuhr-p4808,4910/10A,2010,"25,1 x 30 mm",Edelstahl,Grau,Edelstahl,Quarz,Quarz E15,Gut,Nur Papiere,Damen,HV-4808
-iwc-schaffhausen-portofino-automatic-40-zifferblatt-silber-p3771,,2021,40 mm,Edelstahl,Silber,Leder,Automatik,,Sehr gut,,Herren,HV-3771
+iwc-schaffhausen-portofino-automatic-40-zifferblatt-silber-p3771,IW356517,2021,40 mm,Edelstahl,Silber,Leder,Automatik,,Sehr gut,Nur Uhr,Herren,HV-3771
 omega-seamaster-diver-300-m-zifferblatt-blau-garantiekarte-p2446,212.30.41.20.03.001,2009,41 mm,Edelstahl,Blau,Edelstahl,Automatik,,Gut,Full Set (Box & Papiere),Herren,HV-2446
 breitling-superocean-heritage-46-p1226,A1331212/BF78,2018,,Edelstahl,Schwarz,Edelstahl,Automatik,,Sehr gut,Full Set (Box & Papiere),,HV-1226
 tag-heuer-carrera-chronograph-p9320,CBN2A1B.BA0643,2020,44 mm,Edelstahl,Schwarz,Edelstahl,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-9320
-sinn-spezialuhren-chronograph-936-p9311,,2024,43 mm,Stahl,Schwarz,Leder,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-9311
+sinn-spezialuhren-chronograph-936-p9311,936,2024,43 mm,Stahl,Schwarz,Leder,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-9311
 breitling-superocean-heritage-42-p9290,A1732124/BA61,2016,,Edelstahl,Schwarz,Edelstahl,Automatik,,Sehr gut,Full Set (Box & Papiere),,HV-9290
 iwc-schaffhausen-fliegeruhr-mk18-laureus-garantiekarte-p7474,IW324703,2018,41 mm,Keramik,Blau,"Textil, Leder Inlay",Automatik,,Sehr gut,Nur Papiere,Herren,HV-7474
 tudor-heritage-chronograph-42mm-zifferblatt-schwarz-p1799,70330N,2011,42 mm,Edelstahl,Schwarz,Edelstahl,Automatik,Automatk,Sehr gut,Full Set (Box & Papiere),Herren,HV-1799
 rolex-gmt-master-ii-left-hand-sprite-p9177,126720VTNR,2023,40 mm,Edelstahl,Schwarz,Edelstahl,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-9177
 breitling-avenger-chronograph-blau-45mm-p6059,A13317101C1A1,2020,45 mm,Edelstahl,Blau,Edelstahl,Automatik,,Gut,Full Set (Box & Papiere),Herren,HV-6059
-a-lange-soehne-saxonia-ultra-thin-37-mm-weissgold-p5825,201.027,,37 mm,Weißgold,Weiß,Leder (orig. L&S Armband sehr guter Zustand),Handaufzug,Handaufzug (Kal. L.093.1),Sehr gut,,Herren,HV-5825
+a-lange-soehne-saxonia-ultra-thin-37-mm-weissgold-p5825,201.027,,37 mm,Weißgold,Weiß,Leder (orig. L&S Armband sehr guter Zustand),Handaufzug,Handaufzug (Kal. L.093.1),Sehr gut,Nur Box,Herren,HV-5825
 a-lange-soehne-glashuette-taschenuhr-kaliber-43-l-s-p5085,,1907,53 mm,Silber,Weiß,,Handaufzug,,Gut,Nur Box,Herren,HV-5085
 breitling-chronomat-colt-zifferblatt-blau-kautschukband-p5044,A17388,2019,44 mm,Edelstahl,Blau,Edelstahl + Kautschukband,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-5044
 iwc-portugieser-yacht-club-chronograph-p5038,IW390502,2017,43 mm,Edelstahl,Weiß,Leder / Kautschuk Inlay,Automatik,Automatik (Manufakturwerk mit Flybackfunktion),Sehr gut,Full Set (Box & Papiere),Herren,HV-5038
@@ -21,7 +21,7 @@ panerai-radiomir-handaufzug-p3766,PAM01385,2024,44 mm,Edelstahl,Hellbraun,Leder,
 rolex-oyster-perpetual-date-34-p3762,15200,2000,34 mm,Edelstahl,Silber,Edelstahl,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-3762
 iwc-fliegeruhr-chronograph-bronze-garantiekarte-p4284,IW387902,2020,41,Bronze,Grün,Leder,Automatik,,Gut,Full Set (Box & Papiere),Herren,HV-4284
 cartier-santos-galbee-stahl-gold-24x35-quarz-p4267,119902,,24 x 35,Edelstahl/Gelbgold,Weiß,Edelstahl/Gelbgold,Quarz,,Gut,Full Set (Box & Papiere),Damen,HV-4267
-sinn-203-ti-chronograph-automatik-sinn-rechnung-1x-titanband-zifferblatt-303-yukon-kristall-p7015,,1999,41 mm,Titan,Blau,Titan,Automatik,,Gut,,Herren,HV-7015
+sinn-203-ti-chronograph-automatik-sinn-rechnung-1x-titanband-zifferblatt-303-yukon-kristall-p7015,203 Ti,1999,41 mm,Titan,Blau,Titan,Automatik,,Gut,Nur Papiere,Herren,HV-7015
 vacheron-constantin-overseas-chronograph-zifferblatt-weiss-p3734,49150,,42 mm,Edelstahl,Weiß,Edelstahl,Automatik,,Sehr gut,Nur Box,Herren,HV-3734
 iwc-big-pilot-big-date-150-years-zifferblatt-blau-p5556,IW510503,2019,46 mm,Edelstahl,Blau Emaille Look),Leder,Handaufzug,Handaufzug (8x Tage Gangreserve),Ungetragen,Full Set (Box & Papiere),Herren,HV-5556
 iwc-big-pilot-big-date-150-years-zifferblatt-weiss-p5555,IW510504,2018,46 mm,Edelstahl,Weiß (Emaille Look),Leder,Handaufzug,Handaufzug (8x Tage Gangreserve),Sehr gut,Full Set (Box & Papiere),Herren,HV-5555
@@ -34,11 +34,11 @@ mb-f-legacy-machine-split-escapement-evo-titan-p462,04.TR.LB,2024,44 mm,Titan,Bl
 rolex-datejust-36-blaues-zifferblatt-jubilee-p458,126200,2022,36 mm,Edelstahl,Blau,Edelstahl,Automatik,,Ungetragen,Full Set (Box & Papiere),Herren,HV-458
 iwc-big-pilot-top-gun-keramik-46-mm-p454,IW502001,2017,46 mm,Keramik,Schwarz,Leder,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-454
 iwc-portugieser-handaufzug-p450,IW545405,,44 mm,Edelstahl,Weiß,Leder,Handaufzug,,Sehr gut,Full Set (Box & Papiere),Herren,HV-450
-jaeger-lecoultre-reverso-classic-handaufzug-p446,,2019,40.1 mm,Edelstahl,Silber,Leder,Handaufzug,,Gut,Full Set (Box & Papiere),Herren,HV-446
-longines-saint-imier-chronograph-41-mm-p441,L2.752.4.72.6,,41 mm,Edelstahl,Weiß,Edelstahl,Automatik,,Sehr gut,,Herren,HV-441
+jaeger-lecoultre-reverso-classic-handaufzug-p446,Q2548520,2019,40.1 mm,Edelstahl,Silber,Leder,Handaufzug,,Gut,Full Set (Box & Papiere),Herren,HV-446
+longines-saint-imier-chronograph-41-mm-p441,L2.752.4.72.6,,41 mm,Edelstahl,Weiß,Edelstahl,Automatik,,Sehr gut,Nur Uhr,Herren,HV-441
 breitling-avenger-chronograph-p440,A13385101C1A1,2021,43 mm,Edelstahl,Blau,Edelstahl,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-440
 rolex-oyster-perpetual-34-med-blue-p435,124200,2026,34 mm,Edelstahl 904L,Blau,Edelstahl 904L,Automatik,,Ungetragen,Full Set (Box & Papiere),Herren,HV-435
-nomos-ludwig-handaufzug-34-mm-p434,,2011,34 mm,Edelstahl,Weiß,Leder (stark gebraucht),Handaufzug,,Sehr gut,Full Set (Box & Papiere),Herren,HV-434
+nomos-ludwig-handaufzug-34-mm-p434,205,2011,34 mm,Edelstahl,Weiß,Leder (stark gebraucht),Handaufzug,,Sehr gut,Full Set (Box & Papiere),Herren,HV-434
 tudor-royal-34-mm-p427,28400,2021,34 mm,Edelstahl,Blau,Edelstahl,Automatik,,Gut,Full Set (Box & Papiere),Herren,HV-427
 tudor-black-bay-36-stahl-gelbgold-p426,79503,2022,36 mm,Edelstahl/Gelbgold,Schwarz,Edelstahl/Gelbgold,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-426
 iwc-portofino-8-days-blau-p420,IW510106,2015,45 mm,Edelstahl,Blau,Leder,Handaufzug,,Gut,Full Set (Box & Papiere),Herren,HV-420
@@ -47,21 +47,21 @@ tudor-black-bay-heritage-41-rote-luenette-p413,79230R-0003,,41 mm,Edelstahl,Schw
 breitling-avenger-ii-gmt-p412,A32390,,43 mm,Edelstahl,Schwarz,Leder,Automatik,,Sehr gut,Nur Box,Herren,HV-412
 baume-mercier-hampton-18-k-weissgold-p408,MV045226,,26 x 40 mm Gehäusematerial: Weißgold Armbandmaterial: Leder,Weißgold Armbandmaterial: Leder Armbandfarbe: Blau Zifferbla,Weiß Referenznummer: MV045226 Uhrwerk: Quarz Originale Baume,Leder Armbandfarbe: Blau Zifferblattfarbe: Weiß Referenznumm,Quarz,Quarz Originale Baume & Mercier Papiere ( Die Garantiekarte,Sehr gut,Full Set (Box & Papiere),Damen,HV-408
 omega-seamaster-planet-ocean-39-5-mm-p406,215.30.40.20.03.001,2020,"39,5 mm",Edelstahl,Blau,Edelstahl,Automatik,Omega 8800 Kaliber,Gut,Full Set (Box & Papiere),Herren,HV-406
-hublot-faltschliesse-18-k-rotgold-20-mm-p300,,,,,,,,,,,,HV-300
-iwc-fliegerchronograph-automatik-zb-schwarz-p292,IW377701,2014,43 mm,Edelstahl,Schwarz,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Gut,,Herren,HV-292
+hublot-faltschliesse-18-k-rotgold-20-mm-p300,,,,,,,,,,Nur Uhr,,HV-300
+iwc-fliegerchronograph-automatik-zb-schwarz-p292,IW377701,2014,43 mm,Edelstahl,Schwarz,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Gut,Nur Uhr,Herren,HV-292
 omega-seamaster-planet-ocean-45-mm-p334,2200.50.00,,45 mm,Edelstahl,Schwarz,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Sehr gut,Nur Box,Herren,HV-334
-tag-heuer-link-chronograph-limitiert-auf-150-stueck-p398,,2013,41 mm,Edelstahl,Schwarz,Edelstahl,Automatik,Automatik (Calibre 16),Gut,Nur Papiere,Herren,HV-398
+tag-heuer-link-chronograph-limitiert-auf-150-stueck-p398,CJF211E,2013,41 mm,Edelstahl,Schwarz,Edelstahl,Automatik,Automatik (Calibre 16),Gut,Nur Papiere,Herren,HV-398
 tag-heuer-carrera-chronograph-p298,CV2010,2008,41 mm,Edelstahl,Schwarz,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Gut,Full Set (Box & Papiere),Herren,HV-298
-bvlgari-octo-finissimo-chronograph-gmt-p185,,2022,42 mm (Oktogonal) Baujahr: 2022 Gehäusematerial: Titan Armban,Titan Armbandmaterial: Titan Armbandfarbe: Dunkelgrau Ziffer,Grau Referenznummer: 103068 Uhrwerk: Automatik (Platinrotor),Titan Armbandfarbe: Dunkelgrau Zifferblattfarbe: Grau Refere,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Sehr gut,Full Set (Box & Papiere),Herren,HV-185
-tag-heuer-link-chronograph-automatik-p366,CJF2111,,42 mm,Edelstahl,"Weiß (Außenring leichte Schäden, siehe Bilder)",Edelstahl,Automatik,,Sehr gut,,Herren,HV-366
+bvlgari-octo-finissimo-chronograph-gmt-p185,103068,2022,42 mm (Oktogonal) Baujahr: 2022 Gehäusematerial: Titan Armban,Titan Armbandmaterial: Titan Armbandfarbe: Dunkelgrau Ziffer,Grau Referenznummer: 103068 Uhrwerk: Automatik (Platinrotor),Titan Armbandfarbe: Dunkelgrau Zifferblattfarbe: Grau Refere,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Sehr gut,Full Set (Box & Papiere),Herren,HV-185
+tag-heuer-link-chronograph-automatik-p366,CJF2111,,42 mm,Edelstahl,"Weiß (Außenring leichte Schäden, siehe Bilder)",Edelstahl,Automatik,,Sehr gut,Nur Uhr,Herren,HV-366
 panerai-luminor-marina-handaufzug-2016-p399,PAM00632,2016,44 mm,Edelstahl,Schwarz,Leder / Kautschuk,Handaufzug,,Gut,Full Set (Box & Papiere),Herren,HV-399
-tag-heuer-carrera-gmt-big-date-p263,WAR201Z,,41,Edelstahl,Grau,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Sehr gut,,Herren,HV-263
+tag-heuer-carrera-gmt-big-date-p263,WAR201Z,,41,Edelstahl,Grau,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Sehr gut,Nur Uhr,Herren,HV-263
 omega-planet-ocean-42-mm-p223,2201.51.00,2009,42 mm,Edelstahl,Schwarz,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Gut,Full Set (Box & Papiere),Herren,HV-223
-tag-heuer-carrera-chronograph-p246,CV2010,2007,41 mm,Edelstahl,Schwarz,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Sehr gut,,Herren,HV-246
+tag-heuer-carrera-chronograph-p246,CV2010,2007,41 mm,Edelstahl,Schwarz,Edelstahl,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Sehr gut,Full Set (Box & Papiere),Herren,HV-246
 rolex-datejust-41-schwarzes-zifferblatt-p393,126300,2026,41 mm,Edelstahl,Schwarz,Edelstahl,Automatik,,Neu,Full Set (Box & Papiere),Herren,HV-393
 breitling-chronomat-burgundy-dial-p335,B13047,,39 mm,Edelstahl,Burgundy Dial,Leder,,"Geprüft auf einwandfreies Laufverhalten, kein anstehender Se",Gut,Nur Papiere,Herren,HV-335
 omega-planet-ocean-p384,232.90.46.51.03.001,2014,"45,5 mm",Titan,Blau,Titan,Automatik,Automatik 9300 Kaliber,Gut,Full Set (Box & Papiere),Herren,HV-384
 omega-seamaster-planet-ocean-43-5-mm-p283,215.30.44.21.03.001,2018,"43,5 mm",Edelstahl,Blau,Edelstahl,Automatik,Omega Co-Axial,Sehr gut,Full Set (Box & Papiere),Herren,HV-283
-omega-seamaster-aqua-terra-gmt-p395,231.10.43.22.03.001,,43 mm,Edelstahl,Blau,Leder (guter Zustand),Automatik,Automatik (Manufakturkaliber),Sehr gut,,Herren,HV-395
-tag-heuer-carrera-calibre-16-chronograph-p350,CBM2110.BA065,,41 mm,Edelstahl,Schwarz,Edelstahl,Automatik,,Sehr gut,,Herren,HV-350
+omega-seamaster-aqua-terra-gmt-p395,231.10.43.22.03.001,,43 mm,Edelstahl,Blau,Leder (guter Zustand),Automatik,Automatik (Manufakturkaliber),Sehr gut,Nur Uhr,Herren,HV-395
+tag-heuer-carrera-calibre-16-chronograph-p350,CBM2110.BA065,,41 mm,Edelstahl,Schwarz,Edelstahl,Automatik,,Sehr gut,Nur Uhr,Herren,HV-350
 iwc-portofino-37-automatic-diamond-dial-p357,IW458101,2021,37 mm,Edelstahl,Silber,Leder,Automatik,,Sehr gut,Full Set (Box & Papiere),Herren,HV-357
