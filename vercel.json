@@ -343,11 +343,6 @@
       "permanent": true
     },
     {
-      "source": "/shop",
-      "destination": "/shop",
-      "permanent": true
-    },
-    {
       "source": "/ankauf-&-inzahlungnahme",
       "destination": "/ankauf",
       "permanent": true
@@ -375,16 +370,6 @@
     {
       "source": "/unser-showroom",
       "destination": "/ueber-uns#showroom",
-      "permanent": true
-    },
-    {
-      "source": "/impressum",
-      "destination": "/impressum",
-      "permanent": true
-    },
-    {
-      "source": "/agb",
-      "destination": "/agb",
       "permanent": true
     },
     {
