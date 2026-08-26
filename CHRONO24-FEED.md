@@ -119,12 +119,14 @@ Modellnamen. `Tag Heuer` wird einheitlich zu `TAG Heuer`.
 
 ## Stand der Daten (26.08.2026)
 
-72 Uhren im Feed, die beiden Zubehörartikel bleiben draußen.
+**68 Uhren im Feed.** Die beiden Zubehörartikel bleiben draußen, dazu vier
+Uhren, die Hannes am 26.08. als verkauft gemeldet hat (HV-412, HV-335,
+HV-334, HV-4267) — deren Bestand steht auf 0.
 
-Alle Pflichtfelder sind bei allen 72 gefüllt. Lückenhaft sind nur die beiden
-optionalen: **Baujahr bei 56 von 72**, **Kaliber bei 52 von 72**. Was fehlt,
-steht in `Offene-Angaben-Bestand.pdf`. Nachtragen geht jederzeit, der nächste
-Abruf übernimmt es.
+Alle Pflichtfelder sind gefüllt. Die beiden optionalen bleiben teilweise leer:
+**Baujahr** ist bei zwölf Uhren laut Hannes nicht bekannt und bleibt deshalb
+leer statt geschätzt. **Kaliber** verlangt Chrono24 nicht — 52 Uhren haben
+eines, die übrigen bleiben ohne. Beides ist abgeschlossen, nicht offen.
 
 ## Prüfen, ob der Feed stimmt
 

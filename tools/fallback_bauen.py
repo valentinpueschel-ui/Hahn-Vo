@@ -24,7 +24,11 @@ KATALOG = 'https://hahn-vo-df1c.vercel.app/api/katalog.json'
 
 
 def hole_katalog(url):
-    anfrage = urllib.request.Request(url, headers={'User-Agent': 'hahn-vo-fallback'})
+    # Zwischenspeicher umgehen, sonst kann der Stand bis zu fuenf Minuten alt sein
+    trenner = '&' if '?' in url else '?'
+    url = url + trenner + 'frisch=' + str(os.getpid())
+    anfrage = urllib.request.Request(url, headers={'User-Agent': 'hahn-vo-fallback',
+                                                   'Cache-Control': 'no-cache'})
     with urllib.request.urlopen(anfrage, timeout=60) as antwort:
         return json.load(antwort)
 
