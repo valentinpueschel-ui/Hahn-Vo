@@ -51,17 +51,21 @@ Das Zertifikat stellt Shopify selbst aus.
 
 ## Schritt 2 — hahn-vo.de auf die neue Website
 
-**Zuerst in Vercel**, damit das Zertifikat sofort ausgestellt werden kann,
-sobald DNS greift:
+**In Vercel bereits erledigt** (26.08.2026): `hahn-vo.de` und `www.hahn-vo.de`
+sind im Projekt **hahn-vo-df1c** eingetragen, die Eigentümerprüfung ist durch.
+Es fehlt nur noch DNS.
 
-Vercel → Projekt → Settings → Domains → **Add** → `hahn-vo.de` eintragen und
-`www.hahn-vo.de` gleich mit. Vercel zeigt danach die genauen Werte an —
-**diese nehmen**, nicht die hier abgeschriebenen. Üblich sind:
+Die von Vercel für diese Domain ausgegebenen Werte:
 
 | Typ | Name | Wert |
 |---|---|---|
 | A | `@` | `216.198.79.1` |
-| CNAME | `www` | `cname.vercel-dns.com` |
+| A | `@` | `64.29.17.1` |
+| CNAME | `www` | `fcf5f4acf8d453b4.vercel-dns-017.com` |
+
+Beide A-Einträge anlegen, nicht nur einen — das ist die Ausfallsicherung.
+Für `www` ginge auch `cname.vercel-dns.com`, der obige Wert ist der von
+Vercel bevorzugte.
 
 **Dann bei GoDaddy**, DNS-Verwaltung:
 
