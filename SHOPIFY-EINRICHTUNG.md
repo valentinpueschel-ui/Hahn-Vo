@@ -220,3 +220,14 @@ dafür, dass das so bleibt, falls später doch eine eingetragen wird — bei
 Der Hinweis steht an vier Stellen: unter dem Preis auf der Produktseite, in
 der Datenblatt-Zeile „Besteuerung", im Warenkorb und in der Kassenübersicht.
 AGB § 3 und das Impressum enthielten ihn bereits.
+
+---
+
+## 8. Bestand kommt jetzt aus Shopify (26.08.2026)
+
+Die Website liest ihren Katalog live aus Shopify, der Chrono24-Feed ebenso.
+Eine Uhr wird nur noch an einer Stelle gepflegt. Die Anleitung dazu steht in
+**WEBSITE-KATALOG.md**, der Feed in **CHRONO24-FEED.md**.
+
+`js/data.js` bleibt als Rückfalllösung liegen und wird nur noch gebraucht,
+wenn Shopify nicht antwortet.

@@ -106,6 +106,17 @@ Zusätze in Klammern werden aus den Datenfeldern entfernt: Aus
 `Weiß (Außenring leichte Schäden, siehe Bilder)` wird im Feld `White`. Der
 Hinweis selbst steht weiterhin in der Beschreibung.
 
+## Marken
+
+Mehrwortige Marken lassen sich nicht am ersten Leerzeichen abtrennen — sonst
+stünde bei A. Lange & Söhne die Marke „A." in der Anzeige. Deshalb liegt in
+`api/_shop.js` eine feste Markenliste, längster Treffer gewinnt. Kommt eine
+neue Marke ins Sortiment, dort eintragen. Fehlt sie, nimmt der Feed das erste
+Wort des Titels — die Anzeige entsteht trotzdem, nur mit ungenauer Marke.
+
+`IWC Schaffhausen` wird zu Marke `IWC`, der Zusatz fällt auch aus dem
+Modellnamen. `Tag Heuer` wird einheitlich zu `TAG Heuer`.
+
 ## Stand der Daten (26.08.2026)
 
 72 Uhren im Feed, die beiden Zubehörartikel bleiben draußen.
