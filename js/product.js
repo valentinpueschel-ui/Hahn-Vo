@@ -3,7 +3,9 @@
   'use strict';
   var HV = window.HV;
   var id = new URLSearchParams(location.search).get('id');
-  var p = HV.byId(id) || (window.PRODUCTS || [])[0];
+  /* Unbekannte Kennung: in den Shop leiten, statt eine fremde Uhr unter dieser
+   * Adresse zu zeigen. Ohne Kennung greift die erste Uhr als Einstieg. */
+  var p = id ? HV.byId(id) : (window.PRODUCTS || [])[0];
   if (!p) { location.replace('shop.html'); return; }
 
   document.title = p.brand + ' ' + p.name + ' — Hahn & Vo';
