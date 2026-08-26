@@ -1,5 +1,9 @@
 # hahn-vo.de auf die neue Website legen
 
+> **Erledigt am 26.08.2026.** hahn-vo.de, www.hahn-vo.de und shop.hahn-vo.de
+> laufen. Was unten steht, ist die Aufzeichnung des Vorgangs — und die
+> Anleitung, falls es je zurückgedreht werden muss.
+
 **Die Domain muss nicht übertragen werden.** Sie bleibt bei GoDaddy. Es ändern
 sich nur zwei DNS-Einträge — das dauert Minuten und lässt sich jederzeit
 zurückdrehen. Ein echter Registrar-Umzug wäre der langsame Weg (Auth-Code,
@@ -115,3 +119,48 @@ Getestet am 26.08.2026 auf der Vercel-Adresse, alle greifen.
 A-Einträge bei GoDaddy zurück auf `76.223.105.230` und `13.248.243.5`, dann ist
 der alte Shop wieder da. Bei TTL 600 dauert das zehn Minuten. Deshalb die TTL
 vorher herunterdrehen.
+
+
+---
+
+## Durchgeführt am 26.08.2026
+
+| Eintrag | vorher | nachher |
+|---|---|---|
+| A `@` | „WebsiteBuilder Site" (GoDaddy-Baukasten) | `216.198.79.1` + `64.29.17.1`, TTL 600 |
+| CNAME `www` | `@` | `fcf5f4acf8d453b4.vercel-dns-017.com`, TTL 600 |
+| CNAME `shop` | — | `shops.myshopify.com` |
+
+Unangetastet blieben die Nameserver, `_domainconnect` und der
+DMARC-Eintrag. Der vollständige Stand von vorher ist gesichert.
+
+**Nachgemessen nach der Umstellung:**
+
+- hahn-vo.de und www.hahn-vo.de: HTTP 200, gültiges Zertifikat
+- Startseite lädt den Katalog aus Shopify (`HV.katalogQuelle = shopify`),
+  74 Uhren, 4 davon als verkauft
+- Alte Adressen leiten weiter, im Browser geprüft:
+  `/shop/ols/products/tudor-black-bay-36-…` → `/produkt.html?id=p426`
+- `/chrono24.xml` liefert 68 Artikel, die Produktverweise darin lauten jetzt
+  von selbst `https://hahn-vo.de/produkt.html?id=…`
+- Warenkorb und Kasse: Kassenadresse ist `https://shop.hahn-vo.de/cart/…`
+- Keine Fehlermeldung in der Browser-Konsole
+
+**Stolperstein, den es zu kennen lohnt:** Der A-Eintrag war kein normaler
+Eintrag, sondern GoDaddys Platzhalter „WebsiteBuilder Site". Er ließ sich über
+die Schnittstelle problemlos durch echte Adressen ersetzen.
+
+**Und einer beim Prüfen:** Direkt nach der Umstellung schien die alte Seite
+noch ausgeliefert zu werden. Das war der DNS-Zwischenspeicher des eigenen
+Rechners (TTL 3600 vom alten Eintrag). Alle öffentlichen Auflöser hatten
+längst die neuen Werte. Wer gleich nach einer Umstellung prüft, sollte
+gegen einen öffentlichen Auflöser testen, nicht gegen den eigenen.
+
+## Was jetzt noch offen ist
+
+1. **Chrono24**: Feed-Adresse `https://hahn-vo.de/chrono24.xml` beim Support
+   hinterlegen — zusammen mit der Dublettenfrage aus `CHRONO24-FEED.md`.
+2. **GoDaddy-Website-Buchung** kündigen, sobald die Bestellungen des alten
+   Shops gesichert sind.
+3. **Rechtstexte** anwaltlich prüfen lassen. Sie sind seit dem 26.08.
+   öffentlich verbindlich.
