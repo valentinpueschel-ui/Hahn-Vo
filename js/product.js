@@ -9,6 +9,39 @@
   if (!p) { location.replace('shop.html'); return; }
 
   document.title = p.brand + ' ' + p.name + ' — Hahn & Vo';
+
+  /* Angaben fuer Suchmaschinen und geteilte Links auf diese Uhr umstellen.
+     Google fuehrt JavaScript aus und uebernimmt das. WhatsApp und Facebook
+     tun das nicht — dort greift weiterhin die Vorgabe aus produkt.html. */
+  (function () {
+    var adresse = location.origin + '/produkt.html?id=' + p.id;
+    var titel = p.brand + ' ' + p.name + (p.ref ? ' · Ref. ' + p.ref : '') + ' — Hahn & Vo';
+    var text = [p.brand, p.name, p.year, p.fullset, p.rating ? 'Zustand: ' + p.rating : null,
+                HV.fmtEUR(p.price)].filter(Boolean).join(' · ');
+    function setz(wahl, attr, wert) {
+      var el = document.head.querySelector(wahl);
+      if (el && wert) el.setAttribute(attr, wert);
+    }
+    setz('link[rel="canonical"]', 'href', adresse);
+    setz('meta[property="og:url"]', 'content', adresse);
+    setz('meta[property="og:type"]', 'content', 'product');
+    setz('meta[property="og:title"]', 'content', titel);
+    setz('meta[name="twitter:title"]', 'content', titel);
+    setz('meta[property="og:description"]', 'content', text);
+    setz('meta[name="twitter:description"]', 'content', text);
+    var bild = (p.images || [])[0];
+    if (bild) {
+      if (bild.indexOf('http') !== 0) bild = location.origin + '/' + bild.replace(/^\//, '');
+      setz('meta[property="og:image"]', 'content', bild);
+      setz('meta[name="twitter:image"]', 'content', bild);
+      var w = document.head.querySelector('meta[property="og:image:width"]');
+      var h = document.head.querySelector('meta[property="og:image:height"]');
+      if (w) w.remove();
+      if (h) h.remove();
+    }
+    var d = document.head.querySelector('meta[name="description"]');
+    if (d) d.setAttribute('content', text);
+  })();
   document.getElementById('crumbName').textContent = p.name;
   document.getElementById('pdBrand').textContent = p.brand;
   document.getElementById('pdName').textContent = p.name;

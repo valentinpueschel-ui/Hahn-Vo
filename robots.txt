@@ -1,0 +1,9 @@
+# Hahn & Vo OHG — hahn-vo.de
+
+User-agent: *
+Allow: /
+
+# Kasse und Warenkorb gehören nicht in den Index
+Disallow: /checkout.html
+
+Sitemap: https://hahn-vo.de/sitemap.xml
