@@ -1692,7 +1692,7 @@ window.PRODUCTS = [
   "category": "uhren",
   "fullset": "Full Set (Box & Papiere)",
   "rating": "Sehr gut",
-  "year": "2000",
+  "year": "2005",
   "size": "34 mm",
   "material": "Edelstahl",
   "dial": "Silber",
