@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/chrono24.xml", "destination": "/api/chrono24" }
+  ],
+  "headers": [
+    {
+      "source": "/api/chrono24",
+      "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
+    }
+  ]
+}
