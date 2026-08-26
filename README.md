@@ -12,7 +12,7 @@ Doppelklick auf `serve.command` → http://localhost:8440
 | Seite | Datei | Inhalt |
 |---|---|---|
 | Home | `index.html` | Logo-Hero mit Filmloop + Slot-Machine-Roll, New In, Leistungen, Kundenstimmen, 3er-Block, Q&A, Über-uns-Teaser, Instagram |
-| Shop | `shop.html` | 62 echte Produkte, Kategorien Uhren/Zubehör, Filter Marke/Preis/Status, Sortierung, Hover-Bildwechsel, Status-Badges |
+| Shop | `shop.html` | 74 Produkte, Kategorien Uhren/Zubehör, Filter Marke/Preis/Status, Sortierung, Hover-Bildwechsel, Status-Badges |
 | Produkt | `produkt.html?id=…` | Galerie mit Zoom, Spec-Tabelle, Warenkorb/WhatsApp/Showroom-CTAs |
 | Ankauf | `ankauf.html` | Leitfaden-Wizard (8 Schritte, nach Goatwatch-Vorbild), 4 Optionen, 4-Schritte-Prozess, Ankauf-FAQ |
 | Suchauftrag | `suchauftrag.html` | Find-my-watch-Wizard (7 Schritte), Sourcing-Prozess, Korea-Story |
@@ -22,13 +22,32 @@ Doppelklick auf `serve.command` → http://localhost:8440
 
 ## Daten
 
-`js/data.js` ist die einzige Wahrheitsquelle für Produkte — erzeugt aus dem
-Live-Bestand von hahn-vo.de:
+Der Bestand kommt **live aus Shopify**. Eine Uhr wird nur dort gepflegt,
+Website und Chrono24-Feed ziehen nach — siehe `WEBSITE-KATALOG.md`.
+
+| Adresse | Aufgabe |
+|---|---|
+| `/api/katalog.json` | erzeugt den Katalog bei jedem Aufruf aus Shopify (`api/katalog.js`) |
+| `/chrono24.xml` | derselbe Bestand als XML fuer Chrono24 (`api/chrono24.js`) |
+| `api/_shop.js` | gemeinsamer Unterbau: Shopify-Abfrage, Markenliste |
+
+`js/data.js` ist nur noch die **Rueckfalllosung**: Antwortet Shopify nicht
+innerhalb von 2,5 Sekunden, zeigt die Seite den dort hinterlegten Stand.
+Welcher Weg gerade greift, verraet `HV.katalogQuelle` in der Browser-Konsole.
+Auffrischen:
 
 ```
-python3 tools/build_data.py          # Bestand holen, Bilder laden, data.js schreiben
-python3 tools/build_data.py --dry-run
+python3 tools/fallback_bauen.py            # aus Shopify holen, data.js schreiben
+python3 tools/fallback_bauen.py --dry-run
 ```
+
+Angefasst werden dabei nur `window.PRODUCTS` und `window.SHOPIFY`.
+Kundenstimmen, FAQ, Kontaktdaten und die Flaggschiff-Auswahl (`window.NEW_IN`,
+`window.FLAGSHIP_ID`) bleiben Handarbeit.
+
+> `tools/archiv-alt_build_data.py` baute data.js frueher aus dem alten
+> hahn-vo.de-Shop. Es ist gesperrt: Jene Schnittstelle enthaelt verkaufte
+> Uhren (66 Eintraege gegenueber 63 live) und wuerde den Stand verschlechtern.
 
 **Instagram-Beitraege:** Das Raster auf der Startseite zeigt die echten
 Beitraege von @hahn.vo. Neu holen mit
@@ -43,14 +62,11 @@ Beitrag die 900-px-Fassung aus der Einbettung, speichert sie unter
 `assets/img/ig/` und schreibt `js/ig-posts.js`. Es ist eine Momentaufnahme —
 fuer neue Beitraege erneut ausfuehren.
 
-**Wichtig zur Quelle:** Der Shop liest aus
-`https://<websiteId>.mysimplestore.com/api/v2/products`. Die ältere Adresse
-`onlinestore.godaddy.com/api/v1/products` liefert einen **veralteten Stand**
-(am 21.08.2026 fehlten dort 32 neue Uhren und 28 längst verkaufte standen noch
-drin). Immer die v2-Adresse verwenden.
-
-Stand 21.08.2026: **66 Uhren**. Produktbilder liegen lokal unter
-`assets/products/p<id>/`, interner Code je Uhr ist `HV-<id>`.
+Stand 26.08.2026: **74 Produkte** — 72 Uhren und 2 Zubehoerartikel.
+Produktbilder der Altbestaende liegen lokal unter `assets/products/p<id>/`,
+neuere kommen von der Shopify-Adresse. Interner Code je Uhr ist `HV-<id>`;
+er ist zugleich die Artikelnummer auf Chrono24 und der Verwendungszweck bei
+Bankueberweisung.
 
 **Kundenstimmen:** echt — Wortlaut und Fotos von hahn-vo.de/suchanfrage-einer-uhr
 uebernommen (24.08.2026), Fotos unter `assets/img/reviews/`. Kaufdatum und

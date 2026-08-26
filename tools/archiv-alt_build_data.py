@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Baut js/data.js aus dem LIVE-Bestand von hahn-vo.de.
+"""ARCHIV — NICHT MEHR AUSFUEHREN.
 
-Quelle ist die Schnittstelle, die der Shop selbst benutzt:
-  https://<websiteId>.mysimplestore.com/api/v2/products
-(Die aeltere onlinestore.godaddy.com/api/v1 liefert einen veralteten Stand!)
+Dieses Skript hat js/data.js aus dem alten hahn-vo.de-Shop gebaut. Seit dem
+26.08.2026 kommt der Bestand aus Shopify, und die alte Schnittstelle enthaelt
+nachweislich verkaufte Uhren (66 Eintraege gegenueber 63 live). Wer das hier
+ausfuehrt, ueberschreibt die Rueckfalllosung mit veralteten Daten.
 
-    python3 tools/build_data.py            # holen, Bilder laden, data.js schreiben
-    python3 tools/build_data.py --dry-run  # nur anzeigen, nichts schreiben
+Zum Auffrischen stattdessen:  python3 tools/fallback_bauen.py
+
+Bleibt liegen, weil die Bild- und Beschreibungsaufbereitung dokumentiert,
+woher der Altbestand stammt.
 """
 import argparse, json, os, re, subprocess, urllib.request
 import concurrent.futures as cf
@@ -264,4 +267,7 @@ def main():
 
 
 if __name__ == '__main__':
+    raise SystemExit(
+        'Archiv: Dieses Skript wuerde js/data.js mit dem Stand des alten Shops\n'
+        'ueberschreiben. Zum Auffrischen: python3 tools/fallback_bauen.py')
     main()
