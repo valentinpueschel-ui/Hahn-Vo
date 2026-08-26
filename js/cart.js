@@ -86,12 +86,12 @@
     '<div class="cd-items" data-cd-items></div>' +
     '<div class="cd-empty" data-cd-empty hidden>' +
       '<p>Ihr Warenkorb ist leer.</p>' +
-      '<a class="btn btn-solid" href="shop.html">Kollektion entdecken</a>' +
+      '<a class="btn btn-solid" href="/shop">Kollektion entdecken</a>' +
     '</div>' +
     '<div class="cd-foot" data-cd-foot>' +
       '<div class="cd-total-row"><span class="micro micro-dim">Zwischensumme</span><span class="cd-total num" data-cd-total></span></div>' +
       '<p class="cd-note">Alle Preise sind Endpreise inkl. MwSt. Ob eine Uhr differenzbesteuert ist, steht auf ihrer Seite. Versicherter Versand oder persönliche Übergabe im Showroom — Abstimmung im nächsten Schritt.</p>' +
-      '<a class="btn btn-solid" href="checkout.html">Zur Kasse <span class="arr">→</span></a>' +
+      '<a class="btn btn-solid" href="/checkout">Zur Kasse <span class="arr">→</span></a>' +
     '</div>';
   document.body.append(overlay, drawer);
 
@@ -127,10 +127,10 @@
 
     box.innerHTML = list.map(function (p) {
       return '<div class="cd-item">' +
-        '<a class="cd-item-img" href="produkt.html?id=' + p.id + '"><img src="' + p.images[0] + '" alt="' + p.name + '" loading="lazy"></a>' +
+        '<a class="cd-item-img" href="/produkt?id=' + p.id + '"><img src="' + p.images[0] + '" alt="' + p.name + '" loading="lazy"></a>' +
         '<div>' +
           '<div class="cd-item-brand">' + p.brand + '</div>' +
-          '<a class="cd-item-name" href="produkt.html?id=' + p.id + '">' + p.name + '</a>' +
+          '<a class="cd-item-name" href="/produkt?id=' + p.id + '">' + p.name + '</a>' +
           '<div class="cd-item-price num">' + HV.fmtEUR(p.price) +
             (p.shopifyVariantId ? '<span class="cd-live">sofort kaufbar</span>' : '') + '</div>' +
         '</div>' +

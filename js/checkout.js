@@ -92,7 +92,7 @@
       panel.innerHTML =
         '<h2>Ihr Warenkorb ist leer.</h2>' +
         '<p style="color:var(--ink-60);margin-bottom:24px">Entdecken Sie unsere Kollektion — jede Uhr geprüft, garantiert und sofort verfügbar.</p>' +
-        '<a class="btn btn-solid" href="shop.html">Zum Shop <span class="arr">→</span></a>';
+        '<a class="btn btn-solid" href="/shop">Zum Shop <span class="arr">→</span></a>';
       return;
     }
     panel.innerHTML =
@@ -106,7 +106,7 @@
           '<button class="cd-remove" data-rm="' + p.id + '">Entfernen</button>' +
         '</div>';
       }).join('') +
-      '<div class="co-actions"><a class="btn btn-outline" href="shop.html">Weiter stöbern</a>' +
+      '<div class="co-actions"><a class="btn btn-outline" href="/shop">Weiter stöbern</a>' +
       '<button class="btn btn-solid" data-next>Weiter zu Ihren Daten <span class="arr">→</span></button></div>';
   }
 
@@ -200,7 +200,7 @@
         '<div class="row"><dt>Zahlung</dt><dd>' + payLabel + '</dd></div>' +
         (order.note ? '<div class="row"><dt>Anmerkung</dt><dd>' + esc(order.note) + '</dd></div>' : '') +
       '</dl>' +
-      '<label class="filter-opt" style="margin:14px 0 4px;padding-left:0"><input type="checkbox" id="fAgb"> <span style="font-size:13px">Ich habe die <a href="agb.html" target="_blank" style="text-decoration:underline">AGB</a> und die <a href="widerruf.html" target="_blank" style="text-decoration:underline">Widerrufsbelehrung</a> zur Kenntnis genommen. *</span></label>' +
+      '<label class="filter-opt" style="margin:14px 0 4px;padding-left:0"><input type="checkbox" id="fAgb"> <span style="font-size:13px">Ich habe die <a href="/agb" target="_blank" style="text-decoration:underline">AGB</a> und die <a href="/widerruf" target="_blank" style="text-decoration:underline">Widerrufsbelehrung</a> zur Kenntnis genommen. *</span></label>' +
       '<p class="wiz-error" id="agbErr">Bitte bestätigen Sie AGB und Widerrufsbelehrung.</p>' +
       '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
       '<button class="btn btn-solid" data-confirm>Zahlungspflichtig bestellen</button></div>';
@@ -222,7 +222,7 @@
         (order.payment === 'showroom' ? '. Wir melden uns noch heute zur Terminabstimmung; gezahlt wird bei der Übergabe im Showroom.' :
          ' — inklusive unserer Bankverbindung. Nach Zahlungseingang stimmen wir umgehend die Übergabe mit Ihnen ab.') + '</p>' +
         '<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">' +
-          '<a class="btn btn-solid" href="shop.html">Weiter stöbern</a>' +
+          '<a class="btn btn-solid" href="/shop">Weiter stöbern</a>' +
           '<a class="btn btn-outline" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">Fragen? WhatsApp</a>' +
         '</div>' +
       '</div>';

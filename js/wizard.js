@@ -155,7 +155,7 @@
           '<h3 style="font-size:1.5rem;font-weight:640;letter-spacing:-0.01em">' + (opts.successTitle || 'Vielen Dank!') + '</h3>' +
           '<p style="opacity:.85;line-height:1.65;max-width:52ch">' + (opts.successText || '') + '</p>' +
           '<div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">' +
-            '<a class="btn btn-creme" href="shop.html">Kollektion ansehen</a>' +
+            '<a class="btn btn-creme" href="/shop">Kollektion ansehen</a>' +
             '<a class="btn btn-ghost-creme" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">WhatsApp öffnen</a>' +
           '</div>' +
         '</div>';

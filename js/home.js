@@ -244,7 +244,7 @@
       return '<span class="spec' + (ci === s.chips.length - 1 ? ' num' : '') + '">' + c + '</span>';
     }).join('');
     fsEls.avail.textContent = s.avail;
-    fsEls.link.href = 'produkt.html?id=' + s.id;
+    fsEls.link.href = '/produkt?id=' + s.id;
   }
 
   var current = 0;

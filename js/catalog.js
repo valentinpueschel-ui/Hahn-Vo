@@ -32,7 +32,7 @@
         '</div>' +
         '<div class="pc-price">' + priceHtml + '</div>' +
       '</div>' +
-      '<a class="pc-link" href="produkt.html?id=' + p.id + '" aria-label="' + p.brand + ' ' + p.name + '"></a>' +
+      '<a class="pc-link" href="/produkt?id=' + p.id + '" aria-label="' + p.brand + ' ' + p.name + '"></a>' +
     '</article>';
   };
 })();

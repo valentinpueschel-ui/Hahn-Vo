@@ -14,15 +14,15 @@ var shop = require('./_shop');
  * werden, aber nicht mit den Uhren um Aufmerksamkeit ringen. */
 var SEITEN = [
   { pfad: '/', prio: '1.0', frequenz: 'daily' },
-  { pfad: '/shop.html', prio: '0.9', frequenz: 'daily' },
-  { pfad: '/ankauf.html', prio: '0.8', frequenz: 'monthly' },
-  { pfad: '/suchauftrag.html', prio: '0.8', frequenz: 'monthly' },
-  { pfad: '/ueber-uns.html', prio: '0.7', frequenz: 'monthly' },
-  { pfad: '/referenz-checker.html', prio: '0.6', frequenz: 'monthly' },
-  { pfad: '/impressum.html', prio: '0.2', frequenz: 'yearly' },
-  { pfad: '/datenschutz.html', prio: '0.2', frequenz: 'yearly' },
-  { pfad: '/agb.html', prio: '0.2', frequenz: 'yearly' },
-  { pfad: '/widerruf.html', prio: '0.2', frequenz: 'yearly' },
+  { pfad: '/shop', prio: '0.9', frequenz: 'daily' },
+  { pfad: '/ankauf', prio: '0.8', frequenz: 'monthly' },
+  { pfad: '/suchauftrag', prio: '0.8', frequenz: 'monthly' },
+  { pfad: '/ueber-uns', prio: '0.7', frequenz: 'monthly' },
+  { pfad: '/referenz-checker', prio: '0.6', frequenz: 'monthly' },
+  { pfad: '/impressum', prio: '0.2', frequenz: 'yearly' },
+  { pfad: '/datenschutz', prio: '0.2', frequenz: 'yearly' },
+  { pfad: '/agb', prio: '0.2', frequenz: 'yearly' },
+  { pfad: '/widerruf', prio: '0.2', frequenz: 'yearly' },
 ];
 
 function xmlEscape(s) {
@@ -53,7 +53,7 @@ async function baueSitemap(basis) {
       anzahlUhren++;
       var bild = (p.bilder || [])[0];
       eintraege.push('  <url>\n' +
-        '    <loc>' + xmlEscape(basis + '/produkt.html?id=' + id) + '</loc>\n' +
+        '    <loc>' + xmlEscape(basis + '/produkt?id=' + id) + '</loc>\n' +
         '    <lastmod>' + heute + '</lastmod>\n' +
         '    <changefreq>weekly</changefreq>\n' +
         '    <priority>' + (p.verfuegbar ? '0.8' : '0.4') + '</priority>\n' +

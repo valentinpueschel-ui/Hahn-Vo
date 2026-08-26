@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Referenz-Checker — Hahn &amp; Vo</title>
   <meta name="description" content="Referenznummer eingeben, Klarheit bekommen: Marke, Modell, Produktionszeitraum, Kaliber — der Referenz-Checker von Hahn & Vo.">
-  <link rel="canonical" href="https://hahn-vo.de/referenz-checker.html">
+  <link rel="canonical" href="https://hahn-vo.de/referenz-checker">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hahn &amp; Vo">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:url" content="https://hahn-vo.de/referenz-checker.html">
+  <meta property="og:url" content="https://hahn-vo.de/referenz-checker">
   <meta property="og:title" content="Referenz-Checker — Hahn &amp; Vo">
   <meta property="og:description" content="Referenznummer eingeben, Klarheit bekommen: Marke, Modell, Produktionszeitraum, Kaliber — der Referenz-Checker von Hahn & Vo.">
   <meta property="og:image" content="https://hahn-vo.de/assets/img/founders.jpg">
@@ -64,7 +64,7 @@
 
   <header class="form-hero">
     <div class="wrap">
-      <div class="crumb micro" style="color:var(--creme-60);margin-bottom:26px"><a href="index.html">Home</a> <span>/</span> <span>Referenz-Checker</span></div>
+      <div class="crumb micro" style="color:var(--creme-60);margin-bottom:26px"><a href="/">Home</a> <span>/</span> <span>Referenz-Checker</span></div>
       <h1 class="display-l reveal-line"><span>Referenz rein.<br>Klarheit raus.</span></h1>
       <p class="lede" data-reveal>Jede Uhr trägt ihre Identität in der Referenznummer. Geben Sie sie ein — wir sagen Ihnen, welches Modell Sie vor sich haben, wann es gebaut wurde und welches Werk darin schlägt. Und falls das Stück gerade bei uns im Haus liegt, sehen Sie es sofort.</p>
       <div class="form-hero-meta" data-reveal>
@@ -187,8 +187,8 @@
   function ctas(refText) {
     var wa = window.SITE.whatsapp + '?text=' + encodeURIComponent('Guten Tag, ich habe eine Frage zur Referenz ' + refText + '.');
     return '<div class="rc-ctas">' +
-      '<a class="btn btn-solid" href="suchauftrag.html?ref=' + encodeURIComponent(refText) + '">Diese Referenz suchen lassen <span class="arr">→</span></a>' +
-      '<a class="btn btn-outline" href="ankauf.html">Diese Referenz verkaufen</a>' +
+      '<a class="btn btn-solid" href="/suchauftrag?ref=' + encodeURIComponent(refText) + '">Diese Referenz suchen lassen <span class="arr">→</span></a>' +
+      '<a class="btn btn-outline" href="/ankauf">Diese Referenz verkaufen</a>' +
       '<a class="btn btn-outline" href="' + wa + '" target="_blank" rel="noopener">WhatsApp</a>' +
     '</div>';
   }

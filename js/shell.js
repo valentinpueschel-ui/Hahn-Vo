@@ -16,14 +16,14 @@
   var headerDark = document.body.dataset.header === 'dark';
 
   var NAV_LEFT = [
-    ['index.html', 'home', 'Home'],
-    ['shop.html', 'shop', 'Shop'],
-    ['ankauf.html', 'ankauf', 'Ankauf'],
-    ['suchauftrag.html', 'suchauftrag', 'Suchauftrag'],
+    ['/', 'home', 'Home'],
+    ['/shop', 'shop', 'Shop'],
+    ['/ankauf', 'ankauf', 'Ankauf'],
+    ['/suchauftrag', 'suchauftrag', 'Suchauftrag'],
   ];
   var NAV_RIGHT = [
-    ['referenz-checker.html', 'referenz-checker', 'Referenz-Checker'],
-    ['ueber-uns.html', 'ueber-uns', 'Über uns'],
+    ['/referenz-checker', 'referenz-checker', 'Referenz-Checker'],
+    ['/ueber-uns', 'ueber-uns', 'Über uns'],
   ];
 
   function navLinks(list) {
@@ -39,7 +39,7 @@
   header.innerHTML =
     '<div class="wrap">' +
       '<nav class="nav-left" aria-label="Hauptnavigation">' + navLinks(NAV_LEFT) + '</nav>' +
-      '<a class="brand" href="index.html" aria-label="Hahn &amp; Vo — Startseite">' + MARK +
+      '<a class="brand" href="/" aria-label="Hahn &amp; Vo — Startseite">' + MARK +
         '<span class="brand-word">Hahn &amp; Vo</span>' +
       '</a>' +
       '<div class="nav-right">' + navLinks(NAV_RIGHT) +
@@ -92,10 +92,10 @@
           '<p class="sf-tag">Kuratierte Luxusuhren — auf Echtheit geprüft, mit Garantie. Showroom im Garden Tower, Frankfurt am Main.</p>' +
         '</div>' +
         '<div class="sf-col"><h4>Navigation</h4>' +
-          '<a href="shop.html">Shop</a><a href="ankauf.html">Ankauf &amp; Inzahlungnahme</a><a href="suchauftrag.html">Suchauftrag</a><a href="ueber-uns.html">Über uns</a>' +
+          '<a href="/shop">Shop</a><a href="/ankauf">Ankauf &amp; Inzahlungnahme</a><a href="/suchauftrag">Suchauftrag</a><a href="/ueber-uns">Über uns</a>' +
         '</div>' +
         '<div class="sf-col"><h4>Service</h4>' +
-          '<a href="referenz-checker.html">Referenz-Checker</a><a href="index.html#faq">Fragen &amp; Antworten</a><a href="ueber-uns.html#showroom">Showroom &amp; Termine</a><a href="mailto:info@hahntime.com">info@hahntime.com</a><a href="https://www.instagram.com/hahn.vo/" target="_blank" rel="noopener">Instagram</a>' +
+          '<a href="/referenz-checker">Referenz-Checker</a><a href="/#faq">Fragen &amp; Antworten</a><a href="/ueber-uns#showroom">Showroom &amp; Termine</a><a href="mailto:info@hahntime.com">info@hahntime.com</a><a href="https://www.instagram.com/hahn.vo/" target="_blank" rel="noopener">Instagram</a>' +
         '</div>' +
         '<div class="sf-col"><h4>Showroom</h4>' +
           '<p>Garden Tower · 7. Etage<br>Neue Mainzer Str. 46–50<br>60311 Frankfurt am Main</p>' +
@@ -104,7 +104,7 @@
       '</div>' +
       '<div class="sf-legal">' +
         '<span>© 2026 Hahn &amp; Vo OHG · Alle Preise sind Endpreise inkl. MwSt.</span>' +
-        '<div class="links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="widerruf.html">Widerruf</a></div>' +
+        '<div class="links"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/agb">AGB</a><a href="/widerruf">Widerruf</a></div>' +
       '</div>' +
     '</div>' +
     '<div class="sf-watermark" aria-hidden="true">Hahn &amp; Vo</div>';

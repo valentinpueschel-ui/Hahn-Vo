@@ -6,7 +6,7 @@
   /* Unbekannte Kennung: in den Shop leiten, statt eine fremde Uhr unter dieser
    * Adresse zu zeigen. Ohne Kennung greift die erste Uhr als Einstieg. */
   var p = id ? HV.byId(id) : (window.PRODUCTS || [])[0];
-  if (!p) { location.replace('shop.html'); return; }
+  if (!p) { location.replace('/shop'); return; }
 
   document.title = p.brand + ' ' + p.name + ' — Hahn & Vo';
 
@@ -14,7 +14,7 @@
      Google fuehrt JavaScript aus und uebernimmt das. WhatsApp und Facebook
      tun das nicht — dort greift weiterhin die Vorgabe aus produkt.html. */
   (function () {
-    var adresse = location.origin + '/produkt.html?id=' + p.id;
+    var adresse = location.origin + '/produkt?id=' + p.id;
     var titel = p.brand + ' ' + p.name + (p.ref ? ' · Ref. ' + p.ref : '') + ' — Hahn & Vo';
     var text = [p.brand, p.name, p.year, p.fullset, p.rating ? 'Zustand: ' + p.rating : null,
                 HV.fmtEUR(p.price)].filter(Boolean).join(' · ');
@@ -128,7 +128,7 @@
   if (p.status === 'available') {
     syncCartBtn();
     add.addEventListener('click', function () {
-      if (add.dataset.mode === 'checkout') { location.href = 'checkout.html'; return; }
+      if (add.dataset.mode === 'checkout') { location.href = '/checkout'; return; }
       HV.cart.add(p.id);
       syncCartBtn();
     });
@@ -159,7 +159,7 @@
     document.getElementById(p.status === 'reserved' ? 'pdReservedNote' : 'pdSoldNote').hidden = false;
     if (p.status === 'sold') {
       var sc = document.querySelector('.pd-secondary-ctas');
-      sc.innerHTML = '<a class="btn btn-outline" href="suchauftrag.html">Suchauftrag stellen</a>' +
+      sc.innerHTML = '<a class="btn btn-outline" href="/suchauftrag">Suchauftrag stellen</a>' +
         '<a class="btn btn-outline" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">Per WhatsApp anfragen</a>';
     }
   }

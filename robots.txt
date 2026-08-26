@@ -4,6 +4,6 @@ User-agent: *
 Allow: /
 
 # Kasse und Warenkorb gehören nicht in den Index
-Disallow: /checkout.html
+Disallow: /checkout
 
 Sitemap: https://hahn-vo.de/sitemap.xml

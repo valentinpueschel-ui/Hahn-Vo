@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/chrono24.xml",
@@ -27,392 +29,392 @@
   "redirects": [
     {
       "source": "/shop/ols/products/a-lange-sohne-glashutte-taschenuhr-kaliber-43-ls-uhrenbox",
-      "destination": "/produkt.html?id=p5085",
+      "destination": "/produkt?id=p5085",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/a-lange-sohne-saxonia-201027-ultra-thin-37-mm-weigold",
-      "destination": "/produkt.html?id=p5825",
+      "destination": "/produkt?id=p5825",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/breitling-avenger-chronograph-a13385101c1a1-aus-2021-im-full-set",
-      "destination": "/produkt.html?id=p440",
+      "destination": "/produkt?id=p440",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/breitling-avenger-chronograph-blau-45mm-a13317101c1a1-full-set",
-      "destination": "/produkt.html?id=p6059",
+      "destination": "/produkt?id=p6059",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/breitling-chronomat-colt-a17388-zb-blau-full-set-kautschukband",
-      "destination": "/produkt.html?id=p5044",
+      "destination": "/produkt?id=p5044",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/breitling-navitimer-b01-chronograph-ab0121211c1a1-full-set-service-april-2026",
-      "destination": "/produkt.html?id=p415",
+      "destination": "/produkt?id=p415",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/breitling-superocean-44-automatik-a17367d71b1a1-full-set-2020",
-      "destination": "/produkt.html?id=p1237",
+      "destination": "/produkt?id=p1237",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/breitling-superocean-heritage-42-a1732124ba61-full-set-jahr-2016",
-      "destination": "/produkt.html?id=p9290",
+      "destination": "/produkt?id=p9290",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/breitling-superocean-heritage-46-a1331212bf78-full-set-jahr-2018",
-      "destination": "/produkt.html?id=p1226",
+      "destination": "/produkt?id=p1226",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/bulgari-octo-solotempo-automatik-101964-41mm-zb-schwarz-2015",
-      "destination": "/produkt.html?id=p1154",
+      "destination": "/produkt?id=p1154",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/bvlgari-octo-finissimo-chronograph-gmt-jahr-2022-full-set",
-      "destination": "/produkt.html?id=p185",
+      "destination": "/produkt?id=p185",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/cartier-cle-de-cartier-automatik-wscl0018-40mm-2019-full-set",
-      "destination": "/produkt.html?id=p1157",
+      "destination": "/produkt?id=p1157",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/cartier-santos-galbee-119902-stahlgold-24x35-quarz",
-      "destination": "/produkt.html?id=p4267",
+      "destination": "/produkt?id=p4267",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-big-pilot-big-date-150-years-full-set-iw510503-zb-blau-neu",
-      "destination": "/produkt.html?id=p5556",
+      "destination": "/produkt?id=p5556",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-big-pilot-big-date-150-years-full-set-iw510504-zb-wei",
-      "destination": "/produkt.html?id=p5555",
+      "destination": "/produkt?id=p5555",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-big-pilot-top-gun-keramik-46mm-iw502001-full-set-2017",
-      "destination": "/produkt.html?id=p454",
+      "destination": "/produkt?id=p454",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-fliegerchronograph-iw377701-automatik-zb-schwarz",
-      "destination": "/produkt.html?id=p292",
+      "destination": "/produkt?id=p292",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-fliegeruhr-chronograph-bronze-iw387902-garantiekarte-2020",
-      "destination": "/produkt.html?id=p4284",
+      "destination": "/produkt?id=p4284",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-ingenieur-chronograph-automatik-iw380701-42mm-2016",
-      "destination": "/produkt.html?id=p9012",
+      "destination": "/produkt?id=p9012",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-portofino-37-automatic-iw458101-silber-dia-dial-2021-full-set",
-      "destination": "/produkt.html?id=p357",
+      "destination": "/produkt?id=p357",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-portofino-8-days-blau-iw510106-aus-2015-im-full-set",
-      "destination": "/produkt.html?id=p420",
+      "destination": "/produkt?id=p420",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-portugieser-handaufzug-iw545405-box-service-garantiekarte",
-      "destination": "/produkt.html?id=p450",
+      "destination": "/produkt?id=p450",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-portugieser-yacht-club-chronograph-iw390502-full-set",
-      "destination": "/produkt.html?id=p5038",
+      "destination": "/produkt?id=p5038",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-schaffhausen-fliegeruhr-mk18-iw324703-laureus-garantiekarte",
-      "destination": "/produkt.html?id=p7474",
+      "destination": "/produkt?id=p7474",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/iwc-schaffhausen-portofino-automatic-40-zb-silber-jahr-2021",
-      "destination": "/produkt.html?id=p3771",
+      "destination": "/produkt?id=p3771",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/jaeger-le-coultre-reverso-handaufzug-401mm-2019-full-set",
-      "destination": "/produkt.html?id=p446",
+      "destination": "/produkt?id=p446",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/longines-saint-imier-chronograph-41mm-l27524726",
-      "destination": "/produkt.html?id=p441",
+      "destination": "/produkt?id=p441",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/mbf-legacy-machine-split-escapement-titan-04trlb-full-set-2024",
-      "destination": "/produkt.html?id=p462",
+      "destination": "/produkt?id=p462",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/nomos-ludwig-34mm-205-handaufzug-aus-2011-im-full-set",
-      "destination": "/produkt.html?id=p434",
+      "destination": "/produkt?id=p434",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/omega-planet-ocean-23290465103001-aus-2014-im-full-set",
-      "destination": "/produkt.html?id=p384",
+      "destination": "/produkt?id=p384",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/omega-planet-ocean-395-mm-ref-21530402003001-full-set-2020",
-      "destination": "/produkt.html?id=p406",
+      "destination": "/produkt?id=p406",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/omega-planet-ocean-435-mm-ref-21530442103001-full-set-2018",
-      "destination": "/produkt.html?id=p283",
+      "destination": "/produkt?id=p283",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/omega-planet-ocean-ref22015100-aus-2009-im-full-set",
-      "destination": "/produkt.html?id=p223",
+      "destination": "/produkt?id=p223",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/omega-seamaster-aqua-terra-gmt-23110432203001-service-2025",
-      "destination": "/produkt.html?id=p395",
+      "destination": "/produkt?id=p395",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/omega-seamaster-diver-300-m-21230412003001-zb-blau-garantiekarte",
-      "destination": "/produkt.html?id=p2446",
+      "destination": "/produkt?id=p2446",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/omega-seamaster-planet-ocean-45-mm-22005000-uhrenbox",
-      "destination": "/produkt.html?id=p334",
+      "destination": "/produkt?id=p334",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/panerai-luminor-marina-pam00632-handaufzug-2016-full-set",
-      "destination": "/produkt.html?id=p399",
+      "destination": "/produkt?id=p399",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/panerai-radiomir-1940-handaufzug-47mm-pam00662-full-set-2016",
-      "destination": "/produkt.html?id=p1218",
+      "destination": "/produkt?id=p1218",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/panerai-radiomir-pam01385-handaufzug-full-set-jahr-2024",
-      "destination": "/produkt.html?id=p3766",
+      "destination": "/produkt?id=p3766",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/patek-philippe-twenty4-grau-491010a-damenuhr-2010",
-      "destination": "/produkt.html?id=p4808",
+      "destination": "/produkt?id=p4808",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/rolex-datejust-36-seltenes-zb-mit-diamanten-116234-full-set-2014",
-      "destination": "/produkt.html?id=p4846",
+      "destination": "/produkt?id=p4846",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/rolex-datejust-36-zb-blau-126200-jubilee-automatik-neu-jahr-2022",
-      "destination": "/produkt.html?id=p458",
+      "destination": "/produkt?id=p458",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/rolex-datejust-41-zb-black-126300-neu-aus-2026-im-full-set",
-      "destination": "/produkt.html?id=p393",
+      "destination": "/produkt?id=p393",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/rolex-gmt-master-ii-left-hand-sprite-126720vtnr-2023-full-set",
-      "destination": "/produkt.html?id=p9177",
+      "destination": "/produkt?id=p9177",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/rolex-oyster-perpetual-34-mm-124200-med-blue-2026-im-full-set",
-      "destination": "/produkt.html?id=p435",
+      "destination": "/produkt?id=p435",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/sinn-203-ti-chronograph-automatik-sinn-rechnung-1x-titanband-zb-303-yukon-kristall",
-      "destination": "/produkt.html?id=p7015",
+      "destination": "/produkt?id=p7015",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/sinn-chronograph-vollkalender-38mm-wei-77990-a-90358-automatik",
-      "destination": "/produkt.html?id=p2162",
+      "destination": "/produkt?id=p2162",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/sinn-spezialuhren-chronograph-936-full-set-jahr-2024",
-      "destination": "/produkt.html?id=p9311",
+      "destination": "/produkt?id=p9311",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tag-heuer-carrera-calibre-16-cbm2110ba065-chronograph",
-      "destination": "/produkt.html?id=p350",
+      "destination": "/produkt?id=p350",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tag-heuer-carrera-chronograph-ref-cbn2a1bba0643-full-set-2020",
-      "destination": "/produkt.html?id=p9320",
+      "destination": "/produkt?id=p9320",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tag-heuer-carrera-chronograph-ref-cv2010-service-2025-full-set",
-      "destination": "/produkt.html?id=p350",
+      "destination": "/produkt?id=p350",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tag-heuer-carrera-chronograph-refcv2010-aus-2008-im-full-set",
-      "destination": "/produkt.html?id=p350",
+      "destination": "/produkt?id=p350",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tag-heuer-carrera-gmt-big-date-ref-war201z-service-nov-2025",
-      "destination": "/produkt.html?id=p263",
+      "destination": "/produkt?id=p263",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tag-heuer-link-chronograph-automatik-cjf2111-service-032026",
-      "destination": "/produkt.html?id=p366",
+      "destination": "/produkt?id=p366",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tudor-black-bay-36-stgg-79503-aus-2022-im-full-set",
-      "destination": "/produkt.html?id=p426",
+      "destination": "/produkt?id=p426",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tudor-black-bay-bucherer-blue-79250bb-automatik-only-watch",
-      "destination": "/produkt.html?id=p5069",
+      "destination": "/produkt?id=p5069",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tudor-heritage-chronograph-42mm-zb-schwarz-70330n-full-set-2011",
-      "destination": "/produkt.html?id=p1799",
+      "destination": "/produkt?id=p1799",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/tudor-royal-34-mm-ref-28400-aus-2021-im-full-set",
-      "destination": "/produkt.html?id=p427",
+      "destination": "/produkt?id=p427",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/vacheron-constantin-overseas-chronograph-ref-49150-box-zb-wei",
-      "destination": "/produkt.html?id=p3734",
+      "destination": "/produkt?id=p3734",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/xn--baume--mercier-hampton-mv045226-aus-18k-weigold-im-full-set-30e",
-      "destination": "/produkt.html?id=p408",
+      "destination": "/produkt?id=p408",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/xn--hublot-faltschliee-aus-18-karat-rotgold-fr-20-mm-bandansto-wue5b97l",
-      "destination": "/produkt.html?id=p300",
+      "destination": "/produkt?id=p300",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/xn--tag-heuer-link-chronograph-150-stck-aus-2013-mit-garantiekarte-fog",
-      "destination": "/produkt.html?id=p398",
+      "destination": "/produkt?id=p398",
       "permanent": true
     },
     {
       "source": "/shop/ols/products/xn--tudor-black-bay-heritage-41-lnette-rot-79230r-0003-tudor-box-7gg",
-      "destination": "/produkt.html?id=p413",
+      "destination": "/produkt?id=p413",
       "permanent": true
     },
     {
       "source": "/shop",
-      "destination": "/shop.html",
+      "destination": "/shop",
       "permanent": true
     },
     {
       "source": "/ankauf-&-inzahlungnahme",
-      "destination": "/ankauf.html",
+      "destination": "/ankauf",
       "permanent": true
     },
     {
       "source": "/ankauf-%26-inzahlungnahme",
-      "destination": "/ankauf.html",
+      "destination": "/ankauf",
       "permanent": true
     },
     {
       "source": "/suchanfrage-einer-uhr",
-      "destination": "/suchauftrag.html",
+      "destination": "/suchauftrag",
       "permanent": true
     },
     {
       "source": "/über-uns",
-      "destination": "/ueber-uns.html",
+      "destination": "/ueber-uns",
       "permanent": true
     },
     {
       "source": "/%C3%BCber-uns",
-      "destination": "/ueber-uns.html",
+      "destination": "/ueber-uns",
       "permanent": true
     },
     {
       "source": "/unser-showroom",
-      "destination": "/ueber-uns.html#showroom",
+      "destination": "/ueber-uns#showroom",
       "permanent": true
     },
     {
       "source": "/impressum",
-      "destination": "/impressum.html",
+      "destination": "/impressum",
       "permanent": true
     },
     {
       "source": "/agb",
-      "destination": "/agb.html",
+      "destination": "/agb",
       "permanent": true
     },
     {
       "source": "/terms-and-conditions",
-      "destination": "/agb.html",
+      "destination": "/agb",
       "permanent": true
     },
     {
       "source": "/datenschutzrichtlinie",
-      "destination": "/datenschutz.html",
+      "destination": "/datenschutz",
       "permanent": true
     },
     {
       "source": "/privacy-policy",
-      "destination": "/datenschutz.html",
+      "destination": "/datenschutz",
       "permanent": true
     },
     {
       "source": "/shop/ols/categories/:pfad*",
-      "destination": "/shop.html",
+      "destination": "/shop",
       "permanent": true
     },
     {
       "source": "/shop/ols/:pfad*",
-      "destination": "/shop.html",
+      "destination": "/shop",
       "permanent": true
     },
     {
       "source": "/m/:pfad*",
-      "destination": "/shop.html",
+      "destination": "/shop",
       "permanent": false
     }
   ]

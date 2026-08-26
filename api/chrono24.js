@@ -194,7 +194,7 @@ function baueArtikel(p, kennungen, basis) {
   x += tag('condition', zustandNachChrono24(f.zustand));
   x += tag('taxation_scheme',
     String(f.besteuerung || '').toLowerCase().indexOf('differenz') === 0 ? 'margin' : 'regular');
-  if (uhrId) x += tag('link', basis + '/produkt.html?id=' + uhrId);
+  if (uhrId) x += tag('link', basis + '/produkt?id=' + uhrId);
   x += tag('description', p.beschreibung);
   x += '    </basic_information>\n';
 
