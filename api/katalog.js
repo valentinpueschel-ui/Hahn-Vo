@@ -27,6 +27,10 @@ function nachWebsiteForm(p, kennungen) {
   /* Zubehör hat keinen Aufzug — dieselbe Unterscheidung wie im Chrono24-Feed. */
   var kategorie = f.aufzug ? 'uhren' : 'zubehoer';
 
+  /* Verkauft schlägt reserviert: Was weg ist, ist weg. */
+  var reserviert = /^(ja|yes|1|true)$/i.test(String(f.reserviert || '').trim());
+  var status = !p.verfuegbar ? 'sold' : (reserviert ? 'reserved' : 'available');
+
   return {
     id: kennungen[p.shopifyId] || ersatzKennung(p.shopifyId),
     brand: p.marke,
@@ -34,7 +38,7 @@ function nachWebsiteForm(p, kennungen) {
     ref: f.referenz || null,
     price: p.preis,
     listPrice: p.listenpreis && p.listenpreis > p.preis ? p.listenpreis : null,
-    status: p.verfuegbar ? 'available' : 'sold',
+    status: status,
     category: kategorie,
     fullset: f.lieferumfang || null,
     rating: f.zustand || null,
@@ -68,11 +72,9 @@ async function baueKatalog(basis) {
     uhren.push(u);
     zuordnung[u.id] = u.shopifyId;
   });
-  /* Reihenfolge wie in Shopify; verkaufte Uhren ans Ende. */
-  uhren.sort(function (a, b) {
-    if ((a.status === 'sold') !== (b.status === 'sold')) return a.status === 'sold' ? 1 : -1;
-    return 0;
-  });
+  /* Erhältliche zuerst, dann reservierte, verkaufte ans Ende. */
+  var RANG = { available: 0, reserved: 1, sold: 2 };
+  uhren.sort(function (a, b) { return (RANG[a.status] || 0) - (RANG[b.status] || 0); });
   return {
     stand: new Date().toISOString(),
     anzahl: uhren.length,

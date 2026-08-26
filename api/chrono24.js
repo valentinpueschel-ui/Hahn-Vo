@@ -183,6 +183,8 @@ function baueArtikel(p, kennungen, basis) {
   var x = '  <article>\n    <basic_information>\n';
   x += tag('article_id', code);
   x += tag('price', preis);
+  /* Chrono24 kennt reservierte Uhren — sie bleiben sichtbar, aber gekennzeichnet. */
+  if (/^(ja|yes|1|true)$/i.test(String(f.reserviert || '').trim())) x += tag('on_hold', 'yes');
   x += tag('availability', 'in stock');
   x += tag('brand', p.marke);
   x += tag('model', p.modell);

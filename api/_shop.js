@@ -12,7 +12,7 @@ var API = 'https://' + SHOP + '/api/2024-10/graphql.json';
 /* Die Metafelder im Namensraum „uhr". */
 var FELDER = ['referenz', 'baujahr', 'durchmesser', 'gehaeuse', 'zifferblatt', 'band',
   'aufzug', 'kaliber', 'zustand', 'lieferumfang', 'geschlecht', 'code',
-  'besteuerung', 'glas', 'chrono24'];
+  'besteuerung', 'glas', 'chrono24', 'reserviert'];
 
 /* Marken mit mehreren Wörtern lassen sich nicht am ersten Leerzeichen
  * abtrennen — „A. Lange & Söhne" wäre sonst die Marke „A.". Deshalb eine
