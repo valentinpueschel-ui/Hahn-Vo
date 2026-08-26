@@ -1,5 +1,5 @@
 /* HAHN & VO — product detail page. Reads ?id= and renders from data.js. */
-(function () {
+(window.HV && window.HV.wennKatalogBereit ? window.HV.wennKatalogBereit : function (f) { f(); })(function () {
   'use strict';
   var HV = window.HV;
   var id = new URLSearchParams(location.search).get('id');
@@ -136,16 +136,21 @@
     ['Modell', p.name],
     ['Referenz', p.ref],
     ['Baujahr', p.year],
+    ['Geschlecht', p.gender],
     ['Durchmesser', p.size],
     ['Gehäuse', p.material],
+    ['Glas', p.glass],
     ['Zifferblatt', p.dial],
     ['Band', p.strap],
     ['Werk', p.movement],
+    ['Kaliber', p.caliber],
     ['Lieferumfang', p.fullset],
     ['Zustand', p.rating ? p.rating : null],
     ['Interner Code', p.code],
     ['Status', HV.statusLabel[p.status]],
-    ['Besteuerung', p.tax || 'Differenzbesteuerung nach § 25a UStG'],
+    ['Besteuerung', /^differenz/i.test(p.tax || '')
+      ? 'Differenzbesteuerung nach § 25a UStG'
+      : (p.tax || 'Differenzbesteuerung nach § 25a UStG')],
   ].filter(function (row) { return row[1]; });
   document.getElementById('specTable').innerHTML = specs.map(function (row) {
     return '<div class="row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>';
@@ -205,4 +210,4 @@
     })
     .slice(0, 4);
   document.getElementById('relatedGrid').innerHTML = related.map(HV.renderCard).join('');
-})();
+});

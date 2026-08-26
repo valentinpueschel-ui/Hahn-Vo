@@ -34,9 +34,7 @@ var EINSTELLUNGEN = {
   nurUhren: true,
 };
 
-var SHOP = 'tami1g-0j.myshopify.com';
-var STOREFRONT_TOKEN = '89c87251e5d1f73c1302b1674ba75b69';
-var API = 'https://' + SHOP + '/api/2024-10/graphql.json';
+var shop = require('./_shop');
 
 /* ---------- Übersetzung ins Chrono24-Vokabular ---------- */
 
@@ -165,118 +163,37 @@ function tag(name, wert) {
   return '      <' + name + '>' + xmlEscape(wert) + '</' + name + '>\n';
 }
 
-/* ---------- Daten holen ---------- */
-
-var FELDER = ['referenz', 'baujahr', 'durchmesser', 'gehaeuse', 'zifferblatt', 'band',
-  'aufzug', 'kaliber', 'zustand', 'lieferumfang', 'geschlecht', 'code',
-  'besteuerung', 'glas', 'chrono24'];
-
-function abfrage(cursor) {
-  var ids = FELDER.map(function (k) {
-    return '{namespace:"uhr",key:"' + k + '"}';
-  }).join(',');
-  return '{products(first:50' + (cursor ? ',after:"' + cursor + '"' : '') + '){' +
-    'pageInfo{hasNextPage endCursor}' +
-    /* Bestandszahlen darf der öffentliche Token nicht lesen; availableForSale
-     * genügt: Shopify setzt es auf false, sobald der Bestand 0 ist. */
-    'edges{node{id title descriptionHtml availableForSale ' +
-    'images(first:16){edges{node{url}}} ' +
-    'variants(first:1){edges{node{price{amount}}}} ' +
-    'metafields(identifiers:[' + ids + ']){key value}}}}}';
-}
-
-async function holeProdukte() {
-  var alle = [], cursor = null;
-  for (var runde = 0; runde < 10; runde++) {
-    var antwort = await fetch(API, {
-      method: 'POST',
-      headers: {
-        'X-Shopify-Storefront-Access-Token': STOREFRONT_TOKEN,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query: abfrage(cursor) }),
-    });
-    if (!antwort.ok) throw new Error('Shopify antwortet mit ' + antwort.status);
-    var daten = await antwort.json();
-    if (daten.errors) throw new Error('Shopify: ' + JSON.stringify(daten.errors));
-    var seite = daten.data.products;
-    seite.edges.forEach(function (e) { alle.push(e.node); });
-    if (!seite.pageInfo.hasNextPage) break;
-    cursor = seite.pageInfo.endCursor;
-  }
-  return alle;
-}
-
-/* Verweis auf unsere eigene Produktseite. Die Zuordnung Uhr ↔ Shopify-Produkt
- * steht in js/data.js, damit es dafür keine zweite Quelle gibt. */
-async function holeVerweise(basis) {
-  try {
-    var antwort = await fetch(basis + '/js/data.js');
-    if (!antwort.ok) return {};
-    var text = await antwort.text();
-    var treffer = text.match(/window\.SHOPIFY\s*=\s*(\{[\s\S]*?\n\});/);
-    if (!treffer) return {};
-    var karte = JSON.parse(treffer[1]).products || {};
-    var umgekehrt = {};
-    Object.keys(karte).forEach(function (uhrId) {
-      umgekehrt[String(karte[uhrId])] = uhrId;
-    });
-    return umgekehrt;
-  } catch (e) {
-    return {};
-  }
-}
-
-function beschreibungAusHtml(html) {
-  return String(html || '')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
-
 /* ---------- Feed bauen ---------- */
 
-function baueArtikel(p, verweise, basis) {
-  var f = {};
-  (p.metafields || []).forEach(function (m) { if (m && m.value) f[m.key] = m.value; });
-
+function baueArtikel(p, kennungen, basis) {
+  var f = p.f;
   var code = f.code;
   if (!code) return null;
   if (EINSTELLUNGEN.ausschluss.indexOf(code) !== -1) return null;
   if (String(f.chrono24 || '').trim().toLowerCase().match(/^(nein|no|aus|false|0)$/)) return null;
   if (EINSTELLUNGEN.nurUhren && !f.aufzug) return null;
-  if (EINSTELLUNGEN.nurVerfuegbare && !p.availableForSale) return null;
+  if (EINSTELLUNGEN.nurVerfuegbare && !p.verfuegbar) return null;
 
-  var variante = ((p.variants.edges[0] || {}).node) || {};
-  var preis = preisFuerChrono24(variante.price && variante.price.amount);
+  var preis = preisFuerChrono24(p.preis);
   if (!preis) return null;
 
-  /* Erstes Wort des Titels ist die Marke, der Rest das Modell. */
-  var titel = String(p.title || '').trim();
-  var marke = titel.split(' ')[0];
-  var modell = titel.slice(marke.length).trim() || titel;
-
   var lieferumfang = LIEFERUMFANG[String(f.lieferumfang || '').toLowerCase()] || null;
-  var uhrId = verweise[String(p.id).split('/').pop()];
+  var uhrId = kennungen[p.shopifyId];
 
   var x = '  <article>\n    <basic_information>\n';
   x += tag('article_id', code);
   x += tag('price', preis);
   x += tag('availability', 'in stock');
-  x += tag('brand', marke);
-  x += tag('model', modell);
-  x += tag('product_name', titel);
+  x += tag('brand', p.marke);
+  x += tag('model', p.modell);
+  x += tag('product_name', p.titel);
   x += tag('reference_number', f.referenz);
   x += tag('gender', uebersetze(f.geschlecht, GESCHLECHT));
   x += tag('condition', zustandNachChrono24(f.zustand));
   x += tag('taxation_scheme',
     String(f.besteuerung || '').toLowerCase().indexOf('differenz') === 0 ? 'margin' : 'regular');
   if (uhrId) x += tag('link', basis + '/produkt.html?id=' + uhrId);
-  x += tag('description', beschreibungAusHtml(p.descriptionHtml));
+  x += tag('description', p.beschreibung);
   x += '    </basic_information>\n';
 
   var werk = tag('movement_type', uebersetze(f.aufzug, AUFZUG)) + tag('caliber', f.kaliber);
@@ -299,7 +216,7 @@ function baueArtikel(p, verweise, basis) {
   sonst += tag('year', f.baujahr);
   if (sonst) x += '    <miscellaneous>\n' + sonst + '    </miscellaneous>\n';
 
-  var bilder = (p.images.edges || []).map(function (e) { return e.node.url; }).slice(0, 16);
+  var bilder = (p.bilder || []).slice(0, 16);
   if (bilder.length) {
     x += '    <images>\n';
     bilder.forEach(function (u) { x += tag('image', u); });
@@ -310,13 +227,13 @@ function baueArtikel(p, verweise, basis) {
 }
 
 async function baueFeed(basis) {
-  var produkte = await holeProdukte();
-  var verweise = await holeVerweise(basis);
+  var produkte = await shop.holeBestand();
+  var kennungen = await shop.holeKennungen(basis);
   var artikel = [];
   var ausgelassen = [];
   produkte.forEach(function (p) {
-    var a = baueArtikel(p, verweise, basis);
-    if (a) artikel.push(a); else ausgelassen.push(p.title);
+    var a = baueArtikel(p, kennungen, basis);
+    if (a) artikel.push(a); else ausgelassen.push(p.titel);
   });
   var xml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<!-- Hahn & Vo OHG — Warenbestand, erzeugt am ' + new Date().toISOString() + ' -->\n' +

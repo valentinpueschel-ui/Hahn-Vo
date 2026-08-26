@@ -347,10 +347,21 @@
 
   /* ---------- new-in rail ---------- */
   var rail = document.getElementById('newinRail');
-  var newest = (window.PRODUCTS || [])
-    .filter(function (p) { return p.status !== 'sold' && p.id !== window.FLAGSHIP_ID; })
-    .slice(0, 8);
-  rail.innerHTML = newest.map(HV.renderCard).join('');
+  function raileFuellen() {
+    var newest = (window.PRODUCTS || [])
+      .filter(function (p) { return p.status !== 'sold' && p.id !== window.FLAGSHIP_ID; })
+      .slice(0, 8);
+    rail.innerHTML = newest.map(HV.renderCard).join('');
+    if (HV.initMotion) HV.initMotion(rail);
+  }
+  raileFuellen();
+
+  /* Die Startseite wartet nicht auf Shopify — der Preloader soll sofort laufen.
+   * Sobald der Katalog da ist, wird die Reihe mit dem aktuellen Bestand neu
+   * gefüllt. */
+  document.addEventListener('hv:katalog', function (e) {
+    if (e.detail && e.detail.quelle === 'shopify') raileFuellen();
+  });
 
   /* drag-scroll for rails */
   document.querySelectorAll('.rail-wrap, .quote-rail-wrap').forEach(function (wrapEl) {
@@ -447,6 +458,4 @@
       (p.reel ? PLAY : '') + '</a>';
   }).join('');
 
-  /* re-init motion for injected content */
-  if (HV.initMotion) HV.initMotion(document.getElementById('newinRail'));
 })();

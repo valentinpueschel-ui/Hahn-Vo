@@ -1,5 +1,5 @@
 /* HAHN & VO — shop: category toggle, faceted filters, sort, animated grid. */
-(function () {
+(window.HV && window.HV.wennKatalogBereit ? window.HV.wennKatalogBereit : function (f) { f(); })(function () {
   'use strict';
   var HV = window.HV;
   var ALL = window.PRODUCTS || [];
@@ -175,4 +175,4 @@
   });
 
   render();
-})();
+});
