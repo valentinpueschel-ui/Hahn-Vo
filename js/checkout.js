@@ -67,7 +67,7 @@
         '<span class="num">' + (zeigen ? versandLabel() : '—') + '</span></div>' +
       '<div class="co-sum-total"><span>Gesamt</span><span class="num">' +
         HV.fmtEUR(HV.cart.total() + (zeigen ? vk : 0)) + '</span></div>' +
-      '<p style="font-size:11.5px;color:var(--ink-60);line-height:1.55;margin-top:14px">Alle Preise sind Endpreise. Der Verkauf erfolgt differenzbesteuert nach § 25a UStG; die Mehrwertsteuer wird auf der Rechnung nicht gesondert ausgewiesen. Jede Uhr mit 12 Monaten Garantie und 14 Tagen Rückgaberecht.</p>';
+      '<p style="font-size:11.5px;color:var(--ink-60);line-height:1.55;margin-top:14px">Alle Preise sind Endpreise inkl. MwSt. Ein Teil unserer Uhren ist differenzbesteuert nach § 25a UStG — dort wird die Mehrwertsteuer auf der Rechnung nicht gesondert ausgewiesen. Die Angabe steht bei jeder Uhr im Datenblatt. Jede Uhr mit 12 Monaten Garantie und 14 Tagen Rückgaberecht.</p>';
   }
 
   /* ---------- step tabs ---------- */

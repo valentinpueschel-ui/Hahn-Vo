@@ -165,6 +165,19 @@
   }
   setWhatsapp();
 
+  /* Besteuerung: Es gibt beides im Bestand — der Satz unter dem Preis und die
+     Zeile im Datenblatt richten sich nach der einzelnen Uhr. */
+  var differenz = /^differenz/i.test(String(p.tax || ''));
+  HV.steuerLabel = differenz
+    ? 'Differenzbesteuerung nach § 25a UStG'
+    : 'Regelbesteuerung, Mehrwertsteuer ausweisbar';
+  var steuerEl = document.getElementById('pdTax');
+  if (steuerEl) {
+    steuerEl.textContent = differenz
+      ? 'Endpreis. Differenzbesteuert nach § 25a UStG — die Mehrwertsteuer ist enthalten, wird auf der Rechnung aber nicht gesondert ausgewiesen.'
+      : 'Endpreis inkl. gesetzlicher Mehrwertsteuer — auf der Rechnung gesondert ausgewiesen.';
+  }
+
   /* spec table */
   var specs = [
     ['Marke', p.brand],
@@ -183,9 +196,7 @@
     ['Zustand', p.rating ? p.rating : null],
     ['Interner Code', p.code],
     ['Status', HV.statusLabel[p.status]],
-    ['Besteuerung', /^differenz/i.test(p.tax || '')
-      ? 'Differenzbesteuerung nach § 25a UStG'
-      : (p.tax || 'Differenzbesteuerung nach § 25a UStG')],
+    ['Besteuerung', HV.steuerLabel],
   ].filter(function (row) { return row[1]; });
   document.getElementById('specTable').innerHTML = specs.map(function (row) {
     return '<div class="row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>';

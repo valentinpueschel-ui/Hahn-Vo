@@ -103,7 +103,7 @@
         '</div>' +
       '</div>' +
       '<div class="sf-legal">' +
-        '<span>© 2026 Hahn &amp; Vo OHG · Preise sind Endpreise, differenzbesteuert nach § 25a UStG</span>' +
+        '<span>© 2026 Hahn &amp; Vo OHG · Alle Preise sind Endpreise inkl. MwSt.</span>' +
         '<div class="links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="widerruf.html">Widerruf</a></div>' +
       '</div>' +
     '</div>' +
