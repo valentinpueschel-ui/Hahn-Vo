@@ -157,12 +157,14 @@
            freigeschaltet ist — Stand 24.08.2026: Shopify Payments (Visa,
            Mastercard, Amex), Apple Pay, Google Pay, Shop Pay, PayPal,
            Banküberweisung. */
-        '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.7;max-width:58ch">Ihre Zahlung läuft über unsere verschlüsselte Kasse — abgesichert nach Bankenstandard. Sie wählen dort zwischen Kreditkarte, Apple&nbsp;Pay, Google&nbsp;Pay, PayPal und Banküberweisung. Ihre Daten sind bereits hinterlegt.</p>' +
-        '<div class="pay-row">' +
-          '<span class="pay-badge">Kreditkarte</span><span class="pay-badge">Apple&nbsp;Pay</span>' +
-          '<span class="pay-badge">Google&nbsp;Pay</span><span class="pay-badge">PayPal</span>' +
-          '<span class="pay-badge">Banküberweisung</span>' +
-        '</div>' +
+        '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.7;max-width:58ch">Sie zahlen im nächsten Schritt in unserer verschlüsselten Kasse — abgesichert nach Bankenstandard. Ihre Daten sind dort bereits hinterlegt.</p>' +
+        /* Reine Information, keine Auswahl. Deshalb bewusst ohne Rahmen und
+           Fläche: Kacheln sahen aus wie Schaltflächen und luden zum Klicken
+           ein, obwohl die Zahlungsart erst in der Kasse gewählt wird. */
+        '<p class="pay-hint">' +
+          '<span class="pay-hint-lead">Dort zur Auswahl</span>' +
+          '<span class="pay-hint-list">Kreditkarte · Apple&nbsp;Pay · Google&nbsp;Pay · PayPal · Banküberweisung</span>' +
+        '</p>' +
         '<div class="field" style="margin-top:22px"><label>Anmerkung zur Bestellung (optional)</label>' +
         '<textarea id="fNote" placeholder="z. B. Wunschtermin für die Übergabe …">' + esc(order.note) + '</textarea></div>' +
         '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
