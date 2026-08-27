@@ -40,7 +40,8 @@ Pflicht, damit die Uhr überall sauber erscheint:
    Zifferblatt, Band, Glas
 
 Der **interne Code** ist wichtig: Er ist die Artikelnummer auf Chrono24 und der
-Verwendungszweck bei Banküberweisung. Schema `HV-` plus Zahl.
+Verwendungszweck bei Banküberweisung. Hannes' Artikelnummer aus der
+Inventarliste, ohne Präfix — `427` oder `550-26`.
 
 Ohne Aufzug gilt der Eintrag als **Zubehör**: Er erscheint im Shop unter
 Zubehör, aber nicht auf Chrono24. Genau so sind die Faltschließe und das

@@ -32,7 +32,7 @@ Schnittstelle an.
 ## Vor der Freischaltung klären — sonst Dubletten
 
 Die derzeit 53 Anzeigen auf Chrono24 sind von Hand angelegt und tragen andere
-Artikelnummern als der Feed (dort ist es der interne Code, z. B. `HV-426`).
+Artikelnummern als der Feed (dort ist es der interne Code, z. B. `427`).
 Importiert Chrono24 den Feed einfach zusätzlich, steht **jede dieser Uhren
 danach zweimal** drin.
 
@@ -46,7 +46,7 @@ besten schreibt Hannes aus dem Händlerkonto und stellt beide Fragen in einem:
 >
 > Wir haben derzeit 53 Inserate, die wir von Hand angelegt haben. Wie werden
 > diese dem Feed zugeordnet, damit keine Dubletten entstehen? Als Artikelnummer
-> (`article_id`) verwenden wir unseren internen Code, z. B. HV-426.
+> (`article_id`) verwenden wir unseren internen Code, z. B. 427.
 >
 > Händlerkonto: hahnundvo
 
@@ -82,7 +82,7 @@ Chrono24-Vokabular:
 
 | Chrono24 | Quelle | Beispiel |
 |---|---|---|
-| `article_id` | `uhr.code` | HV-426 |
+| `article_id` | `uhr.code` | 427 |
 | `price` | Shopify-Preis (+ Aufschlag) | 3390 |
 | `brand` / `model` | Produkttitel, erstes Wort ist die Marke | Tudor / Black Bay 36 |
 | `reference_number` | `uhr.referenz` | 79503 |
@@ -120,8 +120,8 @@ Modellnamen. `Tag Heuer` wird einheitlich zu `TAG Heuer`.
 ## Stand der Daten (26.08.2026)
 
 **68 Uhren im Feed.** Die beiden Zubehörartikel bleiben draußen, dazu vier
-Uhren, die Hannes am 26.08. als verkauft gemeldet hat (HV-412, HV-335,
-HV-334, HV-4267) — deren Bestand steht auf 0.
+Uhren, die Hannes am 26.08. als verkauft gemeldet hat (412, 335, 334,
+4267) — deren Bestand steht auf 0.
 
 Alle Pflichtfelder sind gefüllt. Die beiden optionalen bleiben teilweise leer:
 **Baujahr** ist bei zwölf Uhren laut Hannes nicht bekannt und bleibt deshalb

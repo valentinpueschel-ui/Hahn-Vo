@@ -137,7 +137,7 @@ Inhaltlich gilt:
   Online-Banking — sieben Tage wären praxisnäher.
 - Bank: Städtische Sparkasse Offenbach a.M., **BIC HELADEF1OFF**
   — mit dem Buchstaben O, nicht der Ziffer 0
-- Verwendungszweck: interner Code der Uhr, mit Beispiel (z. B. HV-4846),
+- Verwendungszweck: interner Code der Uhr, mit Beispiel (z. B. 538-26),
   damit der Kunde weiß, wo er ihn findet
 - Durchgehend siezen
 

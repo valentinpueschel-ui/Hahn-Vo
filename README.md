@@ -62,10 +62,11 @@ Beitrag die 900-px-Fassung aus der Einbettung, speichert sie unter
 `assets/img/ig/` und schreibt `js/ig-posts.js`. Es ist eine Momentaufnahme —
 fuer neue Beitraege erneut ausfuehren.
 
-Stand 26.08.2026: **74 Produkte** — 72 Uhren und 2 Zubehoerartikel.
+Stand 27.08.2026: **76 Produkte** — 74 Uhren und 2 Zubehoerartikel.
 Produktbilder der Altbestaende liegen lokal unter `assets/products/p<id>/`,
-neuere kommen von der Shopify-Adresse. Interner Code je Uhr ist `HV-<id>`;
-er ist zugleich die Artikelnummer auf Chrono24 und der Verwendungszweck bei
+neuere kommen von der Shopify-Adresse. Interner Code je Uhr ist Hannes'
+Artikelnummer aus der Inventarliste, ohne Praefix — `427` oder `550-26`.
+Er ist zugleich die Artikelnummer auf Chrono24 und der Verwendungszweck bei
 Bankueberweisung.
 
 **Kundenstimmen:** echt — Wortlaut und Fotos von hahn-vo.de/suchanfrage-einer-uhr
