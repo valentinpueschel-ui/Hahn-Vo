@@ -42,6 +42,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-427",
+  "added": "2026-08-21T04:38:44Z",
   "desc": "Hier präsentieren wir die Tudor Black Bay Stahl/Gold aus dem Jahr 2022 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n79503\n\nBaujahr\n2022\n\nDurchmesser\n36 mm\n\nGehäuse\nEdelstahl/Gelbgold\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl/Gelbgold\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p426/0.jpg",
@@ -76,6 +77,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-462",
+  "added": "2026-08-21T07:51:59Z",
   "desc": "Hier präsentieren wir die MB&F Legacy Machine Split Escapement aus dem Jahr 2024 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n04.TR.LB\n\nBaujahr\n2024\n\nDurchmesser\n44 mm\n\nGehäuse\nTitan\n\nZifferblatt\nBlau\n\nBand\nKautschukband\n\nWerk\nHandaufzug\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut (wie neu)\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p462/0.jpg",
@@ -110,6 +112,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": null,
+  "added": "2026-08-21T07:52:03Z",
   "desc": "Hier präsentieren wir die Rolex Datejust 36 neuwertig & ungetragen aus dem Jahr 2022 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n126200\n\nBaujahr\n2022\n\nDurchmesser\n36 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p458/0.jpg",
@@ -144,6 +147,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-448",
+  "added": "2026-08-21T07:52:05Z",
   "desc": "Hier präsentieren wir die IWC Big Pilot Top Gun aus dem Jahr 2017 im Full Set.\n\nReferenz\nIW502001\n\nBaujahr\n2017\n\nDurchmesser\n46 mm\n\nGehäuse\nKeramik\n\nZifferblatt\nSchwarz\n\nBand\nLeder\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p454/0.jpg",
@@ -178,6 +182,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-433",
+  "added": "2026-08-21T07:52:08Z",
   "desc": "Hier präsentieren wir die IWC Portugieser Handaufzug mit Box und Service-Garantiekarte. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-450\n\nReferenz\nIW545405\n\nDurchmesser\n44 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nLeder\n\nWerk\nHandaufzug\n\nLieferumfang\nFull Set, Box, Garantiekarte\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-450",
   "images": [
    "assets/products/p450/0.jpg",
@@ -212,6 +217,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-424",
+  "added": "2026-08-21T07:52:10Z",
   "desc": "Hier präsentieren wir die Jaeger Le Coultre Reverso aus dem Jahr 2019 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nBaujahr\n2019\n\nDurchmesser\n40.1 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p446/0.jpg",
@@ -246,6 +252,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-434",
+  "added": "2026-08-21T07:52:12Z",
   "desc": "Hier präsentieren wir die Nomos Luwdwig aus dem Jahr 2011 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n205\n\nBaujahr\n2011\n\nDurchmesser\n34 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nLeder (stark gebraucht)\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p434/0.jpg",
@@ -280,6 +287,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-426",
+  "added": "2026-08-21T07:52:14Z",
   "desc": "Hier präsentieren wir die Rolex Longines Saint-Imier Chronograph. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\nL2.752.4.72.6\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nEdelstahl\n\nWerk\nAutomatik 12\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p441/0.jpg",
@@ -314,6 +322,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-449",
+  "added": "2026-08-21T07:52:16Z",
   "desc": "Hier präsentieren wir die Rolex Oyster Perpetual 34 aus dem Jahr 2026 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n124200\n\nBaujahr\n2026\n\nDurchmesser\n34 mm\n\nGehäuse\nEdelstahl 904L\n\nZifferblatt\nMed Blue\n\nBand\nEdelstahl 904L\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p435/0.jpg",
@@ -348,6 +357,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-428",
+  "added": "2026-08-21T07:52:17Z",
   "desc": "Hier präsentieren wir die Tudor Royal 34 aus dem Jahr 2021 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-427\n\nReferenz\n28400\n\nBaujahr\n2021\n\nDurchmesser\n34 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-427",
   "images": [
    "assets/products/p427/0.jpg",
@@ -382,6 +392,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-396",
+  "added": "2026-08-21T07:52:20Z",
   "desc": "Hier präsentieren wir die Omega Planet Ocean Chronograph aus dem Jahr 2014 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n232.90.46.51.03.001\n\nBaujahr\n2014\n\nDurchmesser\n45,5 mm\n\nGehäuse\nTitan\n\nZifferblatt\nBlau\n\nBand\nTitan\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p384/0.jpg",
@@ -416,6 +427,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-418",
+  "added": "2026-08-21T07:52:21Z",
   "desc": "Hier präsentieren wir die IWC Portofino 8 Days aus dem Jahr 2015 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-420\n\nReferenz\nIW510106\n\nBaujahr\n2015\n\nDurchmesser\n45 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nLeder\n\nWerk\nHandaufzug\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-420",
   "images": [
    "assets/products/p420/0.jpg",
@@ -450,6 +462,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-405",
+  "added": "2026-08-21T07:52:23Z",
   "desc": "Hier präsentieren wir die Breitling Navitimer B01 Chronograph im Full Set mit frischer Garantie (April 2026). Der aktuelle Breitling-Listenpreis liegt bei 9.350 Euro. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-415\n\nReferenz\nAB0121211C1A1\n\nBaujahr\n2018\n\nDurchmesser\n43 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nWerk\nAutomatik (B01 Manufakturwerk)\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-415",
   "images": [
    "assets/products/p415/0.jpg",
@@ -484,6 +497,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-410",
+  "added": "2026-08-21T07:52:23Z",
   "desc": "Hier präsentieren wir die Tudor Black Bay Heritage 41. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n79230R-0003\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nBox\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p413/0.jpg",
@@ -518,6 +532,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-408",
+  "added": "2026-08-21T07:52:25Z",
   "desc": "Hier präsentieren wir die Baume & Mercier Hampton im Full Set. Die Uhr besteht aus 18-karätigem Weißgold und ist äußerst selten. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\nMV045226\n\nDurchmesser\n26 x 40 mm\n\nGehäuse\nWeißgold\n\nZifferblatt\nWeiß\n\nBand\nLeder\n\nWerk\nQuarz Originale Baume & Mercier Papiere\n\nLieferumfang\nFull Set, Papiere, Garantiekarte, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p408/0.jpg",
@@ -552,6 +567,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-401",
+  "added": "2026-08-21T07:52:26Z",
   "desc": "Hier präsentieren wir die TAG Heuer Link Chronograph aus 2013 mit Garantiekarte. Diese Uhr ist auf nur 150 Stück limitiert. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nBaujahr\n2013\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nLieferumfang\nPapiere, Garantiekarte\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p398/0.jpg",
@@ -586,6 +602,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-231",
+  "added": "2026-08-21T07:52:27Z",
   "desc": "Hier präsentieren wir die Omega Planet Ocean aus dem Jahr 2020 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n215.30.40.20.03.001\n\nBaujahr\n2020\n\nDurchmesser\n39,5 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p406/0.jpg",
@@ -620,6 +637,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-360",
+  "added": "2026-08-21T07:52:27Z",
   "desc": "Hier präsentieren wir die Panerai Luminor Marina PAM00632 im Full Set aus dem Jahr 2016. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\nPAM00632\n\nBaujahr\n2016\n\nDurchmesser\n44 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nLeder / Kautschuk\n\nWerk\nHandaufzug\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p399/0.jpg",
@@ -654,6 +672,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-394",
+  "added": "2026-08-21T07:52:30Z",
   "desc": "Hier präsentieren wir die Omega Seamaster Aqua Terra. Für alle, die nicht nur die Zeit im Blick haben, sondern gleich mehrere. Die Omega Aqua Terra hatte im Frühjahr 2025 eine komplette Revision bei einem Uhrmacher erhalten. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-395\n\nReferenz\n231.10.43.22.03.001\n\nBaujahr\nnicht bekannt\n\nDurchmesser\n43 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nLeder (guter Zustand)\n\nWerk\nAutomatik (Manufakturkaliber)\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-395",
   "images": [
    "assets/products/p395/0.jpg",
@@ -688,6 +707,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-385",
+  "added": "2026-08-21T07:52:31Z",
   "desc": "Hier präsentieren wir die Rolex Datejust 41 aus dem Jahr 2026 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n126300\n\nBaujahr\n2026\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p393/0.jpg",
@@ -722,6 +742,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-344",
+  "added": "2026-08-21T07:52:35Z",
   "desc": "Hier präsentieren wir den TAG Heuer Link Chronograph. Die TAG Heuer hatte im März 2026 einen kompletten Service erhalten und kommt mit 2x Jahren Garantie. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-366\n\nReferenz\nCJF2111\n\nBaujahr\nnicht bekannt\n\nDurchmesser\n42 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß (Außenring leichte Schäden, siehe Bilder)\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-366",
   "images": [
    "assets/products/p366/0.jpg",
@@ -756,6 +777,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-362",
+  "added": "2026-08-21T07:52:38Z",
   "desc": "Hier präsentieren wir die IWC Portofino 37 aus dem Jahr 2021 im Full Set mit einer Restgarantie bei IWC bis 2029. Unsere Bilder sind unbearbeitet und zeigen jedes Detail, mehr als das bloße Auge wahrnimmt.\n\nReferenz\nIW458101\n\nBaujahr\n2021\n\nDurchmesser\n37 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nWerk\nAutomatik 12\n\nLieferumfang\nFull Set, Garantiekarte, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p357/0.jpg",
@@ -790,6 +812,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-350",
+  "added": "2026-08-21T07:52:39Z",
   "desc": "Hier präsentieren wir die TAG Heuer Carrera Calibre 16. Der Listenpreis der Tag Heuer liegt bei 5.800 Euro in Deutschland. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-350\n\nReferenz\nCBM2110.BA065\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-350",
   "images": [
    "assets/products/p350/0.jpg",
@@ -824,6 +847,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-243",
+  "added": "2026-08-21T07:52:42Z",
   "desc": "Hier präsentieren wir die Tag Heuer Carrera. Diese Tag Heuer hatte im November 2025 eine komplette Revision erhalten. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Sehr gut / gut Gehäuse: Sehr gut Glas: Sehr gut Lünette: Sehr gut (Lünette Pos. 3-4 Schlag) Armband: Sehr gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\nCV2010\n\nBaujahr\n2007\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nLieferumfang\nFull Set, Papiere, Box\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p246/0.jpg",
@@ -858,6 +882,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-269",
+  "added": "2026-08-21T07:52:44Z",
   "desc": "Hier präsentieren wir die Tag Heuer Carrera Chronograph aus dem Jahr 2008 im Full Set. Alle wichtigen Details auf einen Blick: - Gesamtbewertung: Gut - Gehäuse: Sehr gut - Glas: Vorne (Sehr gut)/ Hinten Kratzer auf den Saphirglasboden - Lünette: Auffällig (siehe Bilder) - Armband: Sehr gut - Schließe: Sehr gut - Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\nCV2010\n\nBaujahr\n2008\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl -\n\nZifferblatt\nSchwarz -\n\nBand\nEdelstahl -\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nGut -\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p298/0.jpg",
@@ -892,6 +917,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-300",
+  "added": "2026-08-21T07:52:45Z",
   "desc": "Wir bieten hier eine originale Hublot Faltschließe aus 18k Rotgold an. Bandanstoß: 20 mm. Bei weiteren Fragen stehen wir jederzeit zur Verfügung.\n\nDurchmesser\n20 mm\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p300/0.jpg",
@@ -923,6 +949,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-296",
+  "added": "2026-08-21T07:52:46Z",
   "desc": "Hier präsentieren wir eine wahre Ikone von IWC Schaffhausen — den IWC Flieger Chronograph. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Gut Gehäuse: Gut Glas: Sehr gut Lünette: Gut Armband: Gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\nIW377701\n\nBaujahr\n2014\n\nDurchmesser\n43 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p292/0.jpg",
@@ -956,6 +983,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-283",
+  "added": "2026-08-21T07:52:47Z",
   "desc": "Hier präsentieren wir Omega Planet Ocean im Full Set. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Sehr gut Gehäuse: Sehr gut Glas: Gut Lünette: Sehr gut Armband: Sehr gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\n215.30.44.21.03.001\n\nBaujahr\n2018\n\nDurchmesser\n43,5 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p283/0.jpg",
@@ -990,6 +1018,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-246",
+  "added": "2026-08-21T07:52:47Z",
   "desc": "Hier präsentieren wir den Tag Heuer Carrera GMT Big Date. Diese Tag Heuer hatte im November 2025 eine komplette Revision erhalten. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Sehr gut Gehäuse: Sehr gut Glas: Sehr gut Lünette: Sehr gut Armband: Sehr gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-263\n\nReferenz\nWAR201Z\n\nBaujahr\nnicht bekannt\n\nDurchmesser\n41\n\nGehäuse\nEdelstahl\n\nZifferblatt\nGrau\n\nBand\nEdelstahl\n\nWerk\nGeprüft auf einwandfreies Laufverhalten, kein anstehender Se\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-263",
   "images": [
    "assets/products/p263/0.jpg",
@@ -1024,6 +1053,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-185",
+  "added": "2026-08-21T07:52:49Z",
   "desc": "Hier präsentieren wir die Bulgari Octo Finissimo Chronograph GMT aus dem Jahr 2022 im Full Set. Die Octo Finissimo Chronograph GMT bietet die perfekte Mischung aus technischer Raffinesse und ästhetischer Eleganz. Als flachste Automatikuhr der Welt, die mit Chronograph und GMT-Funktion ausgestattet ist.\n\nInterner Code\nHV-185\n\nBaujahr\n2022 Gehäusematerial: Titan Armbandmaterial: Titan Armbandfa\n\nDurchmesser\n42 mm (Oktogonal) Baujahr: 2022 Gehäusematerial: Titan Armban\n\nGehäuse\nTitan Armbandmaterial: Titan Armbandfarbe: Dunkelgrau Ziffer\n\nZifferblatt\nGrau Referenznummer: 103068 Uhrwerk: Automatik (Platinrotor)\n\nBand\nTitan Armbandfarbe: Dunkelgrau Zifferblattfarbe: Grau Refere\n\nWerk\nGeprüft auf einwandfreies Laufverhalten, kein anstehender Se\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut Gehäuse: Sehr gut Glas: Sehr gut Lünette: Sehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-185",
   "images": [
    "assets/products/p185/0.jpg",
@@ -1058,6 +1088,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-493",
+  "added": "2026-08-21T09:37:10Z",
   "desc": "Hier präsentieren wir die Sinn Chronograph Vollkalender. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-2162\n\nReferenz\nA-90358\n\nDurchmesser\n38 mm\n\nGehäuse\nEdelstahl (Vergoldet)\n\nZifferblatt\nWeiß\n\nBand\nLeder (Aftermarket von Kaufmann)\n\nWerk\nAutomatik\n\nLieferumfang\nEchtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-2162",
   "images": [
    "assets/products/p2162/0.jpg",
@@ -1092,6 +1123,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-532-26",
+  "added": "2026-08-21T09:37:11Z",
   "desc": "Hier präsentieren wir die Tudor Black Bay Bucherer Blue Ref. 79250BB. Eine seltene Sonderedition, die exklusiv für Bucherer gefertigt wurde. Besonders charakteristisch sind das markante blaue Zifferblatt und die blaue Lünette. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-5069\n\nReferenz\n79250BB\n\nDurchmesser\n43 mm\n\nGehäuse\nBronze\n\nZifferblatt\nBlau\n\nBand\nTextil\n\nWerk\nAutomatik (Manufakturwerk)\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-5069",
   "images": [
    "assets/products/p5069/0.jpg",
@@ -1126,6 +1158,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-538-26",
+  "added": "2026-08-21T09:37:12Z",
   "desc": "Hier präsentieren wir die Rolex Datejust 36 aus dem Jahr 2014 im Full Set. Die Rolex verfügt über ein besonderes Jubilee dial mit diamantbesetzten Ziffern bei 6 und 9. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-4846\n\nReferenz\n116234\n\nBaujahr\n2014\n\nDurchmesser\n36 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nEdelstahl\n\nWerk\nRolex 3135\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-4846",
   "images": [
    "assets/products/p4846/0.jpg",
@@ -1160,6 +1193,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-530-26",
+  "added": "2026-08-21T09:37:13Z",
   "desc": "Hier präsentieren wir die Patek Philippe Twenty~4 aus dem Jahr 2010 mit Original Zetifikat & Reisebox. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-4808\n\nReferenz\n4910/10A\n\nBaujahr\n2010\n\nDurchmesser\n25,1 x 30 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nGrau\n\nBand\nEdelstahl\n\nWerk\nQuarz E15\n\nLieferumfang\nEchtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-4808",
   "images": [
    "assets/products/p4808/0.jpg",
@@ -1194,6 +1228,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-529-26",
+  "added": "2026-08-21T09:37:14Z",
   "desc": "Hier präsentieren wir die IWC Portofino Automatic 40 (only watch), jedoch mit Garantie bei IWC bis zum Jahr 07/2029. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-3771\n\nBaujahr\n2021 (Garantie bei IWC bis 2029)\n\nDurchmesser\n40 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nWerk\nAutomatik\n\nZustand\nSehr gut \n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-3771",
   "images": [
    "assets/products/p3771/0.jpg",
@@ -1228,6 +1263,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-522-26",
+  "added": "2026-08-21T09:37:15Z",
   "desc": "Hier präsentieren wir die Omega Diver 300 Blue mit Original Omega Garantiekarte. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-2446\n\nReferenz\n212.30.41.20.03.001\n\nBaujahr\n2009 (Ungefähre Angabe)\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Garantiekarte, Echtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-2446",
   "images": [
    "assets/products/p2446/0.jpg",
@@ -1262,6 +1298,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-519-26",
+  "added": "2026-08-21T09:37:16Z",
   "desc": "Hier präsentieren wir die Breitling Superocean Heritage Chronograph 46 mm im Full Set aus dem Jahr 2018. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-1226\n\nReferenz\nA1331212/BF78\n\nBaujahr\n2018\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-1226",
   "images": [
    "assets/products/p1226/0.jpg",
@@ -1296,6 +1333,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-527-26",
+  "added": "2026-08-21T09:37:17Z",
   "desc": "Hier präsentieren wir die TAG Heuer Carerra Chronograph aus dem Jahr 2020 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-9320\n\nReferenz\nCBN2A1B.BA0643\n\nBaujahr\n2020\n\nDurchmesser\n44 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-9320",
   "images": [
    "assets/products/p9320/0.jpg",
@@ -1330,6 +1368,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-528-26",
+  "added": "2026-08-21T09:37:18Z",
   "desc": "Hier präsentieren wir die Sinn 936 im Full Set aus dem Jahre 2024. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-9311\n\nBaujahr\n2024\n\nDurchmesser\n43 mm\n\nGehäuse\nStahl\n\nZifferblatt\nSchwarz\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-9311",
   "images": [
    "assets/products/p9311/0.jpg",
@@ -1364,6 +1403,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-524-26",
+  "added": "2026-08-21T09:37:18Z",
   "desc": "Hier präsentieren wir die Breitling Superocean Heritage 42 im Full Set aus dem Jahr 2016. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-9290\n\nReferenz\nA1732124/BA61\n\nBaujahr\n2016\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-9290",
   "images": [
    "assets/products/p9290/0.jpg",
@@ -1398,6 +1438,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-523-26",
+  "added": "2026-08-21T09:37:19Z",
   "desc": "Wir präsentieren die IWC Pilot's Watch Mark XVIII Laureus Edition Ref. IW324703. Eine auf nur 1.500 Exemplare weltweit limitierte Sonderedition für die Laureus Foundation. Unsere Bilder zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-7474\n\nReferenz\nIW324703\n\nBaujahr\n2018\n\nDurchmesser\n41 mm\n\nGehäuse\nKeramik\n\nZifferblatt\nBlau\n\nBand\nTextil, Leder Inlay\n\nWerk\nAutomatik\n\nLieferumfang\nGarantiekarte\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-7474",
   "images": [
    "assets/products/p7474/0.jpg",
@@ -1432,6 +1473,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-517-26",
+  "added": "2026-08-21T09:37:21Z",
   "desc": "Hier präsentieren wir die Rolex GMT Master II aus dem Jahr 2023 im Full Set. Die Rolex GMT-Master II Left Hand zeichnet sich durch ihre außergewöhnliche Anordnung der Krone auf der linken Gehäuseseite aus. In Kombination mit der grün-schwarzen Lünette zählt sie zu den begehrtesten Rolex-Modellen. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-9177\n\nReferenz\n126720VTNR\n\nBaujahr\n2023\n\nDurchmesser\n40 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-9177",
   "images": [
    "assets/products/p9177/0.jpg",
@@ -1466,6 +1508,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-507-26",
+  "added": "2026-08-21T09:37:22Z",
   "desc": "Hier präsentieren wir die Breitling Avenger Chronograph 45 aus dem Jahr 2020 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-6059\n\nReferenz\nA13317101C1A1\n\nBaujahr\n2020\n\nDurchmesser\n45 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-6059",
   "images": [
    "assets/products/p6059/0.jpg",
@@ -1500,6 +1543,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-514-26",
+  "added": "2026-08-21T09:37:23Z",
   "desc": "Hier präsentieren wir die elegante A. Lange & Söhne Saxonia 37 mm Ref. 201.027. Eine Ikone deutscher Uhrmacherkunst. Zum Lieferumfang gehört zudem ein hochwertiges L&S Travel Pouch, das diese außergewöhnliche Uhr stilvoll ergänzt. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-5825\n\nReferenz\n201.027\n\nDurchmesser\n37 mm\n\nGehäuse\nWeißgold\n\nZifferblatt\nWeiß\n\nBand\nLeder (orig. L&S Armband sehr guter Zustand)\n\nWerk\nHandaufzug (Kal. L.093.1)\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-5825",
   "images": [
    "assets/products/p5825/0.jpg",
@@ -1534,6 +1578,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-5085",
+  "added": "2026-08-21T09:37:24Z",
   "desc": "Hier präsentieren wir eine Lange & Söhne Taschenuhr mit L&S Zertifikat und Archivauszug von Glashütte, sowie die original Uhrenbox. Ein wahres Sammlerstück. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-5085\n\nBaujahr\n1907\n\nDurchmesser\n53 mm\n\nGehäuse\nSilber\n\nZifferblatt\nWeiß\n\nWerk\nHandaufzug\n\nLieferumfang\nBox\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-5085",
   "images": [
    "assets/products/p5085/0.jpg",
@@ -1568,6 +1613,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-5044",
+  "added": "2026-08-21T09:37:24Z",
   "desc": "Hier präsentieren wir den Breitling Chronomat Colt aus dem Jahr 2019 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-5044\n\nReferenz\nA17388\n\nBaujahr\n2019\n\nDurchmesser\n44 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl + Kautschukband\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-5044",
   "images": [
    "assets/products/p5044/0.jpg",
@@ -1602,6 +1648,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-512-26",
+  "added": "2026-08-21T09:37:25Z",
   "desc": "Hier präsentieren wir den IWC Portugieser Yacht Club Chrono im Full Set mit Flyback Funktion. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-5038\n\nReferenz\nIW390502\n\nBaujahr\n2017\n\nDurchmesser\n43 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nLeder / Kautschuk Inlay\n\nWerk\nAutomatik (Manufakturwerk mit Flybackfunktion)\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-5038",
   "images": [
    "assets/products/p5038/0.jpg",
@@ -1636,6 +1683,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-508-26",
+  "added": "2026-08-21T09:37:26Z",
   "desc": "Hier präsentieren wir die Panerai Radiomir PAM01385 im Full Set aus dem Jahr 2024. Diese Panerai hat eine Restgarantie bis 2032. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-3766\n\nReferenz\nPAM01385\n\nBaujahr\n2024 (Garantie bei Panerai bis 2032)\n\nDurchmesser\n44 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nHellbraun\n\nBand\nLeder\n\nWerk\nHandaufzug\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-3766",
   "images": [
    "assets/products/p3766/0.jpg",
@@ -1670,6 +1718,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-504-26",
+  "added": "2026-08-21T09:37:28Z",
   "desc": "Hier präsentieren wir die IWC Fliegeruhr Chronograph aus dem Jahr 2020 mit IWC Zertifikat. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-4284\n\nReferenz\nIW387902\n\nBaujahr\n2020\n\nDurchmesser\n41\n\nGehäuse\nBronze\n\nZifferblatt\nGrün\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-4284",
   "images": [
    "assets/products/p4284/0.jpg",
@@ -1704,6 +1753,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-497",
+  "added": "2026-08-21T09:37:30Z",
   "desc": "Hier präsentieren wir euch die Sinn 203 Chronograph mit Titangehäuse und Titanarmband. Die originale Sinn-Rechnung aus dem Jahr 1999 ist ebenfalls vorhanden. Zusätzlich wurde die Lünette im Januar 2023 direkt bei Sinn erneuert, der entsprechende Servicenachweis liegt bei. Zum Lieferumfang gehören außerdem ein 2. originales Titanarmband sowie alle beim Lünettenwechsel ausgebauten Originalteile.\n\nInterner Code\nHV-7015\n\nBaujahr\n1999\n\nDurchmesser\n41 mm\n\nGehäuse\nTitan\n\nZifferblatt\nBlau\n\nBand\nTitan\n\nWerk\nAutomatik\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-7015",
   "images": [
    "assets/products/p7015/0.jpg",
@@ -1738,6 +1788,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-496",
+  "added": "2026-08-21T09:37:30Z",
   "desc": "Hier präsentieren wir den Vacheron Constantin Overseas Chronograph mit orig. VC Uhrenbox. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-3734\n\nReferenz\n49150\n\nDurchmesser\n42 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nBox\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-3734",
   "images": [
    "assets/products/p3734/0.jpg",
@@ -1772,6 +1823,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-5556",
+  "added": "2026-08-21T09:37:31Z",
   "desc": "Hier präsentieren wir die IWC Big Pilot Big Date 150 Years Edition. Eine streng limitierte Big Pilot zum 150 jährigen Jubiläum von IWC Schaffhausen. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-5556\n\nReferenz\nIW510503\n\nBaujahr\nDezember 2019\n\nDurchmesser\n46 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau Emaille Look)\n\nBand\nLeder\n\nWerk\nHandaufzug (8x Tage Gangreserve)\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nNeuwertig & ungetragen\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-5556",
   "images": [
    "assets/products/p5556/0.jpg",
@@ -1806,6 +1858,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-5555",
+  "added": "2026-08-21T09:37:32Z",
   "desc": "Hier präsentieren wir die IWC Big Pilot Big Date 150 Years Edition. Eine streng limitierte Big Pilot zum 150 jährigen Jubiläum von IWC Schaffhausen. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-5555\n\nReferenz\nIW510504\n\nBaujahr\nDezember 2018\n\nDurchmesser\n46 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß (Emaille Look)\n\nBand\nLeder\n\nWerk\nHandaufzug (8x Tage Gangreserve)\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-5555",
   "images": [
    "assets/products/p5555/0.jpg",
@@ -1840,6 +1893,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-471",
+  "added": "2026-08-21T09:37:33Z",
   "desc": "Hier präsentieren wir die Breitling Superocean aus dem Jahr 2020 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-1237\n\nReferenz\nA17367D71B1A1\n\nBaujahr\n2020\n\nDurchmesser\n44\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl (starke Gebrauchspuren, siehe Bilder)\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nBefriedigend\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-1237",
   "images": [
    "assets/products/p1237/0.jpg",
@@ -1874,6 +1928,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-470",
+  "added": "2026-08-21T09:37:34Z",
   "desc": "Hier präsentieren wir die Panerai Radiomir 1940 aus dem Jahr 2016 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-1218\n\nReferenz\nPAM00662\n\nBaujahr\n2016\n\nDurchmesser\n47 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBraun\n\nBand\nKautschuk\n\nWerk\nP. 3000 Handaufzug\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-1218",
   "images": [
    "assets/products/p1218/0.jpg",
@@ -1908,6 +1963,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-469",
+  "added": "2026-08-21T09:37:35Z",
   "desc": "Hier präsentieren wir die Cartier Cle de Cartier aus dem Jahr 2019 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-1157\n\nReferenz\nWSCL0018\n\nBaujahr\n2019\n\nDurchmesser\n40 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-1157",
   "images": [
    "assets/products/p1157/0.jpg",
@@ -1942,6 +1998,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-458",
+  "added": "2026-08-21T09:37:36Z",
   "desc": "Hier präsentieren wir die Bulgari Octo Solotempo aus dem Jahr 2015. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-1154\n\nReferenz\n101964\n\nBaujahr\n2015\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Box, Echtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-1154",
   "images": [
    "assets/products/p1154/0.jpg",
@@ -1976,6 +2033,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-9012",
+  "added": "2026-08-21T09:37:37Z",
   "desc": "Hier präsentieren wir die IWC Ingenieur Chronograph aus dem Jahr 2016 in Titan. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-9012\n\nReferenz\nIW380701\n\nBaujahr\n2016\n\nDurchmesser\n42 mm\n\nGehäuse\nTitan\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nEchtheitszertifikat\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-9012",
   "images": [
    "assets/products/p9012/0.jpg",
@@ -2010,6 +2068,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-419",
+  "added": "2026-08-21T09:37:38Z",
   "desc": "Hier präsentieren wir die Breitling Avenger Chronograph aus dem Jahr 2021 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-440\n\nReferenz\nA13385101C1A1\n\nBaujahr\n2021\n\nDurchmesser\n43 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBlau\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-440",
   "images": [
    "assets/products/p440/0.jpg",
@@ -2044,6 +2103,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-206",
+  "added": "2026-08-21T09:49:11Z",
   "desc": "ier präsentieren wir die Omega Planet Ocean 42 mit orange Akzenten. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Gut Gehäuse: Sehr gut Glas: Gut (Mikrokratzer, siehe Bilder) Lünette: In Ordnung (leichte Kratzer auf der Pos., 3-5 siehe Bilder) Armband: Sehr gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-223\n\nReferenz\n2201.51.00\n\nBaujahr\n2009\n\nDurchmesser\n42 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nGeprüft auf einwandfreies Laufverhalten, kein anstehender Se\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-223",
   "images": [
    "assets/products/p223/0.jpg",
@@ -2078,6 +2138,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-546-26",
+  "added": "2026-08-25T08:55:38Z",
   "desc": "Hier präsentieren wir die IWC Portugieser Automatic mit 7 Tagen Gangreserve aus dem Jahr 2024 im Full Set.\n\nDie neue IWC Portugieser Automatic ist flacher als das Vorgängermodell, und das Zifferblatt wirkt moderner. Durch das flachere Gehäuse trägt sich das Modell angenehmer am Handgelenk.\n\nAußerdem haben Sie bis April 2032 eine Garantie bei IWC.\nDer Listenpreis liegt aktuell bei 14.000 Euro.\n\nReferenz\nIW501702\n\nBaujahr\n2024\n\nDurchmesser\n42 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nLeder\n\nWerk\nAutomatik (Manufakturkaliber)\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\nHV-8001",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/e6f82712-78be-4943-bf55-89a43da302ca.jpg?v=1787648141",
@@ -2113,6 +2174,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-537-26",
+  "added": "2026-08-25T08:57:14Z",
   "desc": "Hier präsentieren wir den Breitling Navitimer Chronograph 41 mm aus dem Jahr 2010 im Full Set.\n\nReferenz\nA23322\n\nBaujahr\n2010\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\nHV-8002",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/ea6f91a7-361a-4b6f-b464-b1c5cb7d9b8b.jpg?v=1787648238",
@@ -2150,6 +2212,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-536-26",
+  "added": "2026-08-25T08:59:07Z",
   "desc": "Hier präsentieren wir Ihnen den Girard-Perregaux Chronograph „30 Jahre Fiat“ Ref. 49480. Eine besondere Edition anlässlich eines Jubiläums des Automobilherstellers Fiat.\n\nDas hier angebotene Exemplar stammt aus dem Jahr 2011 und wird als Full Set angeboten.\n\nReferenz\n49480\n\nBaujahr\n2011\n\nDurchmesser\n38 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nGut\n\nInterner Code\nHV-8003",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/f15669c6-959a-4e44-a282-9e6ae8d90d7d.jpg?v=1787648350",
@@ -2185,6 +2248,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-525-26",
+  "added": "2026-08-25T08:59:08Z",
   "desc": "Hier präsentieren wir die TAG Heuer Carrera Juan Manuel Fangio Edition aus dem Jahr 2014 im Full Set.\n\nReferenz\nCV201AH\n\nBaujahr\n2014\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nGut\n\nInterner Code\nHV-8004",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/7699c214-aa38-41b2-9c65-475df0202db7.jpg?v=1787648351",
@@ -2221,6 +2285,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-540-26",
+  "added": "2026-08-25T09:00:38Z",
   "desc": "Hier präsentieren wir die Cartier Clé de Cartier im Full Set aus dem Jahr 2018.\n\nReferenz\nWSCL0005\n\nBaujahr\n2018\n\nDurchmesser\n31 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nGut\n\nInterner Code\nHV-8005",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/e463d1c9-2ed6-4580-8291-40613969941b.jpg?v=1787648441",
@@ -2256,6 +2321,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-541-26",
+  "added": "2026-08-25T09:00:39Z",
   "desc": "Hier präsentieren wir den IWC Portugieser Chronograph mit Edelstahlband im Full Set aus dem Jahr 2021.\n\nReferenz\nIW371609\n\nBaujahr\n2021\n\nDurchmesser\n41 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatik (Manufakturwerk)\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\nHV-8006",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/48b0ded9-d3dc-4bac-9933-3ded4fac90c4.jpg?v=1787648442",
@@ -2293,6 +2359,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-542-26",
+  "added": "2026-08-25T09:02:10Z",
   "desc": "Hier präsentieren wir die IWC Ingenieur Automatic aus dem Jahr 2023 im Full Set.\n\nReferenz\nIW328903\n\nBaujahr\n2023\n\nDurchmesser\n40 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nAqua Green\n\nBand\nEdelstahl\n\nWerk\nAutomatik (Manufakturkaliber)\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\nHV-8007",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/4227eaa1-0909-4009-8317-9c54dcceb70b.jpg?v=1787648533",
@@ -2330,6 +2397,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-8008",
+  "added": "2026-08-25T09:02:11Z",
   "desc": "Ein originales Reiseetui von Patek Philippe, neu und unbenutzt.\n\nDas Innenleben ist weich ausgekleidet, sodass die Uhr vor Kratzern und Beschädigungen geschützt ist. Gedacht für die Reise ebenso wie für die Aufbewahrung zu Hause.\n\nOriginal Patek Philippe Reiseetui\nNeu und unbenutzt\nHochwertige Materialien und Verarbeitung\nSicherer Halt für eine Uhr\nElegantes, klassisches Design\n\nInterner Code\nHV-8008",
   "images": [
    "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/e1066497-6b22-4f2b-a317-48b37a839259.jpg?v=1787648533",
@@ -2361,6 +2429,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-550",
+  "added": "2026-08-27T06:16:05Z",
   "desc": "Hier präsentieren wir die TAG Heuer Formula 1 aus dem Jahr 2023 im Full Set. Die Garantiekarte ist blanko — die Uhr wurde 2023 erstmals bei TAG Heuer registriert.\n\nUnsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt. Der vollständige Lieferumfang ist auf den Bildern ersichtlich: Originalbox, Papiere und Echtheitszertifikat.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-550",
   "images": [
    "assets/products/p550/0.jpg",
@@ -2397,6 +2466,7 @@ window.PRODUCTS = [
   "tax": "Differenzbesteuerung",
   "sku": null,
   "code": "HV-549",
+  "added": "2026-08-27T06:16:32Z",
   "desc": "Hier präsentieren wir die TAG Heuer Formula 1 aus dem Jahr 2022 im Full Set.\n\nUnsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt. Der vollständige Lieferumfang ist auf den Bildern ersichtlich: Originalbox, Papiere und Echtheitszertifikat.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-549",
   "images": [
    "assets/products/p549/0.jpg",
@@ -2433,6 +2503,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-412",
+  "added": "2026-08-21T07:52:24Z",
   "desc": "Hier kommt die Breitling Avenger II GMT. Für alle, die nicht nur eine, sondern gleich zwei Zeitzonen im Griff haben wollen. Natürlich inklusive originaler Box, damit sie sich auch nach dem Flug stilvoll ausruhen kann. Unsere Bilder sind unbearbeitet und zeigen jedes Detail — mehr, als das bloße Auge wahrnimmt.\n\nReferenz\nA32390\n\nDurchmesser\n43 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nBox\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht, weltweiter versicherter Versand oder persönliche Übergabe in unserem Showroom in Frankfurt.",
   "images": [
    "assets/products/p412/0.jpg",
@@ -2463,6 +2534,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-335",
+  "added": "2026-08-21T07:52:40Z",
   "desc": "Hier präsentieren wir die Breitling Chronomat in Stahl/Gold mit Echtheitszertifikat. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Gut Gehäuse: Gut erkennbar Glas: Sehr gut Lünette: Gut erkennbar Armband: Sehr gut Schließe: Sehr gut (After market, siehe Bilder) Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-335\n\nReferenz\nB13047\n\nDurchmesser\n39 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nBurgundy Dial\n\nBand\nLeder\n\nWerk\nGeprüft auf einwandfreies Laufverhalten, kein anstehender Se\n\nLieferumfang\nEchtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-335",
   "images": [
    "assets/products/p335/0.jpg",
@@ -2497,6 +2569,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-334",
+  "added": "2026-08-21T07:52:41Z",
   "desc": "Hier präsentieren wir die Omega Planet Ocean mit original Omegabox. Alle wichtigen Details auf einen Blick: Gesamtbewertung: Sehr gut Gehäuse: Sehr gut Glas: Gut Lünette: Sehr gut Armband: Sehr gut Schließe: Sehr gut Uhrwerk: Geprüft auf einwandfreies Laufverhalten, kein anstehender Service. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-334\n\nReferenz\n2200.50.00\n\nDurchmesser\n45 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nGeprüft auf einwandfreies Laufverhalten, kein anstehender Se\n\nLieferumfang\nBox\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-334",
   "images": [
    "assets/products/p334/0.jpg",
@@ -2531,6 +2604,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-518-26",
+  "added": "2026-08-21T09:37:20Z",
   "desc": "Hier präsentieren wir die Tudor Heritage Chronograph aus dem Jahr 2011 im Full Set. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-1799\n\nReferenz\n70330N\n\nBaujahr\n2011\n\nDurchmesser\n42 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSchwarz\n\nBand\nEdelstahl\n\nWerk\nAutomatk\n\nLieferumfang\nFull Set, Papiere, Box, Echtheitszertifikat\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-1799",
   "images": [
    "assets/products/p1799/0.jpg",
@@ -2565,6 +2639,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-553-26",
+  "added": "2026-08-21T09:37:27Z",
   "desc": "Hier präsentieren wir die Rolex Oyster Perpetual Date 15200 im Full Set. Die Oyster Perpetual Date 34 hatte eine Revision im Jahre 2021 bei Rolex gehabt. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-3762\n\nReferenz\n15200\n\nBaujahr\n2000\n\nDurchmesser\n34 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nSilber\n\nBand\nEdelstahl\n\nWerk\nAutomatik\n\nLieferumfang\nFull Set, Papiere, Box\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-3762",
   "images": [
    "assets/products/p3762/0.jpg",
@@ -2599,6 +2674,7 @@ window.PRODUCTS = [
   "tax": "Regelbesteuerung",
   "sku": null,
   "code": "HV-4267",
+  "added": "2026-08-21T09:37:29Z",
   "desc": "Hier präsentieren wir die Cartier Santos Galbee in Edelstahl/Gelbgold. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\nHV-4267\n\nReferenz\n119902\n\nDurchmesser\n24 x 35\n\nGehäuse\nEdelstahl/Gelbgold\n\nZifferblatt\nWeiß\n\nBand\nEdelstahl/Gelbgold\n\nWerk\nQuarz\n\nLieferumfang\nFull Set, Papiere, Echtheitszertifikat\n\nZustand\nGut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: HV-4267",
   "images": [
    "assets/products/p4267/0.jpg",
