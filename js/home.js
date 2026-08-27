@@ -179,6 +179,8 @@
 
   /* ---------- flagship showcase: rotates through the New-In pieces ---------- */
   var SHOWCASE_COPY = {
+    p550: 'Das grüne Zifferblatt hat die Formula 1 aus dem Rennsport-Zubehör in die Vitrine gehoben — Edelstahl, Tachymeter-Lünette, 43 Millimeter Auftritt. Baujahr 2023, Full Set mit Box und Papieren.',
+    p549: 'Schwarzes Blatt, weiße Hilfszifferblätter, roter Chronographenzeiger — die Formula 1 in ihrer bekanntesten Ausführung. Baujahr 2022, Full Set mit Box und Papieren, Zustand sehr gut.',
     p462: 'Max Büssers „horologisches Konzeptlabor“ baut rund 400 Uhren im Jahr — diese hier trägt ihre fliegende Unruh sichtbar über dem eisblauen Zifferblatt. Full Set von 2024, Zustand wie neu, sofort im Showroom zu besichtigen.',
     p461: 'Seit 1917 ist die Tank die Antwort auf die Frage nach der einen Uhr zum Anzug. Dieses Exemplar mit weißem, römischem Zifferblatt kommt mit Echtheitszertifikat — geöffnet und geprüft wie jede Uhr im Haus.',
     p460: 'Die Tank Solo im größeren Format mit dem gesuchten Piano-Zifferblatt — Baujahr 2010, im Full Set mit Echtheitszertifikat. Zeitlos vom Vormittagstermin bis zur Abendgarderobe.',
@@ -350,6 +352,10 @@
   function raileFuellen() {
     var newest = (window.PRODUCTS || [])
       .filter(function (p) { return p.status !== 'sold' && p.id !== window.FLAGSHIP_ID; })
+      /* „Neu eingetroffen“ heißt zuletzt angelegt — nicht Katalogreihenfolge. */
+      .sort(function (a, b) {
+        return String(b.added || '').localeCompare(String(a.added || ''));
+      })
       .slice(0, 8);
     rail.innerHTML = newest.map(HV.renderCard).join('');
     if (HV.initMotion) HV.initMotion(rail);

@@ -54,6 +54,8 @@ function nachWebsiteForm(p, kennungen) {
     tax: f.besteuerung || null,
     sku: null,
     code: f.code || null,
+    /* Anlagedatum aus Shopify — Grundlage fuer „Neueste zuerst". */
+    added: p.angelegt || null,
     desc: p.beschreibung || '',
     images: p.bilder,
     shopifyId: p.shopifyId,

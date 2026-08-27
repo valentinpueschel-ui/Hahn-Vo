@@ -2611,7 +2611,7 @@ window.PRODUCTS = [
 ];
 
 window.FLAGSHIP_ID = "p462";
-window.NEW_IN = ["p2162", "p5069", "p4846", "p4808", "p3771", "p2446"];
+window.NEW_IN = ["p550", "p549", "p2162", "p5069", "p4846", "p4808", "p3771", "p2446"];
 
 window.TESTIMONIALS = [
  {

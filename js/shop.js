@@ -66,7 +66,17 @@
     if (s === 'price-asc') arr.sort(function (a, b) { return a.price - b.price; });
     else if (s === 'price-desc') arr.sort(function (a, b) { return b.price - a.price; });
     else if (s === 'brand') arr.sort(function (a, b) { return (a.brand + a.name).localeCompare(b.brand + b.name, 'de'); });
-    /* 'new' keeps data.js order (already newest-first) */
+    /* 'new' — nach Anlagedatum aus Shopify, neueste zuerst. Die Rangfolge
+     * erhaeltlich → reserviert → verkauft bleibt dabei erhalten, sonst
+     * draengten sich verkaufte Uhren vor den Bestand. */
+    else {
+      var RANG = { available: 0, reserved: 1, sold: 2 };
+      arr.sort(function (a, b) {
+        var r = (RANG[a.status] || 0) - (RANG[b.status] || 0);
+        if (r) return r;
+        return String(b.added || '').localeCompare(String(a.added || ''));
+      });
+    }
     return arr;
   }
 
