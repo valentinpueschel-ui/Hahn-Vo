@@ -263,15 +263,6 @@
 .pd-live .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); flex: none; }
 .cd-live { display: block; font-size: 10px; font-weight: 620; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ok); margin-top: 3px; }
 
-/* Zahlungsarten — Hinweis, keine Auswahl. Ohne Rahmen und Fläche, damit
-   nichts nach Schaltfläche aussieht; der Strich links trägt die Information. */
-.pay-hint { display: grid; gap: 5px; margin-top: 20px; padding-left: 14px;
-  border-left: 2px solid var(--line); max-width: 58ch; }
-.pay-hint-lead { font-size: 10.5px; font-weight: 620; letter-spacing: 0.11em;
-  text-transform: uppercase; color: var(--ink-40); }
-.pay-hint-list { font-size: 14px; line-height: 1.6; color: var(--ink-60); }
-@media (max-width: 560px) { .pay-hint-list { font-size: 13.5px; } }
-
 /* Übergabe an die gesicherte Kasse */
 .co-handoff { position: fixed; inset: 0; z-index: 1200; background: var(--petrol-deep); color: var(--creme);
   display: grid; place-items: center; text-align: center; padding: var(--gutter);

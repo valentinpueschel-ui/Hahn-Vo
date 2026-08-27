@@ -23,7 +23,7 @@ var EINSTELLUNGEN = {
    * verkaufte Uhr beim nächsten Abruf von selbst aus Chrono24. */
   nurVerfuegbare: true,
 
-  /* Einzelne Uhren dauerhaft heraushalten — interne Codes, z. B. ['HV-426'].
+  /* Einzelne Uhren dauerhaft heraushalten — interne Codes, z. B. ['426'].
    * Für einzelne Uhren geht es auch ohne Code-Änderung: In Shopify beim
    * Produkt das Feld „Chrono24" auf „nein" setzen. */
   ausschluss: [],

@@ -153,18 +153,10 @@
       order.payment = 'shopify';
       panel.innerHTML =
         '<h2>Zahlung</h2>' +
-        /* Die Auswahl muss dem entsprechen, was im Shopify-Konto wirklich
-           freigeschaltet ist — Stand 24.08.2026: Shopify Payments (Visa,
-           Mastercard, Amex), Apple Pay, Google Pay, Shop Pay, PayPal,
-           Banküberweisung. */
+        /* Bewusst ohne Aufzaehlung der Zahlungsarten: Welche zur Verfuegung
+           stehen, zeigt die Kasse selbst — und nur dort stimmt die Liste
+           immer, ohne dass hier jemand nachpflegen muss. */
         '<p style="color:var(--ink-60);font-size:14.5px;line-height:1.7;max-width:58ch">Sie zahlen im nächsten Schritt in unserer verschlüsselten Kasse — abgesichert nach Bankenstandard. Ihre Daten sind dort bereits hinterlegt.</p>' +
-        /* Reine Information, keine Auswahl. Deshalb bewusst ohne Rahmen und
-           Fläche: Kacheln sahen aus wie Schaltflächen und luden zum Klicken
-           ein, obwohl die Zahlungsart erst in der Kasse gewählt wird. */
-        '<p class="pay-hint">' +
-          '<span class="pay-hint-lead">Dort zur Auswahl</span>' +
-          '<span class="pay-hint-list">Kreditkarte · Apple&nbsp;Pay · Google&nbsp;Pay · PayPal · Banküberweisung</span>' +
-        '</p>' +
         '<div class="field" style="margin-top:22px"><label>Anmerkung zur Bestellung (optional)</label>' +
         '<textarea id="fNote" placeholder="z. B. Wunschtermin für die Übergabe …">' + esc(order.note) + '</textarea></div>' +
         '<div class="co-actions"><button class="btn btn-outline" data-back>← Zurück</button>' +
