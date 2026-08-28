@@ -2011,41 +2011,6 @@ window.PRODUCTS = [
   "shopifyId": "10219858886984"
  },
  {
-  "id": "p9012",
-  "brand": "IWC",
-  "name": "Ingenieur Chronograph Automatik 42mm",
-  "ref": "IW380701",
-  "price": 4890,
-  "listPrice": null,
-  "status": "available",
-  "category": "uhren",
-  "fullset": "Nur Papiere",
-  "rating": "Sehr gut",
-  "year": "2016",
-  "size": "42 mm",
-  "material": "Titan",
-  "dial": "Silber",
-  "strap": "Leder",
-  "movement": "Automatik",
-  "caliber": "69370",
-  "glass": "Saphirglas",
-  "gender": "Herren",
-  "tax": "Regelbesteuerung",
-  "sku": null,
-  "code": "9012",
-  "added": "2026-08-21T09:37:37Z",
-  "desc": "Hier präsentieren wir die IWC Ingenieur Chronograph aus dem Jahr 2016 in Titan. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\n9012\n\nReferenz\nIW380701\n\nBaujahr\n2016\n\nDurchmesser\n42 mm\n\nGehäuse\nTitan\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nEchtheitszertifikat\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 9012",
-  "images": [
-   "assets/products/p9012/0.jpg",
-   "assets/products/p9012/1.jpg",
-   "assets/products/p9012/2.jpg",
-   "assets/products/p9012/3.jpg",
-   "assets/products/p9012/4.jpg",
-   "assets/products/p9012/5.jpg"
-  ],
-  "shopifyId": "10219858985288"
- },
- {
   "id": "p440",
   "brand": "Breitling",
   "name": "Avenger Chronograph",
@@ -2683,6 +2648,41 @@ window.PRODUCTS = [
    "assets/products/p4267/3.jpg"
   ],
   "shopifyId": "10219858297160"
+ },
+ {
+  "id": "p9012",
+  "brand": "IWC",
+  "name": "Ingenieur Chronograph Automatik 42mm",
+  "ref": "IW380701",
+  "price": 4890,
+  "listPrice": null,
+  "status": "sold",
+  "category": "uhren",
+  "fullset": "Nur Papiere",
+  "rating": "Sehr gut",
+  "year": "2016",
+  "size": "42 mm",
+  "material": "Titan",
+  "dial": "Silber",
+  "strap": "Leder",
+  "movement": "Automatik",
+  "caliber": "69370",
+  "glass": "Saphirglas",
+  "gender": "Herren",
+  "tax": "Regelbesteuerung",
+  "sku": null,
+  "code": "9012",
+  "added": "2026-08-21T09:37:37Z",
+  "desc": "Hier präsentieren wir die IWC Ingenieur Chronograph aus dem Jahr 2016 in Titan. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nInterner Code\n9012\n\nReferenz\nIW380701\n\nBaujahr\n2016\n\nDurchmesser\n42 mm\n\nGehäuse\nTitan\n\nZifferblatt\nSilber\n\nBand\nLeder\n\nWerk\nAutomatik\n\nLieferumfang\nEchtheitszertifikat\n\nZustand\nSehr gut\n\nJede Uhr wird vor dem Verkauf geprüft. 12 Monate Garantie auf das Werk, 14 Tage Rückgaberecht. Versand: Deutschland kostenfrei, Europa 79 €, weltweit 150 € — oder persönliche Übergabe in unserem Showroom in Frankfurt.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 9012",
+  "images": [
+   "assets/products/p9012/0.jpg",
+   "assets/products/p9012/1.jpg",
+   "assets/products/p9012/2.jpg",
+   "assets/products/p9012/3.jpg",
+   "assets/products/p9012/4.jpg",
+   "assets/products/p9012/5.jpg"
+  ],
+  "shopifyId": "10219858985288"
  }
 ];
 
