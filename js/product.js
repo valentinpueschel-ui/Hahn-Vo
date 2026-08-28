@@ -46,10 +46,12 @@
   document.getElementById('pdBrand').textContent = p.brand;
   document.getElementById('pdName').textContent = p.name;
   document.getElementById('pdPrice').textContent = HV.fmtEUR(p.price);
-  if (p.listPrice) {
+  /* Vorher-Preis (Shopify: Vergleichspreis) — durchgestrichen, dazu das
+     Kennzeichen „Reduziert“. Verkaufte Uhren zeigen keine Reduzierung mehr. */
+  if (p.listPrice && p.listPrice > p.price && p.status !== 'sold') {
     var lp = document.getElementById('pdList');
     lp.hidden = false;
-    lp.textContent = 'Listenpreis neu: ' + HV.fmtEUR(p.listPrice);
+    lp.innerHTML = '<s class="pd-was num">' + HV.fmtEUR(p.listPrice) + '</s><span class="pd-sale">Reduziert</span>';
   }
 
   /* status */

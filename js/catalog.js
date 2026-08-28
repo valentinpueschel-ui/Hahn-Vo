@@ -13,14 +13,19 @@
     var imgA = p.images[0] || '';
     var imgB = p.images[1] || imgA;
     var soldCls = p.status === 'sold' ? ' is-sold' : '';
+    /* listPrice ist der Vorher-Preis (Shopify: Vergleichspreis) — reduzierte
+       Uhren zeigen ihn durchgestrichen neben dem neuen Preis. */
+    var reduziert = p.status !== 'sold' && p.listPrice && p.listPrice > p.price;
     var priceHtml = p.status === 'sold'
       ? '<span class="sold-label num">' + HV.fmtEUR(p.price) + '</span>'
-      : '<span class="num">' + HV.fmtEUR(p.price) + '</span>';
+      : '<span class="num">' + HV.fmtEUR(p.price) + '</span>' +
+        (reduziert ? '<span class="was num">' + HV.fmtEUR(p.listPrice) + '</span>' : '');
     var spec = [p.ref ? 'Ref. ' + p.ref : null, p.year, p.fullset, p.rating ? 'Zustand: ' + p.rating : null]
       .filter(Boolean).join(' · ');
     return '<article class="product-card' + soldCls + '" data-id="' + p.id + '">' +
       '<div class="pc-media">' +
         '<span class="pc-status status status-' + p.status + '">' + HV.statusLabel[p.status] + '</span>' +
+        (reduziert ? '<span class="pc-sale">Reduziert</span>' : '') +
         '<img class="img-a" src="' + imgA + '" alt="' + p.brand + ' ' + p.name + '" loading="lazy">' +
         '<img class="img-b" src="' + imgB + '" alt="" loading="lazy" aria-hidden="true">' +
       '</div>' +

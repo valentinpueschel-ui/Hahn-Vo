@@ -195,7 +195,7 @@
     else if (p.size || p.material) chips.push(p.size || p.material);
     if (p.ref) chips.push('Ref. ' + p.ref);
     if (p.fullset) chips.push(p.fullset.indexOf('Full Set') === 0 ? 'Full Set, Papiere, Box' : p.fullset);
-    chips.push(HV.fmtEUR(p.price));
+    chips.push(HV.fmtEUR(p.price) + (p.listPrice && p.listPrice > p.price ? ' · vorher ' + HV.fmtEUR(p.listPrice) : ''));
     var firstSentence = (p.desc || '').split('. ').slice(1, 3).join('. ');
     return {
       id: p.id,
