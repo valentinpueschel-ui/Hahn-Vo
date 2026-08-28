@@ -72,9 +72,11 @@ Bankueberweisung.
 **Kundenstimmen:** echt — sechs Rezensionen samt Fotos, die Hannes am
 28.08.2026 aus WhatsApp weitergegeben hat, Wortlaut unveraendert. Gepflegt in
 `window.TESTIMONIALS` (js/data.js: name, watch, img, text), Fotos unter
-`assets/img/reviews/`. Die Startseite baut daraus eine gepinnte, vom Scrollen
-geblaetterte Buehne (js/home.js, css/home.css `.st-*`); ohne Bewegung wird
-daraus eine ruhige Liste.
+`assets/img/reviews/`. Die Startseite baut daraus eine Buehne (js/home.js,
+css/home.css `.st-*`): am Desktop gepinnt und vom Scrollen geblaettert, mit
+Rastpunkten je Stimme; auf Touch-Geraeten nicht gepinnt - Wischen, Tippen
+oder ein gemaechlicher Selbstlauf blaettern. Ohne Bewegung wird daraus eine
+ruhige Liste.
 
 **Platzhalter:** Showroom-Fotos
 (`way-showroom.jpg`, `showroom-band.jpg`) und das Ankauf-Motiv

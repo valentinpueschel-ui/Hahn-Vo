@@ -457,14 +457,25 @@
 
     function abbauen() {
       if (!aktiv) return;
-      aktiv.st.kill();
+      if (aktiv.ende) aktiv.ende();
+      if (aktiv.st) aktiv.st.kill();
       aktiv.tl.kill();
       if (aktiv.ghost) aktiv.ghost.kill();
+      if (aktiv.scroll && window.HV && HV.lenis) HV.lenis.off('scroll', aktiv.scroll);
       aktiv = null;
     }
 
     function buehne() {
-      var mobil = window.innerWidth <= 900;
+      /* Zwei Spielarten derselben Bühne:
+         Desktop  — gepinnt, das Scrollen blättert, Rastpunkte fangen jede
+                    Position ab.
+         Touch    — nicht gepinnt. Auf dem Telefon ist Pinnen mit nativem
+                    Scrollen wacklig (Adressleiste, Schwung). Deshalb steht
+                    die Bühne im Fluss, und Wischen oder Tippen blättert;
+                    die Zeitleiste fährt dann selbst. */
+      var mobil = window.innerWidth <= 900 || window.matchMedia('(pointer: coarse)').matches;
+      var HALT = 0.9; /* bei t = i + HALT steht Stimme i vollständig */
+
       var figuren = stimmen.map(function (t, i) {
         return '<figure class="st-fig">' +
           '<img src="' + t.img + '" alt="' + esc(t.watch) + ' von ' + esc(t.name) + '"' + (i ? ' loading="lazy"' : '') + '>' +
@@ -485,7 +496,7 @@
 
       host.className = '';
       host.innerHTML =
-        '<div class="st-pin">' +
+        '<div class="st-pin' + (mobil ? ' is-frei' : '') + '">' +
           '<div class="wrap st-inner">' +
             '<div class="st-top">' +
               '<span class="st-count num"><b data-st-jetzt>01</b><span>/</span><span>' + pad(n) + '</span></span>' +
@@ -499,8 +510,9 @@
               '<div class="st-rail">' + striche + '<i class="st-marker"></i></div>' +
               '<div class="st-quote"><span class="st-ghost" aria-hidden="true">„</span>' + zitate + '</div>' +
             '</div>' +
+            (mobil ? '<div class="st-hint" aria-hidden="true"><span>Wischen</span><i></i></div>' : '') +
           '</div>' +
-          '<div class="st-hint" aria-hidden="true"><span>Weiter scrollen</span><i></i></div>' +
+          (mobil ? '' : '<div class="st-hint" aria-hidden="true"><span>Weiter scrollen</span><i></i></div>') +
         '</div>';
 
       var pin = host.querySelector('.st-pin');
@@ -523,19 +535,16 @@
       metas.forEach(function (m) { gsap.set(m, { opacity: 0, y: 10 }); });
       gsap.set(marker, achse === 'top' ? { top: '0%' } : { left: '0%' });
 
-      /* Kapitel: Bildschirmhöhen pro Stimme — auf dem Telefon kürzer, damit es
-         zügig bleibt. */
-      var kapitel = Math.round((mobil ? 0.7 : 0.9) * window.innerHeight);
-
+      /* Eine Zeitleiste, Einheit 1 = eine Stimme. Bei i beginnt der Wechsel zu
+         Stimme i: erst steigt das alte Zitat komplett aus der Maske, dann erst
+         kommt das neue — nie zwei Texte übereinander. */
       var tl = gsap.timeline({ paused: true });
-      /* Erst steigt das alte Zitat komplett aus der Maske (bis etwa i+0.38),
-         dann erst kommt das neue — so stehen nie zwei Texte uebereinander. */
       function rein(i, bei) {
-        tl.to(zeilen[i], { yPercent: 0, duration: 0.28, ease: 'power3.out', stagger: 0.035 }, bei);
-        tl.to(metas[i], { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out' }, bei + 0.2);
+        tl.to(zeilen[i], { yPercent: 0, duration: 0.26, ease: 'power3.out', stagger: 0.03 }, bei);
+        tl.to(metas[i], { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out' }, bei + 0.18);
       }
       function raus(i, bei) {
-        tl.to(zeilen[i], { yPercent: -110, duration: 0.2, ease: 'power2.in', stagger: 0.022 }, bei);
+        tl.to(zeilen[i], { yPercent: -110, duration: 0.18, ease: 'power2.in', stagger: 0.02 }, bei);
         tl.to(metas[i], { opacity: 0, y: -8, duration: 0.12, ease: 'power1.in' }, bei);
       }
       rein(0, 0.03);
@@ -543,58 +552,155 @@
         var p = (i / (n - 1) * 100).toFixed(3) + '%';
         raus(i - 1, i);
         /* Vorhang: Rahmen hoch, Bild darin gegenläufig — das alte Foto weicht zurück */
-        tl.to(figs[i], { yPercent: 0, duration: 0.5, ease: 'power3.inOut' }, i);
-        tl.to(imgs[i], { yPercent: 0, duration: 0.5, ease: 'power3.inOut' }, i);
-        tl.to(figs[i - 1], { scale: 1.08, duration: 0.5, ease: 'power2.inOut' }, i);
-        tl.to(shades[i - 1], { opacity: 0.55, duration: 0.5, ease: 'power1.inOut' }, i);
-        tl.to(marker, achse === 'top' ? { top: p, duration: 0.5, ease: 'power3.inOut' } : { left: p, duration: 0.5, ease: 'power3.inOut' }, i);
-        rein(i, i + 0.44);
+        tl.to(figs[i], { yPercent: 0, duration: 0.45, ease: 'power3.inOut' }, i);
+        tl.to(imgs[i], { yPercent: 0, duration: 0.45, ease: 'power3.inOut' }, i);
+        tl.to(figs[i - 1], { scale: 1.08, duration: 0.45, ease: 'power2.inOut' }, i);
+        tl.to(shades[i - 1], { opacity: 0.55, duration: 0.45, ease: 'power1.inOut' }, i);
+        tl.to(marker, achse === 'top' ? { top: p, duration: 0.45, ease: 'power3.inOut' } : { left: p, duration: 0.45, ease: 'power3.inOut' }, i);
+        rein(i, i + 0.38);
       }
       tl.set({}, {}, n); /* Gesamtlänge genau n Einheiten */
 
-      var st = ScrollTrigger.create({
-        trigger: pin, start: 'top top', end: '+=' + (n * kapitel),
-        pin: true, anticipatePin: 1, animation: tl, scrub: mobil ? 0.5 : 0.8,
-        onUpdate: function (self) {
-          var t = self.progress * n;
-          var idx = Math.max(0, Math.min(n - 1, Math.floor(t - 0.25)));
-          zaehler.textContent = pad(idx + 1);
-          ticks.forEach(function (tk, k) { tk.classList.toggle('is-on', k === idx); });
-          hint.style.opacity = self.progress > 0.04 ? 0 : 1;
-        },
-      });
-      hint.style.transition = 'opacity .5s';
-
-      /* Das große Anführungszeichen driftet langsam über die ganze Strecke */
-      var ghost = gsap.fromTo(host.querySelector('.st-ghost'), { yPercent: -8 }, {
-        yPercent: 10, ease: 'none',
-        scrollTrigger: { trigger: pin, start: 'top top', end: '+=' + (n * kapitel), scrub: true },
-      });
-
-      /* Pfeile und Striche springen an die Stelle, an der die Stimme ganz steht */
-      function gehe(i) {
-        i = Math.max(0, Math.min(n - 1, i));
-        var ziel = st.start + (i + 0.75) * kapitel;
-        if (window.HV && HV.lenis) HV.lenis.scrollTo(ziel, { duration: 1.2 });
-        else window.scrollTo({ top: ziel, behavior: 'smooth' });
+      function anzeigen(idx) {
+        zaehler.textContent = pad(idx + 1);
+        ticks.forEach(function (tk, k) { tk.classList.toggle('is-on', k === idx); });
       }
-      function jetzt() {
-        return Math.max(0, Math.min(n - 1, Math.floor(st.progress * n - 0.25)));
-      }
-      host.querySelectorAll('[data-st-schritt]').forEach(function (b) {
-        b.addEventListener('click', function () { gehe(jetzt() + parseInt(b.dataset.stSchritt, 10)); });
-      });
-      ticks.forEach(function (tk) {
-        tk.addEventListener('click', function () { gehe(parseInt(tk.dataset.stZu, 10)); });
-      });
-
       if (HV.initMotion) HV.initMotion(host);
-      aktiv = { st: st, tl: tl, ghost: ghost };
+
+      if (mobil) { touchBuehne(); } else { scrollBuehne(); }
+
+      /* ---- Desktop: gepinnt, Scrollen blättert, Rastpunkte ---- */
+      function scrollBuehne() {
+        var kapitel = Math.round(0.8 * window.innerHeight);
+        var st = ScrollTrigger.create({
+          trigger: pin, start: 'top top', end: '+=' + (n * kapitel),
+          pin: true, anticipatePin: 1, animation: tl, scrub: 0.3,
+          onUpdate: function (self) {
+            var t = self.progress * n;
+            anzeigen(Math.max(0, Math.min(n - 1, Math.floor(t - 0.25))));
+            hint.style.opacity = self.progress > 0.04 ? 0 : 1;
+          },
+        });
+        hint.style.transition = 'opacity .5s';
+
+        /* Das große Anführungszeichen driftet langsam über die ganze Strecke */
+        var ghost = gsap.fromTo(host.querySelector('.st-ghost'), { yPercent: -8 }, {
+          yPercent: 10, ease: 'none',
+          scrollTrigger: { trigger: pin, start: 'top top', end: '+=' + (n * kapitel), scrub: true },
+        });
+
+        /* Rastpunkte: kommt das Scrollen zwischen zwei Stimmen zur Ruhe, zieht
+           die Bühne auf die nächste oder vorherige — je nach Richtung; nichts
+           bleibt halb stehen. Lenis übernimmt die Fahrt, sonst würden sich zwei
+           Animationen streiten. */
+        var lenis = window.HV && HV.lenis;
+        var letzte = 0, schnappt = false, ruhe;
+        function ruhepunkt(i) { return st.start + (i + HALT) * kapitel; }
+        function gehe(i, dauer) {
+          i = Math.max(0, Math.min(n - 1, i));
+          letzte = i;
+          var ziel = ruhepunkt(i);
+          if (lenis) {
+            schnappt = true;
+            lenis.scrollTo(ziel, { duration: dauer || 1.1, onComplete: function () { schnappt = false; } });
+          } else {
+            window.scrollTo({ top: ziel, behavior: 'smooth' });
+          }
+        }
+        function schnappen() {
+          if (schnappt || !st.isActive) return;
+          var p = st.progress;
+          if (p < 0.005 || p >= (n - 1 + HALT + 0.05) / n) return; /* am Ende darf man hinaus */
+          var t = p * n, ab = t - (letzte + HALT), i;
+          if (Math.abs(ab) > 0.9) i = Math.round(t - HALT);           /* weit gesprungen: die nächstliegende */
+          else i = ab > 0.12 ? letzte + 1 : ab < -0.12 ? letzte - 1 : letzte;
+          i = Math.max(0, Math.min(n - 1, i));
+          if (Math.abs((lenis ? lenis.scroll : window.scrollY) - ruhepunkt(i)) < 2) { letzte = i; return; }
+          gehe(i, 0.85);
+        }
+        function beiScroll() {
+          if (schnappt || !st.isActive) return;
+          clearTimeout(ruhe);
+          ruhe = setTimeout(schnappen, 130);
+        }
+        if (lenis) lenis.on('scroll', beiScroll);
+
+        host.querySelectorAll('[data-st-schritt]').forEach(function (b) {
+          b.addEventListener('click', function () { gehe(letzte + parseInt(b.dataset.stSchritt, 10)); });
+        });
+        ticks.forEach(function (tk) {
+          tk.addEventListener('click', function () { gehe(parseInt(tk.dataset.stZu, 10)); });
+        });
+        aktiv = { st: st, tl: tl, ghost: ghost, scroll: lenis ? beiScroll : null };
+      }
+
+      /* ---- Touch: im Fluss, Wischen oder Tippen blättert ---- */
+      function touchBuehne() {
+        /* Die Zitate liegen übereinander — der Bereich braucht die Höhe des längsten. */
+        var quote = host.querySelector('.st-quote'), hoechste = 0;
+        qs.forEach(function (q) {
+          q.classList.add('is-measure');
+          hoechste = Math.max(hoechste, q.offsetHeight);
+          q.classList.remove('is-measure');
+        });
+        quote.style.height = hoechste + 'px';
+
+        var jetztI = -1, fahrt = null, takt = null;
+        function zeige(i) {
+          i = Math.max(0, Math.min(n - 1, i));
+          if (i === jetztI) return;
+          jetztI = i;
+          if (fahrt) fahrt.kill();
+          fahrt = tl.tweenTo(i + HALT, { duration: 1.15, ease: 'power2.inOut' });
+          anzeigen(i);
+        }
+        function selbst() { /* erste Berührung beendet das Blättern von allein */
+          if (takt) { clearInterval(takt); takt = null; }
+          hint.style.opacity = 0;
+        }
+        hint.style.transition = 'opacity .5s';
+
+        /* Sobald die Bühne im Bild ist: erste Stimme fährt ein, danach blättert
+           sie gemächlich weiter, bis jemand selbst eingreift. */
+        var beobachter = new IntersectionObserver(function (eintraege) {
+          eintraege.forEach(function (e) {
+            if (e.isIntersecting) {
+              if (jetztI < 0) zeige(0);
+              if (!takt && jetztI < n - 1) takt = setInterval(function () {
+                if (jetztI >= n - 1) { clearInterval(takt); takt = null; return; }
+                zeige(jetztI + 1);
+              }, 6500);
+            } else if (takt) { clearInterval(takt); takt = null; }
+          });
+        }, { threshold: 0.4 });
+        beobachter.observe(host.querySelector('.st-stage'));
+
+        /* Wischen — quer, deutlich, mehr quer als längs */
+        var flaeche = host.querySelector('.st-body'), sx = 0, sy = 0, geste = false;
+        flaeche.addEventListener('pointerdown', function (e) { sx = e.clientX; sy = e.clientY; geste = true; });
+        flaeche.addEventListener('pointerup', function (e) {
+          if (!geste) return;
+          geste = false;
+          var dx = e.clientX - sx, dy = e.clientY - sy;
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) { selbst(); zeige(jetztI + (dx < 0 ? 1 : -1)); }
+        });
+        flaeche.addEventListener('pointercancel', function () { geste = false; });
+
+        host.querySelectorAll('[data-st-schritt]').forEach(function (b) {
+          b.addEventListener('click', function () { selbst(); zeige(jetztI + parseInt(b.dataset.stSchritt, 10)); });
+        });
+        ticks.forEach(function (tk) {
+          tk.addEventListener('click', function () { selbst(); zeige(parseInt(tk.dataset.stZu, 10)); });
+        });
+        aktiv = { st: null, tl: tl, ghost: null, scroll: null,
+                  ende: function () { beobachter.disconnect(); if (takt) clearInterval(takt); if (fahrt) fahrt.kill(); } };
+      }
     }
 
     function bauen() {
       abbauen();
-      if (!kannBewegen || window.innerHeight < 520) liste();
+      var touch = window.innerWidth <= 900 || window.matchMedia('(pointer: coarse)').matches;
+      if (!kannBewegen || (!touch && window.innerHeight < 520)) liste();
       else buehne();
       if (window.ScrollTrigger) ScrollTrigger.refresh();
     }

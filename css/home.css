@@ -155,7 +155,10 @@
 /* Ausgangslage (Vorhang unten, Zeilen in der Maske) setzt allein GSAP —
    ein CSS-Transform dazu wuerde sich addieren. */
 .st-fig { position: absolute; inset: 0; margin: 0; overflow: hidden; will-change: transform; }
-.st-fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform; }
+/* Bilder fangen keine Zeigerereignisse — sonst startet ein Wisch das
+   native Bild-Ziehen, und die Geste geht verloren. */
+.st-fig img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform; pointer-events: none; user-select: none; -webkit-user-drag: none; }
+.st-stage, .st-quote { user-select: none; -webkit-user-select: none; }
 .st-shade { position: absolute; inset: 0; background: var(--petrol-deep); opacity: 0; pointer-events: none; }
 
 /* Leiste zwischen Bühne und Zitat */
@@ -211,7 +214,7 @@
   .st-tick { top: 50%; left: var(--p); width: 18px; height: 22px; }
   .st-tick::before { width: 1px; height: 9px; }
   .st-marker { top: 50%; left: 0; }
-  .st-ghost, .st-hint { display: none; }
+  .st-ghost { display: none; }
   .st-q { justify-content: flex-start; }
   .st-q blockquote { font-size: clamp(1.02rem, 2.55svh, 1.22rem); line-height: 1.36; }
   .st-meta { margin-top: 14px; }
@@ -220,6 +223,23 @@
 @media (max-width: 900px) and (max-height: 700px) {
   .st-stage { height: 32svh; height: 32dvh; }
   .st-q blockquote { font-size: 1rem; line-height: 1.32; }
+}
+
+/* Touch: nicht gepinnt, im Fluss — Wischen oder Tippen blättert */
+.st-pin.is-frei { height: auto; padding-bottom: clamp(56px, 8vw, 96px); }
+.st-pin.is-frei .st-inner { height: auto; }
+.st-pin.is-frei .st-body { touch-action: pan-y; }
+.st-pin.is-frei .st-stage { aspect-ratio: 4 / 5; height: auto; max-height: 480px; justify-self: stretch; }
+.st-q.is-measure { position: relative; visibility: hidden; }
+.st-pin.is-frei .st-hint {
+  position: static; transform: none; display: flex; justify-content: center; margin-top: 22px;
+}
+.st-pin.is-frei .st-hint i { width: 28px; height: 1px; }
+.st-pin.is-frei .st-hint i::after { transform: translateX(-100%); animation: st-hint-x 1.9s var(--ease-inout) infinite; }
+@keyframes st-hint-x { to { transform: translateX(100%); } }
+@media (min-width: 901px) {
+  .st-pin.is-frei .st-body { grid-template-columns: minmax(0, 44fr) 1px minmax(0, 56fr); }
+  .st-pin.is-frei .st-stage { max-height: 62vh; justify-self: end; }
 }
 
 /* Ruhige Liste — ohne Bewegung */
