@@ -15,7 +15,14 @@
   /* deep links: shop.html?cat=uhren / ?brand=Rolex */
   var params = new URLSearchParams(location.search);
   if (params.get('cat')) state.cat = params.get('cat');
-  if (params.get('brand')) state.brands = [params.get('brand')];
+  /* ?brand=… tolerant abgleichen: „tag heuer“ trifft „TAG Heuer“. */
+  if (params.get('brand')) {
+    var gesucht = params.get('brand').trim().toLowerCase();
+    var treffer = ALL.map(function (p) { return p.brand; }).filter(function (b, i, a) {
+      return b && a.indexOf(b) === i && b.toLowerCase() === gesucht;
+    });
+    state.brands = treffer.length ? [treffer[0]] : [params.get('brand')];
+  }
 
   var PRICE_BUCKETS = [
     { id: 'b1', label: 'Unter 3.000 €', min: 0, max: 3000 },
