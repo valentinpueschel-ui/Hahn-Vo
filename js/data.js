@@ -2408,43 +2408,6 @@ window.PRODUCTS = [
   "shopifyId": "10232659771720"
  },
  {
-  "id": "p549",
-  "brand": "TAG Heuer",
-  "name": "Formula 1 Chronograph Zifferblatt Schwarz",
-  "ref": "CAZ101E",
-  "price": 1390,
-  "listPrice": null,
-  "status": "available",
-  "category": "uhren",
-  "fullset": "Full Set (Box & Papiere)",
-  "rating": "Sehr gut",
-  "year": "2022",
-  "size": "43 mm",
-  "material": "Edelstahl",
-  "dial": "Schwarz",
-  "strap": "Edelstahl",
-  "movement": "Quarz",
-  "caliber": null,
-  "glass": "Saphirglas",
-  "gender": "Herren",
-  "tax": "Differenzbesteuerung",
-  "sku": null,
-  "code": "549-26",
-  "added": "2026-08-27T06:16:32Z",
-  "desc": "Hier präsentieren wir die TAG Heuer Formula 1 aus dem Jahr 2022 im Full Set.\n\nUnsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt. Der vollständige Lieferumfang ist auf den Bildern ersichtlich: Originalbox, Papiere und Echtheitszertifikat.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 549-26",
-  "images": [
-   "assets/products/p549/0.jpg",
-   "assets/products/p549/1.jpg",
-   "assets/products/p549/2.jpg",
-   "assets/products/p549/3.jpg",
-   "assets/products/p549/4.jpg",
-   "assets/products/p549/5.jpg",
-   "assets/products/p549/6.jpg",
-   "assets/products/p549/7.jpg"
-  ],
-  "shopifyId": "10232659804488"
- },
- {
   "id": "p412",
   "brand": "Breitling",
   "name": "Avenger II GMT",
@@ -2679,6 +2642,43 @@ window.PRODUCTS = [
    "assets/products/p9012/5.jpg"
   ],
   "shopifyId": "10219858985288"
+ },
+ {
+  "id": "p549",
+  "brand": "TAG Heuer",
+  "name": "Formula 1 Chronograph Zifferblatt Schwarz",
+  "ref": "CAZ101E",
+  "price": 1390,
+  "listPrice": null,
+  "status": "sold",
+  "category": "uhren",
+  "fullset": "Full Set (Box & Papiere)",
+  "rating": "Sehr gut",
+  "year": "2022",
+  "size": "43 mm",
+  "material": "Edelstahl",
+  "dial": "Schwarz",
+  "strap": "Edelstahl",
+  "movement": "Quarz",
+  "caliber": null,
+  "glass": "Saphirglas",
+  "gender": "Herren",
+  "tax": "Differenzbesteuerung",
+  "sku": null,
+  "code": "549-26",
+  "added": "2026-08-27T06:16:32Z",
+  "desc": "Hier präsentieren wir die TAG Heuer Formula 1 aus dem Jahr 2022 im Full Set.\n\nUnsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt. Der vollständige Lieferumfang ist auf den Bildern ersichtlich: Originalbox, Papiere und Echtheitszertifikat.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 549-26",
+  "images": [
+   "assets/products/p549/0.jpg",
+   "assets/products/p549/1.jpg",
+   "assets/products/p549/2.jpg",
+   "assets/products/p549/3.jpg",
+   "assets/products/p549/4.jpg",
+   "assets/products/p549/5.jpg",
+   "assets/products/p549/6.jpg",
+   "assets/products/p549/7.jpg"
+  ],
+  "shopifyId": "10232659804488"
  }
 ];
 
