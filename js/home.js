@@ -370,7 +370,7 @@
   });
 
   /* drag-scroll for rails */
-  document.querySelectorAll('.rail-wrap, .quote-rail-wrap').forEach(function (wrapEl) {
+  document.querySelectorAll('.rail-wrap').forEach(function (wrapEl) {
     var down = false, startX = 0, startScroll = 0, moved = false;
     wrapEl.addEventListener('pointerdown', function (e) {
       down = true; moved = false; startX = e.clientX; startScroll = wrapEl.scrollLeft;
@@ -390,30 +390,232 @@
     }, true);
   });
 
-  /* ---------- testimonials ---------- */
-  var qRail = document.getElementById('quoteRail');
-  qRail.innerHTML = (window.TESTIMONIALS || []).map(function (t) {
-    return '<figure class="quote-card">' +
-      '<span class="stars" aria-hidden="true">„</span>' +
-      '<blockquote>' + t.text + '</blockquote>' +
-      '<figcaption class="q-foot">' +
-        '<span class="q-thumb"><img src="' + t.img + '" alt="Uhr von ' + t.name + '" loading="lazy"></span>' +
-        '<span class="q-meta">' +
-          '<span class="q-name">' + t.name + '</span>' +
-          (t.date ? '<span class="q-date">Gekauft im ' + t.date + '</span>' : '') +
-          (t.watch ? '<span class="q-watch">' + t.watch + '</span>' : '') +
-        '</span>' +
-      '</figcaption>' +
-    '</figure>';
-  }).join('');
-  var qWrap = document.querySelector('.quote-rail-wrap');
-  function qStep(dir) {
-    var card = qRail.querySelector('.quote-card');
-    var w = card ? card.getBoundingClientRect().width + 24 : 400;
-    qWrap.scrollBy({ left: dir * w, behavior: 'smooth' });
-  }
-  document.querySelector('[data-q-prev]').addEventListener('click', function () { qStep(-1); });
-  document.querySelector('[data-q-next]').addEventListener('click', function () { qStep(1); });
+  /* ---------- Kundenstimmen: gepinnte Bühne, vom Scrollen geblättert ----------
+     Sechs Fotos liegen übereinander, sechs Zitate ebenso. Eine einzige
+     Zeitleiste (Einheit 1 = eine Stimme) hängt am Scrollen: bei i beginnt
+     der Wechsel zu Stimme i — Vorhang hoch, altes Zitat raus, neues rein.
+     Alles läuft über transform/opacity; nichts wird nachgeladen oder
+     neu berechnet, solange man scrollt. */
+  (function () {
+    var host = document.getElementById('stimmenBuehne');
+    var stimmen = window.TESTIMONIALS || [];
+    if (!host || !stimmen.length) return;
+    var n = stimmen.length;
+
+    function esc(t) {
+      return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function pad(i) { return ('0' + i).slice(-2); }
+
+    var kannBewegen = !!(window.gsap && window.ScrollTrigger) &&
+      !document.documentElement.classList.contains('no-motion');
+
+    /* Ohne Bewegung oder auf sehr flachen Bildschirmen: ruhige Liste. */
+    function liste() {
+      host.className = 'st-list';
+      host.innerHTML = stimmen.map(function (t) {
+        return '<figure>' +
+          '<img src="' + t.img + '" alt="' + esc(t.watch) + ' von ' + esc(t.name) + '" loading="lazy">' +
+          '<blockquote>' + esc(t.text) + '</blockquote>' +
+          '<figcaption><span class="st-name">' + esc(t.name) + '</span>' +
+          '<span class="st-watch">' + esc(t.watch) + '</span></figcaption>' +
+        '</figure>';
+      }).join('');
+    }
+
+    /* Zitat in Zeilen zerlegen, jede Zeile in eine Maske. Gemessen wird am
+       fertigen Layout — deshalb erst nach dem Laden der Schriften. */
+    function zeilenTeilen(el) {
+      var worte = el.textContent.split(/\s+/).filter(Boolean);
+      el.textContent = '';
+      worte.forEach(function (w, i) {
+        var s = document.createElement('span');
+        s.textContent = w;
+        el.appendChild(s);
+        if (i < worte.length - 1) el.appendChild(document.createTextNode(' '));
+      });
+      var spans = Array.prototype.slice.call(el.children);
+      var zeilen = [], letzteHoehe = null, aktuelle = null;
+      spans.forEach(function (s) {
+        var top = Math.round(s.getBoundingClientRect().top);
+        if (top !== letzteHoehe) { aktuelle = []; zeilen.push(aktuelle); letzteHoehe = top; }
+        aktuelle.push(s.textContent);
+      });
+      el.textContent = '';
+      return zeilen.map(function (z) {
+        var maske = document.createElement('span');
+        maske.className = 'st-line';
+        var innen = document.createElement('span');
+        innen.textContent = z.join(' ');
+        maske.appendChild(innen);
+        el.appendChild(maske);
+        return innen;
+      });
+    }
+
+    var aktiv = null; /* { st, tl, ghost } */
+
+    function abbauen() {
+      if (!aktiv) return;
+      aktiv.st.kill();
+      aktiv.tl.kill();
+      if (aktiv.ghost) aktiv.ghost.kill();
+      aktiv = null;
+    }
+
+    function buehne() {
+      var mobil = window.innerWidth <= 900;
+      var figuren = stimmen.map(function (t, i) {
+        return '<figure class="st-fig">' +
+          '<img src="' + t.img + '" alt="' + esc(t.watch) + ' von ' + esc(t.name) + '"' + (i ? ' loading="lazy"' : '') + '>' +
+          '<span class="st-shade"></span>' +
+        '</figure>';
+      }).join('');
+      var striche = stimmen.map(function (t, i) {
+        var p = n > 1 ? (i / (n - 1) * 100) : 0;
+        return '<button class="st-tick' + (i ? '' : ' is-on') + '" style="--p:' + p.toFixed(3) + '%" data-st-zu="' + i + '" aria-label="Stimme ' + (i + 1) + ': ' + esc(t.name) + '"></button>';
+      }).join('');
+      var zitate = stimmen.map(function (t) {
+        return '<div class="st-q">' +
+          '<blockquote>' + esc(t.text) + '</blockquote>' +
+          '<div class="st-meta"><span class="st-name">' + esc(t.name) + '</span>' +
+          '<span class="st-watch">' + esc(t.watch) + '</span></div>' +
+        '</div>';
+      }).join('');
+
+      host.className = '';
+      host.innerHTML =
+        '<div class="st-pin">' +
+          '<div class="wrap st-inner">' +
+            '<div class="st-top">' +
+              '<span class="st-count num"><b data-st-jetzt>01</b><span>/</span><span>' + pad(n) + '</span></span>' +
+              '<div class="st-nav">' +
+                '<button class="st-btn" data-st-schritt="-1" aria-label="Vorherige Stimme">←</button>' +
+                '<button class="st-btn" data-st-schritt="1" aria-label="Nächste Stimme">→</button>' +
+              '</div>' +
+            '</div>' +
+            '<div class="st-body">' +
+              '<div class="st-stage" data-clip>' + figuren + '</div>' +
+              '<div class="st-rail">' + striche + '<i class="st-marker"></i></div>' +
+              '<div class="st-quote"><span class="st-ghost" aria-hidden="true">„</span>' + zitate + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="st-hint" aria-hidden="true"><span>Weiter scrollen</span><i></i></div>' +
+        '</div>';
+
+      var pin = host.querySelector('.st-pin');
+      var figs = Array.prototype.slice.call(host.querySelectorAll('.st-fig'));
+      var imgs = figs.map(function (f) { return f.querySelector('img'); });
+      var shades = figs.map(function (f) { return f.querySelector('.st-shade'); });
+      var qs = Array.prototype.slice.call(host.querySelectorAll('.st-q'));
+      var zeilen = qs.map(function (q) { return zeilenTeilen(q.querySelector('blockquote')); });
+      var metas = qs.map(function (q) { return q.querySelector('.st-meta'); });
+      var ticks = Array.prototype.slice.call(host.querySelectorAll('.st-tick'));
+      var marker = host.querySelector('.st-marker');
+      var zaehler = host.querySelector('[data-st-jetzt]');
+      var hint = host.querySelector('.st-hint');
+      var achse = mobil ? 'left' : 'top';
+
+      /* Ausgangslage */
+      figs.forEach(function (f, i) { gsap.set(f, { y: 0, yPercent: i ? 101 : 0, scale: 1 }); });
+      imgs.forEach(function (im, i) { gsap.set(im, { y: 0, yPercent: i ? -28 : 0 }); });
+      zeilen.forEach(function (z) { gsap.set(z, { y: 0, yPercent: 110 }); });
+      metas.forEach(function (m) { gsap.set(m, { opacity: 0, y: 10 }); });
+      gsap.set(marker, achse === 'top' ? { top: '0%' } : { left: '0%' });
+
+      /* Kapitel: Bildschirmhöhen pro Stimme — auf dem Telefon kürzer, damit es
+         zügig bleibt. */
+      var kapitel = Math.round((mobil ? 0.7 : 0.9) * window.innerHeight);
+
+      var tl = gsap.timeline({ paused: true });
+      /* Erst steigt das alte Zitat komplett aus der Maske (bis etwa i+0.38),
+         dann erst kommt das neue — so stehen nie zwei Texte uebereinander. */
+      function rein(i, bei) {
+        tl.to(zeilen[i], { yPercent: 0, duration: 0.28, ease: 'power3.out', stagger: 0.035 }, bei);
+        tl.to(metas[i], { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out' }, bei + 0.2);
+      }
+      function raus(i, bei) {
+        tl.to(zeilen[i], { yPercent: -110, duration: 0.2, ease: 'power2.in', stagger: 0.022 }, bei);
+        tl.to(metas[i], { opacity: 0, y: -8, duration: 0.12, ease: 'power1.in' }, bei);
+      }
+      rein(0, 0.03);
+      for (var i = 1; i < n; i++) {
+        var p = (i / (n - 1) * 100).toFixed(3) + '%';
+        raus(i - 1, i);
+        /* Vorhang: Rahmen hoch, Bild darin gegenläufig — das alte Foto weicht zurück */
+        tl.to(figs[i], { yPercent: 0, duration: 0.5, ease: 'power3.inOut' }, i);
+        tl.to(imgs[i], { yPercent: 0, duration: 0.5, ease: 'power3.inOut' }, i);
+        tl.to(figs[i - 1], { scale: 1.08, duration: 0.5, ease: 'power2.inOut' }, i);
+        tl.to(shades[i - 1], { opacity: 0.55, duration: 0.5, ease: 'power1.inOut' }, i);
+        tl.to(marker, achse === 'top' ? { top: p, duration: 0.5, ease: 'power3.inOut' } : { left: p, duration: 0.5, ease: 'power3.inOut' }, i);
+        rein(i, i + 0.44);
+      }
+      tl.set({}, {}, n); /* Gesamtlänge genau n Einheiten */
+
+      var st = ScrollTrigger.create({
+        trigger: pin, start: 'top top', end: '+=' + (n * kapitel),
+        pin: true, anticipatePin: 1, animation: tl, scrub: mobil ? 0.5 : 0.8,
+        onUpdate: function (self) {
+          var t = self.progress * n;
+          var idx = Math.max(0, Math.min(n - 1, Math.floor(t - 0.25)));
+          zaehler.textContent = pad(idx + 1);
+          ticks.forEach(function (tk, k) { tk.classList.toggle('is-on', k === idx); });
+          hint.style.opacity = self.progress > 0.04 ? 0 : 1;
+        },
+      });
+      hint.style.transition = 'opacity .5s';
+
+      /* Das große Anführungszeichen driftet langsam über die ganze Strecke */
+      var ghost = gsap.fromTo(host.querySelector('.st-ghost'), { yPercent: -8 }, {
+        yPercent: 10, ease: 'none',
+        scrollTrigger: { trigger: pin, start: 'top top', end: '+=' + (n * kapitel), scrub: true },
+      });
+
+      /* Pfeile und Striche springen an die Stelle, an der die Stimme ganz steht */
+      function gehe(i) {
+        i = Math.max(0, Math.min(n - 1, i));
+        var ziel = st.start + (i + 0.75) * kapitel;
+        if (window.HV && HV.lenis) HV.lenis.scrollTo(ziel, { duration: 1.2 });
+        else window.scrollTo({ top: ziel, behavior: 'smooth' });
+      }
+      function jetzt() {
+        return Math.max(0, Math.min(n - 1, Math.floor(st.progress * n - 0.25)));
+      }
+      host.querySelectorAll('[data-st-schritt]').forEach(function (b) {
+        b.addEventListener('click', function () { gehe(jetzt() + parseInt(b.dataset.stSchritt, 10)); });
+      });
+      ticks.forEach(function (tk) {
+        tk.addEventListener('click', function () { gehe(parseInt(tk.dataset.stZu, 10)); });
+      });
+
+      if (HV.initMotion) HV.initMotion(host);
+      aktiv = { st: st, tl: tl, ghost: ghost };
+    }
+
+    function bauen() {
+      abbauen();
+      if (!kannBewegen || window.innerHeight < 520) liste();
+      else buehne();
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+    }
+
+    /* Zeilen und Kapitel hängen an der Größe — bei echter Größenänderung neu
+       bauen. Die iOS-Adressleiste ändert nur die Höhe um wenige Pixel; das
+       ignorieren wir, sonst springt die Bühne beim Scrollen. */
+    var w0 = window.innerWidth, h0 = window.innerHeight, warten;
+    window.addEventListener('resize', function () {
+      clearTimeout(warten);
+      warten = setTimeout(function () {
+        if (Math.abs(window.innerWidth - w0) < 24 && Math.abs(window.innerHeight - h0) < 140) return;
+        w0 = window.innerWidth; h0 = window.innerHeight;
+        bauen();
+      }, 220);
+    });
+
+    if (window.ScrollTrigger) ScrollTrigger.config({ ignoreMobileResize: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(bauen);
+    else bauen();
+  })();
 
   /* ---------- FAQ accordion ---------- */
   var acc = document.getElementById('faqAcc');

@@ -69,9 +69,12 @@ Artikelnummer aus der Inventarliste, ohne Praefix — `427` oder `550-26`.
 Er ist zugleich die Artikelnummer auf Chrono24 und der Verwendungszweck bei
 Bankueberweisung.
 
-**Kundenstimmen:** echt — Wortlaut und Fotos von hahn-vo.de/suchanfrage-einer-uhr
-uebernommen (24.08.2026), Fotos unter `assets/img/reviews/`. Kaufdatum und
-Uhrenmodell werden nur angezeigt, wenn sie in `js/data.js` gepflegt sind.
+**Kundenstimmen:** echt — sechs Rezensionen samt Fotos, die Hannes am
+28.08.2026 aus WhatsApp weitergegeben hat, Wortlaut unveraendert. Gepflegt in
+`window.TESTIMONIALS` (js/data.js: name, watch, img, text), Fotos unter
+`assets/img/reviews/`. Die Startseite baut daraus eine gepinnte, vom Scrollen
+geblaetterte Buehne (js/home.js, css/home.css `.st-*`); ohne Bewegung wird
+daraus eine ruhige Liste.
 
 **Platzhalter:** Showroom-Fotos
 (`way-showroom.jpg`, `showroom-band.jpg`) und das Ankauf-Motiv

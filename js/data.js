@@ -2691,44 +2691,40 @@ window.NEW_IN = ["p550", "p549", "p2162", "p5069", "p4846", "p4808", "p3771", "p
 
 window.TESTIMONIALS = [
  {
-  "name": "Andrea M.",
-  "img": "assets/img/reviews/andrea-m.jpg",
-  "text": "Communication with seller has been easy, and the watch matched the offer perfectly. Hannes is a very nice person to exchange messages with, adding a personal touch to the interaction. thank you!"
+  "name": "Christian T.",
+  "watch": "Rolex Datejust 36 · Ref. 16234",
+  "img": "assets/img/reviews/christian-t.jpg",
+  "text": "Erstklassiger Kontakt! Kommunikation lief unkompliziert und transparent über WhatsApp, inklusive Video der Uhr, Zertifikate und Klärung aller weiteren Fragen. Top Zustand der Datejust und wir konnten uns auf einen fairen Preis einigen. Gerne wieder!"
  },
  {
-  "name": "Marcel N.",
-  "img": "assets/img/reviews/marcel-n.jpg",
-  "text": "Hallo Hannes & Minh, ich bin super happy mit der Uhr, sie ist in einem Top-Zustand! Danke für den tollen Service und dass ihr mein Wunschmodell so schnell besorgen konntet 👌🏽"
+  "name": "Ali M.",
+  "watch": "Breitling Superocean",
+  "img": "assets/img/reviews/ali-m.jpg",
+  "text": "Ich bin extra nach Frankfurt gefahren, um dort meine Uhr zu kaufen – und es hat sich absolut gelohnt. Der Service war hervorragend: super nette Mitarbeiter, eine professionelle Beratung und ein insgesamt sehr angenehmes Kauferlebnis. Alles wurde seriös, kompetent und reibungslos abgewickelt."
  },
  {
-  "name": "Stephan L.",
-  "img": "assets/img/reviews/stephan-l.jpg",
-  "text": "Watch looks very good. I am very happy! Thx for all. I hope to meet you someday for something else"
+  "name": "Cosmo J.",
+  "watch": "Omega Genève",
+  "img": "assets/img/reviews/cosmo-j.jpg",
+  "text": "Von Anfang bis Ende super! Habe mir eine schöne Omega Genève gekauft. Die Preisverhandlung war fair, der Kontakt immer höflich und zuvorkommend, auf alle meine Wünsche wurde eingegangen. Der Versand ging super schnell. Ich kann Hannes und Minh wärmstens empfehlen!"
  },
  {
-  "name": "Giuseppe F.",
-  "img": "assets/img/reviews/giuseppe-f.jpg",
-  "text": "Hey guys. Everything ok, package arrived, watch perfect. Thank you very much for everything."
+  "name": "Simon L.",
+  "watch": "Rolex Datejust 36 · Ref. 16014",
+  "img": "assets/img/reviews/simon-l.jpg",
+  "text": "Absolut top Service! Habe meine Datejust und PRX bei Hannes & Minh gekauft. Beratung, Abwicklung und Empfehlung waren sehr gut. Die Männer sind sehr gut connected. Meine favorite Uhrenhändler aus RheinMain. Danke Männer 🤝"
  },
  {
-  "name": "Christian H.",
-  "img": "assets/img/reviews/christian-h.jpg",
-  "text": "Servus Hannes, Uhr ist da, bin mega zufrieden, danke fürs organisieren, gerne wieder."
+  "name": "Rahul B.",
+  "watch": "Glashütte Original PanoMaticLunar",
+  "img": "assets/img/reviews/rahul-b.jpg",
+  "text": "One of the best in business. Knowledgeable, friendly, with a great service mentality. The watch was in great condition as featured on the website and the offer was very attractive. And something others don’t do: these guys went all the way to make their own packaging box and paper with a handwritten note."
  },
  {
-  "name": "Damian M.",
-  "img": "assets/img/reviews/damian-m.jpg",
-  "text": "Ist angekommen. Danke auch für den netten Kontakt und den schnellen Versand und bis zum nächsten Mal. 😁"
- },
- {
-  "name": "Mikel U.",
-  "img": "assets/img/reviews/mikel-u.jpg",
-  "text": "Thank you so much. It was a very smooth communication. Looking forward for the next watch and enjoy wearing this IWC!"
- },
- {
-  "name": "Günther H.",
-  "img": "assets/img/reviews/guenther-h.jpg",
-  "text": "Ihr habt es geschafft (wie euch das gelungen ist kann ich echt nicht sagen) mir 2 megageile Uhren um 12k anzudrehen 😂 unglaulich."
+  "name": "John P.",
+  "watch": "Zenith El Primero",
+  "img": "assets/img/reviews/john-p.jpg",
+  "text": "I had the pleasure of purchasing two great watches off the guys. Both watches were as described, perfect. The best thing was the good friendly communication. Hannes is knowledgeable, friendly and I will be dealing with them again. Thanks again."
  }
 ];
 
