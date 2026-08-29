@@ -69,14 +69,33 @@
       });
     });
 
+    /* Zähler: Die echte Zahl steht im HTML. Die Animation zählt nur hoch,
+       wenn sie wirklich läuft — ohne Bewegung, ohne JS oder in einem
+       Browser, der nicht auslöst, bleibt die richtige Zahl stehen. */
     scope.querySelectorAll('[data-counter]').forEach(function (el) {
       var target = parseFloat(el.dataset.counter);
-      var obj = { v: 0 };
-      gsap.to(obj, {
-        v: target, duration: 1.6, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 90%' },
-        onUpdate: function () { el.textContent = Math.round(obj.v).toLocaleString('de-DE'); },
-      });
+      var obj = { v: target };
+      /* Nur auf 0 setzen, wenn das Element noch unterhalb des Bildschirms liegt —
+         sonst würde eine sichtbare Zahl kurz auf 0 springen. */
+      if (el.getBoundingClientRect().top > window.innerHeight) { obj.v = 0; el.textContent = '0'; }
+      var gestartet = false;
+      function zaehlen() {
+        if (gestartet) return;
+        gestartet = true;
+        gsap.to(obj, {
+          v: target, duration: 1.6, ease: 'power2.out',
+          onUpdate: function () { el.textContent = Math.round(obj.v).toLocaleString('de-DE'); },
+        });
+      }
+      /* Auslöser ist die Sichtbarkeit, nicht das Scroll-Ereignis — eingebettete
+         Browser (Instagram, Facebook) reichen Scroll-Ereignisse nicht immer
+         durch, Sichtbarkeit melden sie alle. Ohne Beobachter: sofort zählen. */
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (eintraege) {
+          if (eintraege.some(function (e) { return e.isIntersecting; })) { zaehlen(); io.disconnect(); }
+        }, { threshold: 0.15 });
+        io.observe(el);
+      } else { zaehlen(); }
     });
   }
   window.HV.initMotion = initScope;
