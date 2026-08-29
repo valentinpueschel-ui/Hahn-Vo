@@ -1734,7 +1734,7 @@ window.PRODUCTS = [
   "brand": "Vacheron Constantin",
   "name": "Overseas Chronograph Zifferblatt Weiß",
   "ref": "49150",
-  "price": 16490,
+  "price": 15590,
   "listPrice": null,
   "status": "available",
   "category": "uhren",
