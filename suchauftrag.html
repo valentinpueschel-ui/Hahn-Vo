@@ -145,6 +145,8 @@
   var prefillRef = new URLSearchParams(location.search).get('ref');
   HV.wizard(document.getElementById('sucheWizard'), steps, {
     initial: prefillRef ? { ref: prefillRef } : null,
+    art: 'suchauftrag',
+    betreff: 'Suchauftrag über hahn-vo.de',
     storageKey: 'hv_suchauftrag_requests',
     submitLabel: 'Suchauftrag stellen',
     successKicker: 'Suchauftrag eingegangen',

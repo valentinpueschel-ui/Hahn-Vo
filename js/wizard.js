@@ -142,13 +142,36 @@
       if (idx === steps.length - 1) { finish(); return; }
       show(idx + 1, 1);
     }
-    function finish() {
-      elBar.style.width = '100%';
-      try {
-        var log = JSON.parse(localStorage.getItem(opts.storageKey || 'hv_requests') || '[]');
-        log.push({ at: new Date().toISOString(), data: state });
-        localStorage.setItem(opts.storageKey || 'hv_requests', JSON.stringify(log));
-      } catch (e) { /* private mode */ }
+    /* ---------- Absenden ----------
+       Die Angaben gehen an /api/anfrage (E-Mail ins Postfach). Zusätzlich
+       bekommt der Kunde immer den WhatsApp-Weg mit fertig vorgefülltem Text.
+       Scheitert der Versand, sagen wir das — und machen WhatsApp zum
+       Hauptweg, statt „eingegangen“ vorzutäuschen. */
+    function zusammenfassung() {
+      var zeilen = [];
+      steps.forEach(function (st) {
+        (st.fields || []).forEach(function (f) {
+          if (!f.key) return;
+          var v = state[f.key];
+          if (Array.isArray(v)) v = v.join(', ');
+          if (v === undefined || v === null || String(v).trim() === '') return;
+          zeilen.push((f.label || f.key) + ': ' + String(v).trim());
+        });
+      });
+      return zeilen;
+    }
+    function betreff() { return opts.betreff || 'Anfrage über hahn-vo.de'; }
+    function whatsappLink(zeilen) {
+      var basis = (window.SITE && window.SITE.whatsapp) || 'https://wa.me/4917620380047';
+      return basis + '?text=' + encodeURIComponent(betreff() + '\n\n' + zeilen.join('\n'));
+    }
+    function mailLink(zeilen) {
+      var an = (window.SITE && window.SITE.email) || 'info@hahntime.com';
+      return 'mailto:' + an + '?subject=' + encodeURIComponent(betreff()) + '&body=' + encodeURIComponent(zeilen.join('\n'));
+    }
+    function escHtml(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+    function erfolg(wa) {
       container.querySelector('.wiz-body').innerHTML =
         '<div class="form-success">' +
           '<span class="micro" style="opacity:.7">' + (opts.successKicker || 'Anfrage eingegangen') + '</span>' +
@@ -156,11 +179,49 @@
           '<p style="opacity:.85;line-height:1.65;max-width:52ch">' + (opts.successText || '') + '</p>' +
           '<div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">' +
             '<a class="btn btn-creme" href="/shop">Kollektion ansehen</a>' +
-            '<a class="btn btn-ghost-creme" href="' + window.SITE.whatsapp + '" target="_blank" rel="noopener">WhatsApp öffnen</a>' +
+            '<a class="btn btn-ghost-creme" href="' + wa + '" target="_blank" rel="noopener">Per WhatsApp nachfassen</a>' +
           '</div>' +
         '</div>';
-      if (window.gsap) gsap.from(container.querySelector('.form-success'), { opacity: 0, y: 24, duration: 0.6, ease: 'power2.out' });
-      if (opts.onFinish) opts.onFinish(state);
+    }
+    function rueckfall(wa, mail, zeilen) {
+      container.querySelector('.wiz-body').innerHTML =
+        '<div class="form-success">' +
+          '<span class="micro" style="opacity:.7">Noch nicht bei uns angekommen</span>' +
+          '<h3 style="font-size:1.5rem;font-weight:640;letter-spacing:-0.01em">Bitte senden Sie Ihre Anfrage per WhatsApp.</h3>' +
+          '<p style="opacity:.85;line-height:1.65;max-width:52ch">Unser Mailversand ist gerade nicht erreichbar. Ihre Angaben sind fertig vorbereitet — ein Tipp auf den Knopf öffnet WhatsApp mit dem kompletten Text, Sie müssen nur noch auf Senden drücken.</p>' +
+          '<div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">' +
+            '<a class="btn btn-creme" href="' + wa + '" target="_blank" rel="noopener">Per WhatsApp senden</a>' +
+            '<a class="btn btn-ghost-creme" href="' + mail + '">Per E-Mail senden</a>' +
+          '</div>' +
+          '<pre style="margin-top:22px;white-space:pre-wrap;font:inherit;font-size:13px;line-height:1.6;opacity:.75">' + escHtml(zeilen.join('\n')) + '</pre>' +
+        '</div>';
+    }
+
+    function finish() {
+      elBar.style.width = '100%';
+      var zeilen = zusammenfassung();
+      var wa = whatsappLink(zeilen), mail = mailLink(zeilen);
+      try {
+        var log = JSON.parse(localStorage.getItem(opts.storageKey || 'hv_requests') || '[]');
+        log.push({ at: new Date().toISOString(), data: state });
+        localStorage.setItem(opts.storageKey || 'hv_requests', JSON.stringify(log));
+      } catch (e) { /* private mode */ }
+      container.querySelector('.wiz-body').innerHTML =
+        '<div class="form-success"><span class="micro" style="opacity:.7">Wird gesendet …</span></div>';
+
+      var gesendet = false;
+      fetch('/api/anfrage', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ art: opts.art || 'anfrage', betreff: betreff(), zeilen: zeilen, daten: state, seite: location.href }),
+      })
+        .then(function (r) { return r.json().then(function (j) { return r.ok && j && j.ok; }, function () { return false; }); })
+        .catch(function () { return false; })
+        .then(function (ok) {
+          gesendet = !!ok;
+          if (gesendet) erfolg(wa); else rueckfall(wa, mail, zeilen);
+          if (window.gsap) gsap.from(container.querySelector('.form-success'), { opacity: 0, y: 24, duration: 0.6, ease: 'power2.out' });
+          if (opts.onFinish) opts.onFinish(state, gesendet);
+        });
     }
 
     elNext.addEventListener('click', next);
