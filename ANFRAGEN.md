@@ -18,7 +18,7 @@ Website das ehrlich: „Bitte senden Sie Ihre Anfrage per WhatsApp." — mit
 dem vorgefüllten WhatsApp-Knopf, einem E-Mail-Knopf und dem Text zum
 Kopieren. **Nichts geht mehr stillschweigend verloren.**
 
-## Was noch fehlt: der Mail-Schlüssel
+## Der Mail-Schlüssel (eingerichtet am 29.08.2026)
 
 Der Versand läuft über **Resend** (resend.com) — kostenlos bis 3.000 Mails
 im Monat, das reicht für Jahre. Einrichtung, einmalig, fünf Minuten:
@@ -53,5 +53,5 @@ genutzt.
 | Variable | Zweck | Stand |
 |---|---|---|
 | `ANFRAGE_AN` | Empfänger-Postfach | gesetzt: info@hahntime.com |
-| `RESEND_API_KEY` | Schlüssel für den Versand | **fehlt** |
+| `RESEND_API_KEY` | Schlüssel für den Versand | gesetzt am 29.08.2026 (verschlüsselt) |
 | `ANFRAGE_VON` | Absender (optional) | nicht gesetzt → onboarding@resend.dev |
