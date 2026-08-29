@@ -351,7 +351,8 @@
   var rail = document.getElementById('newinRail');
   function raileFuellen() {
     var newest = (window.PRODUCTS || [])
-      .filter(function (p) { return p.status !== 'sold' && p.id !== window.FLAGSHIP_ID; })
+      /* Nur Uhren — Zubehör (Etuis, Schließen) bleibt im Shop, aber nicht im Schaufenster. */
+      .filter(function (p) { return p.status !== 'sold' && p.category !== 'zubehoer' && p.id !== window.FLAGSHIP_ID; })
       /* „Neu eingetroffen“ heißt zuletzt angelegt — nicht Katalogreihenfolge. */
       .sort(function (a, b) {
         return String(b.added || '').localeCompare(String(a.added || ''));
