@@ -75,6 +75,37 @@
       }
     }
 
+    /* Anhänge: Schlüssel = Slot (fotos:0), Wert = { name, typ, daten(base64) } */
+    var anhaenge = {};
+    function fotoVorbereiten(schluessel, datei, slot) {
+      var MAX = 1400;
+      function fertig(blob, typ) {
+        var leser = new FileReader();
+        leser.onload = function () {
+          anhaenge[schluessel] = { name: datei.name.replace(/\.[^.]+$/, '') + (typ === 'image/jpeg' ? '.jpg' : ''), typ: typ, daten: String(leser.result).split(',')[1] };
+          if (slot) slot.querySelector('.u-s').textContent = datei.name + ' · ' + Math.round(blob.size / 1024) + ' KB';
+        };
+        leser.readAsDataURL(blob);
+      }
+      /* Verkleinern über ein Canvas; klappt das nicht (z. B. HEIC ohne
+         Browser-Unterstützung), geht das Original mit, solange es klein ist. */
+      var url = URL.createObjectURL(datei), bild = new Image();
+      bild.onload = function () {
+        var f = Math.min(1, MAX / Math.max(bild.width, bild.height));
+        var c = document.createElement('canvas');
+        c.width = Math.round(bild.width * f); c.height = Math.round(bild.height * f);
+        c.getContext('2d').drawImage(bild, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function (blob) { if (blob) fertig(blob, 'image/jpeg'); else fallback(); }, 'image/jpeg', 0.82);
+      };
+      bild.onerror = function () { URL.revokeObjectURL(url); fallback(); };
+      function fallback() {
+        if (datei.size <= 2.5 * 1024 * 1024) fertig(datei, datei.type || 'application/octet-stream');
+        else if (slot) slot.querySelector('.u-s').textContent = datei.name + ' — zu groß, bitte per WhatsApp senden';
+      }
+      bild.src = url;
+    }
+
     function collect() {
       elFields.querySelectorAll('[data-key]').forEach(function (input) {
         state[input.dataset.key] = input.value.trim();
@@ -126,10 +157,15 @@
       elFields.querySelectorAll('input[type=file]').forEach(function (inp) {
         inp.addEventListener('change', function () {
           var slot = inp.closest('.upload-slot');
+          var datei = inp.files[0];
           slot.classList.add('has-file');
           slot.querySelector('.u-ic').textContent = '✓';
-          if (inp.files[0]) slot.querySelector('.u-s').textContent = inp.files[0].name;
-          state['_upload_' + inp.dataset.upload] = inp.files[0] ? inp.files[0].name : '';
+          if (datei) slot.querySelector('.u-s').textContent = datei.name;
+          state['_upload_' + inp.dataset.upload] = datei ? datei.name : '';
+          /* Das Foto wird verkleinert und als Anhang mitgeschickt — der Name
+             allein nützt niemandem. */
+          if (datei) fotoVorbereiten(inp.dataset.upload, datei, slot);
+          else delete anhaenge[inp.dataset.upload];
         });
       });
     }
@@ -188,7 +224,7 @@
         '<div class="form-success">' +
           '<span class="micro" style="opacity:.7">Noch nicht bei uns angekommen</span>' +
           '<h3 style="font-size:1.5rem;font-weight:640;letter-spacing:-0.01em">Bitte senden Sie Ihre Anfrage per WhatsApp.</h3>' +
-          '<p style="opacity:.85;line-height:1.65;max-width:52ch">Unser Mailversand ist gerade nicht erreichbar. Ihre Angaben sind fertig vorbereitet — ein Tipp auf den Knopf öffnet WhatsApp mit dem kompletten Text, Sie müssen nur noch auf Senden drücken.</p>' +
+          '<p style="opacity:.85;line-height:1.65;max-width:52ch">Unser Mailversand ist gerade nicht erreichbar. Ihre Angaben sind fertig vorbereitet — ein Tipp auf den Knopf öffnet WhatsApp mit dem kompletten Text, Sie müssen nur noch auf Senden drücken. Fotos hängen Sie dort bitte direkt an.</p>' +
           '<div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">' +
             '<a class="btn btn-creme" href="' + wa + '" target="_blank" rel="noopener">Per WhatsApp senden</a>' +
             '<a class="btn btn-ghost-creme" href="' + mail + '">Per E-Mail senden</a>' +
@@ -209,10 +245,14 @@
       container.querySelector('.wiz-body').innerHTML =
         '<div class="form-success"><span class="micro" style="opacity:.7">Wird gesendet …</span></div>';
 
+      var liste = Object.keys(anhaenge).sort().map(function (k) { return anhaenge[k]; });
+      var summe = 0, mit = [];
+      liste.forEach(function (a) { summe += a.daten.length * 0.75; if (summe <= 3.8 * 1024 * 1024) mit.push(a); });
+      if (mit.length) zeilen.push('Fotos: ' + mit.length + ' im Anhang' + (mit.length < liste.length ? ' (' + (liste.length - mit.length) + ' zu groß, nicht angehängt)' : ''));
       var gesendet = false;
       fetch('/api/anfrage', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ art: opts.art || 'anfrage', betreff: betreff(), zeilen: zeilen, daten: state, seite: location.href }),
+        body: JSON.stringify({ art: opts.art || 'anfrage', betreff: betreff(), zeilen: zeilen, daten: state, seite: location.href, anhaenge: mit }),
       })
         .then(function (r) { return r.json().then(function (j) { return r.ok && j && j.ok; }, function () { return false; }); })
         .catch(function () { return false; })

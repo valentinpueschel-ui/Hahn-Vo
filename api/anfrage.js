@@ -43,6 +43,19 @@ module.exports = async function handler(req, res) {
   var zeilen = Array.isArray(b.zeilen) ? b.zeilen.slice(0, 80).map(function (z) { return String(z).slice(0, 600); }) : [];
   if (!zeilen.length) return res.status(400).json({ ok: false, grund: 'leer' });
 
+  /* Anhänge (Fotos aus dem Ankauf): höchstens acht, zusammen unter 4 MB. */
+  var anhaenge = [];
+  var groesse = 0;
+  (Array.isArray(b.anhaenge) ? b.anhaenge.slice(0, 8) : []).forEach(function (a) {
+    if (!a || typeof a.daten !== 'string' || !a.daten) return;
+    groesse += a.daten.length * 0.75;
+    if (groesse > 4 * 1024 * 1024) return;
+    anhaenge.push({
+      filename: String(a.name || 'foto.jpg').replace(/[^\w.\-äöüÄÖÜß ]/g, '_').slice(0, 80),
+      content: a.daten,
+    });
+  });
+
   var schluessel = process.env.RESEND_API_KEY;
   if (!schluessel) return res.status(503).json({ ok: false, grund: 'kein-versand' });
 
@@ -79,6 +92,7 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         from: von, to: [an], reply_to: kundeMail || undefined,
         subject: betreff, text: text, html: html,
+        attachments: anhaenge.length ? anhaenge : undefined,
       }),
     });
   } catch (e) {

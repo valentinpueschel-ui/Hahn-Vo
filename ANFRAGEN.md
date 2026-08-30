@@ -9,6 +9,9 @@
    Umgebungsvariable `ANFRAGE_AN` in Vercel, aktuell **info@hahntime.com**.
    Antwortet man auf die Mail, geht die Antwort direkt an den Kunden
    (`reply_to`).
+3a. **Fotos aus dem Ankauf** hängen an der Mail: Der Browser verkleinert sie
+   auf 1.400 px (JPEG), höchstens sechs, zusammen unter 4 MB. Zu große
+   Dateien werden übersprungen — die Mail nennt dann „x zu groß".
 4. Der Kunde sieht „Die Suche läuft." bzw. „Wir melden uns innerhalb von
    12 Stunden" — und zusätzlich einen Knopf **Per WhatsApp nachfassen**,
    der WhatsApp mit dem fertigen Text öffnet.
