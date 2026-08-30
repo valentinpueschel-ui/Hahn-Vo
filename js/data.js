@@ -2796,6 +2796,54 @@ window.TESTIMONIALS = [
   "watch": "Zenith El Primero",
   "img": "assets/img/reviews/john-p.jpg",
   "text": "I had the pleasure of purchasing two great watches off the guys. Both watches were as described, perfect. The best thing was the good friendly communication. Hannes is knowledgeable, friendly and I will be dealing with them again. Thanks again."
+ },
+ {
+  "name": "Andrea M.",
+  "img": "assets/img/reviews/andrea-m.jpg",
+  "text": "Communication with seller has been easy, and the watch matched the offer perfectly. Hannes is a very nice person to exchange messages with, adding a personal touch to the interaction. thank you!",
+  "watch": ""
+ },
+ {
+  "name": "Marcel N.",
+  "img": "assets/img/reviews/marcel-n.jpg",
+  "text": "Hallo Hannes & Minh, ich bin super happy mit der Uhr, sie ist in einem Top-Zustand! Danke für den tollen Service und dass ihr mein Wunschmodell so schnell besorgen konntet 👌🏽",
+  "watch": ""
+ },
+ {
+  "name": "Stephan L.",
+  "img": "assets/img/reviews/stephan-l.jpg",
+  "text": "Watch looks very good. I am very happy! Thx for all. I hope to meet you someday for something else",
+  "watch": ""
+ },
+ {
+  "name": "Giuseppe F.",
+  "img": "assets/img/reviews/giuseppe-f.jpg",
+  "text": "Hey guys. Everything ok, package arrived, watch perfect. Thank you very much for everything.",
+  "watch": ""
+ },
+ {
+  "name": "Christian H.",
+  "img": "assets/img/reviews/christian-h.jpg",
+  "text": "Servus Hannes, Uhr ist da, bin mega zufrieden, danke fürs organisieren, gerne wieder.",
+  "watch": ""
+ },
+ {
+  "name": "Damian M.",
+  "img": "assets/img/reviews/damian-m.jpg",
+  "text": "Ist angekommen. Danke auch für den netten Kontakt und den schnellen Versand und bis zum nächsten Mal. 😁",
+  "watch": ""
+ },
+ {
+  "name": "Mikel U.",
+  "img": "assets/img/reviews/mikel-u.jpg",
+  "text": "Thank you so much. It was a very smooth communication. Looking forward for the next watch and enjoy wearing this IWC!",
+  "watch": "IWC"
+ },
+ {
+  "name": "Günther H.",
+  "img": "assets/img/reviews/guenther-h.jpg",
+  "text": "Ihr habt es geschafft (wie euch das gelungen ist kann ich echt nicht sagen) mir 2 megageile Uhren um 12k anzudrehen 😂 unglaulich.",
+  "watch": ""
  }
 ];
 

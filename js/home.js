@@ -416,10 +416,10 @@
       host.className = 'st-list';
       host.innerHTML = stimmen.map(function (t) {
         return '<figure>' +
-          '<img src="' + t.img + '" alt="' + esc(t.watch) + ' von ' + esc(t.name) + '" loading="lazy">' +
+          '<img src="' + t.img + '" alt="' + esc(t.watch ? t.watch + ' von ' + t.name : 'Uhr von ' + t.name) + '" loading="lazy">' +
           '<blockquote>' + esc(t.text) + '</blockquote>' +
           '<figcaption><span class="st-name">' + esc(t.name) + '</span>' +
-          '<span class="st-watch">' + esc(t.watch) + '</span></figcaption>' +
+          (t.watch ? '<span class="st-watch">' + esc(t.watch) + '</span>' : '') + '</figcaption>' +
         '</figure>';
       }).join('');
     }
@@ -479,7 +479,7 @@
 
       var figuren = stimmen.map(function (t, i) {
         return '<figure class="st-fig">' +
-          '<img src="' + t.img + '" alt="' + esc(t.watch) + ' von ' + esc(t.name) + '"' + (i ? ' loading="lazy"' : '') + '>' +
+          '<img src="' + t.img + '" alt="' + esc(t.watch ? t.watch + ' von ' + t.name : 'Uhr von ' + t.name) + '"' + (i ? ' loading="lazy"' : '') + '>' +
           '<span class="st-shade"></span>' +
         '</figure>';
       }).join('');
@@ -491,7 +491,7 @@
         return '<div class="st-q">' +
           '<blockquote>' + esc(t.text) + '</blockquote>' +
           '<div class="st-meta"><span class="st-name">' + esc(t.name) + '</span>' +
-          '<span class="st-watch">' + esc(t.watch) + '</span></div>' +
+          (t.watch ? '<span class="st-watch">' + esc(t.watch) + '</span>' : '') + '</div>' +
         '</div>';
       }).join('');
 
@@ -572,7 +572,8 @@
 
       /* ---- Desktop: gepinnt, Scrollen blättert, Rastpunkte ---- */
       function scrollBuehne() {
-        var kapitel = Math.round(0.8 * window.innerHeight);
+        /* Bei vielen Stimmen kürzere Kapitel — sonst wird die Strecke lang. */
+        var kapitel = Math.round((n > 8 ? 0.62 : 0.8) * window.innerHeight);
         var st = ScrollTrigger.create({
           trigger: pin, start: 'top top', end: '+=' + (n * kapitel),
           pin: true, anticipatePin: 1, animation: tl, scrub: 0.3,
