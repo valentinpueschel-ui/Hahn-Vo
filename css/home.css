@@ -242,12 +242,18 @@
   .st-pin.is-frei .st-stage { max-height: 62vh; justify-self: end; }
 }
 
-/* Ruhige Liste — ohne Bewegung */
-.st-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; padding: 0 var(--gutter) clamp(72px, 9vw, 150px); max-width: 1680px; margin: 0 auto; }
-.st-list figure { margin: 0; border: 1px solid var(--creme-line); padding: 22px; display: grid; gap: 18px; background: rgba(255, 250, 231, 0.04); }
-.st-list img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
-.st-list blockquote { font-family: var(--font-brand); font-size: 1.2rem; line-height: 1.4; }
-.st-list figcaption { display: grid; gap: 3px; }
+/* Alle Stimmen auf einen Blick — Spaltenraster (Desktop und ohne Bewegung).
+   Spalten statt Gitter, damit unterschiedlich lange Zitate dicht setzen. */
+.st-list { columns: 3 340px; column-gap: clamp(18px, 2vw, 28px); padding: 0 var(--gutter) clamp(72px, 9vw, 150px); max-width: 1680px; margin: 0 auto; }
+.st-karte {
+  break-inside: avoid; margin: 0 0 clamp(18px, 2vw, 28px); display: block;
+  border: 1px solid var(--creme-line); background: rgba(255, 250, 231, 0.04); overflow: hidden;
+}
+.st-karte img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; display: block; }
+.st-karte-text { padding: clamp(18px, 1.8vw, 26px); display: grid; gap: 16px; }
+.st-karte blockquote { font-family: var(--font-brand); font-size: 1.14rem; line-height: 1.45; text-wrap: pretty; }
+.st-karte figcaption { display: grid; gap: 3px; }
+@media (max-width: 760px) { .st-list { columns: 1; } }
 
 /* ---------- ways (3er block) ---------- */
 .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); margin-top: clamp(30px, 4vw, 54px); }

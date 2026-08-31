@@ -415,11 +415,13 @@
     function liste() {
       host.className = 'st-list';
       host.innerHTML = stimmen.map(function (t) {
-        return '<figure>' +
+        return '<figure class="st-karte">' +
           '<img src="' + t.img + '" alt="' + esc(t.watch ? t.watch + ' von ' + t.name : 'Uhr von ' + t.name) + '" loading="lazy">' +
-          '<blockquote>' + esc(t.text) + '</blockquote>' +
-          '<figcaption><span class="st-name">' + esc(t.name) + '</span>' +
-          (t.watch ? '<span class="st-watch">' + esc(t.watch) + '</span>' : '') + '</figcaption>' +
+          '<div class="st-karte-text">' +
+            '<blockquote>' + esc(t.text) + '</blockquote>' +
+            '<figcaption><span class="st-name">' + esc(t.name) + '</span>' +
+            (t.watch ? '<span class="st-watch">' + esc(t.watch) + '</span>' : '') + '</figcaption>' +
+          '</div>' +
         '</figure>';
       }).join('');
     }
@@ -702,8 +704,11 @@
     function bauen() {
       abbauen();
       var touch = window.innerWidth <= 900 || window.matchMedia('(pointer: coarse)').matches;
-      if (!kannBewegen || (!touch && window.innerHeight < 520)) liste();
-      else buehne();
+      /* Desktop: alle Stimmen auf einen Blick (Hannes' Wunsch, 31.08.2026).
+         Nur auf Touch-Geräten blättert die Bühne — dort ist die Fläche zu
+         klein für ein Raster. */
+      if (touch && kannBewegen) buehne();
+      else liste();
       if (window.ScrollTrigger) ScrollTrigger.refresh();
     }
 
