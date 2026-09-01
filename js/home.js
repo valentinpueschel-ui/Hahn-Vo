@@ -411,10 +411,13 @@
     var kannBewegen = !!(window.gsap && window.ScrollTrigger) &&
       !document.documentElement.classList.contains('no-motion');
 
-    /* Ohne Bewegung oder auf sehr flachen Bildschirmen: ruhige Liste. */
-    function liste() {
-      host.className = 'st-list';
-      host.innerHTML = stimmen.map(function (t) {
+    /* Desktop: drei bis vier Karten nebeneinander, rechts wird geblättert.
+       Die Anzahl pro Seite bestimmt das Stylesheet (--st-n) — hier wird nur
+       um genau eine Fensterbreite weitergeschoben, damit die Seiten sauber
+       aufeinander folgen. */
+    function deck() {
+      host.className = 'st-deck';
+      var karten = stimmen.map(function (t) {
         return '<figure class="st-karte">' +
           '<img src="' + t.img + '" alt="' + esc(t.watch ? t.watch + ' von ' + t.name : 'Uhr von ' + t.name) + '" loading="lazy">' +
           '<div class="st-karte-text">' +
@@ -424,6 +427,59 @@
           '</div>' +
         '</figure>';
       }).join('');
+
+      host.innerHTML =
+        '<div class="st-deck-top">' +
+          '<span class="st-count num"><b data-st-seite>01</b><span>/</span><span data-st-seiten>01</span></span>' +
+          '<div class="st-nav">' +
+            '<button class="st-btn" data-st-blatt="-1" aria-label="Vorherige Kundenstimmen">&#8592;</button>' +
+            '<button class="st-btn" data-st-blatt="1" aria-label="Weitere Kundenstimmen">&#8594;</button>' +
+          '</div>' +
+        '</div>' +
+        '<div class="st-spur" tabindex="0" role="group" aria-label="Kundenstimmen, seitlich blätterbar">' + karten + '</div>';
+
+      var spur = host.querySelector('.st-spur');
+      var top = host.querySelector('.st-deck-top');
+      var jetzt = host.querySelector('[data-st-seite]');
+      var gesamt = host.querySelector('[data-st-seiten]');
+      var knoepfe = Array.prototype.slice.call(host.querySelectorAll('[data-st-blatt]'));
+
+      /* Eine Seite ist genau die sichtbare Breite; die erste Karte der
+         nächsten Seite steht eine Lücke weiter rechts. */
+      function schritt() {
+        var luecke = parseFloat(getComputedStyle(spur).columnGap) || 0;
+        return spur.clientWidth + luecke;
+      }
+      function seiten() { return Math.max(1, Math.ceil(spur.scrollWidth / schritt())); }
+
+      function stand() {
+        var s = schritt();
+        var seite = Math.min(seiten(), Math.round(spur.scrollLeft / s) + 1);
+        jetzt.textContent = pad(seite);
+        gesamt.textContent = pad(seiten());
+        /* Rechenwerte sind auf ein, zwei Pixel ungenau — mit Spielraum prüfen. */
+        var amAnfang = spur.scrollLeft < 4;
+        var amEnde = spur.scrollLeft + spur.clientWidth >= spur.scrollWidth - 4;
+        knoepfe[0].disabled = amAnfang;
+        knoepfe[1].disabled = amEnde;
+        top.hidden = amAnfang && amEnde;
+      }
+
+      function blaettern(richtung) {
+        var ziel = spur.scrollLeft + richtung * schritt();
+        if (spur.scrollTo) spur.scrollTo({ left: ziel, behavior: kannBewegen ? 'smooth' : 'auto' });
+        else spur.scrollLeft = ziel;
+      }
+
+      knoepfe.forEach(function (b) {
+        b.addEventListener('click', function () { blaettern(parseInt(b.dataset.stBlatt, 10)); });
+      });
+      spur.addEventListener('scroll', stand, { passive: true });
+      stand();
+      /* Bilder verschieben die Breite noch, sobald sie geladen sind. */
+      host.querySelectorAll('img').forEach(function (im) {
+        if (!im.complete) im.addEventListener('load', stand, { once: true });
+      });
     }
 
     /* Zitat in Zeilen zerlegen, jede Zeile in eine Maske. Gemessen wird am
@@ -704,11 +760,11 @@
     function bauen() {
       abbauen();
       var touch = window.innerWidth <= 900 || window.matchMedia('(pointer: coarse)').matches;
-      /* Desktop: alle Stimmen auf einen Blick (Hannes' Wunsch, 31.08.2026).
-         Nur auf Touch-Geräten blättert die Bühne — dort ist die Fläche zu
-         klein für ein Raster. */
+      /* Desktop: mehrere Stimmen nebeneinander, rechts wird geblättert
+         (Hannes' Wunsch, 01.09.2026). Nur auf Touch-Geräten läuft die
+         gewischte Bühne — dort ist die Fläche zu klein für mehrere Karten. */
       if (touch && kannBewegen) buehne();
-      else liste();
+      else deck();
       if (window.ScrollTrigger) ScrollTrigger.refresh();
     }
 
