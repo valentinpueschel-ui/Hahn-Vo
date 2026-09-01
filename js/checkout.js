@@ -183,7 +183,7 @@
 
   function stepReview() {
     var k = order.kunde;
-    var payLabel = { ueberweisung: 'Banküberweisung', showroom: 'Zahlung bei Übergabe im Showroom', shopify: 'Verschlüsselte Kasse — Karte, Apple Pay, PayPal, Sofortüberweisung' }[order.payment];
+    var payLabel = { ueberweisung: 'Banküberweisung', showroom: 'Zahlung bei Übergabe im Showroom', shopify: 'Verschlüsselte Kasse — Zahlart im nächsten Schritt wählbar' }[order.payment];
     var dlLabel = order.delivery === 'showroom' ? 'Persönliche Übergabe im Showroom' : 'Versicherter Werttransport';
     panel.innerHTML =
       '<h2>Bestellung prüfen</h2>' +
