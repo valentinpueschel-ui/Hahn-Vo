@@ -246,8 +246,11 @@
    Bewegung). --st-n ist die Anzahl pro Seite; home.js schiebt immer um genau
    eine Fensterbreite weiter. */
 .st-deck {
-  --st-n: 3; --st-gap: clamp(18px, 2vw, 28px);
+  --st-gap: clamp(18px, 2vw, 28px);
   padding: 0 var(--gutter) clamp(72px, 9vw, 150px); max-width: 1680px; margin: 0 auto;
+  /* Über den Lichtschleier des Abschnitts (.stimmen::before) heben — sonst
+     legt er sich als milchiger Film über die linken Kartenfotos. */
+  position: relative; z-index: 1;
 }
 .st-deck-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: clamp(20px, 2.2vw, 30px); }
 .st-deck-top[hidden] { display: none; }
@@ -257,8 +260,10 @@
   scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none;
 }
 .st-spur::-webkit-scrollbar { display: none; }
+/* Kartenbreite als feste Bruchteile — kein Teilen durch eine Variable,
+   das rechnen ältere Browser nicht zuverlässig. */
 .st-karte {
-  flex: 0 0 calc((100% - (var(--st-n) - 1) * var(--st-gap)) / var(--st-n));
+  flex: 0 0 calc(33.3333% - 0.6667 * var(--st-gap));
   scroll-snap-align: start; margin: 0; display: flex; flex-direction: column;
   border: 1px solid var(--creme-line); background: rgba(255, 250, 231, 0.04); overflow: hidden;
 }
@@ -268,9 +273,9 @@
    mittig statt oben — sonst klafft unten eine Lücke. */
 .st-karte blockquote { align-self: center; font-family: var(--font-brand); font-size: clamp(1rem, 0.82vw, 1.1rem); line-height: 1.5; text-wrap: pretty; }
 .st-karte figcaption { display: grid; gap: 3px; }
-@media (min-width: 1600px) { .st-deck { --st-n: 4; } }
-@media (max-width: 1100px) { .st-deck { --st-n: 2; } }
-@media (max-width: 760px) { .st-deck { --st-n: 1; } }
+@media (min-width: 1600px) { .st-karte { flex-basis: calc(25% - 0.75 * var(--st-gap)); } }
+@media (max-width: 1100px) { .st-karte { flex-basis: calc(50% - 0.5 * var(--st-gap)); } }
+@media (max-width: 760px) { .st-karte { flex-basis: 100%; } }
 
 /* ---------- ways (3er block) ---------- */
 .ways-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); margin-top: clamp(30px, 4vw, 54px); }
