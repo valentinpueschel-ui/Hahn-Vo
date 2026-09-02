@@ -2475,13 +2475,13 @@ window.PRODUCTS = [
   "added": "2026-09-02T14:28:17Z",
   "desc": "Hier präsentieren wir die IWC Portugieser Handaufzug, Ref. IW545404, mit schwarzem Zifferblatt und Saphirglasboden — der Blick auf das Handaufzugswerk bleibt frei. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nEdelstahlgehäuse mit 43 mm Durchmesser, schwarzes Lederband, kleine Sekunde bei sechs Uhr. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 570-26",
   "images": [
-   "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/fb21ba60-e97a-4476-89ac-94b7d0e232f9.jpg?v=1788359366",
-   "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/f4e28c14-080b-4386-a5d0-6476371de30a.jpg?v=1788359366",
-   "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/e1fb88b8-927d-4911-b6f4-01b670df0516.jpg?v=1788359366",
-   "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/86c2cd64-3a8c-4ee2-b369-bb312f1b5fe9.jpg?v=1788359366",
-   "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/aeb7b3d2-ea8d-4e71-8e62-51ac945259ab.jpg?v=1788359366",
-   "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/116079bb-6fef-48e4-a569-11325beffe97.jpg?v=1788359366",
-   "https://cdn.shopify.com/s/files/1/0980/8393/0440/files/f7880c90-93f2-42b2-a98a-417a742b3501.jpg?v=1788359366"
+   "assets/products/p570/0.jpg",
+   "assets/products/p570/1.jpg",
+   "assets/products/p570/2.jpg",
+   "assets/products/p570/3.jpg",
+   "assets/products/p570/4.jpg",
+   "assets/products/p570/5.jpg",
+   "assets/products/p570/6.jpg"
   ],
   "shopifyId": "10258148458824"
  },
