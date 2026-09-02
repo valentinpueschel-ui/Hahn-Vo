@@ -11,7 +11,7 @@
 var shop = require('./_shop');
 
 /* Uhren, die nicht im Shop erscheinen sollen — interne Codes. */
-var AUSSCHLUSS = [];
+var AUSSCHLUSS = ['570-26'];
 
 /* Aus einer Shopify-Kennung eine dauerhafte Uhren-Kennung bilden, falls die
  * Uhr noch nicht in js/data.js steht. „s" plus Kennung bleibt stabil. */
