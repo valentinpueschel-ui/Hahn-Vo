@@ -204,12 +204,16 @@
     return '<div class="row"><dt>' + row[0] + '</dt><dd>' + row[1] + '</dd></div>';
   }).join('');
 
-  /* Beschreibung dieser Uhr: der Satz zu den Bildern steht auf jeder Seite
-     und wird deshalb hier weggelassen. */
-  var BILDSATZ = /Unsere Bilder sind unbearbeitet.*?wahrnimmt\.*/i;
-  var intro = String(p.desc || '').replace(BILDSATZ, '').replace(/\s+/g, ' ').trim();
-  intro = intro.replace(/[\s.]+$/, '');
-  if (intro) intro += '.';
+  /* Der Fliesstext aus Shopify wird nicht mehr gezeigt: Bei fast allen Uhren
+     wiederholte er nur das Datenblatt darueber. Aus der Beschreibung bleibt
+     allein die Zustandsliste — die steht sonst nirgends.
+     Hinter dem Satz zu den Bildern folgt in den Altbestaenden das abgeschriebene
+     Datenblatt samt Standardtext; ab dort wird abgeschnitten. Die Zustandsliste
+     steht immer davor. */
+  var BILDSATZ = /Unsere Bilder sind unbearbeitet/i;
+  var roh = String(p.desc || '');
+  var schnitt = roh.search(BILDSATZ);
+  var intro = (schnitt >= 0 ? roh.slice(0, schnitt) : roh).replace(/\s+/g, ' ').trim();
 
   /* Unser Versprechen — gleicher Text unter jeder Uhr */
   var VERSPRECHEN = [
@@ -224,8 +228,6 @@
      als Aufzaehlung ist sie deutlich besser zu lesen. */
   var MERKMAL = /(Gesamtbewertung|Gesamtzustand|Gehäuse|Glas|Lünette|Armband|Band|Schließe|Uhrwerk|Zifferblatt|Krone|Drücker)\s*:/g;
   var teile = intro.split(/Alle wichtigen Details auf einen Blick:\s*/i);
-  var kopf = teile[0].replace(/[\s.]+$/, '');
-  if (kopf) kopf += '.';
   var punkte = [];
   if (teile.length > 1) {
     punkte = teile[1]
@@ -236,9 +238,8 @@
   }
 
   document.getElementById('pdDesc').innerHTML =
-    (kopf ? '<h3>Diese Uhr</h3><p>' + kopf + '</p>' : '') +
     (punkte.length
-      ? '<ul class="pd-cond">' + punkte.map(function (t) {
+      ? '<h3>Zustand im Detail</h3><ul class="pd-cond">' + punkte.map(function (t) {
           var k = t.indexOf(':');
           return k > 0
             ? '<li><b>' + t.slice(0, k) + '</b><span>' + t.slice(k + 1).trim().replace(/[\s.]+$/, '') + '</span></li>'

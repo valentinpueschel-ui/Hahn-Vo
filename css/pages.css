@@ -127,6 +127,9 @@
 .pd-desc h3 { color: var(--ink); font-size: 13px; font-weight: 620; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
 .pd-desc p + p { margin-top: 12px; }
 .pd-desc h3.pd-promise { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }
+/* Steht das Versprechen ganz oben, trennt schon die letzte Zeile des
+   Datenblatts — eine zweite Linie darunter waere eine zu viel. */
+.pd-desc h3.pd-promise:first-child { margin-top: 6px; padding-top: 0; border-top: 0; }
 .pd-cond { display: grid; gap: 0; margin-top: 14px; }
 .pd-cond li { display: flex; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
 .pd-cond li b { flex: none; width: 150px; color: var(--ink); font-weight: 600; }
