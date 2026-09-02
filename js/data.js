@@ -2450,42 +2450,6 @@ window.PRODUCTS = [
   "shopifyId": "10240425328968"
  },
  {
-  "id": "p570",
-  "brand": "IWC",
-  "name": "Portugieser Handaufzug Zifferblatt Schwarz",
-  "ref": "IW545404",
-  "price": 3350,
-  "listPrice": null,
-  "status": "available",
-  "category": "uhren",
-  "fullset": "Nur Uhr",
-  "rating": "Sehr gut",
-  "year": null,
-  "size": "43 mm",
-  "material": "Edelstahl (Saphirglasboden)",
-  "dial": "Schwarz",
-  "strap": "Leder (Schwarz)",
-  "movement": "Handaufzug",
-  "caliber": null,
-  "glass": "Saphirglas",
-  "gender": "Herren",
-  "tax": "Differenzbesteuerung",
-  "sku": null,
-  "code": "570-26",
-  "added": "2026-09-02T14:28:17Z",
-  "desc": "Hier präsentieren wir die IWC Portugieser Handaufzug, Ref. IW545404, mit schwarzem Zifferblatt und Saphirglasboden — der Blick auf das Handaufzugswerk bleibt frei. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nEdelstahlgehäuse mit 43 mm Durchmesser, schwarzes Lederband, kleine Sekunde bei sechs Uhr. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 570-26",
-  "images": [
-   "assets/products/p570/0.jpg",
-   "assets/products/p570/1.jpg",
-   "assets/products/p570/2.jpg",
-   "assets/products/p570/3.jpg",
-   "assets/products/p570/4.jpg",
-   "assets/products/p570/5.jpg",
-   "assets/products/p570/6.jpg"
-  ],
-  "shopifyId": "10258148458824"
- },
- {
   "id": "p399",
   "brand": "Panerai",
   "name": "Luminor Marina Handaufzug 2016",
@@ -3138,7 +3102,6 @@ window.SHOPIFY = {
   "p553": "10238171545928",
   "p556": "10238171906376",
   "p557": "10238172004680",
-  "p561": "10240425328968",
-  "p570": "10258148458824"
+  "p561": "10240425328968"
  }
 };
