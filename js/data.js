@@ -2597,6 +2597,40 @@ window.PRODUCTS = [
   "shopifyId": "10260249870664"
  },
  {
+  "id": "p555",
+  "brand": "Omega",
+  "name": "Seamaster Vintage Ref. 166.001 Automatik",
+  "ref": "166.001",
+  "price": 890,
+  "listPrice": null,
+  "status": "available",
+  "category": "uhren",
+  "fullset": "Nur Uhr",
+  "rating": "Gut",
+  "year": null,
+  "size": "34–35 mm",
+  "material": "Edelstahl",
+  "dial": "Silber",
+  "strap": "Leder (Braun)",
+  "movement": "Automatik",
+  "caliber": null,
+  "glass": null,
+  "gender": "Herren",
+  "tax": "Regelbesteuerung",
+  "sku": null,
+  "code": "555-26",
+  "added": "2026-09-03T13:58:20Z",
+  "desc": "Hier präsentieren wir die Omega Seamaster Ref. 166.001 aus den 1970er Jahren mit silbernem Zifferblatt. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nEdelstahlgehäuse, braunes Lederband, Automatikwerk. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 555-26",
+  "images": [
+   "assets/products/p555/0.jpg",
+   "assets/products/p555/1.jpg",
+   "assets/products/p555/2.jpg",
+   "assets/products/p555/3.jpg",
+   "assets/products/p555/4.jpg"
+  ],
+  "shopifyId": "10260264124744"
+ },
+ {
   "id": "p5069",
   "brand": "Tudor",
   "name": "Black Bay Bucherer Blue Automatik only watch",
@@ -3217,6 +3251,7 @@ window.SHOPIFY = {
   "p561": "10240425328968",
   "p564": "10260249608520",
   "p562": "10260249772360",
-  "p551": "10260249870664"
+  "p551": "10260249870664",
+  "p555": "10260264124744"
  }
 };
