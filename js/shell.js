@@ -91,13 +91,13 @@
           '<div class="sf-brandline">' + MARK + '<div><div class="brand-word">Hahn &amp; Vo</div><div class="micro" style="opacity:.6;margin-top:4px">Luxury Watches</div></div></div>' +
           '<p class="sf-tag">Kuratierte Luxusuhren — auf Echtheit geprüft, mit Garantie. Showroom im Garden Tower, Frankfurt am Main.</p>' +
         '</div>' +
-        '<div class="sf-col"><h4>Navigation</h4>' +
+        '<div class="sf-col"><h3>Navigation</h3>' +
           '<a href="/shop">Shop</a><a href="/ankauf">Ankauf &amp; Inzahlungnahme</a><a href="/suchauftrag">Suchauftrag</a><a href="/ueber-uns">Über uns</a>' +
         '</div>' +
-        '<div class="sf-col"><h4>Service</h4>' +
+        '<div class="sf-col"><h3>Service</h3>' +
           '<a href="/referenz-checker">Referenz-Checker</a><a href="/#faq">Fragen &amp; Antworten</a><a href="/ueber-uns#showroom">Showroom &amp; Termine</a><a href="mailto:info@hahntime.com">info@hahntime.com</a><a href="https://www.instagram.com/hahn.vo/" target="_blank" rel="noopener">Instagram</a>' +
         '</div>' +
-        '<div class="sf-col"><h4>Showroom</h4>' +
+        '<div class="sf-col"><h3>Showroom</h3>' +
           '<p>Garden Tower · 7. Etage<br>Neue Mainzer Str. 46–50<br>60311 Frankfurt am Main</p>' +
           '<p style="opacity:.66;font-size:12.5px;margin-top:10px">Besuche nach Terminvereinbarung</p>' +
         '</div>' +
