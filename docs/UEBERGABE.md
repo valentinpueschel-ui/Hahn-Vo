@@ -34,7 +34,7 @@ das GitHub-Repo, das Vercel-Projekt und Valentins Claude-Umfeld.
 
 1. **Hannes' Konten:** GitHub-Konto, Claude-Abo, Shopify-Connector verbinden.
 2. **Repo übertragen** (GitHub → Settings → Danger Zone → Transfer). Valentin bleibt Mitarbeiter.
-3. **Vercel:** neues Team, Pro buchen, Projekt `hahn-vo-df1c` übertragen (Vercel → Project Settings → Transfer). Dann Settings → Git → mit dem Repo unter Hannes' Konto verbinden (Vercel-GitHub-App auf seinem Konto installieren). Ein Test-Push muss deployen.
+3. **Vercel:** Hannes nimmt die Einladung ins Team „Hahn und Vo" an (Viewer). Bei der Übergabe: Rolle → Owner, seine Karte unter Billing, Valentin → Viewer. Nach dem Repo-Transfer: Project Settings → Git → mit dem Repo unter Hannes' Konto verbinden (Vercel-GitHub-App auf seinem Konto installieren). Ein Test-Push muss deployen.
 4. **Hannes' Mac:** `git clone`, `bash tools/einrichten.sh`, Playwright-Chromium installieren.
 5. **Probelauf zu zweit (90 Minuten):** Hannes legt eine echte Uhr mit dem Skill an, setzt eine auf reserviert, ändert ein Bild — Valentin sieht zu.
 6. **Aufräumen:** Valentins Vercel-Token, GoDaddy-PAT, Resend-Key widerrufen/rotieren; `~/.hv-tokens` und `.shopify-token` bei Valentin löschen; verwaistes Vercel-Projekt `hahn-vo` (Stand 22.07.) löschen; Testbestellung #1002 archivieren.
