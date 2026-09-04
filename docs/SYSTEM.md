@@ -69,6 +69,9 @@ Ausblenden ohne Löschen: interner Code in `AUSSCHLUSS` (`api/katalog.js`).
 | `api/chrono24.js` | Feed, `EINSTELLUNGEN` (Aufschlag, Rundung, Ausschluss) |
 | `api/anfrage.js` | Mailversand (Resend), Empfänger aus `ANFRAGE_AN` |
 | `api/sitemap.js` | Sitemap aus dem Bestand |
+| `api/produkt.js` | liefert `/produkt?id=…` serverseitig aus `produkt-vorlage.html`: Titel, Beschreibung, Vorschaubild, schema.org Product/Breadcrumb, vorbefüllter Inhalt (5 min Edge-Cache) |
+| `tools/serve.py` | lokaler Server (`serve.command`): saubere Adressen, `/produkt` aus der Vorlage |
+| `llms.txt`, `robots.txt` | Kurzbeschreibung für KI-Suchmaschinen; Crawler-Freigaben, Kasse ausgenommen |
 | `vercel.json` | saubere Adressen, Rewrites (`/api/katalog.json`, `/chrono24.xml`, `/sitemap.xml`), Weiterleitungen vom alten Shop |
 | `assets/products/pXXX/` | eigene Bildkopien (Cover 0.jpg, Hover 1.jpg …) |
 | `assets/img/reviews/` | Fotos der Kundenstimmen |

@@ -36,7 +36,6 @@ async function baueSitemap(basis) {
   var eintraege = SEITEN.map(function (s) {
     return '  <url>\n' +
       '    <loc>' + xmlEscape(basis + s.pfad) + '</loc>\n' +
-      '    <lastmod>' + heute + '</lastmod>\n' +
       '    <changefreq>' + s.frequenz + '</changefreq>\n' +
       '    <priority>' + s.prio + '</priority>\n' +
       '  </url>\n';
@@ -54,7 +53,7 @@ async function baueSitemap(basis) {
       var bild = (p.bilder || [])[0];
       eintraege.push('  <url>\n' +
         '    <loc>' + xmlEscape(basis + '/produkt?id=' + id) + '</loc>\n' +
-        '    <lastmod>' + heute + '</lastmod>\n' +
+        '    <lastmod>' + String(p.geaendert || p.angelegt || heute).slice(0, 10) + '</lastmod>\n' +
         '    <changefreq>weekly</changefreq>\n' +
         '    <priority>' + (p.verfuegbar ? '0.8' : '0.4') + '</priority>\n' +
         (bild ? '    <image:image>\n' +

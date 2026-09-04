@@ -96,7 +96,7 @@ function abfrage(cursor) {
     'pageInfo{hasNextPage endCursor}' +
     /* Bestandszahlen darf der öffentliche Token nicht lesen; availableForSale
      * genügt: Shopify setzt es auf false, sobald der Bestand 0 ist. */
-    'edges{node{id title descriptionHtml availableForSale createdAt ' +
+    'edges{node{id title descriptionHtml availableForSale createdAt updatedAt ' +
     'images(first:16){edges{node{url}}} ' +
     'variants(first:1){edges{node{id price{amount} compareAtPrice{amount}}}} ' +
     'metafields(identifiers:[' + ids + ']){key value}}}}}';
@@ -146,6 +146,7 @@ async function holeBestand() {
         /* Anlagedatum aus Shopify — daraus leitet die Startseite ab, was
          * wirklich neu eingetroffen ist. */
         angelegt: n.createdAt || null,
+        geaendert: n.updatedAt || null,
         preis: v.price ? Math.round(parseFloat(v.price.amount)) : null,
         listenpreis: v.compareAtPrice ? Math.round(parseFloat(v.compareAtPrice.amount)) : null,
         bilder: (n.images.edges || []).map(function (b) { return b.node.url; }),
