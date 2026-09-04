@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 tools/inserat.py:*)",
+      "Bash(python3 tools/uhr.py:*)",
+      "Bash(python3 tools/fallback_bauen.py:*)",
+      "Bash(bash tools/einrichten.sh:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(curl -s https://hahn-vo.de:*)",
+      "Bash(ls:*)",
+      "Read",
+      "Edit",
+      "Write",
+      "mcp__claude_ai_Shopify__graphql_query",
+      "mcp__claude_ai_Shopify__graphql_mutation",
+      "mcp__claude_ai_Shopify__validate_graphql_codeblocks",
+      "mcp__claude_ai_Shopify__graphql_schema",
+      "mcp__claude_ai_Shopify__get-product",
+      "mcp__claude_ai_Shopify__search_products",
+      "mcp__claude_ai_Shopify__get-inventory-levels",
+      "mcp__claude_ai_Shopify__list-orders",
+      "mcp__claude_ai_Shopify__get-order"
+    ]
+  }
+}
