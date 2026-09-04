@@ -9,7 +9,7 @@ das GitHub-Repo, das Vercel-Projekt und Valentins Claude-Umfeld.
 
 | Was | Gehört heute | Übergabe |
 |---|---|---|
-| Shopify-Store `tami1g-0j` | Shop-E-Mail info@hahntime.com — **Store-Inhaber prüfen** (Einstellungen → Benutzer): Valentin hat den Store am 21.08. mit eingerichtet | Steht Valentin als Inhaber: Inhaberschaft an Hannes übertragen; Valentins Mitarbeiterzugang danach einschränken oder entfernen |
+| Shopify-Store `tami1g-0j` | Hannes ist Store-Inhaber (info@hahntime.com, bestätigt 04.09.) | nichts; Valentins Mitarbeiterzugang nach der Übergabe einschränken oder entfernen |
 | Shopify ↔ Claude (Connector) | Valentins claude.ai | Hannes: claude.ai → Connectors → Shopify, mit seinem Login |
 | Shopify Admin-Zugang für den Direktmodus | existiert nicht | optional: App im Dev-Dashboard des Shop-Inhabers, Client-ID/Secret in `~/.hv-tokens` |
 | GitHub-Repo `valentinpueschel-ui/Hahn-Vo` (öffentlich) | Valentin | Settings → Transfer ownership → Hannes' GitHub-Konto (kostenlos). Danach Vercel neu verbinden (unten) |

@@ -248,6 +248,12 @@
 @media (max-width: 900px) {
   .about-split, .showroom-band .sb-grid { grid-template-columns: 1fr; }
   .value-row { grid-template-columns: 1fr; }
+  /* Das Gründerfoto ist 2:1. Einspaltig wäre der Rahmen mit 56vh ein
+     Hochformat, das links einen Gründer abschneidet. Quadratisch bleibt
+     genug Höhe, und der Ausschnitt sitzt auf den beiden (sie stehen bei
+     ~43 % der Bildbreite, nicht in der Mitte). */
+  .about-split .img-frame { height: auto; aspect-ratio: 1 / 1; }
+  .about-split .img-frame img { object-position: 43% 50%; }
 }
 
 /* [hidden] must always win over display rules */
