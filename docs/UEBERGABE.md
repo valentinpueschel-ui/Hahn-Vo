@@ -14,7 +14,7 @@ das GitHub-Repo, das Vercel-Projekt und Valentins Claude-Umfeld.
 | Shopify Admin-Zugang für den Direktmodus | existiert nicht | optional: App im Dev-Dashboard des Shop-Inhabers, Client-ID/Secret in `~/.hv-tokens` |
 | GitHub-Repo `valentinpueschel-ui/Hahn-Vo` (öffentlich) | Valentin | Settings → Transfer ownership → Hannes' GitHub-Konto (kostenlos). Danach Vercel neu verbinden (unten) |
 | GitHub ↔ Claude | `gh` auf Valentins Mac | Hannes: `gh auth login` oder SSH-Schlüssel |
-| Vercel-Projekt `hahn-vo-df1c` + Env-Vars (`RESEND_API_KEY`, `ANFRAGE_AN`) | Valentins Hobby-Team | Neues Team „Hahn & Vo", Pro (20 $/Monat), Projekt übertragen (nimmt Env-Vars + Domain mit), Hannes Owner, Valentin kostenloser Viewer |
+| Vercel-Projekt `hahn-vo-df1c` + Env-Vars (`RESEND_API_KEY`, `ANFRAGE_AN`) | Seit 04.09. abends: eigenes Pro-Team **„Hahn und Vo"** (vercel.com/hahn-vo), Owner Valentin, Hannes als Viewer eingeladen (info@hahntime.com). Valentins andere Projekte liegen im Hobby-Team `valentin-pueschel-projekte` | Keine Projektübertragung mehr nötig: Hannes nimmt die Einladung an → später Rolle auf Owner, seine Karte unter Billing, Valentin zurück auf Viewer |
 | Domain hahn-vo.de, DNS | Hahn & Vo (GoDaddy) | nichts; Valentins Personal Access Token widerrufen |
 | Resend (Mailversand) | Hannes (Konto auf info@hahntime.com, Passwort bei ihm) | nichts; nur Key rotieren, weil Valentin den aktuellen kennt (neuer Key → Vercel Env → Redeploy) |
 | Chrono24 Händlerkonto `hahnundvo`, Feed `/chrono24.xml` | Hannes | nichts; klären, ob Chrono24 den Feed zieht (`CHRONO24-FEED.md`) |

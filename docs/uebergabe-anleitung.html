@@ -103,7 +103,7 @@
         <li>GitHub-Konto</li>
         <li>Claude-Konto mit Abo</li>
         <li>Shopify mit Claude verbinden</li>
-        <li>Vercel-Konto, Team, Pro-Tarif</li>
+        <li>Vercel-Einladung annehmen</li>
         <li>Resend-Login prüfen</li>
         <li>Claude-App auf dem Mac</li>
       </ul>
@@ -115,7 +115,7 @@
       <ul>
         <li>Projekt auf deinen Mac</li>
         <li>Probelauf: du legst eine Uhr an</li>
-        <li>Website-Hosting auf dein Vercel</li>
+        <li>Vercel-Team wird deins</li>
         <li>Code-Ablage auf dein GitHub</li>
         <li>Mail-Schlüssel erneuern</li>
       </ul>
@@ -135,7 +135,7 @@
   <h2>Wie das System zusammenhängt</h2>
   <div class="diagramm">
     <div class="box"><b>Shopify</b>Jede Uhr als Produkt, Bestand, Kasse. <br>Gehört dir schon. Bleibt die einzige Wahrheit über den Bestand.</div>
-    <div class="box"><b>Website auf Vercel</b>hahn-vo.de liest den Bestand live aus Shopify. <br>Zieht bald in dein Vercel-Konto um.</div>
+    <div class="box"><b>Website auf Vercel</b>hahn-vo.de liest den Bestand live aus Shopify. <br>Liegt im Team „Hahn und Vo", das bald dir gehört.</div>
     <div class="box"><b>Code auf GitHub</b>Alle Dateien der Website plus die Werkzeuge und Regeln für Claude. <br>Zieht bald in dein GitHub-Konto um.</div>
   </div>
   <div class="pfeil">▲ &nbsp; Claude Code auf deinem Mac spricht mit allen dreien. Jede Änderung am Code wird automatisch in etwa 40 Sekunden live.</div>
@@ -163,7 +163,7 @@
       <table>
         <tr><td class="k">☐</td><td>GitHub-Benutzername</td></tr>
         <tr><td class="k">☐</td><td>„Shopify verbunden"</td></tr>
-        <tr><td class="k">☐</td><td>Vercel-Team-Name (aus der Adresszeile)</td></tr>
+        <tr><td class="k">☐</td><td>„Vercel-Einladung angenommen"</td></tr>
         <tr><td class="k">☐</td><td>„Resend-Login klappt"</td></tr>
       </table>
       <h3>Das hast du parat</h3>
@@ -228,11 +228,11 @@
   <div class="schritt">
     <div class="nr">4</div>
     <div>
-      <div class="kopf"><h3>Vercel-Konto, Team und Pro-Tarif</h3><span class="wer h">Hannes</span><span class="zeit">10 Minuten</span></div>
-      <p>Vercel liefert die Website aus. <span class="pfad">vercel.com</span> → <b>Sign Up</b> → <b>„Continue with GitHub"</b> (wichtig: mit dem GitHub-Konto aus Schritt 1 — so kann Vercel später deinen Code sehen). Dann ein Team anlegen: Name <b>Hahn &amp; Vo</b>. Im Team: <span class="pfad">Settings → Billing → Upgrade to Pro</span>, Karte hinterlegen. Der Pro-Tarif enthält deinen Sitz als Owner; Valentin kommt später als kostenloser „Viewer" dazu.</p>
-      <div class="hinweis achtung"><b>Warum Pro und nicht kostenlos:</b> Vercel erlaubt den Gratis-Tarif nur für private, nicht-kommerzielle Seiten, und man kann niemanden ins Team holen. Ein laufender Uhrenshop gehört auf Pro — sonst kann Vercel das Konto pausieren.</div>
-      <div class="fertig"><b>Fertig, wenn:</b> unter Settings → Billing „Pro" steht und ein Zahlungsmittel hinterlegt ist. Noch <b>kein</b> Projekt anlegen — das kommt per Übertragung in Teil B.</div>
-      <div class="senden"><b>An Valentin schicken:</b> den Team-Namen so, wie er in der Adresszeile steht (<code>vercel.com/…</code>).</div>
+      <div class="kopf"><h3>Vercel-Einladung annehmen</h3><span class="wer h">Hannes</span><span class="zeit">5 Minuten</span></div>
+      <p>Vercel liefert die Website aus. Die Website liegt bereits in einem eigenen Team <b>„Hahn und Vo"</b> (Pro-Tarif, vorerst auf Valentins Karte), und in deinem Postfach <b>info@hahntime.com</b> liegt eine Einladung von Vercel. Link in der Mail öffnen → Konto anlegen oder anmelden — <b>mit derselben E-Mail info@hahntime.com</b> (bei „Continue with GitHub" muss dein GitHub-Konto diese Adresse haben, sonst passt die Einladung nicht). Danach: <span class="pfad">vercel.com/hahn-vo</span> → Projekt <b>hahn-vo-df1c</b> → Reiter <b>Analytics</b>.</p>
+      <div class="hinweis"><b>Warum Pro und nicht kostenlos:</b> Vercel erlaubt den Gratis-Tarif nur für private, nicht-kommerzielle Seiten, und man kann niemanden ins Team holen. Ein laufender Uhrenshop gehört auf Pro (20 $/Monat).</div>
+      <div class="fertig"><b>Fertig, wenn:</b> du die Besucherzahlen unter Analytics siehst. Du bist vorerst „Viewer" (lesen); in Teil B wirst du Owner.</div>
+      <div class="senden"><b>An Valentin schicken:</b> „Vercel-Einladung angenommen".</div>
     </div>
   </div>
 
@@ -305,11 +305,9 @@ Reservierung bei p… wieder raus</pre>
   <div class="schritt">
     <div class="nr">4</div>
     <div>
-      <div class="kopf"><h3>Website-Hosting auf dein Vercel übertragen</h3><span class="wer b">Beide</span><span class="zeit">15 Minuten</span></div>
-      <p>Das Vercel-Projekt wandert komplett in dein Team: Domain hahn-vo.de, Einstellungen, Umgebungsvariablen, bisherige Besucherstatistik — <b>ohne Ausfall</b>. Valentin erzeugt einen Übergabe-Link (24 Stunden gültig) und schickt ihn dir. Du öffnest ihn, eingeloggt bei Vercel, wählst das Team <b>Hahn &amp; Vo</b> und bestätigst.</p>
-      <p class="klein">Falls Vercel den Link nicht annimmt: Du lädst Valentin unter <span class="pfad">Team → Settings → Members</span> kurz als „Member" ein, er überträgt das Projekt im Dashboard (Project → Settings → General → Transfer), danach stufst du ihn auf „Viewer" zurück. Gleiches Ergebnis.</p>
-      <p>Dann: <span class="pfad">Team → Settings → Members → Invite</span> → Valentins E-Mail, Rolle <b>Viewer</b> (kostenlos).</p>
-      <div class="fertig"><b>Fertig, wenn:</b> das Projekt <code>hahn-vo-df1c</code> in deinem Team liegt, hahn-vo.de weiterhin lädt, unter <b>Analytics</b> Besucherzahlen stehen, und unter <span class="pfad">Settings → Environment Variables</span> die zwei Einträge <code>RESEND_API_KEY</code> und <code>ANFRAGE_AN</code> da sind.</div>
+      <div class="kopf"><h3>Vercel-Team an Hannes übergeben</h3><span class="wer b">Beide</span><span class="zeit">10 Minuten</span></div>
+      <p>Das Team „Hahn und Vo" enthält nur die Website; Hannes ist bereits Viewer. Jetzt wechselt die Eigentümerschaft — ohne Übertragung, ohne Ausfall: Valentin setzt unter <span class="pfad">Team → Settings → Members</span> Hannes' Rolle auf <b>Owner</b>. Hannes hinterlegt unter <span class="pfad">Settings → Billing</span> seine Karte und entfernt Valentins. Dann stuft Hannes Valentin auf <b>Viewer</b> zurück (kostenlos).</p>
+      <div class="fertig"><b>Fertig, wenn:</b> Hannes als einziger Owner steht, seine Karte hinterlegt ist, Valentin Viewer ist, hahn-vo.de weiterhin lädt und unter <span class="pfad">Settings → Environment Variables</span> die zwei Einträge <code>RESEND_API_KEY</code> und <code>ANFRAGE_AN</code> da sind.</div>
     </div>
   </div>
 
