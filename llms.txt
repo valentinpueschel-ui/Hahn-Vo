@@ -1,0 +1,31 @@
+# Hahn & Vo — Luxusuhren in Frankfurt am Main
+
+> Hahn & Vo OHG ist ein Händler für gebrauchte und neuwertige Luxusuhren (Rolex, Omega, IWC, Breitling, Tudor, Patek Philippe, A. Lange & Söhne, Panerai, Cartier u. a.) mit Showroom im Garden Tower über dem Frankfurter Bankenviertel. Gegründet von Hannes Hahn und Minh Vo, beide bei Bucherer ausgebildet. Jede Uhr wird auf Echtheit, Funktion und Ganggenauigkeit geprüft; 12 Monate Garantie auf das Werk; 14 Tage Rückgaberecht; versicherter Versand weltweit oder persönliche Übergabe in Frankfurt. Ankauf, Inzahlungnahme und Suchaufträge — Spezialität: seltene Referenzen aus Südkorea.
+
+## Fakten
+
+- Firma: Hahn & Vo OHG · Sitz: Luisenstraße 81, 63067 Offenbach am Main · USt-IdNr. DE453178178 · HRA 43504
+- Showroom (nach Terminvereinbarung): Garden Tower, 7. Etage, Neue Mainzer Straße 46–50, 60311 Frankfurt am Main
+- Kontakt: info@hahntime.com · Telefon +49 176 8421 1760 · WhatsApp +49 176 203 800 47
+- Social: Instagram @hahn.vo · TikTok @hahn.vo · YouTube @hahn-vo · WhatsApp-Channel mit Angeboten
+- Preise: Endpreise in Euro. Je nach Uhr Differenzbesteuerung nach § 25a UStG oder Regelbesteuerung mit ausgewiesener Mehrwertsteuer — steht auf jeder Produktseite.
+- Versand: Deutschland kostenlos, Europa 80 €, weltweit 150 € — versichert, mit Sendungsverfolgung. Oder Abholung im Showroom.
+- Zahlung: Kreditkarte, PayPal, Apple Pay, Google Pay, Klarna, Banküberweisung (Kasse über Shopify unter shop.hahn-vo.de).
+- Ankauf: Angebot innerhalb von 12 Stunden, Prüfung 1–3 Werktage, Auszahlung per Echtzeitüberweisung.
+
+## Seiten
+
+- [Startseite](https://hahn-vo.de/): Neu eingetroffene Uhren, Leistungen, Kundenstimmen
+- [Shop](https://hahn-vo.de/shop): alle Uhren mit Filtern nach Marke, Preis und Status (erhältlich, reserviert, verkauft)
+- [Produktseiten](https://hahn-vo.de/produkt?id=p567): je Uhr Referenz, Baujahr, Durchmesser, Gehäuse, Zifferblatt, Band, Werk, Kaliber, Lieferumfang, Zustand, Preis, Besteuerung, Bilder
+- [Ankauf & Inzahlungnahme](https://hahn-vo.de/ankauf): Uhr verkaufen oder in Zahlung geben
+- [Suchauftrag](https://hahn-vo.de/suchauftrag): Wunschuhr finden lassen
+- [Über uns](https://hahn-vo.de/ueber-uns): Gründer, Showroom, Kontakt
+- [Referenz-Checker](https://hahn-vo.de/referenz-checker): Referenznummer eingeben, Modell und Produktionszeitraum erfahren
+- [Impressum](https://hahn-vo.de/impressum) · [Datenschutz](https://hahn-vo.de/datenschutz) · [AGB](https://hahn-vo.de/agb) · [Widerruf](https://hahn-vo.de/widerruf)
+
+## Maschinenlesbare Daten
+
+- [Katalog als JSON](https://hahn-vo.de/api/katalog.json): aktueller Bestand mit allen Feldern, Preisen, Status und Bildadressen (5 Minuten Zwischenspeicher)
+- [Sitemap](https://hahn-vo.de/sitemap.xml)
+- Jede Produktseite trägt schema.org-Daten (Product, Offer, BreadcrumbList); jede Seite Organization/Store-Daten.

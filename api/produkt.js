@@ -23,9 +23,13 @@ var katalog = require('./katalog');
 var SITE = 'https://hahn-vo.de';
 var VORLAGE = null;
 
+/* Die Vorlage heißt produkt-vorlage.html, nicht produkt.html: Läge eine
+ * statische produkt.html im Projekt, würde Vercel sie vor dieser Funktion
+ * ausliefern (Dateisystem schlägt Rewrite). Lokal bedient tools/serve.py
+ * /produkt aus derselben Vorlage. */
 function vorlage() {
   if (!VORLAGE) {
-    VORLAGE = fs.readFileSync(path.join(__dirname, '..', 'produkt.html'), 'utf8');
+    VORLAGE = fs.readFileSync(path.join(__dirname, '..', 'produkt-vorlage.html'), 'utf8');
   }
   return VORLAGE;
 }

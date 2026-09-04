@@ -85,6 +85,21 @@
   ],
   "redirects": [
     {
+      "source": "/produkt-vorlage",
+      "destination": "/produkt",
+      "permanent": false
+    },
+    {
+      "source": "/produkt-vorlage.html",
+      "destination": "/produkt",
+      "permanent": false
+    },
+    {
+      "source": "/produkt.html",
+      "destination": "/produkt",
+      "permanent": true
+    },
+    {
       "source": "/shop/ols/products/a-lange-sohne-glashutte-taschenuhr-kaliber-43-ls-uhrenbox",
       "destination": "/produkt?id=p5085",
       "permanent": true
@@ -462,7 +477,7 @@
   ],
   "functions": {
     "api/produkt.js": {
-      "includeFiles": "produkt.html"
+      "includeFiles": "produkt-vorlage.html"
     }
   }
 }

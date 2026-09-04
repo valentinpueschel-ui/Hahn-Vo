@@ -55,7 +55,7 @@ Ausblenden ohne Löschen: interner Code in `AUSSCHLUSS` (`api/katalog.js`).
 
 | Datei | Aufgabe |
 |---|---|
-| `index.html`, `shop.html`, `produkt.html`, `ankauf.html`, `suchauftrag.html`, `ueber-uns.html`, `checkout.html`, `referenz-checker.html`, 4 Rechtsseiten | die Seiten |
+| `index.html`, `shop.html`, `produkt-vorlage.html` (Vorlage; `/produkt` liefert `api/produkt.js`), `ankauf.html`, `suchauftrag.html`, `ueber-uns.html`, `checkout.html`, `referenz-checker.html`, 4 Rechtsseiten | die Seiten |
 | `css/base.css`, `home.css`, `pages.css`, `shop.css` … | Gestaltung; Petrol `#0E334F`, Creme `#FFFAE7`, Inter + Marcellus (Wortmarke) |
 | `js/shell.js` | Header, Footer, Warenkorb-Drawer auf jeder Seite |
 | `js/katalog.js` | holt `/api/katalog.json`, ersetzt `window.PRODUCTS` an Ort und Stelle, 2,5 s Zeitlimit, Ereignis `hv:katalog` |
