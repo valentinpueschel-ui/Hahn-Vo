@@ -2674,6 +2674,43 @@ window.PRODUCTS = [
   "shopifyId": "10261256372552"
  },
  {
+  "id": "p360",
+  "brand": "Panerai",
+  "name": "Luminor Marina Handaufzug Jahr 2016 Full Set",
+  "ref": "PAM00632",
+  "price": 3450,
+  "listPrice": null,
+  "status": "available",
+  "category": "uhren",
+  "fullset": "Full Set (Box & Papiere)",
+  "rating": "Sehr gut",
+  "year": "2016",
+  "size": "44 mm",
+  "material": "Edelstahl",
+  "dial": "Schwarz",
+  "strap": "Leder / Kautschuk (4 Wechselarmbänder)",
+  "movement": "Handaufzug",
+  "caliber": null,
+  "glass": null,
+  "gender": "Herren",
+  "tax": "Regelbesteuerung",
+  "sku": null,
+  "code": "360",
+  "added": "2026-09-04T05:11:29Z",
+  "desc": "Hier präsentieren wir die Panerai Luminor Marina, Ref. PAM00632, aus dem Jahr 2016 im Full Set — schwarzes Zifferblatt mit der typischen Kronenbrücke, 44 mm Edelstahlgehäuse, Handaufzug. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nGeliefert mit originaler Panerai-Box und originalen Papieren. Dazu gehören vier zusätzliche Wechselarmbänder in Leder und Kautschuk im Wert von rund 300 bis 400 Euro. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 360",
+  "images": [
+   "assets/products/p360/0.jpg",
+   "assets/products/p360/1.jpg",
+   "assets/products/p360/2.jpg",
+   "assets/products/p360/3.jpg",
+   "assets/products/p360/4.jpg",
+   "assets/products/p360/5.jpg",
+   "assets/products/p360/6.jpg",
+   "assets/products/p360/7.jpg"
+  ],
+  "shopifyId": "10261500199240"
+ },
+ {
   "id": "p5069",
   "brand": "Tudor",
   "name": "Black Bay Bucherer Blue Automatik only watch",
@@ -3295,6 +3332,7 @@ window.SHOPIFY = {
   "p522": "10261254734152",
   "p504": "10261255291208",
   "p567": "10261255848264",
-  "p574": "10261256372552"
+  "p574": "10261256372552",
+  "p360": "10261500199240"
  }
 };
