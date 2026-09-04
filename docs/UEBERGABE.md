@@ -16,7 +16,7 @@ das GitHub-Repo, das Vercel-Projekt und Valentins Claude-Umfeld.
 | GitHub ↔ Claude | `gh` auf Valentins Mac | Hannes: `gh auth login` oder SSH-Schlüssel |
 | Vercel-Projekt `hahn-vo-df1c` + Env-Vars (`RESEND_API_KEY`, `ANFRAGE_AN`) | Valentins Hobby-Team | Neues Team „Hahn & Vo", Pro (20 $/Monat), Projekt übertragen (nimmt Env-Vars + Domain mit), Hannes Owner, Valentin kostenloser Viewer |
 | Domain hahn-vo.de, DNS | Hahn & Vo (GoDaddy) | nichts; Valentins Personal Access Token widerrufen |
-| Resend (Mailversand) | Konto auf info@hahntime.com | Hannes setzt das Passwort über sein Postfach zurück; danach Key rotieren (neuer Key → Vercel Env → Redeploy) |
+| Resend (Mailversand) | Hannes (Konto auf info@hahntime.com, Passwort bei ihm) | nichts; nur Key rotieren, weil Valentin den aktuellen kennt (neuer Key → Vercel Env → Redeploy) |
 | Chrono24 Händlerkonto `hahnundvo`, Feed `/chrono24.xml` | Hannes | nichts; klären, ob Chrono24 den Feed zieht (`CHRONO24-FEED.md`) |
 | Cloud-Auftrag „p567 auf verkauft" (08.09.) | Valentins claude.ai | läuft einmal; künftige Aufträge legt Hannes selbst an (`/schedule`) |
 | Claude-Gedächtnis, Scratchpad-Skripte | Valentins Mac | ersetzt durch `CLAUDE.md`, `docs/`, `tools/`, `.claude/skills/` — im Repo |
