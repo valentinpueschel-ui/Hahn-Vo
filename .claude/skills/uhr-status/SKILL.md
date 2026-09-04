@@ -29,7 +29,7 @@ Besucher-Zwischenspeicher — baut die Rückfalldatei und committet.
 
 ## Wörter, die Missverständnisse erzeugen
 
-- **„rausnehmen"** kann dreierlei heißen. Nachfragen, wenn nicht eindeutig:
+- **„rausnehmen"** kann dreierlei heißen. Nicht nachfragen — als *verkauft* ausführen und im Bericht die beiden anderen Wege in einem Satz nennen:
   - *verkauft* — bleibt mit Kennzeichen „Verkauft" am Ende des Shops (Beleg, was durchgeht; Standard)
   - *löschen* — komplett weg, siehe Skill `uhr-loeschen`
   - *ausblenden* — Produkt bleibt in Shopify, verschwindet nur von der Website: Code in `AUSSCHLUSS` in `api/katalog.js` eintragen, committen, pushen (so wurde die IWC 570-26 am 02.09. behandelt)

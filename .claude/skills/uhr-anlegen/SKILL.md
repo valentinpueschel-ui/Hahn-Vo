@@ -87,7 +87,7 @@ python3 tools/uhr.py pruefen p567
 Öffne `arbeit/_pruefen-p567/live-bogen.jpg` und **sieh hin**: Cover frontal? Hover = Set oder Front?
 Nicht nach IDs urteilen — das war der Fehler vom 31.08. (Gehäuseboden stand als zweites Bild, die Kontrolle hatte nur die notierte ID verglichen).
 
-Bericht in drei bis fünf Sätzen: Link, Preis, Besteuerung mit Grund, was Cover und zweites Bild zeigen, und jede Unsicherheit (fehlendes Baujahr, Geschlecht geschätzt, Fehler im Inseratstext, Kennung abweichend vom Code).
+Bericht in drei bis fünf Sätzen, mehr nicht: Link, Preis, Besteuerung mit Grund, was Cover und zweites Bild zeigen, und jede Unsicherheit (fehlendes Baujahr, Geschlecht geschätzt, Fehler im Inseratstext, Kennung abweichend vom Code). Keine Schrittliste, keine Erklärung des Ablaufs.
 
 ## Was du NIE tust
 

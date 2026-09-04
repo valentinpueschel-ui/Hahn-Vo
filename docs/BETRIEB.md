@@ -26,9 +26,11 @@ Claude findet sie von selbst.
 | „Bei p567 das Set-Foto als zweites Bild" / „das angehängte Bild als Hover" | Bildreihenfolge ändern |
 | „Text auf Über uns ändern: …" / Screenshot mit Markierung | Website-Änderung, lokal geprüft, deployt |
 
-Claude führt Skripte aus, führt Shopify-Aufrufe über den Connector aus (du bestätigst
-jeden Schreibzugriff einmal per Klick) und berichtet am Ende kurz: Link, Preis,
-Besteuerung, was Cover und zweites Bild zeigen, offene Fragen.
+Claude führt Skripte und Shopify-Aufrufe aus und berichtet am Ende kurz: Link, Preis,
+Besteuerung, was Cover und zweites Bild zeigen, was unsicher war. Gefragt wirst du
+nur, wenn Preis oder Artikelnummer fehlen — oder einmal, bevor etwas unwiderruflich
+gelöscht wird. Beim allerersten Mal fragt Claude Code für jedes Werkzeug (Skripte,
+Shopify, Git) einmal nach einer Erlaubnis: **„Immer erlauben"** wählen — danach nie wieder.
 
 ## Woran du erkennst, dass alles gut ist
 

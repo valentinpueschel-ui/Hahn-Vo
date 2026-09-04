@@ -292,22 +292,14 @@
     <div class="nr">3</div>
     <div>
       <div class="kopf"><h3>Probelauf — Hannes legt eine Uhr an</h3><span class="wer h">Hannes tippt</span><span class="wer v">Valentin schaut zu</span><span class="zeit">60–90 Minuten</span></div>
-      <p>Im Claude-Fenster, mit dem echten Inserat aus deiner Vorbereitung:</p>
-      <pre>Lade diese Uhr hoch: https://www.kleinanzeigen.de/s-anzeige/…</pre>
-      <p>Was dann passiert, und worauf du achtest:</p>
-      <ol>
-        <li>Ein Browserfenster geht auf und liest das Inserat. Das ist gewollt (Kleinanzeigen sperrt unsichtbare Browser).</li>
-        <li>Claude zeigt dir einen <b>Kontaktbogen</b> aller Fotos und sagt, welches Cover und welches zweites Bild wird. <b>Zweites Bild = Set-Foto, sonst ein weiteres Frontbild.</b> Wenn du anderer Meinung bist: sagen.</li>
-        <li>Claude nennt Preis, Besteuerung (mit Begründung), Code, Felder. Stimmt etwas nicht: sagen, bevor es rausgeht.</li>
-        <li>Für jeden Shopify-Schreibzugriff fragt Claude Code einmal nach — du bestätigst mit einem Klick.</li>
-        <li>Am Ende kommt der Link <code>hahn-vo.de/produkt?id=p…</code>. Öffnen. Im Shop mit der Maus über die Karte fahren: das zweite Bild muss erscheinen. Im Filter „Marken" muss die Uhr unter ihrer Marke stehen.</li>
-      </ol>
-      <p>Danach noch zwei kleine Aufgaben, jeweils ein Satz an Claude:</p>
-      <pre>hahn-vo.de/produkt?id=p… auf reserviert
+      <p>Ein Satz im Claude-Fenster, mit dem echten Inserat aus deiner Vorbereitung:</p>
+      <pre>https://www.kleinanzeigen.de/s-anzeige/…   hochladen, Preis wie im Inserat</pre>
+      <p>Mehr nicht. Claude liest das Inserat (ein Browserfenster geht kurz auf — gewollt), holt die Bilder, wählt Cover und zweites Bild nach der Regel „Set-Foto, sonst Frontbild", entscheidet Besteuerung und Felder, legt die Uhr in Shopify an, prüft die Website und schreibt dir <b>drei bis fünf Sätze</b>: Link, Preis, Besteuerung mit Grund, was Cover und zweites Bild zeigen, und was unsicher war. Zwischendurch fragt Claude nichts — nur wenn der Preis oder die Artikelnummer fehlen, oder bevor es etwas löscht.</p>
+      <p>Danach öffnest du den Link und siehst dir die Uhr an. Gefällt dir das zweite Bild nicht, ein Satz genügt: <code>Bei p… das Set-Foto als zweites Bild</code>. Und zwei weitere Sätze, damit du beides einmal gemacht hast:</p>
+      <pre>p… auf reserviert
 Reservierung bei p… wieder raus</pre>
-      <pre>Bei p… das dritte Bild als zweites Bild</pre>
-      <div class="fertig"><b>Fertig, wenn:</b> die Uhr live ist, der Hover stimmt, die Marke im Filter steht, Reservieren und Bildwechsel geklappt haben — und Hannes das alles selbst getippt hat.</div>
-      <div class="hinweis"><b>Wenn etwas hakt:</b> Claude meldet „FEHLER: …" mit Ursache und macht dort weiter, wo es stand (<code>weiter</code>). Kleinanzeigen-Sperre: warten oder Fotos in einen Ordner ziehen und „Fotos liegen in ~/Desktop/neue-uhr" sagen.</div>
+      <div class="fertig"><b>Fertig, wenn:</b> die Uhr live ist, der Bericht kam, Reservieren und ein Bildwechsel geklappt haben — und Hannes die Sätze selbst getippt hat.</div>
+      <div class="hinweis"><b>Wenn etwas hakt:</b> Claude meldet „FEHLER: …" mit Ursache und macht dort weiter, wo es stand. Kleinanzeigen-Sperre: warten oder Fotos in einen Ordner ziehen und „Fotos liegen in ~/Desktop/neue-uhr" sagen. Beim allerersten Mal fragt Claude Code für jedes Werkzeug (Skripte, Shopify, Git) einmal nach einer Erlaubnis — <b>„Immer erlauben"</b> wählen, danach nie wieder.</div>
     </div>
   </div>
   <div class="schritt">
@@ -353,10 +345,21 @@ git remote set-url origin https://github.com/&lt;hannes&gt;/Hahn-Vo.git</pre>
         <tr><td class="k">☐</td><td>GitHub: Repo gehört Hannes, Valentin ist Mitarbeiter</td></tr>
         <tr><td class="k">☐</td><td>Claude Code auf Hannes' Mac: Shopify verbunden, <code>tools/einrichten.sh</code> meldet 0 fehlen</td></tr>
         <tr><td class="k">☐</td><td>Resend: neuer Schlüssel, alter gelöscht, Testmail angekommen</td></tr>
+        <tr><td class="k">☐</td><td>Shopify: <span class="pfad">Einstellungen → Benutzer</span> — als <b>Store-Inhaber</b> steht Hannes. Steht dort Valentin: „Inhaberschaft übertragen" an Hannes. Danach Valentins Mitarbeiter-Zugang entfernen oder auf „nur Produkte" beschränken.</td></tr>
         <tr><td class="k">☐</td><td>Chrono24: <code>hahn-vo.de/chrono24.xml</code> lädt — ob Chrono24 den Feed abholt, mit dem Chrono24-Support klären (Vorlage in <code>CHRONO24-FEED.md</code>)</td></tr>
       </table>
     </div>
   </div>
+
+  <h2 style="margin-top:6mm">Wer hat danach welche Rechte</h2>
+  <p>Alles gehört Hannes. Valentin behält nur, was Hannes ihm gibt — und Hannes kann jedes davon mit einem Klick entziehen.</p>
+  <table>
+    <tr><th>Dienst</th><th>Hannes</th><th>Valentin</th><th>Entziehen</th></tr>
+    <tr><td>Shopify</td><td>Store-Inhaber — alles</td><td>Mitarbeiter (für den Shopify-Connector), Rechte einschränkbar</td><td>Einstellungen → Benutzer → entfernen</td></tr>
+    <tr><td>GitHub</td><td>Eigentümer des Repos — alles, auch Löschen und Übertragen</td><td>Mitarbeiter: darf Code pushen, keine Einstellungen, kein Löschen</td><td>Settings → Collaborators → entfernen</td></tr>
+    <tr><td>Vercel</td><td>Owner des Teams — Domain, Zahlung, Einstellungen, Mitglieder</td><td>Viewer: nur lesen (Analytics, Deployments), nichts ändern</td><td>Team → Settings → Members → entfernen</td></tr>
+    <tr><td>Resend, GoDaddy, Chrono24, Claude-Konto</td><td>Inhaber</td><td>—</td><td>—</td></tr>
+  </table>
   <div class="kicker" style="page-break-before: always">Teil C · Valentin allein · 30 Minuten</div>
   <h2>Aufräumen</h2>
   <table>

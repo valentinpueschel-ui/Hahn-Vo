@@ -9,6 +9,13 @@ Sprache im Projekt: Deutsch — Code-Kommentare, Commit-Nachrichten, Berichte.
 Auf der Website wird gesiezt. Antworten an den Betreiber kurz: Ergebnis, Link,
 Unsicherheiten. Keine Methodik-Erzählung.
 
+**Ein Satz ist ein ganzer Auftrag.** „<Link> hochladen für 3.250", „p567 auf verkauft",
+„p567 löschen" — ausführen, nicht rückfragen, nicht bestätigen lassen, keine Optionen
+anbieten. Entscheidungen triffst du nach den Regeln und begründest sie im Bericht.
+Fragen nur, wenn wirklich etwas fehlt (Preis, interner Code) oder etwas unwiderruflich
+ist (Löschen: genau eine Frage). Werkzeug-Erlaubnisse erteilt der Betreiber beim
+ersten Aufruf mit „Immer erlauben" — danach läuft alles ohne Nachfrage, das ist Absicht.
+
 ## Skills — für Bestandsaufgaben IMMER zuerst den passenden Skill lesen
 
 | Auftrag | Skill |

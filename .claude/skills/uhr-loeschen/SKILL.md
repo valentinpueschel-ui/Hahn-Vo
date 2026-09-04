@@ -7,7 +7,9 @@ description: Eine Uhr komplett aus Shopify und von der Website entfernen (Produk
 
 Löschen ist unwiderruflich — Produkt, Bilder und Datenblatt sind danach in Shopify weg.
 Wenn der Auftrag nur „rausnehmen" oder „verkauft" sagt, ist das **nicht** Löschen:
-Skill `uhr-status`. Bei Zweifel nachfragen, mit den drei Deutungen (verkauft / löschen / ausblenden).
+Skill `uhr-status`. Bei „rausnehmen" ohne weiteres Wort: als *verkauft* behandeln und
+im Bericht sagen, dass Löschen und Ausblenden auch möglich wären — nicht vorher fragen.
+Nur bei ausdrücklichem „löschen" EINE Rückfrage: „p567 (Marke Modell) wirklich unwiderruflich löschen?" — das ist die einzige Frage in diesem Skill.
 
 ```
 python3 tools/uhr.py loeschen p567
