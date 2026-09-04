@@ -1,0 +1,106 @@
+{
+  "_hinweis": "Texte der Markenseiten (/marken/<slug>). Zwei bis drei Sätze, sachlich, ohne Preise. Marken ohne Eintrag bekommen den Standardtext. Bearbeiten und pushen — live nach ~40 Sekunden.",
+  "_standard": "{marke} bei Hahn & Vo: Jede Uhr wird auf Echtheit, Funktion und Ganggenauigkeit geprüft und kommt mit 12 Monaten Garantie auf das Werk. Sie kaufen online mit versichertem Versand oder sehen sich die Uhr im Showroom im Frankfurter Bankenviertel an — nach Terminvereinbarung.",
+  "marken": {
+    "rolex": {
+      "name": "Rolex",
+      "titel": "Rolex kaufen in Frankfurt — geprüft, mit Garantie",
+      "text": "Rolex, gegründet 1905, steht für Oyster-Gehäuse, Chronometerwerke und Modelle, die über Jahrzehnte wertstabil bleiben: Datejust, Submariner, GMT-Master II, Oyster Perpetual. Bei Hahn & Vo finden Sie geprüfte Rolex-Uhren aus Vorbesitz — mit Referenz, Baujahr und Lieferumfang klar benannt, 12 Monaten Garantie auf das Werk und der Möglichkeit, jedes Stück im Showroom in Frankfurt persönlich zu sehen."
+    },
+    "omega": {
+      "name": "Omega",
+      "titel": "Omega kaufen in Frankfurt — Seamaster, Speedmaster, Constellation",
+      "text": "Omega, seit 1848 in Biel, ist die Marke der Speedmaster auf dem Mond, der Seamaster im Wasser und der Constellation am Handgelenk. Bei Hahn & Vo finden Sie geprüfte Omega-Uhren aus Vorbesitz, von der Vintage-Seamaster bis zum aktuellen Co-Axial-Chronometer — mit Garantie, versichertem Versand oder Übergabe im Frankfurter Showroom."
+    },
+    "iwc": {
+      "name": "IWC",
+      "titel": "IWC Schaffhausen kaufen in Frankfurt — Portugieser, Pilot, Portofino",
+      "text": "IWC fertigt seit 1868 in Schaffhausen — Portugieser, Fliegeruhren, Portofino und Ingenieur gehören zu den klarsten Entwürfen der Schweizer Uhrmacherei. Hahn & Vo führt regelmäßig IWC-Uhren aus Vorbesitz, jede auf Echtheit und Funktion geprüft, mit 12 Monaten Garantie auf das Werk."
+    },
+    "breitling": {
+      "name": "Breitling",
+      "titel": "Breitling kaufen in Frankfurt — Navitimer, Superocean, Avenger",
+      "text": "Breitling, gegründet 1884, hat mit dem Navitimer den Chronographen der Piloten geschaffen und mit Superocean und Avenger robuste Werkzeuguhren. Bei Hahn & Vo finden Sie geprüfte Breitling-Modelle aus Vorbesitz, mit klaren Angaben zu Referenz, Baujahr und Lieferumfang und 12 Monaten Garantie."
+    },
+    "tag-heuer": {
+      "name": "TAG Heuer",
+      "titel": "TAG Heuer kaufen in Frankfurt — Carrera, Formula 1, Link",
+      "text": "TAG Heuer, aus dem 1860 gegründeten Haus Heuer, ist die Marke des Motorsports: Carrera, Monaco, Formula 1. Hahn & Vo führt geprüfte TAG-Heuer-Chronographen und Automatikuhren aus Vorbesitz — mit Garantie, versichertem Versand oder Abholung im Frankfurter Showroom."
+    },
+    "tudor": {
+      "name": "Tudor",
+      "titel": "Tudor kaufen in Frankfurt — Black Bay, Heritage",
+      "text": "Tudor, 1926 von Rolex-Gründer Hans Wilsdorf ins Leben gerufen, verbindet Rolex-Gehäusebau mit eigenen Manufakturwerken — Black Bay und Pelagos sind die Klassiker. Bei Hahn & Vo finden Sie geprüfte Tudor-Uhren aus Vorbesitz mit 12 Monaten Garantie auf das Werk."
+    },
+    "cartier": {
+      "name": "Cartier",
+      "titel": "Cartier kaufen in Frankfurt — Santos, Tank, Ballon Bleu",
+      "text": "Cartier, seit 1847 in Paris, hat mit Santos und Tank die Formuhr erfunden. Hahn & Vo führt geprüfte Cartier-Uhren aus Vorbesitz — Referenz, Baujahr und Lieferumfang klar benannt, 12 Monate Garantie, Übergabe versichert per Versand oder im Frankfurter Showroom."
+    },
+    "sinn": {
+      "name": "Sinn",
+      "titel": "Sinn Spezialuhren kaufen in Frankfurt",
+      "text": "Sinn Spezialuhren kommt aus Frankfurt am Main — seit 1961 Fliegeruhren, Chronographen und Instrumentenuhren mit technischen Lösungen wie Ar-Trockenhaltetechnik und Tegiment-Härtung. Bei Hahn & Vo, ebenfalls in Frankfurt, finden Sie geprüfte Sinn-Modelle aus Vorbesitz mit 12 Monaten Garantie."
+    },
+    "panerai": {
+      "name": "Panerai",
+      "titel": "Panerai kaufen in Frankfurt — Luminor, Radiomir",
+      "text": "Panerai, 1860 in Florenz gegründet, ist die Marke der italienischen Marinetaucher: Luminor mit Kronenschutzbrücke, Radiomir mit Drahtbügeln. Hahn & Vo führt geprüfte Panerai-Uhren aus Vorbesitz — mit Garantie, versichertem Versand oder Übergabe im Showroom."
+    },
+    "a-lange-soehne": {
+      "name": "A. Lange & Söhne",
+      "titel": "A. Lange & Söhne kaufen in Frankfurt",
+      "text": "A. Lange & Söhne aus Glashütte, 1845 gegründet und 1990 neu begonnen, steht für sächsische Uhrmacherei auf höchstem Niveau: Dreiviertelplatine, handgravierte Unruhkloben, Lange 1 und Saxonia. Bei Hahn & Vo finden Sie geprüfte Lange-Uhren aus Vorbesitz, mit 12 Monaten Garantie auf das Werk."
+    },
+    "seiko": {
+      "name": "Seiko",
+      "titel": "Seiko kaufen in Frankfurt — King Seiko, Vintage",
+      "text": "Seiko, seit 1881 in Tokio, baut Werke, Gehäuse und Zifferblätter im eigenen Haus — von der King Seiko der Sechzigerjahre bis zu heutigen Prospex-Tauchern. Hahn & Vo führt ausgewählte Seiko-Uhren aus Vorbesitz, geprüft und mit Garantie."
+    },
+    "mb-f": {
+      "name": "MB&F",
+      "titel": "MB&F kaufen in Frankfurt — Legacy Machines",
+      "text": "MB&F, 2005 von Maximilian Büsser gegründet, versteht sich als horologisches Konzeptlabor: Die Legacy Machines tragen die Unruh sichtbar über dem Zifferblatt. Hahn & Vo bietet MB&F aus Vorbesitz mit vollständiger Dokumentation — Besichtigung im Frankfurter Showroom nach Terminvereinbarung."
+    },
+    "jaeger-lecoultre": {
+      "name": "Jaeger-LeCoultre",
+      "titel": "Jaeger-LeCoultre kaufen in Frankfurt — Reverso, Master",
+      "text": "Jaeger-LeCoultre, seit 1833 im Vallée de Joux, ist die Manufaktur der Reverso und der Master Control. Hahn & Vo führt geprüfte Jaeger-LeCoultre-Uhren aus Vorbesitz mit 12 Monaten Garantie auf das Werk."
+    },
+    "nomos": {
+      "name": "Nomos",
+      "titel": "Nomos Glashütte kaufen in Frankfurt",
+      "text": "Nomos Glashütte, 1990 gegründet, baut eigene Werke und Uhren im Bauhaus-Stil: Tangente, Ludwig, Club. Bei Hahn & Vo finden Sie geprüfte Nomos-Uhren aus Vorbesitz mit Garantie."
+    },
+    "longines": {
+      "name": "Longines",
+      "titel": "Longines kaufen in Frankfurt",
+      "text": "Longines, seit 1832 in Saint-Imier, verbindet klassische Gestaltung mit Schweizer Werken — Master Collection, HydroConquest, Heritage. Hahn & Vo führt geprüfte Longines-Uhren aus Vorbesitz mit 12 Monaten Garantie."
+    },
+    "baume-mercier": {
+      "name": "Baume & Mercier",
+      "titel": "Baume & Mercier kaufen in Frankfurt",
+      "text": "Baume & Mercier, seit 1830 in Genf, steht für klassische Uhren wie Clifton, Classima und Hampton. Bei Hahn & Vo finden Sie geprüfte Baume-&-Mercier-Uhren aus Vorbesitz mit Garantie."
+    },
+    "patek-philippe": {
+      "name": "Patek Philippe",
+      "titel": "Patek Philippe kaufen in Frankfurt",
+      "text": "Patek Philippe, seit 1839 in Genf, ist die Referenz der Haute Horlogerie — Calatrava, Nautilus, Twenty~4. Hahn & Vo bietet Patek Philippe aus Vorbesitz mit geprüfter Echtheit und vollständiger Dokumentation, Besichtigung im Frankfurter Showroom nach Terminvereinbarung."
+    },
+    "vacheron-constantin": {
+      "name": "Vacheron Constantin",
+      "titel": "Vacheron Constantin kaufen in Frankfurt — Overseas",
+      "text": "Vacheron Constantin, gegründet 1755, ist die älteste durchgehend produzierende Uhrenmanufaktur der Welt — Overseas, Patrimony, Traditionnelle. Hahn & Vo führt Vacheron Constantin aus Vorbesitz, geprüft und mit Garantie."
+    },
+    "bvlgari": {
+      "name": "Bvlgari",
+      "titel": "Bvlgari kaufen in Frankfurt — Octo",
+      "text": "Bvlgari, 1884 in Rom gegründet, hat mit der Octo Finissimo die flachsten mechanischen Uhren ihrer Klasse gebaut. Hahn & Vo führt geprüfte Bvlgari-Uhren aus Vorbesitz mit 12 Monaten Garantie."
+    },
+    "girard-perregaux": {
+      "name": "Girard Perregaux",
+      "titel": "Girard-Perregaux kaufen in Frankfurt — Laureato",
+      "text": "Girard-Perregaux, seit 1791 in La Chaux-de-Fonds, ist bekannt für das Tourbillon mit drei Goldbrücken und die Laureato. Bei Hahn & Vo finden Sie geprüfte Girard-Perregaux-Uhren aus Vorbesitz mit Garantie."
+    }
+  }
+}

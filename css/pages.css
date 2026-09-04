@@ -76,6 +76,14 @@
 }
 .chip-x:hover { background: var(--petrol-deep); }
 .shop-grid-zone { padding-top: clamp(28px, 3.5vw, 48px); padding-bottom: clamp(72px, 9vw, 140px); }
+/* Markenseiten: kurzer Text unter dem Titel, Übersicht als Kartenraster */
+.marke-intro { padding: 0 var(--gutter) clamp(18px, 2.4vw, 30px); }
+.marke-intro p { max-width: 68ch; color: var(--ink-60); font-size: 15.5px; line-height: 1.7; }
+.marken-raster { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.marke-karte { display: grid; gap: 6px; padding: clamp(22px, 2.6vw, 34px) clamp(18px, 2vw, 26px); background: var(--white); color: var(--ink); text-decoration: none; transition: background 0.3s; }
+.marke-karte:hover { background: var(--creme); }
+.marke-name { font-family: var(--font-brand); font-size: clamp(1.25rem, 1.6vw, 1.6rem); letter-spacing: 0.01em; }
+.marke-anzahl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-60); }
 /* Solange der Katalog noch nicht da ist, Platz freihalten: Sonst steht der
    Abschnitt darunter kurz im Bild und springt beim Füllen um tausende Pixel
    nach unten (Layout-Shift 0,5 — gemessen 04.09.). */
@@ -128,6 +136,24 @@
 .spec-table .row dt { color: var(--ink-60); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 2px; }
 .spec-table .row dd { font-weight: 500; }
 .pd-desc { color: var(--ink-60); font-size: 15px; line-height: 1.7; margin-top: 22px; }
+/* Feste Kaufleiste, nur auf dem Handy. Liegt unter dem Header-z-index (900),
+   über dem Inhalt; erscheint per .is-on, sobald die Knöpfe oben weggescrollt sind. */
+.pd-bar {
+  display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 850;
+  gap: 10px; align-items: center;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 255, 255, 0.96); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+  transform: translateY(110%); transition: transform 0.4s var(--ease-out);
+}
+.pd-bar.is-on { transform: none; }
+.pd-bar-info { display: grid; gap: 1px; min-width: 0; flex: 1; }
+.pd-bar-name { font-size: 12px; color: var(--ink-60); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pd-bar-price { font-size: 16px; font-weight: 620; color: var(--ink); }
+.pd-bar .btn { padding: 12px 14px; font-size: 12px; white-space: nowrap; flex: none; }
+.pd-bar .pd-bar-buy[disabled] { opacity: 0.55; }
+@media (max-width: 760px) { .pd-bar { display: flex; } }
+
 .pd-desc h2 { color: var(--ink); font-size: 13px; font-weight: 620; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
 .pd-desc p + p { margin-top: 12px; }
 .pd-desc h2.pd-promise { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); }

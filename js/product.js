@@ -167,6 +167,35 @@
   }
   setWhatsapp();
 
+  /* Feste Kaufleiste auf dem Handy: spiegelt Preis, Kaufknopf und WhatsApp,
+     sobald die eigentlichen Knöpfe aus dem Bild gescrollt sind. */
+  (function () {
+    var bar = document.getElementById('pdBar');
+    var ctas = document.getElementById('pdCtas');
+    if (!bar || !ctas) return;
+    document.getElementById('pdBarName').textContent = p.brand + ' ' + p.name;
+    document.getElementById('pdBarPrice').textContent = HV.fmtEUR(p.price);
+    var wa = document.getElementById('pdWhatsapp');
+    var barWa = document.getElementById('pdBarWhatsapp');
+    var barBuy = document.getElementById('pdBarBuy');
+    function spiegeln() {
+      if (wa && barWa) barWa.href = wa.href;
+      barBuy.disabled = add.disabled;
+      barBuy.textContent = add.dataset.mode === 'checkout' ? 'Zur Kasse' : (add.disabled ? add.textContent.trim() : 'In den Warenkorb');
+    }
+    spiegeln();
+    document.addEventListener('hv:cart', spiegeln);
+    barBuy.addEventListener('click', function () { if (!add.disabled) add.click(); spiegeln(); });
+    if (!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (eintraege) {
+      var e = eintraege[0];
+      var vorbei = !e.isIntersecting && e.boundingClientRect.top < 0;
+      bar.classList.toggle('is-on', vorbei);
+      bar.setAttribute('aria-hidden', vorbei ? 'false' : 'true');
+      spiegeln();
+    }, { threshold: 0 }).observe(ctas);
+  })();
+
   /* Besteuerung: Es gibt beides im Bestand — der Satz unter dem Preis und die
      Zeile im Datenblatt richten sich nach der einzelnen Uhr. */
   var differenz = /^differenz/i.test(String(p.tax || ''));

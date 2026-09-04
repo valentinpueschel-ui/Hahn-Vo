@@ -62,6 +62,16 @@ async function baueSitemap(basis) {
           '    </image:image>\n' : '') +
         '  </url>\n');
     });
+    /* Markenseiten: eine je Marke im Bestand, dazu die Übersicht. */
+    var slug = require('./marke').slug;
+    var marken = {};
+    bestand.forEach(function (p) {
+      if (p.f && p.f.aufzug && p.marke) marken[p.marke] = (marken[p.marke] || 0) + 1;
+    });
+    eintraege.push('  <url>\n    <loc>' + xmlEscape(basis + '/marken') + '</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>\n');
+    Object.keys(marken).sort().forEach(function (m) {
+      eintraege.push('  <url>\n    <loc>' + xmlEscape(basis + '/marken/' + slug(m)) + '</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>\n');
+    });
   } catch (e) {
     /* Grundgerüst genügt — lieber eine kurze Sitemap als gar keine. */
   }

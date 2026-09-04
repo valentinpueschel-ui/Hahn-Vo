@@ -70,6 +70,7 @@ Ausblenden ohne Löschen: interner Code in `AUSSCHLUSS` (`api/katalog.js`).
 | `api/anfrage.js` | Mailversand (Resend), Empfänger aus `ANFRAGE_AN` |
 | `api/sitemap.js` | Sitemap aus dem Bestand |
 | `api/produkt.js` | liefert `/produkt?id=…` serverseitig aus `produkt-vorlage.html`: Titel, Beschreibung, Vorschaubild, schema.org Product/Breadcrumb, vorbefüllter Inhalt (5 min Edge-Cache) |
+| `api/marke.js` + `daten/marken.json` | Markenseiten `/marken` und `/marken/<slug>` aus `shop.html` als Vorlage: Kopf, Einleitungstext (aus der JSON, editierbar), vorbefülltes Raster, CollectionPage/ItemList |
 | `tools/serve.py` | lokaler Server (`serve.command`): saubere Adressen, `/produkt` aus der Vorlage |
 | `llms.txt`, `robots.txt` | Kurzbeschreibung für KI-Suchmaschinen; Crawler-Freigaben, Kasse ausgenommen |
 | `vercel.json` | saubere Adressen, Rewrites (`/api/katalog.json`, `/chrono24.xml`, `/sitemap.xml`), Weiterleitungen vom alten Shop |

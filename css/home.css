@@ -214,7 +214,8 @@
   .st-body { grid-template-columns: 1fr; grid-template-rows: auto auto minmax(0, 1fr); gap: 18px; }
   .st-stage { aspect-ratio: auto; height: 38svh; height: 38dvh; max-height: 340px; justify-self: stretch; }
   .st-rail { width: 100%; height: 1px; align-self: auto; }
-  .st-tick { top: 50%; left: var(--p); width: 18px; height: 22px; }
+  /* 28 px Tippfläche (Mindestmaß 24) — der sichtbare Strich bleibt 9 × 1 px */
+  .st-tick { top: 50%; left: var(--p); width: 28px; height: 28px; }
   .st-tick::before { width: 1px; height: 9px; }
   .st-marker { top: 50%; left: 0; }
   .st-ghost { display: none; }

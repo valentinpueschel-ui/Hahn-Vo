@@ -95,7 +95,7 @@
           '<a href="/shop">Shop</a><a href="/ankauf">Ankauf &amp; Inzahlungnahme</a><a href="/suchauftrag">Suchauftrag</a><a href="/ueber-uns">Über uns</a>' +
         '</div>' +
         '<div class="sf-col"><h3>Service</h3>' +
-          '<a href="/referenz-checker">Referenz-Checker</a><a href="/#faq">Fragen &amp; Antworten</a><a href="/ueber-uns#showroom">Showroom &amp; Termine</a><a href="mailto:info@hahntime.com">info@hahntime.com</a><a href="https://www.instagram.com/hahn.vo/" target="_blank" rel="noopener">Instagram</a>' +
+          '<a href="/marken">Marken</a><a href="/referenz-checker">Referenz-Checker</a><a href="/#faq">Fragen &amp; Antworten</a><a href="/ueber-uns#showroom">Showroom &amp; Termine</a><a href="mailto:info@hahntime.com">info@hahntime.com</a><a href="https://www.instagram.com/hahn.vo/" target="_blank" rel="noopener">Instagram</a>' +
         '</div>' +
         '<div class="sf-col"><h3>Showroom</h3>' +
           '<p>Garden Tower · 7. Etage<br>Neue Mainzer Str. 46–50<br>60311 Frankfurt am Main</p>' +

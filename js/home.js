@@ -99,9 +99,19 @@
     return tl;
   }
 
+  /* Der Preloader läuft einmal je Sitzung: Wer die Startseite in derselben
+     Sitzung erneut öffnet (Zurück aus dem Shop, zweiter Besuch), sieht sofort
+     den Hero. Der erste Eindruck bleibt, die Wartezeit kommt nur einmal. */
+  var preGesehen = false;
+  try { preGesehen = sessionStorage.getItem('hv_pre') === '1'; } catch (e) {}
+
   /* preloader sequence — the hand starts on the real current second,
      flies back to 12 like a chronograph reset, recoils, then the page wipes in */
-  if (!reduce) {
+  if (!reduce && preGesehen) {
+    pre.style.display = 'none';
+    heroEntrance();
+  } else if (!reduce) {
+    try { sessionStorage.setItem('hv_pre', '1'); } catch (e) {}
     document.documentElement.style.overflow = 'hidden';
     var now = new Date();
     var startAngle = (now.getSeconds() + now.getMilliseconds() / 1000) * 6;

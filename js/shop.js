@@ -23,6 +23,13 @@
     });
     state.brands = treffer.length ? [treffer[0]] : [params.get('brand')];
   }
+  /* Markenseiten (/marken/rolex): der Server setzt die Marke als Voreinstellung
+     in <body data-marke>. Die Übersicht (/marken) hat kein Raster — dort ist
+     hier nichts zu tun. */
+  if (document.body.dataset.markenUebersicht) return;
+  if (document.body.dataset.marke && !params.get('brand')) {
+    state.brands = [document.body.dataset.marke];
+  }
 
   var PRICE_BUCKETS = [
     { id: 'b1', label: 'Unter 3.000 €', min: 0, max: 3000 },

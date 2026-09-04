@@ -3,6 +3,14 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/marken",
+      "destination": "/api/marke"
+    },
+    {
+      "source": "/marken/:slug",
+      "destination": "/api/marke?slug=:slug"
+    },
+    {
       "source": "/produkt",
       "destination": "/api/produkt"
     },
@@ -478,6 +486,12 @@
   "functions": {
     "api/produkt.js": {
       "includeFiles": "produkt-vorlage.html"
+    },
+    "api/marke.js": {
+      "includeFiles": "{shop.html,daten/marken.json}"
+    },
+    "api/sitemap.js": {
+      "includeFiles": "daten/marken.json"
     }
   }
 }
