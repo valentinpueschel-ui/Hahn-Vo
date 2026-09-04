@@ -189,6 +189,38 @@
     p457: 'Moonwatch-DNA im 38-Millimeter-Gehäuse mit grauem Zifferblatt — die Speedmaster für schmalere Handgelenke. Baujahr 2018, komplettes Full Set.',
   };
 
+  /* Aus der Beschreibung einen Schaufenster-Text bauen. Der Satz zu den
+     Bildern steht unter jeder Uhr und fliegt raus, „Hier präsentieren wir
+     die …“ wird zu „Die …“ gekürzt. Ein Punkt in einer Abkürzung wie
+     „Ref.“ ist kein Satzende — daran ist die frühere Fassung gescheitert
+     und hat den Text mitten im Satz abgeschnitten. */
+  var BILDSATZ = /Unsere Bilder sind unbearbeitet[\s\S]*?wahrnimmt\.?/i;
+  var ABKUERZUNG = /\b(?:Ref|Nr|ca|bzw|Kal|inkl|max|min|ggf|evtl|Abb|St|z|B|u|a)\.$/;
+
+  function inSaetze(text) {
+    var saetze = [], start = 0, re = /[.!?]\s+(?=[A-ZÄÖÜ0-9])/g, m;
+    while ((m = re.exec(text)) !== null) {
+      var kandidat = text.slice(start, m.index + 1).trim();
+      if (ABKUERZUNG.test(kandidat)) continue;
+      saetze.push(kandidat);
+      start = m.index + m[0].length;
+    }
+    var rest = text.slice(start).trim();
+    if (rest) saetze.push(rest);
+    return saetze;
+  }
+
+  function schaufensterText(p) {
+    var roh = String(p.desc || '').replace(BILDSATZ, '').replace(/\s+/g, ' ').trim();
+    var saetze = inSaetze(roh);
+    if (!saetze.length) return 'Geprüft und dokumentiert — jetzt im Showroom zu besichtigen.';
+    saetze[0] = saetze[0].replace(/^Hier präsentieren wir (?:euch )?(die|den|das)\s+/i,
+      function (_m, artikel) { return artikel.charAt(0).toUpperCase() + artikel.slice(1) + ' '; });
+    var text = saetze[0];
+    if (text.length < 150 && saetze[1]) text += ' ' + saetze[1];
+    return text;
+  }
+
   function slideData(p) {
     var chips = [];
     if (p.material && p.size) chips.push(p.material + ' · ' + p.size);
@@ -196,21 +228,26 @@
     if (p.ref) chips.push('Ref. ' + p.ref);
     if (p.fullset) chips.push(p.fullset.indexOf('Full Set') === 0 ? 'Full Set, Papiere, Box' : p.fullset);
     chips.push(HV.fmtEUR(p.price) + (p.listPrice && p.listPrice > p.price ? ' · vorher ' + HV.fmtEUR(p.listPrice) : ''));
-    var firstSentence = (p.desc || '').split('. ').slice(1, 3).join('. ');
     return {
       id: p.id,
       kicker: p.id === window.FLAGSHIP_ID ? 'Das Flaggschiff' : 'Neu eingetroffen',
       name: p.brand + ' ' + p.name,
-      desc: SHOWCASE_COPY[p.id] || (firstSentence ? firstSentence.replace(/\.*$/, '') + '.' : 'Geprüft und dokumentiert — jetzt im Showroom zu besichtigen.'),
+      desc: SHOWCASE_COPY[p.id] || schaufensterText(p),
       chips: chips,
       avail: p.status === 'available' ? '1 von 1 · sofort verfügbar' : '1 von 1 · aktuell reserviert',
       img: p.images[0],
     };
   }
 
-  var slides = (window.NEW_IN || [])
-    .map(HV.byId).filter(Boolean)
-    .filter(function (p) { return p.status === 'available'; })
+  /* Die Auswahl leitet sich aus dem Bestand ab: zuletzt angelegt zuerst,
+     nur erhältliche Uhren, kein Zubehör — dieselbe Regel wie die Reihe
+     darunter. Früher stand hier eine von Hand gepflegte Liste
+     (window.NEW_IN). Die veraltete bei jeder neuen Uhr und zeigte
+     irgendwann verkaufte oder gelöschte Stücke. */
+  var slides = (window.PRODUCTS || [])
+    .filter(function (p) { return p.status === 'available' && p.category !== 'zubehoer'; })
+    .sort(function (a, b) { return String(b.added || '').localeCompare(String(a.added || '')); })
+    .slice(0, 6)
     .map(slideData);
 
   var fsMedia = document.getElementById('fsMedia');
