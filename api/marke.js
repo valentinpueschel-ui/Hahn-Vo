@@ -74,6 +74,9 @@ function neuesteZuerst(a, b) {
 }
 
 function kopf(html, titel, beschreibung, adresse) {
+  /* shop.html verweist relativ auf css/, js/, vendor/, assets/ — unter
+   * /marken/rolex zeigte das auf /marken/css/… (404, Seite ohne Stil). */
+  html = html.replace(/(href|src)="(css|js|vendor|assets)\//g, '$1="/$2/');
   html = html.replace(/<title>[^<]*<\/title>/, '<title>' + esc(titel) + '</title>');
   html = html.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="' + esc(beschreibung) + '">');
   html = html.replace(/<link rel="canonical" href="[^"]*">/, '<link rel="canonical" href="' + esc(adresse) + '">');
