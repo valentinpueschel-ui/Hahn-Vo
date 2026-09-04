@@ -20,14 +20,14 @@ command -v gh >/dev/null && gut "GitHub CLI" || schlecht "gh fehlt (nicht zwinge
 
 echo
 echo "Python-Pakete"
-python3 -c "import playwright" 2>/dev/null && gut "playwright" || schlecht "playwright fehlt (Inserate lesen)" "pip3 install playwright && python3 -m playwright install chromium"
+python3 -c "import playwright" 2>/dev/null && gut "playwright" || schlecht "playwright fehlt (Inserate lesen)" "python3 -m pip install --break-system-packages playwright && python3 -m playwright install chromium"
 python3 -c "from playwright.sync_api import sync_playwright" 2>/dev/null && python3 - <<'PY' 2>/dev/null && gut "Chromium für Playwright" || schlecht "Chromium für Playwright fehlt" "python3 -m playwright install chromium"
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
     b = p.chromium.launch(); b.close()
 PY
-python3 -c "import PIL" 2>/dev/null && gut "Pillow (Kontaktbögen)" || schlecht "Pillow fehlt" "pip3 install pillow"
-python3 -c "import openpyxl" 2>/dev/null && gut "openpyxl (Excel-Listen)" || schlecht "openpyxl fehlt (nur für Excel-Listen)" "pip3 install openpyxl"
+python3 -c "import PIL" 2>/dev/null && gut "Pillow (Kontaktbögen)" || schlecht "Pillow fehlt" "python3 -m pip install --break-system-packages pillow"
+python3 -c "import openpyxl" 2>/dev/null && gut "openpyxl (Excel-Listen)" || schlecht "openpyxl fehlt (nur für Excel-Listen)" "python3 -m pip install --break-system-packages openpyxl"
 
 echo
 echo "Repo und Deploy"
