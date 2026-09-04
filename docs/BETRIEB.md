@@ -45,6 +45,7 @@ Shopify, Git) einmal nach einer Erlaubnis: **„Immer erlauben"** wählen — da
 
 - **`daten/differenzbesteuerung.csv`** — jede neue differenzbesteuerte Uhr dort eintragen (oder § 25a ins Inserat schreiben, dann erkennt Claude es).
 - **Neue Marke im Bestand** (zwei Wörter, z. B. „Grand Seiko"): Claude sagen „neue Marke Grand Seiko eintragen" — sie kommt in die Markenliste.
+- **Markenseiten** (`hahn-vo.de/marken/rolex` …) entstehen automatisch für jede Marke im Bestand. Der Text oben auf der Seite steht in `daten/marken.json` — für neue Marken gibt es einen Standardtext; ein eigener Text: „Schreib einen Text für die Markenseite Grand Seiko".
 - **Kundenstimmen:** Text + Foto der gekauften Uhr an Claude geben.
 
 ## Wenn etwas nicht klappt

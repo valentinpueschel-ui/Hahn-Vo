@@ -186,14 +186,23 @@
     spiegeln();
     document.addEventListener('hv:cart', spiegeln);
     barBuy.addEventListener('click', function () { if (!add.disabled) add.click(); spiegeln(); });
-    if (!('IntersectionObserver' in window)) return;
-    new IntersectionObserver(function (eintraege) {
-      var e = eintraege[0];
-      var vorbei = !e.isIntersecting && e.boundingClientRect.top < 0;
-      bar.classList.toggle('is-on', vorbei);
-      bar.setAttribute('aria-hidden', vorbei ? 'false' : 'true');
-      spiegeln();
-    }, { threshold: 0 }).observe(ctas);
+    /* Beim Scrollen prüfen, nicht per IntersectionObserver: Der meldet nichts,
+       wenn die Knöpfe bei einem Sprung (Anker, schneller Wisch) am Bild
+       vorbeifliegen, ohne je darin gewesen zu sein. */
+    var angefragt = false;
+    function pruefen() {
+      angefragt = false;
+      var vorbei = ctas.getBoundingClientRect().bottom < 0;
+      if (vorbei !== bar.classList.contains('is-on')) {
+        bar.classList.toggle('is-on', vorbei);
+        bar.setAttribute('aria-hidden', vorbei ? 'false' : 'true');
+        spiegeln();
+      }
+    }
+    window.addEventListener('scroll', function () {
+      if (!angefragt) { angefragt = true; requestAnimationFrame(pruefen); }
+    }, { passive: true });
+    pruefen();
   })();
 
   /* Besteuerung: Es gibt beides im Bestand — der Satz unter dem Preis und die

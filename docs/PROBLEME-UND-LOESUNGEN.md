@@ -154,6 +154,10 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 
 **F12 · Schriften ohne Preload.** Inter und Marcellus luden erst nach dem CSS. → `<link rel="preload">` in allen Seiten, Preconnect zu Shopify-CDN.
 
+**F13 · Markenseite ohne Stil (05.09.).** `/marken/rolex` lud `css/style.css` relativ → `/marken/css/style.css` → 404; die Seite kam nackt. → `api/marke.js` macht alle `css/ js/ vendor/ assets/`-Pfade absolut. Gilt für jede Seite, die unter einem Unterpfad ausgeliefert wird.
+
+**C17 · IntersectionObserver meldet Sprünge nicht (05.09.).** Die Kaufleiste sollte erscheinen, sobald die Knöpfe oben weggescrollt sind. Bei einem Sprung (Anker, schneller Wisch, `scrollTo`) fliegt das Element am Bild vorbei, ohne je darin zu sein — der Observer feuert nicht. → Scroll-Ereignis mit `requestAnimationFrame` und `getBoundingClientRect().bottom < 0`.
+
 ## G. Arbeitsweise
 
 **G1 · Nur die lokale Kopie geprüft (31.08.).** Die hatte zufällig die richtige Reihenfolge. → Live ist die Wahrheit; lokale Kopie ist Reserve.
