@@ -12,6 +12,7 @@ einmal eine falsche Uhr, ein falsches Bild oder eine falsche Steuer produziert.
 
 ## Bevor du anfängst
 
+- **Der Auftrag ist ein Satz** („<Link> hochladen für 3.250"). Entscheidungen zu Bildern, Besteuerung, Feldern triffst du nach den Regeln hier und begründest sie im Bericht (siehe CLAUDE.md). Eine Frage stellst du nur, wenn Preis oder interner Code fehlen oder das Inserat nicht zum Link passt.
 - **Preis:** Steht im Auftrag ein Preis? Sonst gilt 1:1 der Inseratspreis. „VB" ist ein Hinweis, kein Preis — dann nachfragen.
 - **Sonderwünsche:** „das Set als zweites Bild", „dieses Bild als Hover" — merken, das entscheidet Phase 3.
 - Mehrere Links? Jede Uhr einzeln, vollständig, nacheinander.
