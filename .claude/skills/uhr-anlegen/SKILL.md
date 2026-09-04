@@ -1,0 +1,97 @@
+---
+name: uhr-anlegen
+description: Eine Uhr aus einem Inserat (Kleinanzeigen, eBay, Chrono24) oder einem Fotoordner in Shopify anlegen, damit sie auf hahn-vo.de erscheint. Auslöser sind Sätze wie „hochladen", „auf die Website", „inserieren", „Uhr anlegen" mit einem Link oder Ordner.
+---
+
+# Uhr anlegen
+
+Du bekommst einen Link oder einen Ordner und sollst die Uhr auf hahn-vo.de bringen.
+Alles Deterministische tun Skripte. Du liest, entscheidest und siehst hin.
+Die Regeln unten sind aus echten Fehlern entstanden — jede einzelne hat schon
+einmal eine falsche Uhr, ein falsches Bild oder eine falsche Steuer produziert.
+
+## Bevor du anfängst
+
+- **Preis:** Steht im Auftrag ein Preis? Sonst gilt 1:1 der Inseratspreis. „VB" ist ein Hinweis, kein Preis — dann nachfragen.
+- **Sonderwünsche:** „das Set als zweites Bild", „dieses Bild als Hover" — merken, das entscheidet Phase 3.
+- Mehrere Links? Jede Uhr einzeln, vollständig, nacheinander.
+
+## Phase 1 — Inserat holen
+
+```
+python3 tools/inserat.py "<URL>" --name <kurzname>        # z. B. --name omega-constellation
+python3 tools/inserat.py --ordner ~/Desktop/neue-uhr      # Rückfall: Fotos + beschreibung.txt
+```
+
+Ergebnis: `arbeit/<name>/inserat.json`, `bilder/`, `kontaktbogen.jpg`.
+Ein sichtbarer Browser geht auf — das ist gewollt (Kleinanzeigen sperrt unsichtbare).
+Meldet das Skript nach allen Versuchen eine Sperre: dem Nutzer sagen, später
+erneut versuchen, oder er zieht die Fotos in einen Ordner (Ordner-Eingang).
+
+## Phase 2 — Lesen und Felder füllen
+
+Lies `inserat.json` **vollständig**, besonders `beschreibung`. Dort stehen alle
+Angaben — Referenz, Baujahr, Durchmesser, Werk, Lieferumfang, Zustand, oft § 25a.
+Lege `arbeit/<name>/uhr.json` an. Vorlage mit allen Regeln: `docs/uhr.beispiel.json`.
+
+Feste Regeln:
+
+- **Nichts erfinden.** Kein Baujahr, kein Kaliber, kein Glas, das nicht im Inserat steht. Weglassen ist richtig, schätzen ist falsch.
+- **Kennung:** `p` + Nummer vor dem Bindestrich des internen Codes (`567-26` → `p567`). Vorher `python3 tools/uhr.py frei p567`. Alte GoDaddy-Kennungen kollidieren gelegentlich — dann die nächste freie Nummer nehmen und es im Bericht nennen.
+- **Interner Code** = Hannes' Artikelnummer aus dem Inserat (Verwendungszweck, „Interner Code"). Fehlt er, nachfragen — nicht ausdenken; er ist Chrono24-Artikelnummer und Überweisungszweck.
+- **Titel** beginnt mit der Marke in der Schreibweise aus `api/_shop.js` (MARKEN). Unbekannte Marke → dort eintragen, sonst fehlt die Uhr im Markenfilter.
+- **Besteuerung, Dreistufenregel:** § 25a im Inseratstext → Differenzbesteuerung. Sonst Code/Referenz in `daten/differenzbesteuerung.csv` → Differenzbesteuerung. Sonst Regelbesteuerung. Das Skript prüft das nach und blockt Abweichungen ohne Begründung.
+- **Lieferumfang** nach Text UND Bildern. „Full Set" nur mit Box und Papieren.
+- **Geschlecht:** nennt das Inserat nichts, unter 34 mm eher Damen; 34–36 mm Unisex vertretbar; sonst Herren. Unsicherheit im Bericht nennen.
+- **Absätze:** 1–2 Absätze in ganzen Sätzen aus dem Inserat. Ohne den Satz „Unsere Bilder sind unbearbeitet …" und ohne die Überweisungszeile — das hängt das Skript an. Steht im Inserat eine **fremde Marke** (Vorlagenfehler: „Rolex GMT-Master" bei einer Omega, Platzhalter „(Optional 1-2 Sätze …)"), den Text NICHT übernehmen, aus den Datenzeilen selbst schreiben und den Fehler im Bericht melden, damit Hannes das Inserat korrigiert.
+
+## Phase 3 — Bilder ANSEHEN
+
+Öffne `arbeit/<name>/kontaktbogen.jpg` mit dem Read-Werkzeug und sieh jedes Bild an.
+
+- **Cover (Position 0):** frontale Zifferblattansicht. Nicht die schönste Aufnahme — die frontale.
+- **Zweites Bild (Position 1) = Hover-Bild auf der Shop-Karte:** das **Set-Foto** (Box, Papiere), sonst ein **weiteres Frontbild** (Uhr in der Hand oder am Handgelenk, Zifferblatt frontal). Entweder oder — Regel von Valentin.
+- **Steile Schrägaufnahmen** (Gehäuse dominiert, Zifferblatt verzerrt) sind KEIN Frontbild. Das ist am 04.09. bei drei Uhren schiefgegangen, weil die kleinen Vorschauen frontal wirkten. Im Zweifel die Einzeldatei `bilder/NN.jpg` öffnen.
+- **Fremde Uhren** (Nachbaranzeigen, andere Referenz, andere Farbe) und Duplikate weglassen. Der Kleinanzeigen-Leser filtert schon, aber sieh trotzdem hin.
+- Reihenfolge danach: Details, Band, Boden — wie ein Kunde die Uhr in die Hand nimmt.
+
+Trag `bilder.reihenfolge`, `cover_ist_front: true`, `zweites: "set"|"front"` (bei front zusätzlich `zweites_ist_front: true`) und sprechende `alt`-Texte für 0 und 1 ein.
+
+## Phase 4 — Anlegen
+
+```
+python3 tools/uhr.py vorschau arbeit/<name>     # prüft uhr.json, zeigt, was rausginge — bis „Eingabe in Ordnung"
+python3 tools/uhr.py anlegen  arbeit/<name>     # startet den Ablauf
+```
+
+Das Skript arbeitet, bis Shopify dran ist, und druckt dann einen GraphQL-Aufruf. Dann:
+
+1. Den Aufruf **wörtlich, unverändert** über den Shopify-Connector ausführen — `graphql_mutation` bei „mutation", `graphql_query` bei Abfragen. Nichts kürzen, keine IDs „verbessern".
+2. Die Antwort **unverändert als JSON** in `arbeit/<name>/antwort.json` schreiben.
+3. `python3 tools/uhr.py ergebnis arbeit/<name> --datei arbeit/<name>/antwort.json`
+
+Wiederholen, bis „Alle Schritte erledigt" erscheint. Das Skript prüft jede Antwort,
+merkt sich IDs, wartet auf Vercel, baut die Rückfalldatei, committet und pusht.
+Meldet es einen FEHLER: Meldung lesen, Ursache in `uhr.json` beheben, dann
+`python3 tools/uhr.py weiter arbeit/<name>` — der Ablauf setzt dort fort, wo er stand.
+
+Liegen Zugangsdaten in `~/.hv-tokens` (`SHOPIFY_ADMIN_TOKEN` oder `SHOPIFY_CLIENT_ID`/`SECRET`),
+geht alles ohne Connector: `python3 tools/uhr.py anlegen arbeit/<name> --direkt`.
+
+## Phase 5 — Live ansehen und berichten
+
+```
+python3 tools/uhr.py pruefen p567
+```
+
+Öffne `arbeit/_pruefen-p567/live-bogen.jpg` und **sieh hin**: Cover frontal? Hover = Set oder Front?
+Nicht nach IDs urteilen — das war der Fehler vom 31.08. (Gehäuseboden stand als zweites Bild, die Kontrolle hatte nur die notierte ID verglichen).
+
+Bericht in drei bis fünf Sätzen: Link, Preis, Besteuerung mit Grund, was Cover und zweites Bild zeigen, und jede Unsicherheit (fehlendes Baujahr, Geschlecht geschätzt, Fehler im Inseratstext, Kennung abweichend vom Code).
+
+## Was du NIE tust
+
+- Mutationen freihändig tippen oder an anderen Produkten „nebenbei" etwas ändern.
+- `js/data.js` von Hand editieren — nur über `tools/uhr.py` und `tools/fallback_bauen.py`.
+- Bild-URLs von Kleinanzeigen/eBay direkt an Shopify geben — die Bilder liegen im Projekt und werden von hahn-vo.de geladen (das Skript macht das).
+- Live prüfen und dabei nur den Cache-Umgeher (`?frisch=`) benutzen — Besucher sehen den Stand bis zu fünf Minuten später. Das Skript prüft beides.

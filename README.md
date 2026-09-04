@@ -1,7 +1,22 @@
-# Hahn & Vo — Shop-Website (Redesign-Demo)
+# Hahn & Vo — Website hahn-vo.de
 
-Komplettes Redesign von hahn-vo.de als statische Site — Luxusuhren-E-Commerce nach den
+Die Website von Hahn & Vo als statische Site — Luxusuhren-E-Commerce nach den
 H&V Brand Guidelines 2025 (Petrol #0E334F · Creme #FFFAE7 · Weiß · Inter).
+Bestand und Kasse kommen aus Shopify, Hosting über Vercel, Deploy per Git-Push.
+
+**Einstieg für Betreiber und Claude:**
+
+| Datei | Für wen |
+|---|---|
+| `CLAUDE.md` | Regeln und Kurzfassung für jede Claude-Code-Sitzung |
+| `docs/BETRIEB.md` | Hannes: einrichten, was man sagt, woran man Erfolg erkennt |
+| `docs/SYSTEM.md` | Landkarte: wie Shopify, Website, Vercel, GitHub zusammenhängen |
+| `docs/PROBLEME-UND-LOESUNGEN.md` | alles, was schiefging, mit Ursache und Regel |
+| `docs/UEBERGABE.md` | Konten, Zugänge, Reihenfolge der Übergabe |
+| `.claude/skills/` | `uhr-anlegen`, `uhr-status`, `uhr-loeschen`, `uhr-bilder`, `website-aendern` |
+| `tools/inserat.py`, `tools/uhr.py` | die Werkzeuge hinter den Skills |
+
+Umgebung prüfen: `bash tools/einrichten.sh`
 
 ## Starten
 

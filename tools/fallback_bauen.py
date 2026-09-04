@@ -65,6 +65,24 @@ def main():
     produkte = katalog['produkte']
     print('Katalog geholt: %d Produkte, Stand %s' % (len(produkte), katalog.get('stand')))
 
+    alt = io.open(DATA, encoding='utf-8').read()
+
+    # Die Schnittstelle leitet die Kennungen aus der DEPLOYTEN data.js ab. Eine
+    # Uhr, die hier gerade erst eingetragen wurde, käme deshalb als „s1234567"
+    # zurück. Die lokale Zuordnung gewinnt — sonst landen Ersatzkennungen in
+    # der Datei und die Bildordner passen nicht mehr (Fehler vom 31.08.).
+    lokal = json.loads(re.search(r'window\.SHOPIFY\s*=\s*(\{.*?\n\});', alt, re.S).group(1)).get('products', {})
+    umgekehrt = {str(v): k for k, v in lokal.items()}
+    umbenannt = 0
+    for u in produkte:
+        gewollt = umgekehrt.get(str(u.get('shopifyId')))
+        if gewollt and gewollt != u['id']:
+            u['id'] = gewollt
+            umbenannt += 1
+    if umbenannt:
+        print('Kennungen aus der lokalen Zuordnung übernommen: %d' % umbenannt)
+    katalog['shopify'] = {u['id']: str(u['shopifyId']) for u in produkte if u.get('shopifyId')}
+
     mit_lokal = 0
     for u in produkte:
         bilder = lokale_bilder(u['id'])
@@ -76,7 +94,6 @@ def main():
     print('Bilder: %d aus dem Projekt, %d von der Shopify-Adresse'
           % (mit_lokal, len(produkte) - mit_lokal))
 
-    alt = io.open(DATA, encoding='utf-8').read()
     neu = block_ersetzen(alt, 'PRODUCTS', produkte)
     shopify = json.loads(re.search(r'window\.SHOPIFY\s*=\s*(\{.*?\n\});', neu, re.S).group(1))
     shopify['products'] = katalog['shopify']

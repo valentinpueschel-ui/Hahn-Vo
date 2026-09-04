@@ -7,6 +7,11 @@ Alltag heißt das:
 
 Niemand muss mehr eine Datei bearbeiten oder etwas hochladen.
 
+> **Seit 04.09.2026 gibt es dafür Claude-Skills** (`.claude/skills/`, Anleitung in
+> `docs/BETRIEB.md`): Link zum Inserat reicht, der Rest läuft geführt. Was unten
+> steht, ist der Weg von Hand im Shopify-Adminbereich — er funktioniert weiterhin,
+> nur ohne die schöne `pXXX`-Adresse und ohne lokale Reservebilder.
+
 ## Was wo landet
 
 | In Shopify | Website | Chrono24 |

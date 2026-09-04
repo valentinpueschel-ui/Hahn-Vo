@@ -1,0 +1,61 @@
+{
+ "_hinweis": "Vorlage für arbeit/<name>/uhr.json. Alles aus inserat.json und dem Kontaktbogen ableiten — nichts erfinden. Unbekanntes weglassen (z. B. baujahr, kaliber), nie schätzen.",
+
+ "id": "p567",
+ "code": "567-26",
+ "titel": "Omega Constellation 33 mm Stahl/Gelbgold Jahr 1990",
+ "preis": 990,
+ "listenpreis": null,
+ "preis_begruendung": null,
+
+ "besteuerung": "Differenzbesteuerung",
+ "besteuerung_begruendung": null,
+
+ "absaetze": [
+  "Hier präsentieren wir die Omega Constellation in Edelstahl mit Gelbgold-Lünette, Ref. 396.1080, aus dem Jahr 1990 — weißes Zifferblatt mit den charakteristischen römischen Ziffern auf der Lünette.",
+  "33 mm Durchmesser, integriertes Edelstahlband, Quarzwerk. Geliefert mit originalen Omega-Papieren und Zertifikat."
+ ],
+
+ "felder": {
+  "referenz": "396.1080",
+  "baujahr": 1990,
+  "durchmesser": "33 mm",
+  "gehaeuse": "Edelstahl/Gelbgold",
+  "zifferblatt": "Weiß",
+  "band": "Edelstahl",
+  "aufzug": "Quarz",
+  "kaliber": null,
+  "glas": null,
+  "zustand": "Sehr gut",
+  "lieferumfang": "Nur Papiere",
+  "geschlecht": "Herren"
+ },
+
+ "bilder": {
+  "reihenfolge": [0, 6, 1, 2, 3, 4, 5],
+  "cover_ist_front": true,
+  "zweites": "set",
+  "zweites_ist_front": false,
+  "alt": {
+   "0": "Frontansicht",
+   "1": "Set mit Papieren"
+  }
+ },
+
+ "_regeln": {
+  "id": "p + Nummer vor dem Bindestrich des Codes (567-26 → p567). Vorher: python3 tools/uhr.py frei p567. Ist sie vergeben (alte GoDaddy-Kennungen!), nächste freie Zahl im 5xx-Bereich wählen und das notieren.",
+  "code": "Hannes' Artikelnummer aus dem Inserat/der Inventarliste, ohne HV- Präfix.",
+  "titel": "Beginnt mit der Marke (so wie in api/_shop.js MARKEN geschrieben). Mehr Modell, weniger Werbung. Kein „Full Set"-Geschrei, das steht im Feld.",
+  "preis": "1:1 aus dem Inserat, außer Valentin/Hannes nennen einen anderen — dann preis_begruendung.",
+  "besteuerung": "Dreistufenregel: § 25a im Inseratstext → Differenzbesteuerung; sonst Code/Referenz in daten/differenzbesteuerung.csv → Differenzbesteuerung; sonst Regelbesteuerung. Abweichung nur mit Begründung.",
+  "absaetze": "1–2 Absätze, ganze Sätze, aus der Beschreibung. OHNE den Satz „Unsere Bilder sind unbearbeitet …" und OHNE die Überweisungszeile — beides hängt das Skript an. Keine fremde Marke im Text (Vorlagenfehler!).",
+  "felder.aufzug": "Automatik | Handaufzug | Quarz | Solar",
+  "felder.zustand": "Neu | Ungetragen | Sehr gut | Gut | Befriedigend | Defekt oder unvollständig",
+  "felder.lieferumfang": "Full Set (Box & Papiere) | Nur Papiere | Nur Box | Nur Uhr — nach Text UND Bildern entscheiden",
+  "felder.geschlecht": "Herren | Damen | Unisex — unter 34 mm eher Damen, wenn das Inserat nichts sagt",
+  "felder.glas": "Saphirglas | Mineralglas | Plexiglas | Kunststoff — nur wenn es im Inserat steht",
+  "felder.baujahr": "Ganze Jahreszahl. Bei „ca.", „n.b." oder Servicejahr im Titel: weglassen.",
+  "bilder.reihenfolge": "Positionen vom Kontaktbogen, Cover zuerst. Cover = frontale Zifferblattansicht. Zweites = Set-Foto, sonst ein weiteres Frontbild (Uhr in der Hand / am Handgelenk, Zifferblatt frontal). Steile Schrägaufnahmen sind kein Frontbild.",
+  "bilder.zweites": "set oder front — Regel von Valentin: entweder oder."
+ }
+}
