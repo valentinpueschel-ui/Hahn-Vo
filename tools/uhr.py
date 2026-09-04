@@ -180,10 +180,23 @@ def shopify_map_schreiben(karte):
 
 
 def datajs_syntax():
-    r = subprocess.run(['node', '-e', "global.window={};require(%s);console.log('ok')" % json.dumps(DATA)],
-                       capture_output=True, text=True)
-    if 'ok' not in r.stdout:
-        fehler('js/data.js ist nach dem Umbau kaputt: ' + (r.stderr or r.stdout)[:300])
+    """Prüft, dass js/data.js noch lädt. Mit Node echt; ohne Node wenigstens,
+    dass die beiden Blöcke, die wir schreiben, gültiges JSON sind."""
+    if shutil.which('node'):
+        r = subprocess.run(['node', '-e', "global.window={};require(%s);console.log('ok')" % json.dumps(DATA)],
+                           capture_output=True, text=True)
+        if 'ok' not in r.stdout:
+            fehler('js/data.js ist nach dem Umbau kaputt: ' + (r.stderr or r.stdout)[:300])
+        return
+    t = datajs_text()
+    for name in ('PRODUCTS', 'SHOPIFY'):
+        m = re.search(r'window\.' + name + r'\s*=\s*([\[{][\s\S]*?\n[\]}]);', t)
+        if not m:
+            fehler('window.%s in js/data.js nicht gefunden' % name)
+        try:
+            json.loads(m.group(1))
+        except Exception as e:
+            fehler('window.%s in js/data.js ist kein gültiges JSON mehr: %s' % (name, e))
 
 
 def fallback_bauen():

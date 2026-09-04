@@ -12,22 +12,25 @@ echo "Hahn & Vo — Umgebung prüfen ($(pwd))"
 echo
 
 echo "Werkzeuge"
-command -v git >/dev/null && gut "git $(git --version | cut -d' ' -f3)" || schlecht "git fehlt" "Xcode Command Line Tools: xcode-select --install"
-command -v python3 >/dev/null && gut "python3 $(python3 --version | cut -d' ' -f2)" || schlecht "python3 fehlt" "brew install python"
-command -v node >/dev/null && gut "node $(node --version)" || schlecht "node fehlt (für Syntaxprüfung von js/data.js)" "brew install node"
-command -v claude >/dev/null && gut "Claude Code" || schlecht "Claude Code fehlt" "npm install -g @anthropic-ai/claude-code   (dann: claude → anmelden)"
-command -v gh >/dev/null && gut "GitHub CLI" || schlecht "gh fehlt (nicht zwingend — git push reicht)" "brew install gh && gh auth login"
+# git und python3 bringen Apples Command Line Tools mit — kein Homebrew nötig:
+#   xcode-select --install   (öffnet einen Apple-Dialog, einmal bestätigen)
+command -v git >/dev/null && gut "git $(git --version | cut -d' ' -f3)" || schlecht "git fehlt" "xcode-select --install   (Apple-Dialog bestätigen, ~10 Minuten)"
+command -v python3 >/dev/null && gut "python3 $(python3 --version | cut -d' ' -f2)" || schlecht "python3 fehlt" "xcode-select --install   (bringt python3 mit)"
+command -v node >/dev/null && gut "node $(node --version) (optional, genauere Prüfung von js/data.js)" || echo "  · node fehlt — nicht nötig, die Skripte prüfen js/data.js dann per JSON-Prüfung"
+command -v claude >/dev/null && gut "Claude Code (Terminal)" || echo "  · Claude Code im Terminal nicht gefunden — mit der Mac-App ist das in Ordnung"
+command -v gh >/dev/null && gut "GitHub CLI" || echo "  · gh fehlt — nicht zwingend; zum Pushen reicht eine GitHub-Anmeldung (siehe unten)"
+if git config --get credential.helper >/dev/null 2>&1 || (command -v gh >/dev/null && gh auth status >/dev/null 2>&1); then gut "GitHub-Anmeldung fürs Pushen vorhanden"; else echo "  · GitHub-Anmeldung fürs Pushen: entweder 'gh auth login' (öffnet den Browser) oder beim ersten Push Benutzername + Token eingeben"; fi
 
 echo
 echo "Python-Pakete"
-python3 -c "import playwright" 2>/dev/null && gut "playwright" || schlecht "playwright fehlt (Inserate lesen)" "python3 -m pip install --break-system-packages playwright && python3 -m playwright install chromium"
+python3 -c "import playwright" 2>/dev/null && gut "playwright" || schlecht "playwright fehlt (Inserate lesen)" "python3 -m pip install --user playwright && python3 -m playwright install chromium   (Homebrew-Python: --break-system-packages statt --user)"
 python3 -c "from playwright.sync_api import sync_playwright" 2>/dev/null && python3 - <<'PY' 2>/dev/null && gut "Chromium für Playwright" || schlecht "Chromium für Playwright fehlt" "python3 -m playwright install chromium"
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
     b = p.chromium.launch(); b.close()
 PY
-python3 -c "import PIL" 2>/dev/null && gut "Pillow (Kontaktbögen)" || schlecht "Pillow fehlt" "python3 -m pip install --break-system-packages pillow"
-python3 -c "import openpyxl" 2>/dev/null && gut "openpyxl (Excel-Listen)" || schlecht "openpyxl fehlt (nur für Excel-Listen)" "python3 -m pip install --break-system-packages openpyxl"
+python3 -c "import PIL" 2>/dev/null && gut "Pillow (Kontaktbögen)" || schlecht "Pillow fehlt" "python3 -m pip install --user pillow"
+python3 -c "import openpyxl" 2>/dev/null && gut "openpyxl (Excel-Listen)" || echo "  · openpyxl fehlt — nur für Excel-Listen nötig: python3 -m pip install --user openpyxl"
 
 echo
 echo "Repo und Deploy"

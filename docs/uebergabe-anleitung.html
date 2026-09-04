@@ -105,7 +105,7 @@
         <li>Shopify mit Claude verbinden</li>
         <li>Vercel-Konto, Team, Pro-Tarif</li>
         <li>Resend-Login prüfen</li>
-        <li>Mac vorbereiten</li>
+        <li>Claude-App auf dem Mac</li>
       </ul>
     </div>
     <div class="karte">
@@ -182,7 +182,7 @@
         <tr><td><b>Push</b></td><td>Eine Änderung vom Mac zu GitHub hochladen. Löst automatisch aus, dass Vercel die neue Fassung live stellt („Deploy").</td></tr>
         <tr><td><b>Connector</b></td><td>Die Verbindung zwischen deinem Claude-Konto und einem Dienst (Shopify). Persönlich, nicht übertragbar.</td></tr>
         <tr><td><b>Skill</b></td><td>Eine Arbeitsanweisung für Claude, die im Repo liegt — z. B. „Uhr anlegen". Claude findet sie von selbst.</td></tr>
-        <tr><td><b>Terminal</b></td><td>Das Textfenster, in dem man Befehle eintippt. Du brauchst es nur zum Starten: <code>claude</code>.</td></tr>
+        <tr><td><b>Terminal</b></td><td>Das Textfenster, in dem man Befehle eintippt. Mit der Claude-App brauchst du es nicht — Claude tippt die Befehle.</td></tr>
         <tr><td><b>Token / Schlüssel</b></td><td>Ein Passwort für Programme. Wird in Teil C erneuert, damit nichts mehr auf Valentins Namen läuft.</td></tr>
       </table>
     </div>
@@ -249,13 +249,10 @@
   <div class="schritt">
     <div class="nr">6</div>
     <div>
-      <div class="kopf"><h3>Deinen Mac vorbereiten</h3><span class="wer h">Hannes</span><span class="zeit">15 Minuten, meist Wartezeit</span></div>
-      <p>Wir brauchen ein paar Werkzeuge im Hintergrund. Falls du es dir nicht zutraust: überspringen, wir machen es in Teil B gemeinsam. Sonst: <b>Terminal</b> öffnen (Programme → Dienstprogramme) und die drei Zeilen nacheinander einfügen, jeweils mit Enter bestätigen. Die erste installiert „Homebrew" (fragt nach deinem Mac-Passwort), die zweite die Werkzeuge, die dritte Claude Code.</p>
-<pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install git node python gh
-npm install -g @anthropic-ai/claude-code</pre>
-      <p class="klein">Alternativ gibt es Claude Code als Mac-App zum Herunterladen (claude.com/claude-code). Beides funktioniert; die Werkzeuge aus der zweiten Zeile brauchen wir in jedem Fall.</p>
-      <div class="fertig"><b>Fertig, wenn:</b> <code>claude --version</code> im Terminal eine Versionsnummer zeigt. Außerdem: macOS ist aktuell, du kennst dein Mac-Passwort, und du kannst den Bildschirm teilen (FaceTime, Zoom, Teams — egal was).</div>
+      <div class="kopf"><h3>Claude Code als Mac-App installieren</h3><span class="wer h">Hannes</span><span class="zeit">5 Minuten</span></div>
+      <p>Du brauchst kein Terminal. Claude Code gibt es als Mac-App: <span class="pfad">claude.com/claude-code</span> → Download für Mac → installieren → mit deinem Claude-Konto anmelden. Alles Weitere, was der Mac im Hintergrund braucht (git, Python, den Browser fürs Inseratlesen), installiert <b>Claude selbst</b>, sobald wir in Teil B das Projekt öffnen — du bestätigst nur Apple-Dialoge und gibst einmal dein Mac-Passwort ein.</p>
+      <p class="klein">Wer lieber im Terminal arbeitet: <code>npm install -g @anthropic-ai/claude-code</code> — dann ist der Start <code>claude</code> im Projektordner. Ergebnis ist dasselbe.</p>
+      <div class="fertig"><b>Fertig, wenn:</b> die App startet und dein Name oben steht. Außerdem: macOS ist aktuell, du kennst dein Mac-Passwort, und du kannst den Bildschirm teilen (FaceTime, Zoom, Teams — egal was).</div>
     </div>
   </div>
 
@@ -282,16 +279,12 @@ npm install -g @anthropic-ai/claude-code</pre>
   <div class="schritt">
     <div class="nr">2</div>
     <div>
-      <div class="kopf"><h3>Projekt auf den Mac, Umgebung prüfen</h3><span class="wer b">Beide</span><span class="zeit">20 Minuten</span></div>
-      <p>Im Terminal auf Hannes' Mac:</p>
-<pre>cd ~/Desktop
-git clone https://github.com/valentinpueschel-ui/Hahn-Vo.git hahn-vo
-cd hahn-vo
-git config --global user.name "Hannes Hahn"
-git config --global user.email "info@hahntime.com"
-bash tools/einrichten.sh</pre>
-      <p>Das Prüfskript sagt Zeile für Zeile, was fehlt, und wie man es installiert (typisch: <code>python3 -m pip install --break-system-packages playwright pillow openpyxl</code> und <code>python3 -m playwright install chromium</code>). Danach <code>claude</code> starten, mit dem Claude-Konto anmelden. Im Claude-Fenster <code>/mcp</code> eingeben: Shopify muss als verbunden erscheinen.</p>
-      <div class="fertig"><b>Fertig, wenn:</b> <code>bash tools/einrichten.sh</code> „0 fehlen" meldet und Claude Code den Shopify-Connector zeigt.</div>
+      <div class="kopf"><h3>Projekt auf den Mac, Claude richtet den Rest ein</h3><span class="wer b">Beide</span><span class="zeit">30 Minuten, meist Wartezeit</span></div>
+      <p>Hannes legt auf dem Schreibtisch einen leeren Ordner <b>hahn-vo</b> an und öffnet ihn in der Claude-App als Projekt. Dann sagt er Claude — Wort für Wort reicht:</p>
+      <pre>Hol das Projekt von github.com/valentinpueschel-ui/Hahn-Vo in diesen Ordner und richte meinen Mac dafür ein. Ich bin Hannes Hahn, info@hahntime.com.</pre>
+      <p>Claude klont das Repo, startet <code>tools/einrichten.sh</code> und installiert, was fehlt: Apples Werkzeuge (ein Dialog, einmal bestätigen, ~10 Minuten), die Python-Pakete, den Browser fürs Inseratlesen, und hinterlegt Name und E-Mail für Commits. Für das spätere Pushen meldet Claude dich bei GitHub an (<code>gh auth login</code> öffnet den Browser — du klickst „Authorize"). Zum Schluss <code>/mcp</code> ins Claude-Fenster tippen: Shopify muss als verbunden erscheinen.</p>
+      <p class="klein">Terminal-Variante, falls jemand sie braucht: <code>git clone https://github.com/valentinpueschel-ui/Hahn-Vo.git ~/Desktop/hahn-vo</code>, dann darin <code>bash tools/einrichten.sh</code> und die genannten Befehle.</p>
+      <div class="fertig"><b>Fertig, wenn:</b> Claude „<code>tools/einrichten.sh</code> meldet 0 fehlen" sagt, Shopify unter <code>/mcp</code> verbunden ist, und ein Probe-Push funktioniert (Claude: „mach einen leeren Test-Commit und pushe ihn").</div>
     </div>
   </div>
 
@@ -377,7 +370,7 @@ git remote set-url origin https://github.com/&lt;hannes&gt;/Hahn-Vo.git</pre>
   </table>
 
   <h2>Danach: dein Alltag</h2>
-  <p>Terminal öffnen, <code>cd ~/Desktop/hahn-vo</code>, <code>claude</code> — und sagen, was passieren soll:</p>
+  <p>Claude-App öffnen, Projekt <b>hahn-vo</b> wählen — und sagen, was passieren soll:</p>
   <table>
     <tr><th>Du sagst</th><th>Claude tut</th></tr>
     <tr><td>„Lade diese Uhr hoch: &lt;Link&gt;" (Kleinanzeigen, eBay, Chrono24) — optional „für 3.250 €"</td><td>liest, zeigt Bilder und Felder, legt an, prüft live, berichtet</td></tr>

@@ -6,12 +6,10 @@ Claude findet sie von selbst.
 
 ## Einmalig einrichten (30 Minuten)
 
-1. **Claude Code installieren** und mit deinem Claude-Konto anmelden (Abo mit ausreichend Nutzung — eine Uhr anzulegen ist tokenintensiv, Max ist sinnvoll).
+1. **Claude Code als Mac-App installieren** (claude.com/claude-code) und mit deinem Claude-Konto anmelden (Abo mit ausreichend Nutzung — eine Uhr anzulegen ist tokenintensiv, Max ist sinnvoll). Terminal-Variante: `npm install -g @anthropic-ai/claude-code`.
 2. **Shopify verbinden:** claude.ai → Einstellungen → Connectors → Shopify → mit deinem Shop-Login (info@hahntime.com) verbinden.
-3. **Projekt holen:** GitHub-Konto anlegen (falls noch keins), von Valentin ins Repo eingeladen werden oder das Repo übernehmen, dann im Terminal:
-   `git clone https://github.com/<konto>/Hahn-Vo.git ~/Desktop/hahn-vo` (Valentin hilft beim ersten Mal).
-4. **Umgebung prüfen:** im Projektordner `bash tools/einrichten.sh`. Es sagt dir, was fehlt und wie du es installierst.
-5. **Claude starten:** im Projektordner `claude` eintippen.
+3. **Projekt holen:** GitHub-Konto anlegen (falls noch keins), von Valentin ins Repo eingeladen werden oder das Repo übernehmen. Leeren Ordner `hahn-vo` auf dem Schreibtisch anlegen, in der Claude-App öffnen und sagen: „Hol das Projekt von github.com/<konto>/Hahn-Vo in diesen Ordner und richte meinen Mac dafür ein." Claude installiert, was fehlt (`tools/einrichten.sh` sagt ihm, was), und meldet dich bei GitHub an.
+4. **Prüfen:** `/mcp` im Claude-Fenster zeigt Shopify als verbunden; Claude meldet „einrichten.sh: 0 fehlen".
 
 ## Was du sagst — Beispiele
 
