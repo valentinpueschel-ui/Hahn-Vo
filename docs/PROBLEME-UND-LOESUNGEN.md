@@ -146,6 +146,14 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 
 **F8 · zsh teilt Wörter nicht (04.09.).** `set -- $ok` — kosmetisch, aber Prüfschleifen können deshalb Unsinn melden. → Python statt Shell für Prüfungen.
 
+**F9 · Statische Datei schlägt Rewrite (04.09.).** Ein Rewrite `/produkt → /api/produkt` griff nicht, solange `produkt.html` im Projekt lag — Vercel liefert Dateien vor Rewrites aus. → Vorlage heißt `produkt-vorlage.html`; `/produkt` bedient `api/produkt.js`; lokal `tools/serve.py`. Nie wieder eine `produkt.html` anlegen.
+
+**F10 · Produktseiten ohne Kopfdaten (bis 04.09.).** Titel, Beschreibung, Vorschaubild und schema.org kamen nur per JavaScript — WhatsApp-Vorschau zeigte das Gründerfoto, KI-Suchmaschinen sahen „Uhr — Hahn & Vo". → Serverseitig gefüllt (`api/produkt.js`): Product/Offer/Breadcrumb, Meta, OG; Lighthouse-SEO 92 → 100.
+
+**F11 · Layout-Sprung im Shop, Wert 0,5 (04.09.).** Kam der Katalog erst nach dem ersten Bild, füllte sich das leere Raster und schob den Abschnitt darunter um 44.000 px. Timing-abhängig, deshalb nur manchmal messbar. → `.product-grid:empty { min-height: 120vh }`. Hero: das per JS eingesetzte HV-Zeichen hatte keine reservierte Höhe → `aspect-ratio` auf `.hero-mark`.
+
+**F12 · Schriften ohne Preload.** Inter und Marcellus luden erst nach dem CSS. → `<link rel="preload">` in allen Seiten, Preconnect zu Shopify-CDN.
+
 ## G. Arbeitsweise
 
 **G1 · Nur die lokale Kopie geprüft (31.08.).** Die hatte zufällig die richtige Reihenfolge. → Live ist die Wahrheit; lokale Kopie ist Reserve.

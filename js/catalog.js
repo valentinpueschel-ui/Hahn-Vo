@@ -32,7 +32,7 @@
       '<div class="pc-body">' +
         '<span class="pc-brand">' + p.brand + '</span>' +
         '<div class="pc-title-zone">' +
-          '<h3 class="pc-name">' + p.name + '</h3>' +
+          '<h2 class="pc-name">' + p.name + '</h2>' +
           '<span class="pc-specline">' + spec + '</span>' +
         '</div>' +
         '<div class="pc-price">' + priceHtml + '</div>' +

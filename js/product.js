@@ -239,14 +239,14 @@
 
   document.getElementById('pdDesc').innerHTML =
     (punkte.length
-      ? '<h3>Zustand im Detail</h3><ul class="pd-cond">' + punkte.map(function (t) {
+      ? '<h2>Zustand im Detail</h2><ul class="pd-cond">' + punkte.map(function (t) {
           var k = t.indexOf(':');
           return k > 0
             ? '<li><b>' + t.slice(0, k) + '</b><span>' + t.slice(k + 1).trim().replace(/[\s.]+$/, '') + '</span></li>'
             : '<li><span>' + t + '</span></li>';
         }).join('') + '</ul>'
       : '') +
-    '<h3 class="pd-promise">Unser Versprechen</h3>' +
+    '<h2 class="pd-promise">Unser Versprechen</h2>' +
     VERSPRECHEN.map(function (t) { return '<p>' + t + '</p>'; }).join('');
 
   /* related: same brand first, then price neighbours */

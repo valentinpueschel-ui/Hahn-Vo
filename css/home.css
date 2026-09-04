@@ -38,7 +38,10 @@
   display: flex; flex-direction: column; align-items: center;
   padding-top: calc(var(--header-h) + 3vh);
 }
-.hero-mark { width: clamp(120px, 17vw, 210px); margin-bottom: clamp(20px, 3.5vh, 44px); opacity: 0; will-change: transform; }
+/* aspect-ratio = Seitenverhältnis des HV-Zeichens (viewBox 408.7 × 406.6):
+   Das SVG wird per JS eingesetzt — ohne reservierte Höhe rückt der ganze
+   Hero beim Einsetzen um 120 px (Layout-Shift, gemessen 04.09.). */
+.hero-mark { width: clamp(120px, 17vw, 210px); aspect-ratio: 408.7 / 406.6; margin-bottom: clamp(20px, 3.5vh, 44px); opacity: 0; will-change: transform; }
 .hero-mark svg { width: 100%; height: auto; display: block; filter: drop-shadow(0 24px 60px rgba(0,0,0,0.45)); }
 .hero-title { margin: 0; }
 /* slot-machine letter roll */

@@ -231,14 +231,14 @@ function rendern(p) {
 
   var punkte = zustandsliste(p.desc);
   var descHtml = (punkte.length
-    ? '<h3>Zustand im Detail</h3><ul class="pd-cond">' + punkte.map(function (t) {
+    ? '<h2>Zustand im Detail</h2><ul class="pd-cond">' + punkte.map(function (t) {
         var k = t.indexOf(':');
         return k > 0
           ? '<li><b>' + esc(t.slice(0, k)) + '</b><span>' + esc(t.slice(k + 1).trim().replace(/[\s.]+$/, '')) + '</span></li>'
           : '<li><span>' + esc(t) + '</span></li>';
       }).join('') + '</ul>'
     : '') +
-    '<h3 class="pd-promise">Unser Versprechen</h3>' +
+    '<h2 class="pd-promise">Unser Versprechen</h2>' +
     VERSPRECHEN.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('');
   html = html.replace('<div class="pd-desc" id="pdDesc"></div>', '<div class="pd-desc" id="pdDesc">' + descHtml + '</div>');
 
