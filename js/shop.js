@@ -39,6 +39,7 @@
   ];
   var STATUS_OPTS = [
     { id: 'available', label: 'Erhältlich' },
+    { id: 'anfrage', label: 'Auf Anfrage' },
     { id: 'reserved', label: 'Reserviert' },
     { id: 'sold', label: 'Verkauft' },
   ];

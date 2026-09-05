@@ -17,7 +17,7 @@
     var byId = {};
     (window.PRODUCTS || []).forEach(function (p) { byId[p.id] = p; });
     return read().map(function (id) { return byId[id]; }).filter(Boolean)
-      .filter(function (p) { return p.status !== 'sold'; });
+      .filter(function (p) { return p.status !== 'sold' && p.status !== 'anfrage'; });
   }
   function total() {
     return items().reduce(function (s, p) { return s + (p.price || 0); }, 0);
@@ -60,6 +60,8 @@
     reconcile: reconcile,
     has: function (id) { return read().indexOf(id) !== -1; },
     add: function (id) {
+      var p = HV.byId ? HV.byId(id) : null;
+      if (p && p.status === 'anfrage') return; /* nicht über die Kasse — nur auf Anfrage */
       var ids = read();
       if (ids.indexOf(id) === -1) { ids.push(id); write(ids); }
       openDrawer();

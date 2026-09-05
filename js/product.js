@@ -155,6 +155,21 @@
         }
       });
     }
+  } else if (p.status === 'anfrage') {
+    /* Über ~10.000 USD läuft nichts über die Kasse (Shopify Payments) — der
+       Kaufknopf wird zur WhatsApp-Anfrage, daneben Anruf und Showroom. */
+    add.dataset.mode = 'anfrage';
+    add.innerHTML = 'Per WhatsApp anfragen <span class="arr">→</span>';
+    add.addEventListener('click', function () {
+      var wa = document.getElementById('pdWhatsapp');
+      if (wa) window.open(wa.href, '_blank', 'noopener');
+    });
+    var sek = document.querySelector('.pd-secondary-ctas');
+    if (sek) {
+      sek.innerHTML = '<a class="btn btn-outline" href="tel:' + String(window.SITE.phone || '').replace(/\s/g, '') + '">Anrufen</a>' +
+        '<a class="btn btn-outline" href="/ueber-uns#showroom">Im Showroom ansehen</a>';
+    }
+    document.getElementById('pdAnfrageNote').hidden = false;
   } else {
     add.disabled = true;
     add.textContent = p.status === 'reserved' ? 'Reserviert' : 'Verkauft';
@@ -181,7 +196,10 @@
     function spiegeln() {
       if (wa && barWa) barWa.href = wa.href;
       barBuy.disabled = add.disabled;
-      barBuy.textContent = add.dataset.mode === 'checkout' ? 'Zur Kasse' : (add.disabled ? add.textContent.trim() : 'In den Warenkorb');
+      barBuy.textContent = add.dataset.mode === 'checkout' ? 'Zur Kasse'
+        : add.dataset.mode === 'anfrage' ? 'WhatsApp anfragen'
+        : (add.disabled ? add.textContent.trim() : 'In den Warenkorb');
+      if (barWa) barWa.hidden = add.dataset.mode === 'anfrage';
     }
     spiegeln();
     document.addEventListener('hv:cart', spiegeln);

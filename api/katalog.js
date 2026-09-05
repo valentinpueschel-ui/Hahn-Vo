@@ -27,9 +27,10 @@ function nachWebsiteForm(p, kennungen) {
   /* Zubehör hat keinen Aufzug — dieselbe Unterscheidung wie im Chrono24-Feed. */
   var kategorie = f.aufzug ? 'uhren' : 'zubehoer';
 
-  /* Verkauft schlägt reserviert: Was weg ist, ist weg. */
+  /* Verkauft schlägt reserviert: Was weg ist, ist weg. „anfrage" = zu haben,
+   * aber nicht über die Kasse (siehe anfrageUhren in _shop.js). */
   var reserviert = /^(ja|yes|1|true)$/i.test(String(f.reserviert || '').trim());
-  var status = !p.verfuegbar ? 'sold' : (reserviert ? 'reserved' : 'available');
+  var status = !p.verfuegbar ? 'sold' : (p.anfrage ? 'anfrage' : (reserviert ? 'reserved' : 'available'));
 
   return {
     id: kennungen[p.shopifyId] || ersatzKennung(p.shopifyId),
@@ -75,7 +76,7 @@ async function baueKatalog(basis) {
     zuordnung[u.id] = u.shopifyId;
   });
   /* Erhältliche zuerst, dann reservierte, verkaufte ans Ende. */
-  var RANG = { available: 0, reserved: 1, sold: 2 };
+  var RANG = { available: 0, anfrage: 0, reserved: 1, sold: 2 };
   uhren.sort(function (a, b) { return (RANG[a.status] || 0) - (RANG[b.status] || 0); });
   return {
     stand: new Date().toISOString(),

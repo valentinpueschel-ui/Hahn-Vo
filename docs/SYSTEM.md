@@ -40,9 +40,11 @@ Danach: Website zeigt die Uhr binnen 5 Minuten, Chrono24 zieht sie beim nächste
 
 ## Status-Logik
 
-`api/katalog.js`: `status = !verfuegbar ? 'sold' : (reserviert ? 'reserved' : 'available')`.
+`api/katalog.js`: `status = !verfuegbar ? 'sold' : (anfrage ? 'anfrage' : (reserviert ? 'reserved' : 'available'))`.
 `verfuegbar` = Storefront `availableForSale` (Bestand > 0). Verkauft schlägt reserviert.
 Ausblenden ohne Löschen: interner Code in `AUSSCHLUSS` (`api/katalog.js`).
+
+**„Auf Anfrage"** (seit 05.09.): Shopify Payments verarbeitet keine Waren über 10.000 USD. Uhren ab ~8.500 € liegen in Shopify als **Entwurf** und in `daten/anfrage-uhren.json`; `api/_shop.js` hängt sie an den Bestand an (nur, wenn Shopify sie nicht selbst liefert). Website: Kennzeichen „Auf Anfrage", Kaufknopf = WhatsApp, kein Warenkorb. Chrono24-Feed, Sitemap, Markenseiten: normal. Pflege (Preis, verkauft) in der JSON-Datei.
 
 ## Kennungen
 

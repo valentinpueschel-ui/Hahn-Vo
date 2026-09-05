@@ -7,7 +7,7 @@
     return (window.PRODUCTS || []).find(function (p) { return p.id === id; });
   };
 
-  HV.statusLabel = { available: 'Erhältlich', reserved: 'Reserviert', sold: 'Verkauft' };
+  HV.statusLabel = { available: 'Erhältlich', anfrage: 'Auf Anfrage', reserved: 'Reserviert', sold: 'Verkauft' };
 
   HV.renderCard = function (p) {
     var imgA = p.images[0] || '';

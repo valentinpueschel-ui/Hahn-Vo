@@ -118,6 +118,8 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 
 **D9 · Shopify-Statistik zeigt nur Kasse (30.08.).** Sitzungen/Conversion dort bedeutungslos. → Vercel Web Analytics auf allen Seiten, Datenschutz Abschnitt 4.
 
+**D11 · Shopify Payments verarbeitet keine Waren über 10.000 USD (Trust & Safety, 04.09.).** Ein Käufer scheiterte mit PayPal (Käuferlimit), ein anderer zahlte 5.450 € per Karte (Order #1003, nach zwei Fehlversuchen erfolgreich) — und Shopify hielt die Auszahlung zurück: „High Value Goods" im Shop. Frist für die Rückmeldung: 06.09. → Uhren ab ~8.500 € (≈ 10.000 USD) sind in Shopify **Entwurf** und stehen in `daten/anfrage-uhren.json`; die Website zeigt sie als **„Auf Anfrage"** (WhatsApp, Telefon, Showroom, Überweisung), Chrono24-Feed und Sitemap führen sie weiter. Neue Uhren über der Grenze gehören in diese Liste, nicht in den Shopify-Verkauf. Alternative wäre ein anderer Zahlungsanbieter (z. B. Mollie) statt Shopify Payments.
+
 **D10 · Versandzonen** (21.08.): Deutschland 0 €, Europa 79 €, Welt 150 € — sonst rechnet Shopify eigene Preise und die Kasse weicht von der Website ab.
 
 ## E. Anfragen und Mail

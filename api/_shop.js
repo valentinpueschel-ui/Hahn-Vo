@@ -156,7 +156,35 @@ async function holeBestand() {
     if (!seite.pageInfo.hasNextPage) break;
     cursor = seite.pageInfo.endCursor;
   }
-  return alle;
+  return alle.concat(anfrageUhren(alle));
+}
+
+/* Uhren „auf Anfrage": Shopify Payments verarbeitet keine Waren über
+ * 10.000 USD (Trust & Safety, 04.09.2026). Diese Uhren liegen in Shopify als
+ * Entwurf — unsichtbar für Storefront und Kasse — und werden aus
+ * daten/anfrage-uhren.json gepflegt. Sie erscheinen auf der Website, im
+ * Chrono24-Feed und in der Sitemap wie alle anderen, nur ohne Kaufknopf.
+ * Solange eine Uhr in Shopify noch aktiv ist, gewinnt Shopify (kein Doppel). */
+function anfrageUhren(shopify) {
+  var liste;
+  try { liste = require('../daten/anfrage-uhren.json').produkte || []; } catch (e) { return []; }
+  var vorhanden = {};
+  shopify.forEach(function (p) { vorhanden[String(p.shopifyId)] = true; });
+  return liste.filter(function (u) { return !vorhanden[String(u.shopifyId)]; }).map(function (u) {
+    var f = {
+      referenz: u.ref, baujahr: u.year, durchmesser: u.size, gehaeuse: u.material, zifferblatt: u.dial,
+      band: u.strap, aufzug: u.movement, kaliber: u.caliber, zustand: u.rating, lieferumfang: u.fullset,
+      geschlecht: u.gender, code: u.code, besteuerung: u.tax, glas: u.glass,
+    };
+    Object.keys(f).forEach(function (k) { if (f[k] == null || f[k] === '') delete f[k]; else f[k] = String(f[k]); });
+    return {
+      shopifyId: String(u.shopifyId), variantId: null,
+      titel: u.brand + ' ' + u.name, marke: u.brand, modell: u.name,
+      beschreibung: u.desc || '', verfuegbar: u.status !== 'sold', anfrage: u.status !== 'sold',
+      angelegt: u.added || null, preis: u.price, listenpreis: u.listPrice || null,
+      bilder: u.images || [], f: f,
+    };
+  });
 }
 
 /* Zuordnung Shopify-Produkt → Uhren-Kennung der Website, aus js/data.js.
@@ -189,4 +217,5 @@ module.exports = {
   beschreibungAusHtml: beschreibungAusHtml,
   holeBestand: holeBestand,
   holeKennungen: holeKennungen,
+  anfrageUhren: anfrageUhren,
 };

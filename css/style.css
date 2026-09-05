@@ -209,6 +209,7 @@ ul { list-style: none; }
 }
 .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .status-available { color: var(--ok); }
+.status-anfrage { color: var(--petrol); }
 .status-reserved { color: var(--reserved); }
 .status-sold { color: var(--sold); }
 .status-available::before { box-shadow: 0 0 0 0 rgba(30,107,78,.5); animation: pulse 2.4s infinite; }

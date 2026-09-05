@@ -244,7 +244,7 @@
       name: p.brand + ' ' + p.name,
       desc: SHOWCASE_COPY[p.id] || schaufensterText(p),
       chips: chips,
-      avail: p.status === 'available' ? '1 von 1 · sofort verfügbar' : '1 von 1 · aktuell reserviert',
+      avail: p.status === 'available' ? '1 von 1 · sofort verfügbar' : p.status === 'anfrage' ? '1 von 1 · auf Anfrage' : '1 von 1 · aktuell reserviert',
       img: p.images[0],
     };
   }
@@ -255,7 +255,7 @@
      (window.NEW_IN). Die veraltete bei jeder neuen Uhr und zeigte
      irgendwann verkaufte oder gelöschte Stücke. */
   var slides = (window.PRODUCTS || [])
-    .filter(function (p) { return p.status === 'available' && p.category !== 'zubehoer'; })
+    .filter(function (p) { return (p.status === 'available' || p.status === 'anfrage') && p.category !== 'zubehoer'; })
     .sort(function (a, b) { return String(b.added || '').localeCompare(String(a.added || '')); })
     .slice(0, 6)
     .map(slideData);
