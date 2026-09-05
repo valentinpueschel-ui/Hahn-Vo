@@ -28,15 +28,18 @@
   --creme-dim: #F7F1DC;
   --white: #FFFFFF;
   --ink: #0E334F;
-  --ink-60: rgba(14, 51, 79, 0.6);
-  --ink-40: rgba(14, 51, 79, 0.4);
+  /* 05.09.2026: Deckkraft angehoben (0,6 → 0,72 / 0,4 → 0,5), damit graue
+     Kleinschrift auf Creme und Weiß mindestens 4,5:1 Kontrast erreicht.
+     Namen bleiben, damit kein Selektor angefasst werden muss. */
+  --ink-60: rgba(14, 51, 79, 0.72);
+  --ink-40: rgba(14, 51, 79, 0.5);
   --line: rgba(14, 51, 79, 0.14);
   --line-strong: rgba(14, 51, 79, 0.3);
   --creme-line: rgba(255, 250, 231, 0.16);
   --creme-60: rgba(255, 250, 231, 0.62);
   --ok: #1E6B4E;
   --reserved: #8A6A1F;
-  --sold: #8B8B83;
+  --sold: #6C6C64; /* vorher #8B8B83 — 3,4:1 auf Weiß, jetzt 5:1 */
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-brand: 'Marcellus', 'Times New Roman', serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

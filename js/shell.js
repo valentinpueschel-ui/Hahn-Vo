@@ -81,6 +81,29 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- Akkordeon für statische FAQ-Blöcke (Ratgeber) ----------
+     Markup wie auf der Startseite (.acc > .acc-item > .acc-btn + .acc-body),
+     nur ohne window.FAQ. Die Startseite baut ihres selbst in home.js. */
+  document.querySelectorAll('.acc[data-acc-statisch]').forEach(function (acc) {
+    acc.addEventListener('click', function (e) {
+      var btn = e.target.closest('.acc-btn');
+      if (!btn) return;
+      var item = btn.parentElement;
+      var body = item.querySelector('.acc-body');
+      var offen = item.classList.contains('is-open');
+      acc.querySelectorAll('.acc-item.is-open').forEach(function (o) {
+        o.classList.remove('is-open');
+        o.querySelector('.acc-body').style.maxHeight = '0px';
+        o.querySelector('.acc-btn').setAttribute('aria-expanded', 'false');
+      });
+      if (!offen) {
+        item.classList.add('is-open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   /* ---------- footer ---------- */
   var footer = document.createElement('footer');
   footer.className = 'site-footer';
@@ -95,7 +118,7 @@
           '<a href="/shop">Shop</a><a href="/ankauf">Ankauf &amp; Inzahlungnahme</a><a href="/suchauftrag">Suchauftrag</a><a href="/ueber-uns">Über uns</a>' +
         '</div>' +
         '<div class="sf-col"><h3>Service</h3>' +
-          '<a href="/marken">Marken</a><a href="/referenz-checker">Referenz-Checker</a><a href="/#faq">Fragen &amp; Antworten</a><a href="/ueber-uns#showroom">Showroom &amp; Termine</a><a href="mailto:info@hahntime.com">info@hahntime.com</a><a href="https://www.instagram.com/hahn.vo/" target="_blank" rel="noopener">Instagram</a>' +
+          '<a href="/marken">Marken</a><a href="/ratgeber">Ratgeber</a><a href="/referenz-checker">Referenz-Checker</a><a href="/#faq">Fragen &amp; Antworten</a><a href="/ueber-uns#showroom">Showroom &amp; Termine</a><a href="mailto:info@hahntime.com">info@hahntime.com</a><a href="https://www.instagram.com/hahn.vo/" target="_blank" rel="noopener">Instagram</a>' +
         '</div>' +
         '<div class="sf-col"><h3>Showroom</h3>' +
           '<p>Garden Tower · 7. Etage<br>Neue Mainzer Str. 46–50<br>60311 Frankfurt am Main</p>' +

@@ -19,6 +19,14 @@ var SEITEN = [
   { pfad: '/suchauftrag', prio: '0.8', frequenz: 'monthly' },
   { pfad: '/ueber-uns', prio: '0.7', frequenz: 'monthly' },
   { pfad: '/referenz-checker', prio: '0.6', frequenz: 'monthly' },
+  /* Ratgeber: statische Artikel. lastmod = Datum der letzten Textänderung —
+   * beim Überarbeiten eines Artikels hier mitziehen. */
+  { pfad: '/ratgeber', prio: '0.7', frequenz: 'weekly', lastmod: '2026-09-05' },
+  { pfad: '/ratgeber/differenzbesteuerung', prio: '0.6', frequenz: 'monthly', lastmod: '2026-09-05' },
+  { pfad: '/ratgeber/rolex-referenznummer-seriennummer', prio: '0.6', frequenz: 'monthly', lastmod: '2026-09-05' },
+  { pfad: '/ratgeber/echtheit-pruefen-full-set', prio: '0.6', frequenz: 'monthly', lastmod: '2026-09-05' },
+  { pfad: '/ratgeber/uhr-verkaufen-frankfurt', prio: '0.6', frequenz: 'monthly', lastmod: '2026-09-05' },
+  { pfad: '/ratgeber/gebrauchte-luxusuhr-kaufen-checkliste', prio: '0.6', frequenz: 'monthly', lastmod: '2026-09-05' },
   { pfad: '/impressum', prio: '0.2', frequenz: 'yearly' },
   { pfad: '/datenschutz', prio: '0.2', frequenz: 'yearly' },
   { pfad: '/agb', prio: '0.2', frequenz: 'yearly' },
@@ -36,6 +44,7 @@ async function baueSitemap(basis) {
   var eintraege = SEITEN.map(function (s) {
     return '  <url>\n' +
       '    <loc>' + xmlEscape(basis + s.pfad) + '</loc>\n' +
+      (s.lastmod ? '    <lastmod>' + s.lastmod + '</lastmod>\n' : '') +
       '    <changefreq>' + s.frequenz + '</changefreq>\n' +
       '    <priority>' + s.prio + '</priority>\n' +
       '  </url>\n';

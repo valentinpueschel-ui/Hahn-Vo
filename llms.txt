@@ -22,6 +22,13 @@
 - [Suchauftrag](https://hahn-vo.de/suchauftrag): Wunschuhr finden lassen
 - [Über uns](https://hahn-vo.de/ueber-uns): Gründer, Showroom, Kontakt
 - [Referenz-Checker](https://hahn-vo.de/referenz-checker): Referenznummer eingeben, Modell und Produktionszeitraum erfahren
+- [Marken](https://hahn-vo.de/marken): Übersicht aller Marken im Bestand, je Marke eine eigene Seite (z. B. https://hahn-vo.de/marken/rolex)
+- [Ratgeber](https://hahn-vo.de/ratgeber): Fachartikel der Gründer
+  - [Differenzbesteuerung bei Luxusuhren (§ 25a UStG)](https://hahn-vo.de/ratgeber/differenzbesteuerung)
+  - [Rolex Referenznummer und Seriennummer finden, lesen, prüfen](https://hahn-vo.de/ratgeber/rolex-referenznummer-seriennummer)
+  - [Echtheit prüfen und Full Set](https://hahn-vo.de/ratgeber/echtheit-pruefen-full-set)
+  - [Uhr verkaufen in Frankfurt: Ablauf des Ankaufs](https://hahn-vo.de/ratgeber/uhr-verkaufen-frankfurt)
+  - [Gebrauchte Luxusuhr kaufen: Checkliste](https://hahn-vo.de/ratgeber/gebrauchte-luxusuhr-kaufen-checkliste)
 - [Impressum](https://hahn-vo.de/impressum) · [Datenschutz](https://hahn-vo.de/datenschutz) · [AGB](https://hahn-vo.de/agb) · [Widerruf](https://hahn-vo.de/widerruf)
 
 ## Maschinenlesbare Daten

@@ -73,6 +73,7 @@ Ausblenden ohne Löschen: interner Code in `AUSSCHLUSS` (`api/katalog.js`).
 | `api/sitemap.js` | Sitemap aus dem Bestand |
 | `api/produkt.js` | liefert `/produkt?id=…` serverseitig aus `produkt-vorlage.html`: Titel, Beschreibung, Vorschaubild, schema.org Product/Breadcrumb, vorbefüllter Inhalt (5 min Edge-Cache) |
 | `api/marke.js` + `daten/marken.json` | Markenseiten `/marken` und `/marken/<slug>` aus `shop.html` als Vorlage: Kopf, Einleitungstext (aus der JSON, editierbar), vorbefülltes Raster, CollectionPage/ItemList |
+| `ratgeber/index.html`, `ratgeber/<slug>.html` | Ratgeber: Übersicht und fünf Artikel als fertige statische Seiten (absolute Pfade, Article/FAQPage/Breadcrumb-Daten). Neuer Artikel = bestehende Datei kopieren, dann Übersicht, `api/sitemap.js` (SEITEN mit lastmod) und `llms.txt` ergänzen |
 | `tools/serve.py` | lokaler Server (`serve.command`): saubere Adressen, `/produkt` aus der Vorlage |
 | `llms.txt`, `robots.txt` | Kurzbeschreibung für KI-Suchmaschinen; Crawler-Freigaben, Kasse ausgenommen |
 | `vercel.json` | saubere Adressen, Rewrites (`/api/katalog.json`, `/chrono24.xml`, `/sitemap.xml`), Weiterleitungen vom alten Shop |
@@ -107,5 +108,6 @@ Ausblenden ohne Löschen: interner Code in `AUSSCHLUSS` (`api/katalog.js`).
 | Resend | Konto auf info@hahntime.com | Mailversand der Formulare |
 | Chrono24 | Händlerkonto `hahnundvo` | Feed-Abnehmer (ob der Feed aktiv ist: mit Chrono24 klären) |
 
+Suchmaschinen: Search Console, Bing Webmaster und Google-Unternehmensprofil gehören auf Hannes' Konto — Anleitung und Begründung in `docs/Hahn-Vo-Google-Bing-Anmeldung.pdf` (Quelle `docs/suchmaschinen-anmeldung.html`).
 Details zur Übergabe: `docs/UEBERGABE.md`. Was schiefging und warum: `docs/PROBLEME-UND-LOESUNGEN.md`.
 Ältere Anleitungen (Domainumzug, Kasse, Siezen, Feed, Anfragen) liegen als `*.md` im Hauptordner.

@@ -169,3 +169,12 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 **G3 · Screenshots des Nutzers kommen manchmal nicht an.** → Kurz sagen, dass kein Bild angekommen ist, statt zu raten.
 
 **G4 · Der Auftrag ist die Wahrheit, nicht die Vermutung.** „Bild als zweites nehmen" heißt: genau dieses Bild an Position 2 — in Shopify UND in der lokalen Kopie, dann live ansehen.
+
+### H. Ratgeber und Kontrast (05.09.2026)
+
+- **Fünf Karten in zwei Spalten lassen eine graue Lücke** (Raster-Hintergrund `--line` scheint durch). Lösung: `.ratgeber-karte:last-child:nth-child(odd) { grid-column: 1 / -1 }` — die letzte Karte allein in der Reihe füllt beide Spalten.
+- **Statische Seiten in einem Unterordner (`ratgeber/`) brauchen absolute Pfade** (`/css/…`, `/js/…`, `/vendor/…`), sonst lädt nichts. Der `hv:kopf`-Block aus den Hauptseiten hat relative Preload-Pfade — beim Kopieren anpassen.
+- **Akkordeon der Startseite hängt an `window.FAQ`.** Für statische FAQ-Blöcke gibt es in `js/shell.js` den Handler für `.acc[data-acc-statisch]` — gleiches Markup, kein JSON.
+- **Lighthouse-Kontrast:** `--ink-60` (0,6) ergab 3,8:1 auf Creme, `--sold` #8B8B83 3,4:1 auf Weiß. Jetzt 0,72 bzw. #6C6C64 (≥ 4,5:1). Namen der Variablen unverändert gelassen, damit kein Selektor angefasst werden musste.
+- **Lokaler Server meldet 404 für `/api/katalog.json` und `/_vercel/insights/script.js`** — normal, beides gibt es nur auf Vercel. Die Seiten fallen auf `js/data.js` zurück.
+

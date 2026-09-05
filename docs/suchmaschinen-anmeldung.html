@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Hahn &amp; Vo — Google, Bing und der Karteneintrag</title>
+<style>
+  @font-face { font-family: 'Inter'; src: url('../vendor/fonts/inter-var.woff2') format('woff2'); font-weight: 100 900; }
+  @font-face { font-family: 'Marcellus'; src: url('../vendor/fonts/marcellus.woff2') format('woff2'); }
+  @page { size: A4; margin: 18mm 16mm 20mm 16mm; }
+  :root { --petrol: #0E334F; --petrol-deep: #0A2439; --creme: #FFFAE7; --ink: #15202B; --ink-60: #5B6670; --line: #D9DEE3; --ok: #1F7A4D; --warn: #B4531B; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: Inter, "Helvetica Neue", Arial, sans-serif; color: var(--ink); font-size: 10.6pt; line-height: 1.5; }
+  h1, h2, h3 { margin: 0; line-height: 1.2; }
+  h1 { font-family: Marcellus, Georgia, serif; font-weight: 400; font-size: 30pt; letter-spacing: 0.01em; color: var(--petrol); }
+  h2 { font-size: 17pt; font-weight: 650; color: var(--petrol); margin: 0 0 4mm; padding-bottom: 2mm; border-bottom: 2px solid var(--petrol); }
+  h3 { font-size: 11.5pt; font-weight: 650; margin: 0; }
+  p { margin: 0 0 2.6mm; }
+  ul, ol { margin: 0 0 2.6mm; padding-left: 5mm; }
+  li { margin: 0 0 1.2mm; }
+  code, .pfad { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9.2pt; background: #F1F3F5; padding: 0.4mm 1.4mm; border-radius: 2px; }
+  pre { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 9pt; background: #F1F3F5; padding: 2.4mm 3mm; border-radius: 3px; margin: 1.6mm 0 2.6mm; white-space: pre-wrap; border-left: 3px solid var(--petrol); }
+  .seite { page-break-after: always; }
+  .seite:last-child { page-break-after: auto; }
+  .kicker { font-size: 8.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-60); font-weight: 600; }
+
+  /* Deckblatt */
+  .deck { background: var(--petrol); color: var(--creme); margin: -18mm -16mm 7mm; padding: 21mm 16mm 11mm; }
+  .deck .meta { margin-top: 6mm; }
+  .deck p { max-width: 150mm; }
+  .deck .kicker { color: rgba(255,250,231,.7); }
+  .deck h1 { color: var(--creme); font-size: 34pt; margin: 6mm 0 3mm; }
+  .deck p { color: rgba(255,250,231,.85); max-width: 130mm; font-size: 11.5pt; }
+  .deck .meta { margin-top: 12mm; display: flex; gap: 12mm; font-size: 9.5pt; color: rgba(255,250,231,.75); }
+  .deck .meta b { display: block; color: var(--creme); font-weight: 650; }
+
+  /* Karten */
+  .karten { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 3mm 0 5mm; }
+  .karte { border: 1px solid var(--line); border-radius: 4px; padding: 3.2mm 3.6mm; background: #fff; }
+  .karte .kicker { margin-bottom: 1.2mm; }
+  .karte h3 { font-size: 12pt; color: var(--petrol); margin-bottom: 1mm; }
+  .karte .dauer { color: var(--ink-60); font-size: 9pt; }
+  .karte ul { margin: 1.6mm 0 0; padding-left: 4mm; font-size: 9.6pt; }
+
+  /* Schritte */
+  .schritt { display: grid; grid-template-columns: 11mm 1fr; gap: 3mm; padding: 3.4mm 0; border-top: 1px solid var(--line); page-break-inside: avoid; }
+  .schritt:first-of-type { border-top: 0; }
+  .nr { width: 9.5mm; height: 9.5mm; border-radius: 50%; background: var(--petrol); color: var(--creme); font-weight: 700; font-size: 11pt; display: flex; align-items: center; justify-content: center; }
+  .kopf { display: flex; align-items: baseline; gap: 2.4mm; flex-wrap: wrap; margin-bottom: 1.4mm; }
+  .wer { font-size: 8pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6mm 1.8mm; border-radius: 2px; }
+  .wer.h { background: #E6EEF4; color: var(--petrol); }
+  .wer.v { background: #F4EBE0; color: var(--warn); }
+  .wer.b { background: #E3F1E8; color: var(--ok); }
+  .zeit { font-size: 9pt; color: var(--ink-60); }
+  .fertig { margin-top: 1.4mm; padding: 1.6mm 2.4mm; background: var(--creme); border-left: 3px solid var(--petrol); font-size: 9.6pt; }
+  .fertig b { color: var(--petrol); }
+  .senden { margin-top: 1.4mm; font-size: 9.6pt; color: var(--warn); }
+  .senden b { font-weight: 700; }
+
+  /* Hinweise */
+  .hinweis { background: var(--creme); border-radius: 3px; padding: 2.6mm 3.4mm; margin: 2.6mm 0; font-size: 9.8pt; }
+  .hinweis b { color: var(--petrol); }
+  .achtung { background: #FBEFE6; border-left: 3px solid var(--warn); }
+  .achtung b { color: var(--warn); }
+
+  /* Tabellen */
+  table { width: 100%; border-collapse: collapse; margin: 1.6mm 0 3.6mm; font-size: 9.6pt; }
+  th, td { text-align: left; vertical-align: top; padding: 1.8mm 2.2mm; border-bottom: 1px solid var(--line); }
+  th { font-size: 8.5pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-60); font-weight: 600; }
+  td.k { width: 6mm; font-size: 12pt; color: var(--petrol); padding-top: 1.2mm; }
+
+  /* Diagramm */
+  .diagramm { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin: 3mm 0 4mm; }
+  .box { border: 1.5px solid var(--petrol); border-radius: 4px; padding: 2.6mm 3mm; font-size: 9.4pt; }
+  .box b { display: block; color: var(--petrol); font-size: 10.5pt; margin-bottom: 0.8mm; }
+  .box.mac { background: var(--creme); }
+  .pfeil { text-align: center; color: var(--ink-60); font-size: 9pt; margin: 0 0 3mm; }
+
+  .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .klein { font-size: 9.3pt; color: var(--ink-60); }
+</style>
+<style>
+  .warum { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; margin: 3mm 0 5mm; }
+  .warum .karte h3 { margin-bottom: 1.6mm; }
+  .warum .karte p { font-size: 9.6pt; margin-bottom: 1.6mm; }
+  .vorlage { background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--petrol); padding: 2.6mm 3.4mm; font-size: 9.6pt; margin: 1.6mm 0 3mm; white-space: pre-wrap; font-family: Inter, sans-serif; }
+  .zeit-gesamt { display: flex; gap: 8mm; margin: 2mm 0 4mm; font-size: 9.6pt; color: var(--ink-60); }
+  .zeit-gesamt b { color: var(--petrol); }
+</style>
+</head>
+<body>
+
+<section class="seite">
+  <div class="deck">
+    <div class="kicker">Hahn &amp; Vo OHG · hahn-vo.de</div>
+    <h1>Google, Bing und der Karteneintrag</h1>
+    <p>Drei kostenlose Anmeldungen, die entscheiden, ob Kunden in Frankfurt Hahn &amp; Vo finden — und ob wir sehen, wonach sie suchen. Warum sich das lohnt, und was du dafür tun musst.</p>
+    <div class="meta">
+      <div><b>Für</b>Hannes Hahn</div>
+      <div><b>Von</b>Valentin Püschel</div>
+      <div><b>Stand</b>5. September 2026</div>
+    </div>
+  </div>
+
+  <h2>Worum es geht</h2>
+  <div class="warum">
+    <div class="karte">
+      <div class="kicker">1 · Google</div>
+      <h3>Search Console</h3>
+      <p>Googles Werkstattzugang zur eigenen Website. Zeigt, mit welchen Suchbegriffen Leute auf hahn-vo.de kommen, welche Seiten in der Suche stehen und ob Google Fehler sieht.</p>
+      <div class="dauer">10 Minuten · einmalig</div>
+    </div>
+    <div class="karte">
+      <div class="kicker">2 · Microsoft</div>
+      <h3>Bing Webmaster Tools</h3>
+      <p>Dasselbe für Bing — und damit für Copilot, die ChatGPT-Suche, DuckDuckGo und Yahoo. Alle vier beziehen ihre Ergebnisse von Bing.</p>
+      <div class="dauer">3 Minuten · Import aus Google</div>
+    </div>
+    <div class="karte">
+      <div class="kicker">3 · Google Maps</div>
+      <h3>Unternehmensprofil</h3>
+      <p>Der Kasten mit Karte, Sternen, Fotos und Anruf-Knopf, der bei „Luxusuhren Frankfurt“ rechts oder ganz oben erscheint. Ohne Profil steht dort ein Wettbewerber.</p>
+      <div class="dauer">15 Minuten · Bestätigung dauert Tage</div>
+    </div>
+  </div>
+
+  <h2>Warum das für Hahn &amp; Vo wichtig ist</h2>
+  <h3>Wir sind blind, solange die Search Console fehlt</h3>
+  <p>Vercel zählt Besucher. Erst die Search Console zeigt, <b>woher</b> sie kommen: „Rolex Datejust 41 gebraucht“ oder „Uhr verkaufen Frankfurt“? Welche Produktseiten stehen in der Suche, welche nicht, und was kann Google nicht lesen? Außerdem reichen wir dort die Sitemap ein — dann kennt Google jede neue Uhr in Tagen statt Wochen. Bei laufend wechselndem Bestand entscheidet das, ob eine Uhr in der Suche steht, solange sie verkäuflich ist.</p>
+  <h3>Bing ist die KI-Suche</h3>
+  <p>Bing selbst ist in Deutschland klein. Aber Copilot, die ChatGPT-Suche, DuckDuckGo und Yahoo greifen auf den Bing-Index zu. Wer dort fehlt, fehlt in den Antworten, die immer mehr Leute statt der klassischen Suche lesen. Die Anmeldung übernimmt alles aus der Search Console — drei Minuten.</p>
+  <h3>Der Karteneintrag ist für einen Showroom der stärkste Hebel</h3>
+  <p>Bei „Luxusuhren Frankfurt“ oder „Rolex Ankauf Frankfurt“ zeigt Google zuerst die Karte mit drei Einträgen. Dort zählen Sterne, Fotos, Öffnungszeiten und Nähe, nicht die Website. Das Profil ist kostenlos, verlinkt hahn-vo.de, WhatsApp und Telefon, und jede Bewertung eines zufriedenen Käufers ist die sichtbarste Werbung, die es gibt. Ohne Profil schickt Google Kunden zu Wettbewerbern, die eines haben.</p>
+
+</section>
+
+<section class="seite">
+  <h2>Was du machst — Schritt für Schritt</h2>
+  <div class="hinweis"><b>Warum du das machen musst und nicht ich:</b> Alle drei Dienste verlangen den Inhaber. Sie gehören ans Firmenkonto, damit sie bei einem Wechsel des Dienstleisters bei dir bleiben. Ich bekomme danach Zugriff als Mitarbeiter und richte den Rest ein.</div>
+  <div class="zeit-gesamt"><span><b>Dauer:</b> etwa 30 Minuten am Stück</span><span><b>Du brauchst:</b> Zugang zu info@hahntime.com und zu GoDaddy (Domain)</span></div>
+
+  <div class="schritt">
+    <div class="nr">1</div>
+    <div>
+      <div class="kopf"><h3>Google-Konto für info@hahntime.com</h3><span class="wer h">Hannes</span><span class="zeit">5 Minuten</span></div>
+      <p>Falls es noch keines gibt: <span class="pfad">accounts.google.com</span> → „Konto erstellen“ → „Für mich“ → „Stattdessen aktuelle E-Mail-Adresse verwenden“ → <span class="pfad">info@hahntime.com</span>. Google schickt einen Code an diese Adresse. Kein Gmail-Postfach nötig — das Konto hängt an deiner bestehenden Adresse.</p>
+      <div class="fertig"><b>Fertig, wenn:</b> du dich mit info@hahntime.com bei Google anmelden kannst.</div>
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">2</div>
+    <div>
+      <div class="kopf"><h3>Search Console: hahn-vo.de bestätigen</h3><span class="wer h">Hannes</span><span class="zeit">10 Minuten</span></div>
+      <p><span class="pfad">search.google.com/search-console</span> → „Property hinzufügen“ → links <b>„Domain“</b> → <span class="pfad">hahn-vo.de</span> → Weiter. Google zeigt dir einen Text, der mit <span class="pfad">google-site-verification=</span> beginnt. Kopieren.</p>
+      <p>Dann bei GoDaddy: Meine Produkte → Domain hahn-vo.de → <b>DNS</b> → „Hinzufügen“ → Typ <b>TXT</b>, Name <span class="pfad">@</span>, Wert = der kopierte Text → Speichern. Zurück zur Search Console → „Bestätigen“. Klappt es nicht sofort, in einer Stunde noch einmal „Bestätigen“ drücken — DNS braucht manchmal etwas.</p>
+      <p class="klein">Wenn dir DNS nicht geheuer ist: stattdessen „URL-Präfix“ → <span class="pfad">https://hahn-vo.de</span> → Methode „HTML-Datei“ → die Datei mir schicken. Ich lege sie auf die Website, du klickst „Bestätigen“.</p>
+      <div class="fertig"><b>Fertig, wenn:</b> die Search Console „Inhaberschaft bestätigt“ meldet.</div>
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">3</div>
+    <div>
+      <div class="kopf"><h3>Sitemap einreichen und mich hinzufügen</h3><span class="wer h">Hannes</span><span class="zeit">3 Minuten</span></div>
+      <p>In der Search Console links „Sitemaps“ → <span class="pfad">https://hahn-vo.de/sitemap.xml</span> eintragen → Senden. Dann „Einstellungen“ → „Nutzer und Berechtigungen“ → „Nutzer hinzufügen“ → <span class="pfad">valentinpueschel@gmail.com</span>, Berechtigung „Uneingeschränkt“.</p>
+      <div class="fertig"><b>Fertig, wenn:</b> unter Sitemaps „Erfolgreich“ steht. Die Zahlen darunter füllen sich über die nächsten Tage.</div>
+    </div>
+  </div>
+
+</section>
+
+<section class="seite">
+  <h2>Weiter: Bing und der Karteneintrag</h2>
+  <div class="schritt">
+    <div class="nr">4</div>
+    <div>
+      <div class="kopf"><h3>Bing Webmaster Tools</h3><span class="wer h">Hannes</span><span class="zeit">3 Minuten</span></div>
+      <p><span class="pfad">bing.com/webmasters</span> → „Anmelden“ mit dem <b>Google-Konto</b> aus Schritt 1 → „Aus Google Search Console importieren“ → hahn-vo.de auswählen → Importieren. Bing übernimmt Bestätigung und Sitemap.</p>
+      <div class="fertig"><b>Fertig, wenn:</b> hahn-vo.de im Bing-Dashboard steht.</div>
+    </div>
+  </div>
+
+  <div class="schritt">
+    <div class="nr">5</div>
+    <div>
+      <div class="kopf"><h3>Google-Unternehmensprofil anlegen</h3><span class="wer h">Hannes</span><span class="zeit">15 Minuten + Bestätigung</span></div>
+      <p><span class="pfad">business.google.com</span> → „Jetzt verwalten“ → Name <b>Hahn &amp; Vo</b> → Kategorie <b>„Uhrengeschäft“</b> → „Ja, Kunden können mich an meinem Standort besuchen“ → Neue Mainzer Straße 46–50, 60311 Frankfurt am Main → Telefon <span class="pfad">+49 176 8421 1760</span> → Website <span class="pfad">https://hahn-vo.de</span>.</p>
+      <p>Google entscheidet, wie es bestätigt: per Video (du zeigst per Handy Eingang, Schild und Arbeitsplatz), per Postkarte an die Adresse (kommt beim Empfang von Tribes an — dort abholen) oder per Anruf. Danach ausfüllen: Öffnungszeiten „Nach Vereinbarung“ und Attribut <b>„Termin erforderlich“</b>, Beschreibung (Vorlage unten), 10 Fotos (Showroom, Gründer, drei Uhren, Gebäude), Terminlink <span class="pfad">https://hahn-vo.de/ueber-uns#showroom</span>.</p>
+      <p class="klein">Prüfe vorher, ob Google schon einen Eintrag „Hahn &amp; Vo“ kennt (Google-Suche nach dem Namen). Wenn ja: „Inhaber dieses Unternehmens?“ anklicken statt neu anlegen — sonst gibt es zwei Einträge.</p>
+      <div class="fertig"><b>Fertig, wenn:</b> das Profil „Bestätigt“ zeigt und du unter „Rezensionen erhalten“ einen Link kopieren kannst.</div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:6mm">Vorlagen</h2>
+  <h3>Beschreibung für das Unternehmensprofil</h3>
+  <div class="vorlage">Hahn &amp; Vo ist ein Händler für gebrauchte und neuwertige Luxusuhren in Frankfurt am Main. Rolex, Omega, IWC, Breitling, Tudor, Patek Philippe, A. Lange &amp; Söhne und weitere Manufakturen — jede Uhr geöffnet, auf Echtheit und Funktion geprüft, mit Echtheitszertifikat, 12 Monaten Garantie und 14 Tagen Rückgaberecht. Ankauf und Inzahlungnahme mit Angebot innerhalb von 12 Stunden, Suchaufträge für seltene Referenzen. Showroom im Garden Tower, 7. Etage, mitten im Bankenviertel — nach Terminvereinbarung, auch abends und am Wochenende.</div>
+
+  <h3>Bewertung erbitten — nach jeder Übergabe per WhatsApp</h3>
+  <div class="vorlage">Hallo [Name], vielen Dank für Ihr Vertrauen. Wenn Sie mit der [Uhr] und der Abwicklung zufrieden sind, freuen wir uns über eine kurze Google-Bewertung: [Link aus „Rezensionen erhalten“]. Das dauert eine Minute und hilft uns sehr. Herzliche Grüße, Hannes Hahn</div>
+  <p class="klein">Zehn echte Bewertungen mit Text schlagen jede Anzeige. Nie selbst schreiben, nie kaufen — Google erkennt das und sperrt das Profil.</p>
+
+</section>
+
+<section class="seite">
+  <h2>Was danach passiert</h2>
+  <table>
+    <tr><th>Wer</th><th>Was</th><th>Wann</th></tr>
+    <tr><td>Valentin / Claude</td><td>Prüft in der Search Console, ob Produktseiten, Markenseiten und Ratgeber indexiert sind; behebt gemeldete Fehler; reicht neue Seiten ein.</td><td>nach Schritt 3, dann monatlich</td></tr>
+    <tr><td>Google</td><td>Füllt die Search Console mit Suchbegriffen und Klicks. Erste Daten nach 2–3 Tagen, belastbar nach 4 Wochen.</td><td>laufend</td></tr>
+    <tr><td>Hannes</td><td>Hält das Unternehmensprofil lebendig: alle paar Wochen ein Foto oder ein „Beitrag“ mit einer neuen Uhr, jede Bewertung kurz beantworten.</td><td>10 Minuten pro Monat</td></tr>
+    <tr><td>Hannes</td><td>Schickt nach jeder Übergabe die Bewertungsbitte.</td><td>bei jedem Verkauf</td></tr>
+  </table>
+
+  <h2>Stolpersteine</h2>
+  <ul>
+    <li><b>Coworking-Adresse.</b> Google will Geschäfte sehen, die Kunden dort besuchen. Ein Schild „Hahn &amp; Vo“ am Büro oder am Empfang hilft bei der Video-Bestätigung. Lehnt Google die Adresse ab, legen wir das Profil als Unternehmen „mit Einzugsgebiet“ an — dann ohne Karte, aber mit allem anderen.</li>
+    <li><b>Firmensitz ≠ Showroom.</b> Ins Profil gehört der Showroom in Frankfurt, nicht die Offenbacher Adresse aus dem Impressum. Kunden suchen, wo sie hinfahren.</li>
+    <li><b>Doppelte Einträge</b> schaden beiden. Erst suchen, dann anlegen.</li>
+    <li><b>DNS-Bestätigung schlägt fehl?</b> Meist ist der TXT-Eintrag noch nicht überall angekommen. Eine Stunde warten, erneut „Bestätigen“. Der Eintrag muss bleiben — löschst du ihn später, verliert Google die Bestätigung.</li>
+    <li><b>Privatkonto statt Firmenkonto.</b> Alles auf info@hahntime.com, nichts auf ein privates Gmail. Sonst hängt der Karteneintrag an einer Person.</li>
+  </ul>
+
+  <div class="hinweis"><b>Wenn alles steht,</b> sag mir kurz Bescheid. Dann übernehme ich die Sitemap-Kontrolle, verknüpfe die Search Console mit der Website und schaue nach vier Wochen zum ersten Mal auf die Suchbegriffe — die legen fest, welche Ratgeber-Artikel als Nächstes sinnvoll sind.</div>
+</section>
+
+</body>
+</html>
