@@ -244,7 +244,7 @@
       name: p.brand + ' ' + p.name,
       desc: SHOWCASE_COPY[p.id] || schaufensterText(p),
       chips: chips,
-      avail: p.status === 'available' ? '1 von 1 · sofort verfügbar' : p.status === 'anfrage' ? '1 von 1 · auf Anfrage' : '1 von 1 · aktuell reserviert',
+      avail: p.status === 'available' ? '1 von 1 · sofort verfügbar' : p.status === 'anfrage' ? '1 von 1 · Kauf per Überweisung' : '1 von 1 · aktuell reserviert',
       img: p.images[0],
     };
   }

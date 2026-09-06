@@ -17,7 +17,7 @@ var MARKEN = require('../daten/marken.json');
 var SITE = 'https://hahn-vo.de';
 var VORLAGE = null;
 var EUR = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
-var STATUS = { available: 'Erhältlich', anfrage: 'Auf Anfrage', reserved: 'Reserviert', sold: 'Verkauft' };
+var STATUS = { available: 'Erhältlich', anfrage: 'Per Überweisung', reserved: 'Reserviert', sold: 'Verkauft' };
 
 function vorlage() {
   if (!VORLAGE) VORLAGE = fs.readFileSync(path.join(__dirname, '..', 'shop.html'), 'utf8');

@@ -156,10 +156,11 @@
       });
     }
   } else if (p.status === 'anfrage') {
-    /* Über ~10.000 USD läuft nichts über die Kasse (Shopify Payments) — der
-       Kaufknopf wird zur WhatsApp-Anfrage, daneben Anruf und Showroom. */
+    /* Über ~10.000 USD (rund 8.500 €) verarbeitet Shopify Payments nicht —
+       diese Uhren liegen in Shopify als Entwurf und werden per Banküberweisung
+       verkauft. Der Kaufknopf öffnet WhatsApp, daneben Anruf und Showroom. */
     add.dataset.mode = 'anfrage';
-    add.innerHTML = 'Per WhatsApp anfragen <span class="arr">→</span>';
+    add.innerHTML = 'Per Überweisung kaufen <span class="arr">→</span>';
     add.addEventListener('click', function () {
       var wa = document.getElementById('pdWhatsapp');
       if (wa) window.open(wa.href, '_blank', 'noopener');
@@ -197,7 +198,7 @@
       if (wa && barWa) barWa.href = wa.href;
       barBuy.disabled = add.disabled;
       barBuy.textContent = add.dataset.mode === 'checkout' ? 'Zur Kasse'
-        : add.dataset.mode === 'anfrage' ? 'WhatsApp anfragen'
+        : add.dataset.mode === 'anfrage' ? 'Per Überweisung'
         : (add.disabled ? add.textContent.trim() : 'In den Warenkorb');
       if (barWa) barWa.hidden = add.dataset.mode === 'anfrage';
     }

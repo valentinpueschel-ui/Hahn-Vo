@@ -48,7 +48,7 @@ function absolut(url) {
 
 var EUR = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
 
-var STATUS = { available: 'Erhältlich', anfrage: 'Auf Anfrage', reserved: 'Reserviert', sold: 'Verkauft' };
+var STATUS = { available: 'Erhältlich', anfrage: 'Per Überweisung', reserved: 'Reserviert', sold: 'Verkauft' };
 
 function kuerzen(text, max) {
   var t = String(text || '').replace(/\s+/g, ' ').trim();
@@ -243,10 +243,10 @@ function rendern(p) {
     VERSPRECHEN.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('');
   html = html.replace('<div class="pd-desc" id="pdDesc"></div>', '<div class="pd-desc" id="pdDesc">' + descHtml + '</div>');
 
-  /* Auf Anfrage: Kaufknopf wird zur WhatsApp-Anfrage, Hinweis sichtbar */
+  /* Kauf per Überweisung: Kaufknopf öffnet WhatsApp, Hinweis sichtbar */
   if (p.status === 'anfrage') {
     html = html.replace('<button class="btn btn-solid" data-magnetic id="addToCart">In den Warenkorb <span class="arr">→</span></button>',
-      '<button class="btn btn-solid" data-magnetic id="addToCart" data-mode="anfrage">Per WhatsApp anfragen <span class="arr">→</span></button>');
+      '<button class="btn btn-solid" data-magnetic id="addToCart" data-mode="anfrage">Per Überweisung kaufen <span class="arr">→</span></button>');
     html = html.replace('id="pdAnfrageNote" hidden', 'id="pdAnfrageNote"');
   }
   /* Verkauft/Reserviert: Hinweis gleich sichtbar, Knopf gleich richtig beschriftet */

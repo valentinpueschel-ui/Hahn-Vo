@@ -159,9 +159,10 @@ async function holeBestand() {
   return alle.concat(anfrageUhren(alle));
 }
 
-/* Uhren „auf Anfrage": Shopify Payments verarbeitet keine Waren über
- * 10.000 USD (Trust & Safety, 04.09.2026). Diese Uhren liegen in Shopify als
- * Entwurf — unsichtbar für Storefront und Kasse — und werden aus
+/* Uhren „per Überweisung": Shopify Payments verarbeitet keine Waren über
+ * 10.000 USD, rund 8.500 € (Trust & Safety, 04.09.2026; Entwurf gesetzt am
+ * 06.09.2026). Diese Uhren liegen in Shopify als Entwurf — unsichtbar für
+ * Storefront, Kasse und alle Verkaufskanäle — und werden aus
  * daten/anfrage-uhren.json gepflegt. Sie erscheinen auf der Website, im
  * Chrono24-Feed und in der Sitemap wie alle anderen, nur ohne Kaufknopf.
  * Solange eine Uhr in Shopify noch aktiv ist, gewinnt Shopify (kein Doppel). */
