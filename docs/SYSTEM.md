@@ -44,7 +44,10 @@ Danach: Website zeigt die Uhr binnen 5 Minuten, Chrono24 zieht sie beim nächste
 `verfuegbar` = Storefront `availableForSale` (Bestand > 0). Verkauft schlägt reserviert.
 Ausblenden ohne Löschen: interner Code in `AUSSCHLUSS` (`api/katalog.js`).
 
-**„Auf Anfrage"** (seit 05.09.): Shopify Payments verarbeitet keine Waren über 10.000 USD. Uhren ab ~8.500 € liegen in Shopify als **Entwurf** und in `daten/anfrage-uhren.json`; `api/_shop.js` hängt sie an den Bestand an (nur, wenn Shopify sie nicht selbst liefert). Website: Kennzeichen „Auf Anfrage", Kaufknopf = WhatsApp, kein Warenkorb. Chrono24-Feed, Sitemap, Markenseiten: normal. Pflege (Preis, verkauft) in der JSON-Datei.
+**„Per Überweisung"** (scharfgeschaltet 06.09.2026): Shopify Payments verarbeitet keine Waren über 10.000 USD, rund 8.500 €. Die betroffenen Uhren liegen in Shopify als **Entwurf** — damit aus Storefront und allen Verkaufskanälen raus, wie Shopify Trust & Safety es verlangt (Ticket 8142a75a) — und werden aus `daten/anfrage-uhren.json` gepflegt; `api/_shop.js` hängt sie an den Bestand an (nur, wenn Shopify sie nicht selbst liefert). Website: Kennzeichen „Per Überweisung", Kaufknopf öffnet WhatsApp, kein Warenkorb, keine Kasse. Chrono24-Feed, Sitemap, Markenseiten: normal. Pflege (Preis, verkauft) in der JSON-Datei.
+
+Interner Status heißt im Code weiterhin `anfrage` — nur die Beschriftung ist „Per Überweisung".
+**Rückweg**, sobald ein anderer Zahlungsanbieter aktiv ist: Produkte in Shopify wieder auf `ACTIVE` (`productUpdate(product:{id, status: ACTIVE})`), Eintrag aus `daten/anfrage-uhren.json` entfernen, `tools/fallback_bauen.py`, committen.
 
 ## Kennungen
 

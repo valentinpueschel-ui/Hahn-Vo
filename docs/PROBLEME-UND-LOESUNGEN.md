@@ -178,3 +178,12 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 - **Lighthouse-Kontrast:** `--ink-60` (0,6) ergab 3,8:1 auf Creme, `--sold` #8B8B83 3,4:1 auf Weiß. Jetzt 0,72 bzw. #6C6C64 (≥ 4,5:1). Namen der Variablen unverändert gelassen, damit kein Selektor angefasst werden musste.
 - **Lokaler Server meldet 404 für `/api/katalog.json` und `/_vercel/insights/script.js`** — normal, beides gibt es nur auf Vercel. Die Seiten fallen auf `js/data.js` zurück.
 
+### I. Shopify Payments und Waren über 10.000 USD (06.09.2026)
+
+- **Was passiert ist:** Shopify Trust & Safety hat die Auszahlungen des gesamten Shops eingefroren, weil Waren über 10.000 USD gelistet waren. Betroffen war auch eine bereits bezahlte Bestellung über 5.450 €.
+- **Wo die Regel steht:** nirgends öffentlich. Die Shopify-Payments-AGB verweisen auf die Listen der Abwickler (in Deutschland Stripe, PayPal, Adyen); dort stehen Uhren als *genehmigungspflichtig*, nicht als verboten. Eine Freigabe ist jederzeit widerrufbar.
+- **🚩 Nur EIN Kartenabwickler je Shop.** Shopify hat schriftlich bestätigt, dass sich Zahlungsanbieter nicht nach Produkt aufteilen lassen. Entweder Shopify Payments und keine Ware über 10.000 USD, oder vollständiger Wechsel.
+- **PayPal, Klarna und Banküberweisung sind eigene Gateways** und von der Sperre nicht betroffen. Nachweisbar an `order.transactions.gateway`: `paypal` bzw. `shopify_payments`. Der Connector darf `shopifyPaymentsAccount` nicht lesen (fehlende Berechtigung) — Auszahlungsstatus nur im Adminbereich sichtbar.
+- **Gelöst durch** `status: DRAFT` auf den zwölf betroffenen Produkten. Das nimmt sie aus Storefront und allen Verkaufskanälen, ist umkehrbar und erhält alle Daten. Nicht löschen.
+- **Mollie hat dieselbe Wand:** Kreditkarte maximal 10.000 € je Transaktion („default limit"). PayPal über Mollie ohne Anbieterlimit. Vor jedem Wechsel schriftlich klären: Warenkategorie, Höchstbetrag, Sicherheitseinbehaltung, Auszahlungsfrist, Haftung bei Rückbuchung.
+
