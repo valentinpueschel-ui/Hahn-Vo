@@ -187,3 +187,10 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 - **Gelöst durch** `status: DRAFT` auf den zwölf betroffenen Produkten. Das nimmt sie aus Storefront und allen Verkaufskanälen, ist umkehrbar und erhält alle Daten. Nicht löschen.
 - **Mollie hat dieselbe Wand:** Kreditkarte maximal 10.000 € je Transaktion („default limit"). PayPal über Mollie ohne Anbieterlimit. Vor jedem Wechsel schriftlich klären: Warenkategorie, Höchstbetrag, Sicherheitseinbehaltung, Auszahlungsfrist, Haftung bei Rückbuchung.
 
+### J. Kleinanzeigen liefert Bilder nicht mehr unter $_86.JPG (07.09.2026)
+
+- **Symptom:** `tools/inserat.py` meldet für jedes Bild „HTTP Error 404". Titel, Preis und Beschreibung kommen normal an.
+- **Ursache:** Die Fassung `?rule=$_86.JPG` gibt es nicht mehr. Von allen geprüften Regeln ($_86, $_59.JPG, $_57, $_35, $_72, $_2, $_20, $_0, $_1, $_3, $_27, ohne Regel) antwortet nur noch **`$_59.AUTO`** mit einem Bild, 960×960.
+- **Gelöst:** `KA_BILDREGELN` in `tools/inserat.py` — Kette `['$_86.JPG', '$_59.AUTO']`, größte zuerst, mit Rückfall. Kommt die große Fassung zurück, wird sie automatisch wieder genommen.
+- **🚩 Davon getrennt:** Bei frisch eingestellten Inseraten liefert Kleinanzeigens Bildserver für einen Teil der Fotos dauerhaft 404, obwohl der Galeriezähler alle zeigt. Geprüft mit direktem Abruf, mit der Browser-Sitzung (Cookies) und an der gerenderten Seite — die Bilder sind auch im echten Browser 0×0. Das ist kein Sperrproblem und lässt sich nicht umgehen. Dann später erneut lesen oder die Fotos über den Ordner-Eingang (`--ordner`) einspielen.
+

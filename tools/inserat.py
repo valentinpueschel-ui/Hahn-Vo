@@ -165,6 +165,11 @@ def lese_kleinanzeigen(url, sichtbar=True, versuche=6):
     return None
 
 
+# Bildfassungen von Kleinanzeigen, groesste zuerst. Stand 07.09.2026 liefert
+# nur $_59.AUTO ein Bild (960x960), alle anderen antworten mit 404.
+KA_BILDREGELN = ['$_86.JPG', '$_59.AUTO']
+
+
 def kleinanzeigen_eigene_bilder(urls):
     """Die eigene Galerie ist der erste $_59.AUTO-Block vor dem Verkäufer-Avatar."""
     eigene = []
@@ -200,11 +205,20 @@ def hole_kleinanzeigen(url, ziel, sichtbar):
     bilder = []
     for i, pfad in enumerate(pfade):
         datei = os.path.join(bilder_dir, '%02d.jpg' % i)
-        quelle = 'https://img.kleinanzeigen.de/api/v1/prod-ads/images/%s?rule=$_86.JPG' % pfad
-        try:
-            groesse = lade(quelle, datei, referer='https://www.kleinanzeigen.de/')
-        except Exception as e:
-            sag('  Bild %d nicht geladen: %s' % (i, str(e)[:80]))
+        quelle, groesse = None, 0
+        # Grösste zuerst. Seit 07.09.2026 liefert Kleinanzeigen nur noch
+        # $_59.AUTO (960x960); $_86.JPG antwortet mit 404. Die Kette bleibt,
+        # falls die grossen Fassungen zurueckkommen.
+        for regel in KA_BILDREGELN:
+            versuch = 'https://img.kleinanzeigen.de/api/v1/prod-ads/images/%s?rule=%s' % (pfad, regel)
+            try:
+                groesse = lade(versuch, datei, referer='https://www.kleinanzeigen.de/')
+                quelle = versuch
+                break
+            except Exception:
+                continue
+        if not quelle:
+            sag('  Bild %d nicht geladen (alle Fassungen 404)' % i)
             continue
         if groesse < 15000:  # Platzhalter oder Fehlerbild
             os.remove(datei)
