@@ -2454,42 +2454,6 @@ window.PRODUCTS = [
   "shopifyId": "10219713331528"
  },
  {
-  "id": "p8001",
-  "brand": "IWC",
-  "name": "Portugieser Automatic 7x Days",
-  "ref": "IW501702",
-  "price": 9390,
-  "listPrice": null,
-  "status": "anfrage",
-  "category": "uhren",
-  "fullset": "Full Set (Box & Papiere)",
-  "rating": "Sehr gut",
-  "year": "2024",
-  "size": "42 mm",
-  "material": "Edelstahl",
-  "dial": "Weiß",
-  "strap": "Leder",
-  "movement": "Automatik",
-  "caliber": "Automatik (Manufakturkaliber)",
-  "glass": "Saphirglas",
-  "gender": "Herren",
-  "tax": "Regelbesteuerung",
-  "sku": null,
-  "code": "546-26",
-  "added": "2026-08-25T08:55:38Z",
-  "desc": "Hier präsentieren wir die IWC Portugieser Automatic mit 7 Tagen Gangreserve aus dem Jahr 2024 im Full Set.\n\nDie neue IWC Portugieser Automatic ist flacher als das Vorgängermodell, und das Zifferblatt wirkt moderner. Durch das flachere Gehäuse trägt sich das Modell angenehmer am Handgelenk.\n\nAußerdem haben Sie bis April 2032 eine Garantie bei IWC.\nDer Listenpreis liegt aktuell bei 14.000 Euro.\n\nReferenz\nIW501702\n\nBaujahr\n2024\n\nDurchmesser\n42 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nLeder\n\nWerk\nAutomatik (Manufakturkaliber)\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\n546-26",
-  "images": [
-   "assets/products/p8001/0.jpg",
-   "assets/products/p8001/1.jpg",
-   "assets/products/p8001/2.jpg",
-   "assets/products/p8001/3.jpg",
-   "assets/products/p8001/4.jpg",
-   "assets/products/p8001/5.jpg",
-   "assets/products/p8001/6.jpg"
-  ],
-  "shopifyId": "10227037208904"
- },
- {
   "id": "p8007",
   "brand": "IWC",
   "name": "Ingenieur Automatic Aqua Green",
@@ -3158,6 +3122,42 @@ window.PRODUCTS = [
    "assets/products/p567/6.jpg"
   ],
   "shopifyId": "10261255848264"
+ },
+ {
+  "id": "p8001",
+  "brand": "IWC",
+  "name": "Portugieser Automatic 7x Days",
+  "ref": "IW501702",
+  "price": 9390,
+  "listPrice": null,
+  "status": "sold",
+  "category": "uhren",
+  "fullset": "Full Set (Box & Papiere)",
+  "rating": "Sehr gut",
+  "year": "2024",
+  "size": "42 mm",
+  "material": "Edelstahl",
+  "dial": "Weiß",
+  "strap": "Leder",
+  "movement": "Automatik",
+  "caliber": "Automatik (Manufakturkaliber)",
+  "glass": "Saphirglas",
+  "gender": "Herren",
+  "tax": "Regelbesteuerung",
+  "sku": null,
+  "code": "546-26",
+  "added": "2026-08-25T08:55:38Z",
+  "desc": "Hier präsentieren wir die IWC Portugieser Automatic mit 7 Tagen Gangreserve aus dem Jahr 2024 im Full Set.\n\nDie neue IWC Portugieser Automatic ist flacher als das Vorgängermodell, und das Zifferblatt wirkt moderner. Durch das flachere Gehäuse trägt sich das Modell angenehmer am Handgelenk.\n\nAußerdem haben Sie bis April 2032 eine Garantie bei IWC.\nDer Listenpreis liegt aktuell bei 14.000 Euro.\n\nReferenz\nIW501702\n\nBaujahr\n2024\n\nDurchmesser\n42 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nWeiß\n\nBand\nLeder\n\nWerk\nAutomatik (Manufakturkaliber)\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\n546-26",
+  "images": [
+   "assets/products/p8001/0.jpg",
+   "assets/products/p8001/1.jpg",
+   "assets/products/p8001/2.jpg",
+   "assets/products/p8001/3.jpg",
+   "assets/products/p8001/4.jpg",
+   "assets/products/p8001/5.jpg",
+   "assets/products/p8001/6.jpg"
+  ],
+  "shopifyId": "10227037208904"
  }
 ];
 
@@ -3351,7 +3351,6 @@ window.SHOPIFY = {
   "p5556": "10219858493768",
   "p5555": "10219858559304",
   "p393": "10219713331528",
-  "p8001": "10227037208904",
   "p8007": "10227041108296",
   "p458": "10219712151880",
   "p4808": "10219856724296",
@@ -3370,6 +3369,7 @@ window.SHOPIFY = {
   "p549": "10232659804488",
   "p553": "10238171545928",
   "p562": "10260249772360",
-  "p567": "10261255848264"
+  "p567": "10261255848264",
+  "p8001": "10227037208904"
  }
 };
