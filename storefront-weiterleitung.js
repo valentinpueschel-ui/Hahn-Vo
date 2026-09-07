@@ -7,9 +7,28 @@
  * Shopify hängt diese Datei über einen Script-Tag in alle Storefront-Seiten
  * ein. Die Kasse selbst bekommt sie nicht — dort laufen keine Script-Tags.
  * Zusätzlich sind unten die Pfade ausgenommen, die zum Kaufvorgang gehören.
+ *
+ * ─────────────────────────────────────────────────────────────────────────
+ * AUS seit 07.09.2026 — Shopify Trust & Safety, Ticket 8142a75a.
+ *
+ * Der Prüfer ruft die Ladenadresse des Shopify-Kontos auf, wird von hier
+ * nach hahn-vo.de geworfen, sieht dort die Uhren über 10.000 USD stehen und
+ * kann deshalb nicht bestätigen, dass sie aus dem Shopify-Laden entfernt
+ * wurden. Solange die Prüfung läuft, muss shop.hahn-vo.de für ihn erreichbar
+ * bleiben.
+ *
+ * WIEDER EINSCHALTEN, sobald Shopify die Prüfung geschlossen und die
+ * Auszahlung freigegeben hat: unten AKTIV auf true setzen, committen, pushen.
+ * Das Shopify-Theme lädt diese Datei unverändert von hahn-vo.de — im
+ * Adminbereich ist dafür nichts zu tun.
+ * ─────────────────────────────────────────────────────────────────────────
  */
 (function () {
   'use strict';
+
+  var AKTIV = false;   /* ← auf true = Weiterleitung wieder an */
+
+  if (!AKTIV) return;
 
   var ZIEL = 'https://hahn-vo.de';
 
