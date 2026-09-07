@@ -2637,42 +2637,6 @@ window.PRODUCTS = [
   "shopifyId": "10219859083592"
  },
  {
-  "id": "p567",
-  "brand": "Omega",
-  "name": "Constellation 33 mm Stahl/Gelbgold Jahr 1990",
-  "ref": "396.1080",
-  "price": 990,
-  "listPrice": null,
-  "status": "reserved",
-  "category": "uhren",
-  "fullset": "Nur Papiere",
-  "rating": "Sehr gut",
-  "year": "1990",
-  "size": "33 mm",
-  "material": "Edelstahl/Gelbgold",
-  "dial": "Weiß",
-  "strap": "Edelstahl",
-  "movement": "Quarz",
-  "caliber": null,
-  "glass": null,
-  "gender": "Herren",
-  "tax": "Differenzbesteuerung",
-  "sku": null,
-  "code": "567-26",
-  "added": "2026-09-04T02:23:35Z",
-  "desc": "Hier präsentieren wir die Omega Constellation in Edelstahl mit Gelbgold-Lünette, Ref. 396.1080, aus dem Jahr 1990 — weißes Zifferblatt mit den charakteristischen römischen Ziffern auf der Lünette. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\n33 mm Durchmesser, integriertes Edelstahlband, Quarzwerk. Geliefert mit originalen Omega-Papieren und Zertifikat. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 567-26",
-  "images": [
-   "assets/products/p567/0.jpg",
-   "assets/products/p567/1.jpg",
-   "assets/products/p567/2.jpg",
-   "assets/products/p567/3.jpg",
-   "assets/products/p567/4.jpg",
-   "assets/products/p567/5.jpg",
-   "assets/products/p567/6.jpg"
-  ],
-  "shopifyId": "10261255848264"
- },
- {
   "id": "p412",
   "brand": "Breitling",
   "name": "Avenger II GMT",
@@ -3158,6 +3122,42 @@ window.PRODUCTS = [
    "assets/products/p562/7.jpg"
   ],
   "shopifyId": "10260249772360"
+ },
+ {
+  "id": "p567",
+  "brand": "Omega",
+  "name": "Constellation 33 mm Stahl/Gelbgold Jahr 1990",
+  "ref": "396.1080",
+  "price": 990,
+  "listPrice": null,
+  "status": "sold",
+  "category": "uhren",
+  "fullset": "Nur Papiere",
+  "rating": "Sehr gut",
+  "year": "1990",
+  "size": "33 mm",
+  "material": "Edelstahl/Gelbgold",
+  "dial": "Weiß",
+  "strap": "Edelstahl",
+  "movement": "Quarz",
+  "caliber": null,
+  "glass": null,
+  "gender": "Herren",
+  "tax": "Differenzbesteuerung",
+  "sku": null,
+  "code": "567-26",
+  "added": "2026-09-04T02:23:35Z",
+  "desc": "Hier präsentieren wir die Omega Constellation in Edelstahl mit Gelbgold-Lünette, Ref. 396.1080, aus dem Jahr 1990 — weißes Zifferblatt mit den charakteristischen römischen Ziffern auf der Lünette. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\n33 mm Durchmesser, integriertes Edelstahlband, Quarzwerk. Geliefert mit originalen Omega-Papieren und Zertifikat. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 567-26",
+  "images": [
+   "assets/products/p567/0.jpg",
+   "assets/products/p567/1.jpg",
+   "assets/products/p567/2.jpg",
+   "assets/products/p567/3.jpg",
+   "assets/products/p567/4.jpg",
+   "assets/products/p567/5.jpg",
+   "assets/products/p567/6.jpg"
+  ],
+  "shopifyId": "10261255848264"
  }
 ];
 
@@ -3356,7 +3356,6 @@ window.SHOPIFY = {
   "p4808": "10219856724296",
   "p560": "10235514290504",
   "p440": "10219859083592",
-  "p567": "10261255848264",
   "p412": "10219713069384",
   "p357": "10219713626440",
   "p335": "10219713691976",
@@ -3370,6 +3369,7 @@ window.SHOPIFY = {
   "p9012": "10219858985288",
   "p549": "10232659804488",
   "p553": "10238171545928",
-  "p562": "10260249772360"
+  "p562": "10260249772360",
+  "p567": "10261255848264"
  }
 };
