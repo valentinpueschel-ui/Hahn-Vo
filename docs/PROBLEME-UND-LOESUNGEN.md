@@ -194,3 +194,11 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 - **Gelöst:** `KA_BILDREGELN` in `tools/inserat.py` — Kette `['$_86.JPG', '$_59.AUTO']`, größte zuerst, mit Rückfall. Kommt die große Fassung zurück, wird sie automatisch wieder genommen.
 - **🚩 Davon getrennt:** Bei frisch eingestellten Inseraten liefert Kleinanzeigens Bildserver für einen Teil der Fotos dauerhaft 404, obwohl der Galeriezähler alle zeigt. Geprüft mit direktem Abruf, mit der Browser-Sitzung (Cookies) und an der gerenderten Seite — die Bilder sind auch im echten Browser 0×0. Das ist kein Sperrproblem und lässt sich nicht umgehen. Dann später erneut lesen oder die Fotos über den Ordner-Eingang (`--ordner`) einspielen.
 
+### K. Shopify sieht den eigenen Laden nicht (07.09.2026)
+
+- **Symptom:** Trust & Safety konnte nicht bestätigen, dass die Uhren über 10.000 USD entfernt sind, obwohl sie längst Entwürfe waren. Begründung: „Your store URL redirects away from your Shopify store."
+- **Ursache:** `storefront-weiterleitung.js`. Die Datei liegt in **unserem** Repo und wird vom Shopify-Theme über `https://hahn-vo.de/storefront-weiterleitung.js` eingebunden. Sie wirft jeden Besucher von shop.hahn-vo.de auf hahn-vo.de — auch den Prüfer, der dort die teuren Uhren stehen sah.
+- **Gelöst:** Schalter `AKTIV = false` im Kopf der Datei, pushen. Kein Zugriff auf das Shopify-Theme nötig, weil das Theme die Datei unverändert von uns lädt.
+- **🚩 Nach der Prüfung wieder auf `true` setzen.** Sonst landen Kunden, die aus der Kasse zurückgehen, im nackten Shopify-Laden mit fremdem Aussehen und denselben Uhren.
+- **Prüfen lässt sich das ohne Adminzugang:** `curl -o /dev/null -w "%{http_code}" https://shop.hahn-vo.de/products/<handle>` — Entwürfe geben 404, aktive Produkte 200.
+
