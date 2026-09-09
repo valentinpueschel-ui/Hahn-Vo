@@ -1313,7 +1313,7 @@ window.PRODUCTS = [
   "brand": "Panerai",
   "name": "Radiomir Handaufzug 47mm",
   "ref": "PAM00662",
-  "price": 5490,
+  "price": 4990,
   "listPrice": null,
   "status": "available",
   "category": "uhren",
@@ -2567,6 +2567,36 @@ window.PRODUCTS = [
   "shopifyId": "10235514290504"
  },
  {
+  "id": "p577",
+  "brand": "Rolex",
+  "name": "Datejust 41 Jubilee Zifferblatt Silber Jahr 2026",
+  "ref": "126334",
+  "price": 13790,
+  "listPrice": null,
+  "status": "anfrage",
+  "category": "uhren",
+  "fullset": "Full Set (Box & Papiere)",
+  "rating": "Neu",
+  "year": "2026",
+  "size": "41 mm",
+  "material": "Edelstahl, Lünette Weißgold",
+  "dial": "Silber",
+  "strap": "Edelstahl (Jubilee)",
+  "movement": "Automatik",
+  "caliber": "3235",
+  "glass": null,
+  "gender": "Herren",
+  "tax": "Differenzbesteuerung",
+  "sku": null,
+  "code": "577-26",
+  "added": "2026-09-09T12:40:51Z",
+  "desc": "Hier präsentieren wir die Rolex Datejust 41, Ref. 126334, fabrikneu aus September 2026 im Full Set. Silbernes Zifferblatt, geriffelte Lünette aus Weißgold, Gehäuse und Jubilee-Band aus Edelstahl, 41 mm Durchmesser, Automatikwerk Kaliber 3235.\n\nGeliefert mit originalen Rolex-Papieren und originaler Rolex-Box. Es besteht noch die fünfjährige Rolex-Garantie, dazu kommen zwölf Monate Hausgarantie von uns.",
+  "images": [
+   "assets/products/p577/0.jpg"
+  ],
+  "shopifyId": "10274244886856"
+ },
+ {
   "id": "p440",
   "brand": "Breitling",
   "name": "Avenger Chronograph",
@@ -3392,6 +3422,7 @@ window.SHOPIFY = {
   "p458": "10219712151880",
   "p4808": "10219856724296",
   "p560": "10235514290504",
+  "p577": "10274244886856",
   "p440": "10219859083592",
   "p412": "10219713069384",
   "p357": "10219713626440",
@@ -3409,7 +3440,6 @@ window.SHOPIFY = {
   "p562": "10260249772360",
   "p567": "10261255848264",
   "p9177": "10219857510728",
-  "p8001": "10227037208904",
-  "p577": "10274244886856"
+  "p8001": "10227037208904"
  }
 };
