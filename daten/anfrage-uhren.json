@@ -426,6 +426,36 @@
     "assets/products/p560/7.jpg"
    ],
    "shopifyId": "10235514290504"
+  },
+  {
+   "id": "p577",
+   "brand": "Rolex",
+   "name": "Datejust 41 Jubilee Zifferblatt Silber Jahr 2026",
+   "ref": "126334",
+   "price": 13790,
+   "listPrice": null,
+   "status": "anfrage",
+   "category": "uhren",
+   "fullset": "Full Set (Box & Papiere)",
+   "rating": "Neu",
+   "year": "2026",
+   "size": "41 mm",
+   "material": "Edelstahl, Lünette Weißgold",
+   "dial": "Silber",
+   "strap": "Edelstahl (Jubilee)",
+   "movement": "Automatik",
+   "caliber": "3235",
+   "glass": null,
+   "gender": "Herren",
+   "tax": "Differenzbesteuerung",
+   "sku": "HV-P577",
+   "code": "577-26",
+   "added": "2026-09-09T12:40:51Z",
+   "desc": "Hier präsentieren wir die Rolex Datejust 41, Ref. 126334, fabrikneu aus September 2026 im Full Set. Silbernes Zifferblatt, geriffelte Lünette aus Weißgold, Gehäuse und Jubilee-Band aus Edelstahl, 41 mm Durchmesser, Automatikwerk Kaliber 3235.\n\nGeliefert mit originalen Rolex-Papieren und originaler Rolex-Box. Es besteht noch die fünfjährige Rolex-Garantie, dazu kommen zwölf Monate Hausgarantie von uns.",
+   "images": [
+    "assets/products/p577/0.jpg"
+   ],
+   "shopifyId": "10274244886856"
   }
  ]
 }
