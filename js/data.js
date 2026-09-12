@@ -1234,7 +1234,12 @@ window.PRODUCTS = [
    "assets/products/p4267/0.jpg",
    "assets/products/p4267/1.jpg",
    "assets/products/p4267/2.jpg",
-   "assets/products/p4267/3.jpg"
+   "assets/products/p4267/3.jpg",
+   "assets/products/p4267/4.jpg",
+   "assets/products/p4267/5.jpg",
+   "assets/products/p4267/6.jpg",
+   "assets/products/p4267/7.jpg",
+   "assets/products/p4267/8.jpg"
   ],
   "shopifyId": "10219858297160"
  },
