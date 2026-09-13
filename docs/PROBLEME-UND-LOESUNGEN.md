@@ -202,3 +202,12 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
 - **🚩 Nach der Prüfung wieder auf `true` setzen.** Sonst landen Kunden, die aus der Kasse zurückgehen, im nackten Shopify-Laden mit fremdem Aussehen und denselben Uhren.
 - **Prüfen lässt sich das ohne Adminzugang:** `curl -o /dev/null -w "%{http_code}" https://shop.hahn-vo.de/products/<handle>` — Entwürfe geben 404, aktive Produkte 200.
 
+### L. Ausgetauschte Bilder kommen beim Kunden nicht an (13.09.2026)
+
+- **Symptom:** Nach einem Bildtausch zeigt die Produktseite bei manchen Besuchern weiter das alte Foto, obwohl Datei und Katalog live stimmen. Bei uns sah alles richtig aus, bei Hannes nicht.
+- **Ursache:** `vercel.json` schickte für `/assets/products/(.*)` `max-age=86400, stale-while-revalidate=86400` mit. Da ein Austausch den **Dateinamen nicht ändert** (`0.jpg` bleibt `0.jpg`), behält der Browser die alte Datei bis zu **48 Stunden**. Prüfen mit `curl -sI <bild-url>` — `age:` und `x-vercel-cache: HIT` verraten es.
+- **Gelöst, zweifach:**
+  1. **Sofort:** versionierte Adresse. In `daten/anfrage-uhren.json` die Bildpfade mit `?v=2` versehen (beim nächsten Mal `?v=3`). Neue Adresse = neuer Zwischenspeicher, wirkt für alle sofort.
+  2. **Dauerhaft:** Frist auf `/assets/products/` von 24 h auf **1 h** gesenkt. Der Edge-Cache bleibt über `stale-while-revalidate` erhalten, die Seite bleibt schnell.
+- **🚩 Betrifft nur Uhren „per Überweisung".** Normale Uhren bekommen ihre Bilder von der Shopify-Adresse mit jedes Mal neuem Dateinamen — dort gibt es das Problem nicht. Beim Geben der Bilder an Shopify trotzdem ein `?v=` anhängen, sonst holt Shopify selbst eine alte Fassung.
+
