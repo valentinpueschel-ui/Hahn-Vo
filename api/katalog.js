@@ -13,13 +13,23 @@ var shop = require('./_shop');
 /* Uhren, die nicht im Shop erscheinen sollen — interne Codes. */
 var AUSSCHLUSS = ['570-26'];
 
+/* Rückfall für das Metafeld uhr.hinweis. Nach dem Anlegen einer neuen
+ * Metafeld-Definition dauert es je nach Region bis zu einer Stunde, bis die
+ * Storefront-API sie ausliefert (14.09.2026: lokal sofort da, aus der
+ * Vercel-Region eine Stunde lang nicht). Damit ein Zusatz von Hannes trotzdem
+ * sofort auf der Seite steht, darf er zusätzlich in daten/hinweise.json
+ * stehen. Shopify gewinnt immer. */
+function hinweisRueckfall() {
+  try { return require('../daten/hinweise.json'); } catch (e) { return {}; }
+}
+
 /* Aus einer Shopify-Kennung eine dauerhafte Uhren-Kennung bilden, falls die
  * Uhr noch nicht in js/data.js steht. „s" plus Kennung bleibt stabil. */
 function ersatzKennung(shopifyId) {
   return 's' + String(shopifyId).slice(-7);
 }
 
-function nachWebsiteForm(p, kennungen) {
+function nachWebsiteForm(p, kennungen, rueckfall) {
   var f = p.f;
   if (f.code && AUSSCHLUSS.indexOf(f.code) !== -1) return null;
   if (!p.preis) return null;
@@ -32,8 +42,10 @@ function nachWebsiteForm(p, kennungen) {
   var reserviert = /^(ja|yes|1|true)$/i.test(String(f.reserviert || '').trim());
   var status = !p.verfuegbar ? 'sold' : (p.anfrage ? 'anfrage' : (reserviert ? 'reserved' : 'available'));
 
+  var kennung = kennungen[p.shopifyId] || ersatzKennung(p.shopifyId);
+
   return {
-    id: kennungen[p.shopifyId] || ersatzKennung(p.shopifyId),
+    id: kennung,
     brand: p.marke,
     name: p.modell,
     ref: f.referenz || null,
@@ -61,7 +73,7 @@ function nachWebsiteForm(p, kennungen) {
     /* Freier Hinweis je Uhr (Metafeld uhr.hinweis) — wird auf der Produktseite
      * sichtbar unter der Beschreibung gezeigt. Der Fliesstext aus Shopify wird
      * dort absichtlich nicht angezeigt, deshalb dieses eigene Feld. */
-    note: f.hinweis || null,
+    note: f.hinweis || (rueckfall || {})[kennung] || null,
     images: p.bilder,
     shopifyId: p.shopifyId,
     shopifyVariantId: p.variantId,
@@ -71,10 +83,11 @@ function nachWebsiteForm(p, kennungen) {
 async function baueKatalog(basis) {
   var bestand = await shop.holeBestand();
   var kennungen = await shop.holeKennungen(basis);
+  var rueckfall = hinweisRueckfall();
   var uhren = [];
   var zuordnung = {};
   bestand.forEach(function (p) {
-    var u = nachWebsiteForm(p, kennungen);
+    var u = nachWebsiteForm(p, kennungen, rueckfall);
     if (!u) return;
     uhren.push(u);
     zuordnung[u.id] = u.shopifyId;
@@ -85,7 +98,6 @@ async function baueKatalog(basis) {
   return {
     stand: new Date().toISOString(),
     anzahl: uhren.length,
-    _felder: shop.FELDER,   /* vorübergehend: prüft, welcher Stand von _shop.js läuft */
     produkte: uhren,
     shopify: zuordnung,
   };
