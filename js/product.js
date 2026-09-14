@@ -294,6 +294,18 @@
       .split('\n').map(function (t) { return t.trim(); }).filter(Boolean);
   }
 
+  /* Hinweis zu dieser einen Uhr (Metafeld uhr.hinweis). Steht bewusst als
+     eigenes Feld da: Der Fliesstext aus Shopify wird oben abgeschnitten,
+     ein Zusatz von Hannes soll aber sichtbar sein. Absätze mit Leerzeile. */
+  var hinweisHtml = '';
+  if (p.note) {
+    hinweisHtml = '<h2>Besonderheiten</h2>' + String(p.note).split(/\n\s*\n|\n/)
+      .map(function (t) { return t.trim(); }).filter(Boolean)
+      .map(function (t) {
+        return '<p>' + t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>';
+      }).join('');
+  }
+
   document.getElementById('pdDesc').innerHTML =
     (punkte.length
       ? '<h2>Zustand im Detail</h2><ul class="pd-cond">' + punkte.map(function (t) {
@@ -303,6 +315,7 @@
             : '<li><span>' + t + '</span></li>';
         }).join('') + '</ul>'
       : '') +
+    hinweisHtml +
     '<h2 class="pd-promise">Unser Versprechen</h2>' +
     VERSPRECHEN.map(function (t) { return '<p>' + t + '</p>'; }).join('');
 

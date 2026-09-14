@@ -58,6 +58,10 @@ function nachWebsiteForm(p, kennungen) {
     /* Anlagedatum aus Shopify — Grundlage fuer „Neueste zuerst". */
     added: p.angelegt || null,
     desc: p.beschreibung || '',
+    /* Freier Hinweis je Uhr (Metafeld uhr.hinweis) — wird auf der Produktseite
+     * sichtbar unter der Beschreibung gezeigt. Der Fliesstext aus Shopify wird
+     * dort absichtlich nicht angezeigt, deshalb dieses eigene Feld. */
+    note: f.hinweis || null,
     images: p.bilder,
     shopifyId: p.shopifyId,
     shopifyVariantId: p.variantId,

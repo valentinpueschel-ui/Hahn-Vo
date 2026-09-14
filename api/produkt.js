@@ -239,6 +239,12 @@ function rendern(p) {
           : '<li><span>' + esc(t) + '</span></li>';
       }).join('') + '</ul>'
     : '') +
+    /* Hinweis zu dieser einen Uhr (Metafeld uhr.hinweis) — siehe js/product.js. */
+    (p.note
+      ? '<h2>Besonderheiten</h2>' + String(p.note).split(/\n\s*\n|\n/)
+          .map(function (t) { return t.trim(); }).filter(Boolean)
+          .map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('')
+      : '') +
     '<h2 class="pd-promise">Unser Versprechen</h2>' +
     VERSPRECHEN.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('');
   html = html.replace('<div class="pd-desc" id="pdDesc"></div>', '<div class="pd-desc" id="pdDesc">' + descHtml + '</div>');

@@ -211,3 +211,16 @@ diese Datei erklärt, warum sie da sind. Lesen, bevor man etwas „vereinfacht".
   2. **Dauerhaft:** Frist auf `/assets/products/` von 24 h auf **1 h** gesenkt. Der Edge-Cache bleibt über `stale-while-revalidate` erhalten, die Seite bleibt schnell.
 - **🚩 Betrifft nur Uhren „per Überweisung".** Normale Uhren bekommen ihre Bilder von der Shopify-Adresse mit jedes Mal neuem Dateinamen — dort gibt es das Problem nicht. Beim Geben der Bilder an Shopify trotzdem ein `?v=` anhängen, sonst holt Shopify selbst eine alte Fassung.
 
+
+### M. Ein Zusatztext steht in Shopify, aber niemand sieht ihn (14.09.2026)
+
+- **Symptom:** Valentin gibt einen Satz vor („Die Uhr erhielt bei Omega eine vollständige Revision …"), der Satz steht nachweislich in der Shopify-Beschreibung und in `/api/katalog.json` — auf der Produktseite ist er trotzdem nicht zu finden.
+- **Ursache:** Die Produktseite zeigt den Shopify-Fließtext **absichtlich nicht**. `js/product.js` schneidet die Beschreibung am Satz „Unsere Bilder sind unbearbeitet …" ab und rendert danach nur noch die Zustandsliste („Alle wichtigen Details auf einen Blick:") und den festen Block „Unser Versprechen". Dasselbe in `api/produkt.js` für die serverseitige Fassung. Das war 2026 eine bewusste Entscheidung, weil der Fließtext bei fast allen Uhren nur das Datenblatt darüber wiederholte.
+- **Gelöst:** eigenes Metafeld **`uhr.hinweis`** (`multi_line_text_field`). Es kommt über `FELDER` in `api/_shop.js` und `note` in `api/katalog.js` auf die Seite und wird in `js/product.js` und `api/produkt.js` als Abschnitt **„Besonderheiten"** über „Unser Versprechen" gerendert. In `uhr.json` heißt das Feld `hinweis` (oberste Ebene), `tools/uhr.py` schreibt es beim Anlegen mit.
+- **🚩 Merksatz:** Was der Kunde lesen soll, gehört in `hinweis` — nicht nur in `absaetze`. Die Absätze wirken auf Meta-Description, Chrono24-Feed und Shopify, nicht auf die sichtbare Produktseite.
+
+### N. „Full Set" bei Revisionspapieren (14.09.2026)
+
+- **Symptom:** p349 (Omega Aqua Terra) stand als „Full Set (Box & Papiere)" auf der Seite. Das Inserat nannte aber nur „Omega Revisionspapiere aus dem 31. August 2026" und die Box — keine Originalpapiere.
+- **Gelöst:** neuer Auswahlwert **`Box & Revisionspapiere`** in der Shopify-Metafeld-Definition `uhr.lieferumfang` (`metafieldDefinitionUpdate`, Auswahlliste ergänzt), in `WAHL` in `tools/uhr.py` und in `LIEFERUMFANG` in `api/chrono24.js` (dort `original_papers: no`, `original_box: yes` — Chrono24 meint mit „Papiere" die Garantiekarte ab Werk).
+- **🚩 Regel:** „Full Set" nur mit **Original**papieren. Service- oder Revisionsbelege sind keine.

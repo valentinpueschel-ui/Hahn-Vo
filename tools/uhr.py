@@ -57,7 +57,10 @@ LIEFERSATZ = 'Der vollständige Lieferumfang ist auf den Bildern ersichtlich.'
 WAHL = {
     'aufzug': ['Automatik', 'Handaufzug', 'Quarz', 'Solar'],
     'zustand': ['Neu', 'Ungetragen', 'Sehr gut', 'Gut', 'Befriedigend', 'Defekt oder unvollständig'],
-    'lieferumfang': ['Full Set (Box & Papiere)', 'Nur Papiere', 'Nur Box', 'Nur Uhr'],
+    # „Box & Revisionspapiere": Box ja, aber statt Originalpapieren nur ein
+    # Service-/Revisionsbeleg vom Hersteller. Nicht als Full Set ausgeben
+    # (Korrektur vom 14.09.2026, p349 Aqua Terra).
+    'lieferumfang': ['Full Set (Box & Papiere)', 'Box & Revisionspapiere', 'Nur Papiere', 'Nur Box', 'Nur Uhr'],
     'besteuerung': ['Differenzbesteuerung', 'Regelbesteuerung'],
     'geschlecht': ['Herren', 'Damen', 'Unisex'],
     'glas': ['Saphirglas', 'Mineralglas', 'Plexiglas', 'Kunststoff'],
@@ -307,7 +310,7 @@ def gq(s):
     return json.dumps(str(s), ensure_ascii=False)
 
 
-def metafelder_literal(felder, code, besteuerung):
+def metafelder_literal(felder, code, besteuerung, hinweis=None):
     teile = []
     for k, v in felder.items():
         if v in (None, ''):
@@ -316,6 +319,11 @@ def metafelder_literal(felder, code, besteuerung):
         teile.append('{namespace: "uhr", key: %s, type: "%s", value: %s}' % (gq(k), typ, gq(v)))
     teile.append('{namespace: "uhr", key: "code", type: "single_line_text_field", value: %s}' % gq(code))
     teile.append('{namespace: "uhr", key: "besteuerung", type: "single_line_text_field", value: %s}' % gq(besteuerung))
+    # Freier Zusatz von Hannes. Der Fliesstext aus Shopify wird auf der
+    # Produktseite absichtlich nicht gezeigt — nur dieses Feld erscheint dort
+    # sichtbar unter „Besonderheiten".
+    if hinweis:
+        teile.append('{namespace: "uhr", key: "hinweis", type: "multi_line_text_field", value: %s}' % gq(hinweis))
     return '[' + ', '.join(teile) + ']'
 
 
@@ -325,7 +333,7 @@ def m_product_create(u):
             'descriptionHtml: %s, metafields: %s }) { product { id title variants(first: 1) { nodes { id inventoryItem { id } } } } '
             'userErrors { field message } } }'
             % (gq(u['titel']), gq(u['marke']), gq(u['produkttyp']), tags, gq(u['beschreibung_html']),
-               metafelder_literal(u['felder'], u['code'], u['besteuerung'])))
+               metafelder_literal(u['felder'], u['code'], u['besteuerung'], u.get('hinweis'))))
 
 
 def m_einrichten(u, ids):

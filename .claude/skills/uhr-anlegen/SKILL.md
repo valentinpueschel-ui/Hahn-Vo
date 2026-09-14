@@ -42,7 +42,8 @@ Feste Regeln:
 - **Interner Code** = Hannes' Artikelnummer aus dem Inserat (Verwendungszweck, „Interner Code"). Fehlt er, nachfragen — nicht ausdenken; er ist Chrono24-Artikelnummer und Überweisungszweck.
 - **Titel** beginnt mit der Marke in der Schreibweise aus `api/_shop.js` (MARKEN). Unbekannte Marke → dort eintragen, sonst fehlt die Uhr im Markenfilter.
 - **Besteuerung, Dreistufenregel:** § 25a im Inseratstext → Differenzbesteuerung. Sonst Code/Referenz in `daten/differenzbesteuerung.csv` → Differenzbesteuerung. Sonst Regelbesteuerung. Das Skript prüft das nach und blockt Abweichungen ohne Begründung.
-- **Lieferumfang** nach Text UND Bildern. „Full Set" nur mit Box und Papieren.
+- **Lieferumfang** nach Text UND Bildern. „Full Set" nur mit Box und **Original**papieren. Sind es Service-/Revisionsbelege statt Garantiekarte → `Box & Revisionspapiere` (Fehler vom 14.09.2026 bei p349).
+- **`hinweis`** (optional, oberste Ebene in `uhr.json`): Steht im Auftrag „das bitte noch als Zusatz hinzufügen", gehört der Satz **hierhin**, nicht nur in die Absätze. Die Produktseite zeigt den Shopify-Fließtext bewusst nicht — sichtbar wird allein die Zustandsliste, dieses Feld („Besonderheiten") und „Unser Versprechen". Absätze durch eine Leerzeile trennen.
 - **Geschlecht:** nennt das Inserat nichts, unter 34 mm eher Damen; 34–36 mm Unisex vertretbar; sonst Herren. Unsicherheit im Bericht nennen.
 - **Absätze:** 1–2 Absätze in ganzen Sätzen aus dem Inserat. Ohne den Satz „Unsere Bilder sind unbearbeitet …" und ohne die Überweisungszeile — das hängt das Skript an. Steht im Inserat eine **fremde Marke** (Vorlagenfehler: „Rolex GMT-Master" bei einer Omega, Platzhalter „(Optional 1-2 Sätze …)"), den Text NICHT übernehmen, aus den Datenzeilen selbst schreiben und den Fehler im Bericht melden, damit Hannes das Inserat korrigiert.
 

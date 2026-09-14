@@ -108,6 +108,9 @@ var FARBE = {
 /* Lieferumfang → Papiere und Box getrennt. */
 var LIEFERUMFANG = {
   'full set (box & papiere)': { papiere: true, box: true },
+  /* Revisionspapiere sind keine Originalpapiere im Sinne von Chrono24 —
+     das Feld meint Garantiekarte/Kaufbeleg ab Werk. */
+  'box & revisionspapiere': { papiere: false, box: true },
   'nur papiere': { papiere: true, box: false },
   'nur box': { papiere: false, box: true },
   'nur uhr': { papiere: false, box: false },
