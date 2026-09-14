@@ -85,6 +85,7 @@ async function baueKatalog(basis) {
   return {
     stand: new Date().toISOString(),
     anzahl: uhren.length,
+    _felder: shop.FELDER,   /* vorübergehend: prüft, welcher Stand von _shop.js läuft */
     produkte: uhren,
     shopify: zuordnung,
   };
