@@ -2531,7 +2531,7 @@ window.PRODUCTS = [
   "code": "349",
   "added": "2026-09-14T03:39:49Z",
   "desc": "Hier präsentieren wir die Omega Seamaster Aqua Terra, Ref. 231.10.42.21.01.003, mit schwarzem Zifferblatt im Teak-Muster. Gehäuse und Band aus Edelstahl, 41 mm Durchmesser, Manufakturkaliber 8500 mit Sichtboden. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nDie Uhr erhielt bei Omega eine vollständige Revision im Wert von knapp 700 Euro und verfügt noch bis zum 30. August 2028 über eine Herstellergarantie. Seit der Revision ist die Uhr noch original von Omega verklebt. Geliefert mit der originalen Omega-Box und den Omega-Revisionspapieren vom 31. August 2026. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 349",
-  "note": null,
+  "note": "Die Uhr erhielt bei Omega eine vollständige Revision im Wert von knapp 700 Euro und verfügt noch bis zum 30. August 2028 über eine Herstellergarantie.\n\nSeit der Revision ist die Uhr noch original von Omega verklebt!!",
   "images": [
    "assets/products/p349/0.jpg",
    "assets/products/p349/1.jpg",
@@ -2569,7 +2569,7 @@ window.PRODUCTS = [
   "code": "580-26",
   "added": "2026-09-14T03:58:57Z",
   "desc": "Hier präsentieren wir die IWC Aquatimer Split Minute Chronograph, Ref. IW372301, aus dem Jahr 2005 im Full Set. Schwarzes Zifferblatt mit gelben Akzenten, Gehäuse und Band aus Titan, 44 mm Durchmesser, Automatikwerk. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nDie IWC kommt mit einem originalen IWC Kautschukband und Dornschließe. Geliefert mit den originalen IWC-Papieren und der originalen IWC-Box; die Box ist stark gebraucht. Zustand der Uhr: gut. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 580-26",
-  "note": null,
+  "note": "Die IWC kommt mit einem originalen IWC Kautschukband und Dornschließe.",
   "images": [
    "assets/products/p580/0.jpg",
    "assets/products/p580/1.jpg",

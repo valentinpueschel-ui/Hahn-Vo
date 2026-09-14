@@ -87,6 +87,7 @@ Interner Status heißt im Code weiterhin `anfrage` — nur die Beschriftung ist 
 | `tools/fallback_bauen.py` | Rückfalldatei aus Shopify, lokale Zuordnung gewinnt |
 | `tools/einrichten.sh` | Umgebung prüfen |
 | `daten/differenzbesteuerung.csv` | Hannes' Liste der differenzbesteuerten Uhren (ohne Seriennummern) |
+| `daten/hinweise.json` | Rückfall für das Metafeld `uhr.hinweis` (Abschnitt „Besonderheiten" auf der Produktseite). Shopify gewinnt; die Datei greift nur, solange Shopify ein frisch angelegtes Metafeld noch nicht ausliefert |
 | `.claude/skills/*` | die fünf Skills |
 | `CLAUDE.md` | Regeln und Kurzfassung für jede Claude-Sitzung |
 
