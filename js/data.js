@@ -2801,45 +2801,6 @@ window.PRODUCTS = [
   "shopifyId": "10219713331528"
  },
  {
-  "id": "p8007",
-  "brand": "IWC",
-  "name": "Ingenieur Automatic Aqua Green",
-  "ref": "IW328903",
-  "price": 9290,
-  "listPrice": null,
-  "status": "anfrage",
-  "category": "uhren",
-  "fullset": "Full Set (Box & Papiere)",
-  "rating": "Sehr gut",
-  "year": "2023",
-  "size": "40 mm",
-  "material": "Edelstahl",
-  "dial": "Aqua Green",
-  "strap": "Edelstahl",
-  "movement": "Automatik",
-  "caliber": "32111",
-  "glass": "Saphirglas",
-  "gender": "Herren",
-  "tax": "Regelbesteuerung",
-  "sku": null,
-  "code": "542-26",
-  "added": "2026-08-25T09:02:10Z",
-  "desc": "Hier präsentieren wir die IWC Ingenieur Automatic aus dem Jahr 2023 im Full Set.\n\nReferenz\nIW328903\n\nBaujahr\n2023\n\nDurchmesser\n40 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nAqua Green\n\nBand\nEdelstahl\n\nWerk\nAutomatik (Manufakturkaliber)\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\n542-26",
-  "note": null,
-  "images": [
-   "assets/products/p8007/0.jpg",
-   "assets/products/p8007/1.jpg",
-   "assets/products/p8007/2.jpg",
-   "assets/products/p8007/3.jpg",
-   "assets/products/p8007/4.jpg",
-   "assets/products/p8007/5.jpg",
-   "assets/products/p8007/6.jpg",
-   "assets/products/p8007/7.jpg",
-   "assets/products/p8007/8.jpg"
-  ],
-  "shopifyId": "10227041108296"
- },
- {
   "id": "p458",
   "brand": "Rolex",
   "name": "Datejust 36, blaues Zifferblatt, Jubilee",
@@ -3680,6 +3641,45 @@ window.PRODUCTS = [
    "assets/products/p8001/6.jpg"
   ],
   "shopifyId": "10227037208904"
+ },
+ {
+  "id": "p8007",
+  "brand": "IWC",
+  "name": "Ingenieur Automatic Aqua Green",
+  "ref": "IW328903",
+  "price": 9290,
+  "listPrice": null,
+  "status": "sold",
+  "category": "uhren",
+  "fullset": "Full Set (Box & Papiere)",
+  "rating": "Sehr gut",
+  "year": "2023",
+  "size": "40 mm",
+  "material": "Edelstahl",
+  "dial": "Aqua Green",
+  "strap": "Edelstahl",
+  "movement": "Automatik",
+  "caliber": "32111",
+  "glass": "Saphirglas",
+  "gender": "Herren",
+  "tax": "Regelbesteuerung",
+  "sku": null,
+  "code": "542-26",
+  "added": "2026-08-25T09:02:10Z",
+  "desc": "Hier präsentieren wir die IWC Ingenieur Automatic aus dem Jahr 2023 im Full Set.\n\nReferenz\nIW328903\n\nBaujahr\n2023\n\nDurchmesser\n40 mm\n\nGehäuse\nEdelstahl\n\nZifferblatt\nAqua Green\n\nBand\nEdelstahl\n\nWerk\nAutomatik (Manufakturkaliber)\n\nLieferumfang\nFull Set (Box & Papiere)\n\nZustand\nSehr gut\n\nInterner Code\n542-26",
+  "note": null,
+  "images": [
+   "assets/products/p8007/0.jpg",
+   "assets/products/p8007/1.jpg",
+   "assets/products/p8007/2.jpg",
+   "assets/products/p8007/3.jpg",
+   "assets/products/p8007/4.jpg",
+   "assets/products/p8007/5.jpg",
+   "assets/products/p8007/6.jpg",
+   "assets/products/p8007/7.jpg",
+   "assets/products/p8007/8.jpg"
+  ],
+  "shopifyId": "10227041108296"
  }
 ];
 
@@ -3880,7 +3880,6 @@ window.SHOPIFY = {
   "p5556": "10219858493768",
   "p5555": "10219858559304",
   "p393": "10219713331528",
-  "p8007": "10227041108296",
   "p458": "10219712151880",
   "p4808": "10219856724296",
   "p560": "10235514290504",
@@ -3903,6 +3902,7 @@ window.SHOPIFY = {
   "p562": "10260249772360",
   "p567": "10261255848264",
   "p9177": "10219857510728",
-  "p8001": "10227037208904"
+  "p8001": "10227037208904",
+  "p8007": "10227041108296"
  }
 };
