@@ -1848,7 +1848,7 @@ window.PRODUCTS = [
   "strap": "Edelstahl (Jubilé)",
   "movement": "Automatik",
   "caliber": null,
-  "glass": "Saphirglas",
+  "glass": "Plexiglas",
   "gender": "Herren",
   "tax": "Regelbesteuerung",
   "sku": null,
