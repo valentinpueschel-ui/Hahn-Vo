@@ -13,7 +13,17 @@ python3 tools/uhr.py status p567 reserviert     # Kennzeichen uhr.reserviert = J
 python3 tools/uhr.py status p567 erhaeltlich    # Kennzeichen weg, Bestand 1
 python3 tools/uhr.py preis  p567 3250           # neuer Preis
 python3 tools/uhr.py preis  p567 9190 --listenpreis 9990   # Sale: Streichpreis über dem Preis
+python3 tools/uhr.py hinweis p567 "Erster Absatz.
+
+Zweiter Absatz."                                # Besonderheiten oben auf der Produktseite
+python3 tools/uhr.py hinweis p567               # ohne Text: Besonderheiten wieder weg
 ```
+
+**„Das noch als Zusatz dazu", „bitte hinzufügen", „das soll draufstehen"** = `hinweis`.
+Nicht in die Shopify-Beschreibung schreiben — die zeigt die Produktseite bewusst nicht.
+Der Befehl setzt das Metafeld, schreibt `daten/hinweise.json`, pusht und wartet, bis der
+Text live steht. Danach mit `pruefen` oder einem Blick auf die Seite bestätigen — am
+14.09.2026 wurde zweimal „ist drin" gemeldet, ohne dass es sichtbar war.
 
 Das Skript druckt Shopify-Aufrufe. Jeden **wörtlich** über den Connector ausführen
 (`graphql_query` bei Abfragen, `graphql_mutation` bei „mutation"), Antwort

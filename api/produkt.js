@@ -239,15 +239,20 @@ function rendern(p) {
           : '<li><span>' + esc(t) + '</span></li>';
       }).join('') + '</ul>'
     : '') +
-    /* Hinweis zu dieser einen Uhr (Metafeld uhr.hinweis) — siehe js/product.js. */
-    (p.note
-      ? '<h2>Besonderheiten</h2>' + String(p.note).split(/\n\s*\n|\n/)
-          .map(function (t) { return t.trim(); }).filter(Boolean)
-          .map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('')
-      : '') +
     '<h2 class="pd-promise">Unser Versprechen</h2>' +
     VERSPRECHEN.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('');
   html = html.replace('<div class="pd-desc" id="pdDesc"></div>', '<div class="pd-desc" id="pdDesc">' + descHtml + '</div>');
+
+  /* Besonderheiten dieser Uhr (Metafeld uhr.hinweis) — eigener Block oben,
+     direkt unter dem Preis. Er steht schon im HTML, damit er auch ohne
+     JavaScript und in der Vorschau von Google/WhatsApp dasteht. */
+  if (p.note) {
+    var extraHtml = '<h2>Besonderheiten</h2>' + String(p.note).split(/\n\s*\n|\n/)
+      .map(function (t) { return t.trim(); }).filter(Boolean)
+      .map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('');
+    html = html.replace('<div class="pd-extra" id="pdExtra" hidden></div>',
+      '<div class="pd-extra" id="pdExtra">' + extraHtml + '</div>');
+  }
 
   /* Kauf per Überweisung: Kaufknopf öffnet WhatsApp, Hinweis sichtbar */
   if (p.status === 'anfrage') {

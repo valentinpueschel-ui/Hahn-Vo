@@ -35,6 +35,7 @@ DATA = os.path.join(ROOT, 'js', 'data.js')
 IMGDIR = os.path.join(ROOT, 'assets', 'products')
 ARBEIT = os.path.join(ROOT, 'arbeit')
 DIFF_CSV = os.path.join(ROOT, 'daten', 'differenzbesteuerung.csv')
+HINWEISE_JSON = os.path.join(ROOT, 'daten', 'hinweise.json')
 SHOP_JS = os.path.join(ROOT, 'api', '_shop.js')
 KATALOG_JS = os.path.join(ROOT, 'api', 'katalog.js')
 
@@ -921,6 +922,63 @@ def s_status_abschluss(ordner, z, s):
     z['abschluss'] = '%s → %s. %s/produkt?id=%s · Commit %s' % (p['id'], z['aktion'] if z['aktion'] != 'preis' else '%d €' % z['preis'], SITE, p['id'], rev or '—')
 
 
+def m_hinweis(product_id, text):
+    if text:
+        return ('mutation { metafieldsSet(metafields: [{ownerId: "%s", namespace: "uhr", key: "hinweis", '
+                'type: "multi_line_text_field", value: %s}]) { metafields { key value } userErrors { field message } } }'
+                % (product_id, gq(text)))
+    return ('mutation { metafieldsDelete(metafields: [{ownerId: "%s", namespace: "uhr", key: "hinweis"}]) '
+            '{ deletedMetafields { key } userErrors { field message } } }' % product_id)
+
+
+def s_hinweis_setzen(ordner, z, s):
+    return m_hinweis(z['ids']['product'], z.get('text'))
+
+
+def a_hinweis_setzen(ordner, z, s, d):
+    m = (d.get('metafieldsSet') or d.get('metafieldsDelete') or {})
+    if m.get('userErrors'):
+        fehler('Shopify: ' + json.dumps(m['userErrors'], ensure_ascii=False))
+    sag('  Metafeld uhr.hinweis %s' % ('gesetzt' if z.get('text') else 'geloescht'))
+
+
+def s_hinweis_lokal(ordner, z, s):
+    """Zusatz zusaetzlich in daten/hinweise.json — damit er sofort auf der Seite
+    steht. Shopify liefert ein frisch angelegtes Metafeld je nach Region bis zu
+    einer Stunde lang nicht aus (14.09.2026); api/katalog.js nimmt deshalb den
+    Text aus der Datei, solange Shopify nichts schickt."""
+    kennung = z['produkt']['id']
+    daten = {}
+    if os.path.exists(HINWEISE_JSON):
+        daten = lies_json(HINWEISE_JSON)
+    if z.get('text'):
+        daten[kennung] = z['text']
+    else:
+        daten.pop(kennung, None)
+    schreib_json(HINWEISE_JSON, daten)
+    sag('  daten/hinweise.json: %s %s' % (kennung, 'gesetzt' if z.get('text') else 'entfernt'))
+    rev = commit_und_push(['daten/hinweise.json'], 'Besonderheiten: %s (%s %s)'
+                          % (kennung, z['produkt']['brand'], z['produkt']['name'][:40]))
+    sag('  gepusht (%s), warte auf die Live-Seite …' % (rev or '—'))
+
+    # daten/hinweise.json steckt in der Vercel-Funktion — erst nach dem Deploy da.
+    ziel = (z.get('text') or '').strip()
+    def ok(p):
+        return bool(p) and (p.get('note') or '').strip() == ziel
+    start = time.time()
+    while time.time() - start < 300:
+        p, _ = produkt_live(kennung, frisch=True)
+        if ok(p):
+            break
+        time.sleep(15)
+    live_pruefung(kennung, ok)
+    fallback_bauen()
+    rev2 = commit_und_push(['js/data.js'], 'Rueckfalldatei nach Besonderheiten %s' % kennung)
+    z['abschluss'] = ('%s: Besonderheiten %s. %s/produkt?id=%s · Commit %s'
+                      % (kennung, 'stehen auf der Seite' if z.get('text') else 'entfernt',
+                         SITE, kennung, rev2 or rev or '—'))
+
+
 def s_bestellungen(ordner, z, s):
     s['hinweis'] = 'Prüft die letzten 50 Bestellungen auf diese Uhr — an einer Bestellung darf nichts gelöscht werden.'
     return q_bestellungen()
@@ -1093,12 +1151,14 @@ SCHRITTE = {
     'status_abschluss': s_status_abschluss, 'bestellungen_pruefen': s_bestellungen, 'productDelete': s_delete,
     'loeschen_lokal': s_loeschen_lokal, 'medien_abfragen': s_medien_abfragen, 'bild_hochladen': s_bilder_hochladen_lokal,
     'medien_hinzufuegen': s_medien_hinzufuegen, 'medien_aendern': s_medien_aendern, 'bilder_lokal': s_bilder_lokal,
+    'hinweis_setzen': s_hinweis_setzen, 'hinweis_lokal': s_hinweis_lokal,
 }
 ANTWORTEN = {
     'productCreate': a_product_create, 'einrichten': a_einrichten, 'productCreateMedia': a_medien,
     'medien_pruefen': a_medien_pruefen, 'lager_abfragen': a_lager, 'status_setzen': a_status_setzen,
     'bestellungen_pruefen': a_bestellungen, 'productDelete': a_delete, 'medien_abfragen': a_medien_abfragen,
     'medien_hinzufuegen': a_medien_hinzufuegen, 'medien_aendern': a_medien_aendern,
+    'hinweis_setzen': a_hinweis_setzen,
 }
 
 
@@ -1155,6 +1215,21 @@ def plan_loeschen(ziel, trotzdem=False):
     ]}
     zustand_speichern(ordner, z)
     sag('Ablauf „loeschen" für %s geplant in %s.' % (ziel, os.path.relpath(ordner, ROOT)))
+    return ordner
+
+
+def plan_hinweis(ziel, text):
+    ordner = os.path.join(ARBEIT, '_hinweis-%s' % ziel)
+    if os.path.isdir(ordner):
+        shutil.rmtree(ordner)
+    os.makedirs(ordner)
+    z = {'aktion': 'hinweis', 'ziel': ziel, 'text': text, 'schritte': [
+        schritt_anlegen('ids_aufloesen', 'skript'),
+        schritt_anlegen('hinweis_setzen', 'mutation'),
+        schritt_anlegen('hinweis_lokal', 'skript'),
+    ]}
+    zustand_speichern(ordner, z)
+    sag('Ablauf „hinweis" für %s geplant in %s.' % (ziel, os.path.relpath(ordner, ROOT)))
     return ordner
 
 
@@ -1230,6 +1305,10 @@ def main():
     s6 = sub.add_parser('loeschen'); s6.add_argument('ziel'); s6.add_argument('--trotzdem', action='store_true'); s6.add_argument('--direkt', action='store_true')
     s7 = sub.add_parser('bilder'); s7.add_argument('ziel'); s7.add_argument('--reihenfolge'); s7.add_argument('--entfernen', type=int)
     s7.add_argument('--hinzufuegen'); s7.add_argument('--position', type=int, default=1); s7.add_argument('--direkt', action='store_true')
+    s11 = sub.add_parser('hinweis', help='Besonderheiten dieser Uhr — erscheinen oben auf der Produktseite')
+    s11.add_argument('ziel'); s11.add_argument('text', nargs='?', default=None,
+                     help='Text; Absätze mit einer Leerzeile. Ohne Text wird der Hinweis entfernt.')
+    s11.add_argument('--datei', help='Text stattdessen aus einer Datei lesen'); s11.add_argument('--direkt', action='store_true')
     s8 = sub.add_parser('pruefen'); s8.add_argument('ziel')
     s9 = sub.add_parser('frei'); s9.add_argument('ziel')
     s10 = sub.add_parser('vorschau', help='uhr.json prüfen und zeigen, was rausginge — ohne etwas zu ändern'); s10.add_argument('ordner')
@@ -1263,6 +1342,9 @@ def main():
             fehler('--reihenfolge 0,3,1,2 | --entfernen N | --hinzufuegen datei.jpg [--position N]')
         reihe = [int(x) for x in a.reihenfolge.split(',')] if a.reihenfolge else None
         weiter(plan_bilder(a.ziel, reihe, a.entfernen, a.hinzufuegen, a.position), a.direkt)
+    elif a.cmd == 'hinweis':
+        text = io.open(a.datei, encoding='utf-8').read().strip() if a.datei else (a.text or '').strip()
+        weiter(plan_hinweis(a.ziel, text or None), a.direkt)
     elif a.cmd == 'pruefen':
         pruefen(a.ziel)
     elif a.cmd == 'frei':
