@@ -10,9 +10,9 @@ var STOREFRONT_TOKEN = '89c87251e5d1f73c1302b1674ba75b69';
 var API = 'https://' + SHOP + '/api/2024-10/graphql.json';
 
 /* Die Metafelder im Namensraum „uhr". */
-var FELDER = ['referenz', 'baujahr', 'durchmesser', 'gehaeuse', 'zifferblatt', 'band',
-  'aufzug', 'kaliber', 'zustand', 'lieferumfang', 'geschlecht', 'code',
-  'besteuerung', 'glas', 'chrono24', 'reserviert', 'hinweis'];
+var FELDER = ['referenz', 'hinweis', 'baujahr', 'durchmesser', 'gehaeuse', 'zifferblatt',
+  'band', 'aufzug', 'kaliber', 'zustand', 'lieferumfang', 'geschlecht', 'code',
+  'besteuerung', 'glas', 'chrono24', 'reserviert'];
 
 /* Marken mit mehreren Wörtern lassen sich nicht am ersten Leerzeichen
  * abtrennen — „A. Lange & Söhne" wäre sonst die Marke „A.". Deshalb eine
