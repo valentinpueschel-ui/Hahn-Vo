@@ -29,6 +29,7 @@ Die Regeln, die hier erzwungen werden, stehen in CLAUDE.md und
 docs/PROBLEME-UND-LOESUNGEN.md — jede ist die Folge eines echten Fehlers.
 """
 import argparse, csv, io, json, os, re, shutil, subprocess, sys, time, urllib.request, urllib.error
+import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'js', 'data.js')
@@ -158,8 +159,12 @@ def marke_erkennen(titel):
 
 def slug(s):
     s = s.lower()
-    for a, b in (('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue'), ('ß', 'ss'), ('é', 'e'), ('è', 'e'), ('&', 'und')):
+    for a, b in (('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue'), ('ß', 'ss'), ('&', 'und')):
         s = s.replace(a, b)
+    # Restliche Akzente auf den Grundbuchstaben zurückführen — sonst wird aus
+    # „Française" das Handle „fran-aise" (gesehen am 16.09.2026).
+    s = unicodedata.normalize('NFKD', s)
+    s = ''.join(c for c in s if not unicodedata.combining(c))
     s = re.sub(r'[^a-z0-9]+', '-', s).strip('-')
     return s
 
