@@ -1986,7 +1986,7 @@ window.PRODUCTS = [
   "brand": "IWC",
   "name": "Fliegeruhr Chronograph Bronze Garantiekarte",
   "ref": "IW387902",
-  "price": 4890,
+  "price": 4690,
   "listPrice": null,
   "status": "available",
   "category": "uhren",
