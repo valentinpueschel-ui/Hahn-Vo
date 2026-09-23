@@ -14,7 +14,7 @@ das GitHub-Repo, das Vercel-Projekt und Valentins Claude-Umfeld.
 | Shopify Admin-Zugang für den Direktmodus | existiert nicht | optional: App im Dev-Dashboard des Shop-Inhabers, Client-ID/Secret in `~/.hv-tokens` |
 | GitHub-Repo `valentinpueschel-ui/Hahn-Vo` (öffentlich) | Valentin | Settings → Transfer ownership → Hannes' GitHub-Konto (kostenlos). Danach Vercel neu verbinden (unten) |
 | GitHub ↔ Claude | `gh` auf Valentins Mac | Hannes: `gh auth login` oder SSH-Schlüssel |
-| Vercel-Projekt `hahn-vo-df1c` + Env-Vars (`RESEND_API_KEY`, `ANFRAGE_AN`) | Seit 04.09. abends: eigenes Pro-Team **„Hahn und Vo"** (vercel.com/hahn-vo), Owner Valentin, Hannes als Viewer eingeladen (info@hahntime.com). Valentins andere Projekte liegen im Hobby-Team `valentin-pueschel-projekte` | Keine Projektübertragung mehr nötig: Hannes nimmt die Einladung an → später Rolle auf Owner, seine Karte unter Billing, Valentin zurück auf Viewer |
+| Vercel-Projekt `hahn-vo-df1c` + Env-Vars (`RESEND_API_KEY`, `ANFRAGE_AN`) | Team **„Hahn und Vo"** (vercel.com/hahn-vo), Owner Valentin. **Seit 22.09.2026 Hobby** — Valentin hat Pro gekündigt; beim Downgrade wurde sein Team `valentin-pueschel-projekte` in „Hahn und Vo" hineinverschmolzen und gelöscht. Im Team liegen jetzt auch Valentins andere Projekte (cana, goxida-site, kelida-site, ambiente-korea, marit, deshi, gakago, gakago-9jkg) und das verwaiste alte `hahn-vo`. Hannes' Viewer-Platz ist mit dem Downgrade weggefallen | Vor der Übergabe zurück auf **Pro** (20 $/Monat): Hannes als Owner, seine Karte unter Billing, Valentin → Viewer. **Vorher Valentins Projekte in ein eigenes Team schieben**, sonst bekommt Hannes sie mit |
 | Domain hahn-vo.de, DNS | Hahn & Vo (GoDaddy) | nichts; Valentins Personal Access Token widerrufen |
 | Resend (Mailversand) | Hannes (Konto auf info@hahntime.com, Passwort bei ihm) | nichts; nur Key rotieren, weil Valentin den aktuellen kennt (neuer Key → Vercel Env → Redeploy) |
 | Chrono24 Händlerkonto `hahnundvo`, Feed `/chrono24.xml` | Hannes | nichts; klären, ob Chrono24 den Feed zieht (`CHRONO24-FEED.md`) |
@@ -25,6 +25,10 @@ das GitHub-Repo, das Vercel-Projekt und Valentins Claude-Umfeld.
 
 ## Warum Vercel Pro und warum Hannes Owner
 
+> **Stand 22.09.2026:** Das Team läuft vorübergehend auf Hobby (siehe Tabelle).
+> Für den Dauerbetrieb eines Shops ist das keine Lösung — die Gründe darunter
+> gelten unverändert.
+
 - Hobby erlaubt keine Team-Mitglieder und laut Vercel nur nicht-kommerzielle Nutzung — ein laufender Shop darauf ist ein Risiko (Konto kann pausiert werden).
 - Analytics-Ereignisse (50.000/Monat) teilen sich auf Hobby alle acht Projekte in Valentins Team; Verlauf nur 1 Monat statt 12.
 - Pro: 20 $/Monat, ein bezahlter Sitz enthalten = Hannes. Viewer-Sitze sind kostenlos = Valentin. Deployen braucht keinen Vercel-Sitz — es läuft über Git-Push.
@@ -34,7 +38,7 @@ das GitHub-Repo, das Vercel-Projekt und Valentins Claude-Umfeld.
 
 1. **Hannes' Konten:** GitHub-Konto, Claude-Abo, Shopify-Connector verbinden.
 2. **Repo übertragen** (GitHub → Settings → Danger Zone → Transfer). Valentin bleibt Mitarbeiter.
-3. **Vercel:** Hannes nimmt die Einladung ins Team „Hahn und Vo" an (Viewer). Bei der Übergabe: Rolle → Owner, seine Karte unter Billing, Valentin → Viewer. Nach dem Repo-Transfer: Project Settings → Git → mit dem Repo unter Hannes' Konto verbinden (Vercel-GitHub-App auf seinem Konto installieren). Ein Test-Push muss deployen.
+3. **Vercel:** Team zurück auf Pro, Valentins Projekte vorher heraustrennen. Hannes nimmt die Einladung ins Team „Hahn und Vo" an (Viewer). Bei der Übergabe: Rolle → Owner, seine Karte unter Billing, Valentin → Viewer. Nach dem Repo-Transfer: Project Settings → Git → mit dem Repo unter Hannes' Konto verbinden (Vercel-GitHub-App auf seinem Konto installieren). Ein Test-Push muss deployen.
 4. **Hannes' Mac:** `git clone`, `bash tools/einrichten.sh`, Playwright-Chromium installieren.
 5. **Probelauf zu zweit (90 Minuten):** Hannes legt eine echte Uhr mit dem Skill an, setzt eine auf reserviert, ändert ein Bild — Valentin sieht zu.
 6. **Aufräumen:** Valentins Vercel-Token, GoDaddy-PAT, Resend-Key widerrufen/rotieren; `~/.hv-tokens` und `.shopify-token` bei Valentin löschen; verwaistes Vercel-Projekt `hahn-vo` (Stand 22.07.) löschen; Testbestellung #1002 archivieren.
