@@ -2772,7 +2772,10 @@ window.PRODUCTS = [
    "assets/products/p4808/2.jpg",
    "assets/products/p4808/3.jpg",
    "assets/products/p4808/4.jpg",
-   "assets/products/p4808/5.jpg"
+   "assets/products/p4808/5.jpg",
+   "assets/products/p4808/6.jpg",
+   "assets/products/p4808/7.jpg",
+   "assets/products/p4808/8.jpg"
   ],
   "shopifyId": "10219856724296"
  },
@@ -2931,39 +2934,6 @@ window.PRODUCTS = [
    "assets/products/p504/7.jpg"
   ],
   "shopifyId": "10261255291208"
- },
- {
-  "id": "p544",
-  "brand": "Omega",
-  "name": "Seamaster Diver 300 M Zifferblatt Schwarz Jahr 2014",
-  "ref": "212.30.41.20.01.00",
-  "price": 3390,
-  "listPrice": null,
-  "status": "reserved",
-  "category": "uhren",
-  "fullset": "Full Set (Box & Papiere)",
-  "rating": "Sehr gut",
-  "year": "2014",
-  "size": "41 mm",
-  "material": "Edelstahl",
-  "dial": "Schwarz",
-  "strap": "Edelstahl",
-  "movement": "Automatik",
-  "caliber": null,
-  "glass": null,
-  "gender": "Herren",
-  "tax": "Regelbesteuerung",
-  "sku": null,
-  "code": "544-26",
-  "added": "2026-09-12T09:35:21Z",
-  "desc": "Hier präsentieren wir die Omega Seamaster Diver 300 M, Ref. 212.30.41.20.01.00, aus dem Jahr 2014 im Full Set. Schwarzes Zifferblatt mit Wellenmuster, schwarze Taucherlünette, Gehäuse und Band aus Edelstahl, 41 mm Durchmesser, Automatikwerk. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nGeliefert mit originalen Omega-Papieren und originaler Omega-Box. Zusätzlich liegt ein Kautschukband im Wert von rund 100 € bei, sodass sich die Uhr je nach Anlass umsetzen lässt. Zustand: sehr gut. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 544-26",
-  "note": null,
-  "images": [
-   "assets/products/p544/0.jpg",
-   "assets/products/p544/1.jpg",
-   "assets/products/p544/2.jpg"
-  ],
-  "shopifyId": "10277494620488"
  },
  {
   "id": "p576",
@@ -3688,6 +3658,39 @@ window.PRODUCTS = [
   "shopifyId": "10261255848264"
  },
  {
+  "id": "p544",
+  "brand": "Omega",
+  "name": "Seamaster Diver 300 M Zifferblatt Schwarz Jahr 2014",
+  "ref": "212.30.41.20.01.00",
+  "price": 3390,
+  "listPrice": null,
+  "status": "sold",
+  "category": "uhren",
+  "fullset": "Full Set (Box & Papiere)",
+  "rating": "Sehr gut",
+  "year": "2014",
+  "size": "41 mm",
+  "material": "Edelstahl",
+  "dial": "Schwarz",
+  "strap": "Edelstahl",
+  "movement": "Automatik",
+  "caliber": null,
+  "glass": null,
+  "gender": "Herren",
+  "tax": "Regelbesteuerung",
+  "sku": null,
+  "code": "544-26",
+  "added": "2026-09-12T09:35:21Z",
+  "desc": "Hier präsentieren wir die Omega Seamaster Diver 300 M, Ref. 212.30.41.20.01.00, aus dem Jahr 2014 im Full Set. Schwarzes Zifferblatt mit Wellenmuster, schwarze Taucherlünette, Gehäuse und Band aus Edelstahl, 41 mm Durchmesser, Automatikwerk. Unsere Bilder sind unbearbeitet und zeigen jedes Detail – mehr, als das bloße Auge wahrnimmt.\n\nGeliefert mit originalen Omega-Papieren und originaler Omega-Box. Zusätzlich liegt ein Kautschukband im Wert von rund 100 € bei, sodass sich die Uhr je nach Anlass umsetzen lässt. Zustand: sehr gut. Der vollständige Lieferumfang ist auf den Bildern ersichtlich.\n\nBei Zahlung per Überweisung bitte als Verwendungszweck angeben: 544-26",
+  "note": null,
+  "images": [
+   "assets/products/p544/0.jpg",
+   "assets/products/p544/1.jpg",
+   "assets/products/p544/2.jpg"
+  ],
+  "shopifyId": "10277494620488"
+ },
+ {
   "id": "p9177",
   "brand": "Rolex",
   "name": "GMT Master II Left Hand Sprite",
@@ -4001,7 +4004,6 @@ window.SHOPIFY = {
   "p577": "10274244886856",
   "p581": "10278293766472",
   "p504": "10261255291208",
-  "p544": "10277494620488",
   "p576": "10277603672392",
   "p434": "10219712545096",
   "p412": "10219713069384",
@@ -4022,6 +4024,7 @@ window.SHOPIFY = {
   "p561": "10240425328968",
   "p562": "10260249772360",
   "p567": "10261255848264",
+  "p544": "10277494620488",
   "p9177": "10219857510728",
   "p8001": "10227037208904",
   "p8007": "10227041108296"
